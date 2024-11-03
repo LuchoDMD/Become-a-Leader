@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+/* Aplicar box-sizing globalmente */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Reset de estilo básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
