@@ -1,0 +1,92 @@
+/* styles.css */
+
+/* El componente ocupa toda la pantalla */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #121212; /* Fondo de pantalla oscuro */
+  color: #3b4cca; /* Color del texto azul */
+}
+
+fieldset {
+  border: 2px solid #3b4cca;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(50, 50, 50, 0.8); /* Fondo oscuro */
+  width: 60%;
+  max-width: 800px;
+  margin: 20px;
+}
+
+legend {
+  padding: 0 10px;
+  color: #3b4cca;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin: 10px 0 5px 0;
+  color: #3b4cca;
+}
+
+input, select {
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  border: 2px solid #3b4cca;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  color: #3b4cca;
+}
+
+button {
+  background-color: #ffcb05;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #3b4cca;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3b4cca;
+  color: #fff;
+}
+
+#pruebaAura {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../../../src/assets/aura.png');
+}
+
+#pruebaBruno {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../../../src/assets/bruno.png');
+}
