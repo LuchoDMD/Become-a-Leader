@@ -3,6 +3,6 @@ import { PantallaNuevaPartidaComponent } from './inicio/pantalla-nueva-partida/p
 import { PantallaInicioComponent } from './inicio/pantalla-inicio/pantalla-inicio.component';
 
 export const routes: Routes = [
-    {path: 'inicio/id:',component:PantallaInicioComponent},
+    {path: 'inicio/:id',component:PantallaInicioComponent},
     {path:'nuevaPartida', component:PantallaNuevaPartidaComponent}
 ];

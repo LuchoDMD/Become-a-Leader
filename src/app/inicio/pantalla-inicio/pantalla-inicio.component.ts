@@ -58,12 +58,14 @@ export class PantallaInicioComponent {
        * 
        */
       console.log('Crear nueva partida');
+      this.crearPartida();
     }
   }
 
   confirmarSobrescribir() {
     this.mostrarAlerta = false;
     // Lógica para sobrescribir la partida existente
+    this.crearPartida();
     console.log('Sobrescribir la partida existente');
   }
 
@@ -72,7 +74,7 @@ export class PantallaInicioComponent {
   }
 
   crearPartida(){
-    
+    this.router.navigate(['nuevaPartida']);
   }
 
   cargarPartida() { // Lógica para cargar la partida existente console.log('Cargar partida existente'); 
