@@ -12,3 +12,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-color: #121212; /* Fondo de pantalla oscuro */
+
+}
