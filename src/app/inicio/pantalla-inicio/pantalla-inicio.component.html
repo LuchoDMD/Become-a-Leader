@@ -1,6 +1,13 @@
-<p>pantalla-inicio works!</p><!--Ignorar esta linea-->
-
+<!-- pantalla-inicio.component.html -->
+<p>pantalla-inicio works!</p>
 <div class="btns-container">
-  <button>Nueva Partida</button>
-  <button *ngIf="!tienePartida">Cargar Partida</button>
+  <button (click)="crearNuevaPartida()">Nueva Partida</button>
+  <button *ngIf="tienePartida" (click)="cargarPartida()">Cargar Partida</button>
 </div>
+<app-alerta
+  [mensaje]="'¿Estás seguro de que deseas sobrescribir la partida existente?'"
+  [mostrar]="mostrarAlerta"
+  (onConfirmar)="confirmarSobrescribir()"
+  (onCancelar)="cancelarSobrescribir()">
+  
+</app-alerta>

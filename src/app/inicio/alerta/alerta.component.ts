@@ -1,10 +1,13 @@
 // alerta.component.ts
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-alerta',
   templateUrl: './alerta.component.html',
-  styleUrls: ['./alerta.component.css']
+  styleUrls: ['./alerta.component.css'],
+  standalone:true,
+  imports: [CommonModule]
 })
 export class AlertaComponent {
   @Input() mensaje: string = '¿Estás seguro de que deseas sobrescribir la partida existente?';
