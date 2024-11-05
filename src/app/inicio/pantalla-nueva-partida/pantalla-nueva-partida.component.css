@@ -76,7 +76,7 @@ button:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../../../../src/assets/aura.png');
+  background-image: url('../../../../public/assets/img/lideres/aura.png');
 }
 
 #pruebaBruno {
@@ -88,5 +88,5 @@ button:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../../../../src/assets/bruno.png');
+  background-image: url('../../../../public/assets/img/lideres/bruno.png');
 }
