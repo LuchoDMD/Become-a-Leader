@@ -1,0 +1,33 @@
+/* alerta.component.css */
+.alerta {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  .alerta button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .alerta button:first-of-type {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .alerta button:last-of-type {
+    background-color: #dc3545;
+    color: white;
+  }
+  

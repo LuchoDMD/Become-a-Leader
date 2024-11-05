@@ -1,1 +1,8 @@
 <p>alerta works!</p>
+<!-- alerta.component.html -->
+<div class="alerta" *ngIf="mostrar">
+    <p>{{ mensaje }}</p>
+    <button (click)="confirmar()">Confirmar</button>
+    <button (click)="cancelar()">Cancelar</button>
+  </div>
+  
