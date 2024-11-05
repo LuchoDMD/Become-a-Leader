@@ -23,7 +23,7 @@
 .pokeball-icon {
   width: 50px;
   height: 50px;
-  background: url('../../../../public/assets/img/menu_inicio/pokeball_icon.png') no-repeat center center;
+  background: url('/assets/img/menu_inicio/pokeball_icon.png') no-repeat center center;
   background-size: contain;
 }
 
