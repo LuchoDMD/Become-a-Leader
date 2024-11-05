@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
   width: 100vw;
   background-color: #121212; /* Fondo de pantalla oscuro */
   color: #3b4cca; /* Color del texto azul */
@@ -67,26 +66,21 @@ button:hover {
   color: #fff;
 }
 
-#pruebaAura {
-  position: absolute;
-  top: 45%;
-  right: 10%;
-  width: 150px;
-  height: 150px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+#aura {
   background-image: url('/assets/img/lideres/aura.png');
 }
 
-#pruebaBruno {
+#bruno {
+  background-image: url('/assets/img/lideres/bruno.png');
+}
+
+#aura, #bruno {
   position: absolute;
   top: 45%;
-  left: 10%;
+  right: 2%;
   width: 150px;
   height: 150px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/assets/img/lideres/bruno.png');
 }

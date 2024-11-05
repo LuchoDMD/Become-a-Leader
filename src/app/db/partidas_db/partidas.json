@@ -1,7 +1,10 @@
 {
     "partidas":[
         {
-            "id":"123"
+            "id":"123",
+            "nick":"marquitos",
+            "leader":"1",
+            "tipo":"fuego"
         }
     ]
 }

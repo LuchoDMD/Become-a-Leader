@@ -10,8 +10,6 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./pantalla-nueva-partida.component.css']
 })
 export class PantallaNuevaPartidaComponent {
-  mostrarBruno: boolean = false;
-  mostrarAura: boolean = false;
   selectedLider: string = '';
 
   seleccionarLider(event: Event) {
@@ -19,4 +17,6 @@ export class PantallaNuevaPartidaComponent {
     this.selectedLider = target.value;
     console.log('Líder seleccionado:', this.selectedLider); // Agrega un log para verificar
   }
+
+  crearPartida(){}
 }
