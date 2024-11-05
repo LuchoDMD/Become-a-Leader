@@ -2,5 +2,5 @@
 
 <div class="btns-container">
   <button>Nueva Partida</button>
-  <button *ngIf="verificarPartida()">Cargar Partida</button>
+  <button *ngIf="!tienePartida">Cargar Partida</button>
 </div>
