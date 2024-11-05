@@ -16,7 +16,7 @@
 
 /* El contenedor de botones mantiene un tamaño simplificado */
 .btns-container {
-  background: url('../../../../public/img/inicio/menu/wp2595124.jpg') no-repeat center center;
+  background: url('../../../../public/assets/img/menu_inicio/fondo_inicio.jpg') no-repeat center center;
   background-size: cover;
   border-radius: 10px;
   text-align: center;
