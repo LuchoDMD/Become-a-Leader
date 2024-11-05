@@ -1,0 +1,52 @@
+
+/* El componente ocupa toda la pantalla */
+:host {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw; /* Asegura que ocupa todo el ancho */
+    background-color: #121212; /* Fondo de pantalla oscuro */
+    color: #fff;
+    position: relative;
+  }
+/* styles.css */
+
+/* Estilos del navbar */
+.navbar {
+  width: 100%;
+  background-color: #ffcb05; /* Color de fondo del navbar */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaciar los elementos en el navbar */
+}
+
+.pokeball-icon {
+  width: 50px;
+  height: 50px;
+  background: url('../../../../public/img/inicio/menu/107-1075239_pokeball-pixel-png-png-download-pokeball-pixel-art-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #3b4cca; /* Color del texto de los enlaces */
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fff; /* Color del texto de los enlaces al pasar el ratón */
+}
