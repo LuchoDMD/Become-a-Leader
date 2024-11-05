@@ -1,6 +1,6 @@
 <p>pantalla-inicio works!</p><!--Ignorar esta linea-->
 
 <div class="btns-container">
-  <button (click)="NavigateToNewPartida()">Nueva Partida</button>
-  <button>Cargar Partida</button>
+  <button>Nueva Partida</button>
+  <button *ngIf="verificarPartida()">Cargar Partida</button>
 </div>
