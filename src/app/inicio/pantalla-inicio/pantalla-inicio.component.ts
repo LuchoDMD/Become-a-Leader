@@ -18,7 +18,8 @@ export class PantallaInicioComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute, //Falta implementar para recibir el id de usuario por la ruta.
-    private servicio: PartidaService
+    private servicio: PartidaService,
+    private router:Router
   ) {
     this.verificarPartida();
   }
@@ -39,7 +40,7 @@ export class PantallaInicioComponent {
     }
   }
 
-  crearNuevaPartida() {
+  creacionPartida() {
     if (this.tienePartida) {
       this.mostrarAlerta = true;
     } else {
@@ -69,7 +70,13 @@ export class PantallaInicioComponent {
   cancelarSobrescribir() {
     this.mostrarAlerta = false;
   }
+
+  crearPartida(){
+    
+  }
+
   cargarPartida() { // Lógica para cargar la partida existente console.log('Cargar partida existente'); 
   }
+
 }
 
