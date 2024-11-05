@@ -12,7 +12,7 @@
 
 /* Estilos del navbar */
 .navbar {
-  width: 100%;
+  width: 100vw;
   background-color: #ffcb05; /* Color de fondo del navbar */
   padding: 10px;
   display: flex;
