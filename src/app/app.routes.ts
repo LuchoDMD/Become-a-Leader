@@ -4,5 +4,5 @@ import { PantallaInicioComponent } from './inicio/pantalla-inicio/pantalla-inici
 
 export const routes: Routes = [
     {path: 'inicio/:id',component:PantallaInicioComponent},
-    {path:'nuevaPartida', component:PantallaNuevaPartidaComponent}
+    {path:'nuevaPartida/:id', component:PantallaNuevaPartidaComponent}
 ];

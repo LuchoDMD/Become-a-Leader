@@ -1,10 +1,10 @@
 {
-    "partidas":[
-        {
-            "id":"123",
-            "nick":"marquitos",
-            "leader":"1",
-            "tipo":"fuego"
-        }
-    ]
+  "partidas": [
+    {
+      "id_usuario": "123",
+      "nick": "marquitos",
+      "leader": "1",
+      "tipo": "fuego"
+    }
+  ]
 }

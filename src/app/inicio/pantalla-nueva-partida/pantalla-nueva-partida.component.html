@@ -1,11 +1,11 @@
 <p>pantalla-nueva-partida works!</p>
 <fieldset>
   <legend>Nueva Partida</legend>
-  <form action="">
+  <form action="" (ngSubmit)="crearPartida()">
     <label for="">Nombre del Lider</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="datos_partida.nick" [ngModelOptions]="{standalone:true}">
     <label for="">Escoge tu Lider</label>
-    <select name="lider" id="lider" (change)="seleccionarLider($event)">
+    <select name="lider" id="lider" (change)="seleccionarLider($event)" [(ngModel)]="datos_partida.leader" [ngModelOptions]="{standalone:true}">
       <option value="" selected disabled>Selecciona un líder</option>
       <option value="lider1">Lider 1</option>
       <option value="lider2">Lider 2</option>
@@ -14,7 +14,7 @@
     <div id="aura" *ngIf="selectedLider === 'lider1'"> </div>
     <div id="bruno" *ngIf="selectedLider === 'lider2'"> </div>
     <label for="tipo">Escoge tu tipo</label>
-    <select name="tipo" id="tipo" required>
+    <select name="tipo" id="tipo" required [(ngModel)]="datos_partida.tipo" [ngModelOptions]="{standalone:true}">
       <option value="" selected disabled>Sin seleccionar</option>
       <option value="acero">Acero</option>
       <option value="agua">Agua</option>

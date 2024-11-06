@@ -1,3 +1,6 @@
 export interface Partida {
-    id:string;
+    id_usuario?:string|null;
+    nick:string;
+    leader:string;
+    tipo:string;
 }

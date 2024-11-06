@@ -74,7 +74,7 @@ export class PantallaInicioComponent {
   }
 
   crearPartida(){
-    this.router.navigate(['nuevaPartida']);
+    this.router.navigate(['/nuevaPartida', this.idUsuario]);
   }
 
   cargarPartida() { // Lógica para cargar la partida existente console.log('Cargar partida existente'); 
