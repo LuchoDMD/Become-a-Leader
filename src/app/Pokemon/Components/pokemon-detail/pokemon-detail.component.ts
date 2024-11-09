@@ -16,8 +16,6 @@ export class PokemonDetailComponent
   pokeID:string='';
   ps=inject(PokeAPIService);
 
-
-
   generatePokemon() {
     this.ps.getPokemonByID(this.pokeID).subscribe({
       next: (data) => {

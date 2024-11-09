@@ -12,6 +12,7 @@
         
         @if(pokeAPI){
             <h3>Informacion Base</h3>
+            <img [src]="pokeAPI?.sprites.frontdefault" alt="Nadita">
             <ul>
                 <li>ID: {{pokeAPI.id}}</li> 
                 <li>Nombre: {{pokeAPI.name}}</li>
