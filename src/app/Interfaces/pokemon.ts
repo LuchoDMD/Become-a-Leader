@@ -1,5 +1,5 @@
 import { Stats } from "./estadisticas"
-import { Move } from "./movimientos"
+import { Move } from "./moves"
 
 export interface Pokemon {
     id:string,
@@ -7,6 +7,6 @@ export interface Pokemon {
     genero:string, //m o f
     tipos:string[], // Maximo 2
     vidaActual:number,
-    estadisticas:Stats[], 
-    movimientos:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate
+    estadisticas?:Stats[], 
+    movimientos?:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate
 }

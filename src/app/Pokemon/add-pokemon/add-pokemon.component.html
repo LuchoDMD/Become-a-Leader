@@ -2,11 +2,10 @@
     <fieldset>
         <legend>AgregarPokemon</legend>
         <form action="">
-            <label for="pokeID">ID: </label> <input type="text" name="pokeID" id="pokeID" [(ngModel)]="pokeID" placeholder="Ingresar nro del pokemon"> <button type="button">Buscar</button>
+            <label for="pokeID">ID: </label> <input type="text" name="pokeID" id="pokeID" [defaultChecked]="" [(ngModel)]="pokeID" placeholder="Ingresar nro del pokemon"> <button type="button">Buscar</button>
             <div>
-                
                 <h4>Informacion Basica</h4>
-                
+
             </div>
             <div>
                 <h4>Estadisticas</h4>
@@ -20,3 +19,34 @@
         </form>
     </fieldset>
 </section>
+<article>
+    <h1>Detalles del Pokemon</h1>
+    @if(pokeAPI){
+        <h3>Informacion Base</h3>
+        <img [src]="pokeAPI?.sprites.front_default" alt="Nadita">
+        <ul>
+            <li>ID: {{pokeAPI.id}}</li> 
+            <li>Nombre: {{pokeAPI.name}}</li>
+            <li>Tipo: @for (t of pokeAPI.types; track $index) {
+                {{t?.type.name}}
+            }</li>
+            <li>Habilidades: @for (a of pokeAPI.abilities; track $index) {
+                {{a.ability.name}}    
+            }</li>
+            <li>Peso: {{pokeAPI.weight}}</li>
+            <li>Altura: {{pokeAPI.height}}</li>
+        </ul>
+        <h4>Estadisticas Base</h4>
+        <ul>
+            @for (st of pokeAPI.stats; track $index) {
+                <li>{{st?.stat.name}}:{{st?.base_stat}} </li>
+            }
+        </ul>
+        <h4>Movimientos</h4>
+        <ul>
+            @for (m of pokeAPI.moves; track $index) {
+                <li>{{m?.move.name}}</li>
+            }
+        </ul>
+    }
+</article>

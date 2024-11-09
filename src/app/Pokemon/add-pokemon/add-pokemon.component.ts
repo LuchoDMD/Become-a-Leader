@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PokeAPIService } from '../Services/poke-api.service';
 import { Pokemon } from '../../Interfaces/pokemon';
-import { Estadisticas } from '../../Batalla/Interfaces/estadisticas';
+
 
 @Component({
   selector: 'app-add-pokemon',
@@ -14,19 +14,30 @@ import { Estadisticas } from '../../Batalla/Interfaces/estadisticas';
 })
 export class AddPokemonComponent {
   pokeID="";
-  pas=inject(PokeAPIService);
+  ps=inject(PokeAPIService);
   pokemon?:Pokemon;
-
+  pokeAPI:any;
+  
   cleanBuffer(){
     this.pokemon={
       id:'',
       especie:'',
       genero:'',
       tipos:[],
-      vidaActual:0,
-      estadisticas?:Estadisticas[],
-      movimientos:Movimientos[]
-
+      vidaActual:0
     }
   }
+  
+  generatePokemon(id:string){
+    this.ps.getPokemonByID(id).subscribe({
+      next:(data)=>{
+        this.pokeAPI=data;
+        console.log(this.pokeAPI);
+      },
+      error:(err:Error)=>{
+        console.log("ERROR: "+err.message);
+      }
+    });
+  }
+
 }
