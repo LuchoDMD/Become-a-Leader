@@ -1,0 +1,44 @@
+<section>
+    <fieldset>
+        <legend>BuscarPokemon</legend>
+        <form (ngSubmit)="generatePokemon()">
+            <label for="ID">PokemonID:</label>
+            <input type="text" name="ID" id="ID" [(ngModel)]="pokeID" placeholder="Ingresar nro del pokemon">
+            <button type="submit">Buscar</button>
+        </form>
+    </fieldset>
+    <article>
+        <h1>Detalles del Pokemon</h1>
+        @if(pokeAPI){
+            <h3>Informacion Base</h3>
+            <ul>
+                <li>ID: {{pokeAPI.id}}</li> 
+                <li>Nombre: {{pokeAPI.name}}</li>
+                <li>Tipo: @for (t of pokeAPI.types; track $index) {
+                    {{t?.type.name}}
+                }</li>
+                <li>Habilidades: @for (a of pokeAPI.abilities; track $index) {
+                    {{a.ability.name}}    
+                }</li>
+                <li>Peso: {{pokeAPI.weight}}</li>
+                <li>Altura: {{pokeAPI.height}}</li>
+            </ul>
+            <h4>Estadisticas Base</h4>
+            <ul>
+                @for (st of pokeAPI.stats; track $index) {
+                    <li>{{st?.stat.name}}:{{st?.base_stat}} </li>
+                }
+            </ul>
+            <h4>Movimientos</h4>
+            <ul>
+                @for (m of pokeAPI.moves; track $index) {
+                    <li>{{m?.move.name}}</li>
+                }
+            </ul>
+        }
+    </article>
+    
+    <!-- Seguir investigando la pokeAPI pero en si ya mañana puedo crear el formulario para guardar los pokemons 
+     Luego me meto a fondo con la batalla que sera un componente y no un servicio -->
+</section>
+
