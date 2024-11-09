@@ -5,7 +5,7 @@ import { PokemonDetailComponent } from "./Pokemon/Components/pokemon-detail/poke
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PokemonDetailComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
