@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { PokeAPIService } from '../../Services/poke-api.service';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PokeAPIService } from '../../Services/poke-api.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -10,8 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.css'
 })
-export class PokemonDetailComponent 
-{
+export class PokemonDetailComponent {
   pokeAPI:any=undefined;
   pokeID:string='';
   ps=inject(PokeAPIService);
@@ -28,3 +27,4 @@ export class PokemonDetailComponent
     });
   }
 }
+

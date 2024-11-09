@@ -1,4 +1,4 @@
-export interface Estadisticas 
+export interface Stats
 {
     hp:number, //Vida
     atk:number, //Ataque Fisico

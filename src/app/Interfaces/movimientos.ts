@@ -1,4 +1,4 @@
-export interface Movimientos 
+export interface Move
 {
     id:string,
     nombre:string,

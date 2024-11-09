@@ -1,6 +1,6 @@
 <section>
     <fieldset>
-        <legend>BuscarPokemon</legend>
+        <legend>BuscarPokemon: </legend>
         <form (ngSubmit)="generatePokemon()">
             <label for="ID">PokemonID:</label>
             <input type="text" name="ID" id="ID" [(ngModel)]="pokeID" placeholder="Ingresar nro del pokemon">
@@ -9,10 +9,9 @@
     </fieldset>
     <article>
         <h1>Detalles del Pokemon</h1>
-        
         @if(pokeAPI){
             <h3>Informacion Base</h3>
-            <img [src]="pokeAPI?.sprites.frontdefault" alt="Nadita">
+            <img [src]="pokeAPI?.sprites.front_default" alt="Nadita">
             <ul>
                 <li>ID: {{pokeAPI.id}}</li> 
                 <li>Nombre: {{pokeAPI.name}}</li>
@@ -43,4 +42,3 @@
     <!-- Seguir investigando la pokeAPI pero en si ya mañana puedo crear el formulario para guardar los pokemons 
      Luego me meto a fondo con la batalla que sera un componente y no un servicio -->
 </section>
-
