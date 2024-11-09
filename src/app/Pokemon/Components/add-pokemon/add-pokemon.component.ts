@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { PokeAPIService } from '../Services/poke-api.service';
-import { Pokemon } from '../../Interfaces/pokemon';
+import { PokeAPIService } from '../../Services/poke-api.service';
+import { Pokemon } from '../../../Interfaces/pokemon';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class AddPokemonComponent {
       vidaActual:0
     }
   }
-  
+
   generatePokemon(id:string){
     this.ps.getPokemonByID(id).subscribe({
       next:(data)=>{
@@ -40,4 +40,5 @@ export class AddPokemonComponent {
     });
   }
 
+  
 }
