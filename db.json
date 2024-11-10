@@ -1,0 +1,46 @@
+{
+  "usuarios": [
+    {
+      "id": "1126",
+      "email": "quimeyvarela97@gmail.com",
+      "nick": "Withur",
+      "password": "jorge2324"
+    },
+    {
+      "id": "adb3",
+      "email": "cosmefulanito@gmail.com",
+      "nick": "Jose",
+      "password": "prueba1234"
+    },
+    {
+      "id": "5504",
+      "email": "agustina@gmail.com",
+      "nick": "Jose",
+      "password": "prueba1234"
+    },
+    {
+      "id": "610a",
+      "email": "prueba@gmail.com",
+      "nick": "Hola",
+      "password": "sdasdasdas"
+    }
+  ],
+  "partidas": [
+    {
+      "id": "5504",
+      "fecha_inicio": "2024-11-10T02:54:16.259Z",
+      "fecha_fin": "2024-11-10T02:54:16.259Z",
+      "puntuacion": 0,
+      "personaje": {
+        "id": "uuid-1234",
+        "nombre": "Gustavo",
+        "genero": "chica",
+        "rango": "C",
+        "dinero": 1000,
+        "equipo": [],
+        "mochila": {}
+      }
+    }
+  ],
+  "pokemons": []
+}

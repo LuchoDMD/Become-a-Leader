@@ -1,14 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PokemonDetailComponent } from "./Pokemon/Components/pokemon-detail/pokemon-detail.component";
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule,RouterModule,HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Become-a-Leader';
+  title = 'LOGIN-REGISTER';
 }
