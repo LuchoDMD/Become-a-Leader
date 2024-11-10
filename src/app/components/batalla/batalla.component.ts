@@ -200,7 +200,12 @@ mostrarMensajeBatalla(mensaje: string) {
         window.location.reload();
       }, 3000)
     } else {
-      this.resultado = 'derrota';
+      this.resultado = 'Perdiste rey';
+      alert(this.resultado);
+      setTimeout(() => {
+        this.router.navigate(['/menu']), 3000
+      })
+      
       // Redirigir a la pantalla de gameover
     }
   }

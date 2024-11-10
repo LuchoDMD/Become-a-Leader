@@ -41,6 +41,7 @@ export class NuevaPartidaComponent implements OnInit {
       personaje: {
         id: this.id,  // Asigna un UUID o un valor adecuado
         nombre: this.datos_partida.nick, // Se puede ajustar según el lider seleccionado
+        tipo: this.datos_partida.tipo,
         equipo: [],  // Llenar según el tipo de Pokémon que seleccione
       },
     };
@@ -50,8 +51,7 @@ export class NuevaPartidaComponent implements OnInit {
       next:(respuesta) => {
         console.log('Partida creada', respuesta);
         this.router.navigate(['/batalla']);
-      },
-      
+      },    
       error:(error: Error) => {
         console.error('Error creando la partida', error);
       }

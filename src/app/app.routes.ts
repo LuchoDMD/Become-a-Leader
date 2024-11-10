@@ -7,7 +7,7 @@ import { PartidaComponent } from './pages/partida/partida.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { NuevaPartidaComponent } from './components/nueva-partida/nueva-partida.component';  // Ajusta la ruta según tu estructura
 import { BatallaComponent } from './components/batalla/batalla.component';  
-//import { CargarPartidaComponent } from './pages/cargar-partida/cargar-partida.component';  // Ajusta la ruta según tu estructura
+import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
 
 export const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -17,5 +17,5 @@ export const routes: Routes = [
   {path: 'menu',component: MenuComponent},
   {path: 'nueva-partida', component: NuevaPartidaComponent },
   {path: 'batalla', component: BatallaComponent },
-  //{ path: 'cargar-partida', component: CargarPartidaComponent }
+  {path: 'add-pokemon', component: AddPokemonComponent },
 ];

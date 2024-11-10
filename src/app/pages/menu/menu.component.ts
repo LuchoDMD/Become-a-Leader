@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
   // Método para ir a la pantalla de nueva partida o cargar partida
   onSeleccionarPartida(): void {
     if (this.tienePartida) {
-      this.router.navigate(['/cargar-partida']);  // Redirige al componente de cargar partida
+      this.router.navigate(['/batalla']);  // Redirige al componente de cargar partida
     } else {
       this.router.navigate(['/nueva-partida']);  // Redirige al componente de nueva partida
     }

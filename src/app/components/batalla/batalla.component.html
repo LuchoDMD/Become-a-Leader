@@ -3,7 +3,7 @@
     
     <div>
       <h3>Jugador</h3>
-      <p>{{ pokemonJugador?.especie }} (HP: {{ pokemonJugador?.vidaActual }}/{{ pokemonJugador?.estadisticas?.hp }})</p>
+      <p>{{ pokemonJugador.especie }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
       <ul>
         <li *ngFor="let movimiento of movimientosJugador" (click)="iniciarTurno(movimiento)">
           {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
@@ -13,7 +13,7 @@
   
     <div>
       <h3>Rival</h3>
-      <p>{{ pokemonRival?.especie }} (HP: {{ pokemonRival?.vidaActual }}/{{ pokemonRival?.estadisticas?.hp }})</p>
+      <p>{{ pokemonRival.especie }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
     </div>
   
     <button (click)="cambiarPokemon()">Cambiar Pokémon</button>
