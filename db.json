@@ -40,7 +40,63 @@
     }
   ],
   "pokemons": [
-
-
+    {
+      "id": 130,
+      "especie": "gyarados",
+      "tipos": [
+        "water",
+        "flying",
+        "water",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 210,
+      "estadisticas": {
+        "hp": 210,
+        "atk": 366,
+        "def": 296,
+        "satk": 260,
+        "sdef": 330,
+        "spd": 312
+      },
+      "movimientos": [
+        {
+          "nombre": "waterfall",
+          "tipo": "water",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "avalanche",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "giga-impact",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    }
   ]
 }
