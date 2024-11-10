@@ -1,43 +1,54 @@
-<p>pantalla-nueva-partida works!</p>
-<fieldset>
-  <legend>Nueva Partida</legend>
-  <form (ngSubmit)="crearPartida()">
-    <label for="">Nombre del Lider</label>
-    <input type="text" [(ngModel)]="datos_partida.nick" [ngModelOptions]="{standalone:true}" required>
+<div class="menu">
+  <h1 class="title-main">BECOME A LEADER</h1> <!-- Título principal -->
+  <h2>Bienvenido al Juego</h2>
+  <fieldset>
+    <legend>Nueva Partida</legend>
+    <form (ngSubmit)="crearPartida()">
+      <label  id="nombre" for="">Nombre del Lider</label>
+      <input type="text" [(ngModel)]="datos_partida.nick" [ngModelOptions]="{standalone:true}" required>
 
-    <label for="">Escoge tu Lider</label>
-    <select name="lider" id="lider" (change)="seleccionarLider($event)" [(ngModel)]="datos_partida.leader" [ngModelOptions]="{standalone:true}" required>
-      <option value="" selected disabled>Selecciona un líder</option>
-      <option value="lider1">Lider 1</option>
-      <option value="lider2">Lider 2</option>
-    </select>
+      <label id="escoge" for="">Escoge tu Lider</label>
+      <select name="lider" id="lider" (change)="seleccionarLider($event)" [(ngModel)]="datos_partida.leader"
+        [ngModelOptions]="{standalone:true}" required>
+        <option value="" selected disabled>Selecciona un líder</option>
+        <option value="lider1">Lider 1</option>
+        <option value="lider2">Lider 2</option>
+      </select>
 
-    <!-- Muestra diferente contenido según el líder seleccionado -->
-    <div id="aura" *ngIf="selectedLider === 'lider1'">Aura del Líder 1</div>
-    <div id="bruno" *ngIf="selectedLider === 'lider2'">Bruno del Líder 2</div>
 
-    <label for="tipo">Escoge tu tipo</label>
-    <select name="tipo" id="tipo" [(ngModel)]="datos_partida.tipo" [ngModelOptions]="{standalone:true}" required>
-      <option value="" selected disabled>Sin seleccionar</option>
-      <option value="acero">Acero</option>
-      <option value="agua">Agua</option>
-      <option value="bicho">Bicho</option>
-      <option value="dragon">Dragón</option>
-      <option value="electrico">Eléctrico</option>
-      <option value="fantasma">Fantasma</option>
-      <option value="fuego">Fuego</option>
-      <option value="hada">Hada</option>
-      <option value="hielo">Hielo</option>
-      <option value="lucha">Lucha</option>
-      <option value="normal">Normal</option>
-      <option value="planta">Planta</option>
-      <option value="psiquico">Psíquico</option>
-      <option value="roca">Roca</option>
-      <option value="siniestro">Siniestro</option>
-      <option value="veneno">Veneno</option>
-      <option value="volador">Volador</option>
-    </select>
+      @if (selectedLider==='lider1') {
+      <div id="aura">Aura</div>
+      <img src="aura.png" alt="Lider1">
+      }
+      @if (selectedLider==='lider2') {
+      <div id="bruno">Bruno</div>
+      <img src="bruno.png" alt="Lider2">
+      }
+      <!-- Muestra diferente contenido según el líder seleccionado -->
 
-    <button type="submit">Crear Partida</button>
-  </form>
-</fieldset>
+      <label id="tipos" for="tipo">Escoge tu tipo</label>
+      <select name="tipo" id="tipo" [(ngModel)]="datos_partida.tipo" [ngModelOptions]="{standalone:true}" required>
+        <option value="" selected disabled>Sin seleccionar</option>
+        <option value="acero">Acero</option>
+        <option value="agua">Agua</option>
+        <option value="bicho">Bicho</option>
+        <option value="dragon">Dragón</option>
+        <option value="electrico">Eléctrico</option>
+        <option value="fantasma">Fantasma</option>
+        <option value="fuego">Fuego</option>
+        <option value="hada">Hada</option>
+        <option value="hielo">Hielo</option>
+        <option value="lucha">Lucha</option>
+        <option value="normal">Normal</option>
+        <option value="planta">Planta</option>
+        <option value="psiquico">Psíquico</option>
+        <option value="roca">Roca</option>
+        <option value="siniestro">Siniestro</option>
+        <option value="veneno">Veneno</option>
+        <option value="volador">Volador</option>
+      </select>
+
+      <button type="submit">Crear Partida</button>
+    </form>
+  </fieldset>
+</div>

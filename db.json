@@ -28,12 +28,12 @@
   "partidas": [
     {
       "id": "5504",
-      "fecha_inicio": "2024-11-10T02:54:16.259Z",
-      "fecha_fin": "2024-11-10T02:54:16.259Z",
+      "fecha_inicio": "2024-11-10T18:29:24.559Z",
+      "fecha_fin": "2024-11-10T18:29:24.559Z",
       "puntuacion": 0,
       "personaje": {
         "id": "uuid-1234",
-        "nombre": "Gustavo",
+        "nombre": "agustina",
         "genero": "chica",
         "rango": "C",
         "dinero": 1000,

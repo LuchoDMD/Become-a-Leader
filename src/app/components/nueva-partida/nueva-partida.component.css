@@ -1,0 +1,173 @@
+/* General Reset y Estilos Base */
+html, body, :host {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que ocupe toda la altura */
+  width: 100%;  /* Asegura que ocupe todo el ancho */
+  font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Fondo principal */
+:host {
+  background-image: url('../../../../public/fondo_inicio.jpg'); /* Fondo GIF */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título principal */
+.title-main {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 600;
+  color: #ffcb05; /* Amarillo Pokémon */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 50px;
+  font-family: 'Press Start 2P', cursive; /* Fuente retro */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de hover para el título principal */
+.title-main:hover {
+  text-shadow: 0 0 15px rgba(255, 203, 5, 0.8), 0 0 25px rgba(255, 203, 5, 0.6);
+}
+
+/* Estilos para el contenedor del formulario */
+fieldset {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+  max-width: 500px;
+  width: 100%;
+  z-index: 2; /* Asegura que esté por encima del fondo */
+}
+
+/* Leyenda */
+legend {
+  font-size: 1.5em;
+  color: #ffcb05; /* Amarillo Pokémon */
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive; /* Fuente retro */
+  text-align: center;
+}
+
+/* Estilo de los inputs y select */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.1em;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #ffcb05; /* Resaltamos el borde al hacer foco */
+  background-color: #fff;
+}
+
+/* Estilo para los mensajes de error (si los agregas) */
+.error {
+  color: #ff5733; /* Rojo Pokémon */
+  font-size: 0.9em;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+
+/* Botón de "Crear Partida" */
+button {
+  background-color: #ffcb05; /* Amarillo Pokémon */
+  color: #fff;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Transición suave */
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff5733; /* Rojo en hover */
+  transform: translateY(-3px); /* Efecto de levantamiento suave */
+}
+
+button:active {
+  background-color: #3b4cca; /* Azul al hacer clic */
+  transform: translateY(1px); /* Efecto de presionar el botón */
+}
+
+/* Efecto para los elementos de "Aura" y "Bruno" */
+#aura, #bruno {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffcb05;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos específicos para el líder seleccionado */
+#aura {
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(255, 203, 5, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#bruno {
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(255, 87, 51, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  fieldset {
+    padding: 30px; /* Menos padding en pantallas más pequeñas */
+  }
+
+  button {
+    width: 200px; /* Botones más pequeños */
+  }
+}
+
+@media (max-width: 480px) {
+  fieldset {
+    padding: 20px; /* Aún menos padding en pantallas muy pequeñas */
+  }
+
+  button {
+    width: 180px; /* Botones aún más pequeños */
+    font-size: 1em; /* Ajustamos el tamaño de la fuente */
+  }
+}
+
+label {
+  color: #ffffff; /* Establece el color blanco para el texto de los labels */
+}
+
+

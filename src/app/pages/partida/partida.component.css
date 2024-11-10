@@ -1,21 +1,24 @@
-:host {
-    display: block; /* Asegura que el host ocupa su propio espacio */
-    position: fixed; /* Mantiene el fondo fijo en la pantalla */
-    top: 0; /* Inicia desde la parte superior */
-    left: 0; /* Inicia desde la izquierda */
-    width: 100%; /* Ocupa todo el ancho de la ventana */
-    height: 100%; /* Ocupa todo el alto de la ventana */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    z-index: -1; /* Coloca el fondo detrás del contenido */
-}
+
 
 html, body {
   margin: 0; /* Elimina el margen por defecto */
   padding: 0; /* Elimina el relleno por defecto */
   height: 100%; /* Asegura que el cuerpo ocupe todo el alto */
-  overflow: hidden; /* Evita el desplazamiento */
+  top: 0; /* Inicia desde la parte superior */
+  left: 0; /* Inicia desde la izquierda */
+  width: 100%; /* Ocupa todo el ancho de la ventana */
+}
+
+.ESPERA img{
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .bienvenida-container {
@@ -31,9 +34,10 @@ html, body {
     max-width: 80%; /* Ancho máximo del contenedor */
     z-index: 1000; /* Para asegurarte de que se muestre sobre otros elementos */
   }
-  
+
   .mensaje {
     font-size: 16px; /* Ajusta el tamaño de la fuente según lo necesites */
     text-align: center; /* Centrar el texto dentro del contenedor */
     line-height: 1.5; /* Espaciado entre líneas */
   }
+

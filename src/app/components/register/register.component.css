@@ -1,76 +1,127 @@
+/* General reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que la altura se ocupe completamente */
+  font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+}
+
+/* Fondo animado */
+body {
+  background-color: #333333; /* Fondo gris oscuro */
+  background-size: cover; /* Cubre toda la pantalla */
+}
+
+/* Fondo principal */
+
+/* Estilos para el contenedor general */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-image: url('./ceruledge-de-pokemon_3840x2160_xtrafondos.com.jpg'); /* Cambia esta ruta a tu imagen */
-  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
-  background-position: center; /* Centra la imagen */
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  position: relative; /* Necesario para que el fondo no se superponga al formulario */
+  z-index: 1;
+  background-image: url('https://media.giphy.com/media/Ml9qdzetfukLi7kCai/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+/* Estilo para el formulario */
 .register-container {
-  
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  opacity: 0.85;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  background-color: rgba(47, 80, 46, 0.4); /* Fondo del formulario oscuro con algo de transparencia */
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Sombra suave */
+  width: 100%;
+  max-width: 450px; /* Máximo ancho para el formulario */
+  z-index: 2; /* Asegura que el formulario quede encima del fondo */
 }
 
-h1 {
-  color: #ffcc00; /* Color Pokémon */
+/* Título */
+.register-container h1 {
   font-size: 2.5em;
+  color: #ffcb05; /* Amarillo Pokémon */
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2); /* Efecto de resplandor suave */
+}
+
+/* Leyenda */
+.register-container legend {
+  font-size: 1.1em;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
-fieldset {
-  border: 2px solid #ffcc00;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-legend {
-  font-size: 1.5em;
-  color: #ffcc00;
-}
-
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 2px solid #ccc;
+/* Estilo de los inputs */
+input[type="text"],
+input[type="password"] {
+  width: 93%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1.1em;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background-color 0.3s ease;
 }
 
-input:focus {
-  border-color: #ffcc00;
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #ffcb05; /* Resaltamos el borde al hacer foco */
+  background-color: #fff;
 }
 
+/* Estilo para los mensajes de error */
+.error {
+  color: #ff5733; /* Rojo Pokémon */
+  font-size: 0.9em;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+
+/* Estilo del botón */
 button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  background-color: #ffcc00;
+  width: 100%;
+  background-color: #ffcb05; /* Amarillo Pokémon */
+  color: #fff;
+  font-size: 1.2em;
+  padding: 12px;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave */
 }
 
 button:hover {
-  background-color: #e6b800;
+  background-color: #ff5733; /* Rojo al pasar el ratón */
+  transform: translateY(-3px); /* Efecto de elevación */
 }
 
-.error {
-  color: red;
-  font-size: 0.9em;
+button:active {
+  background-color: #3b4cca; /* Azul al hacer clic */
+  transform: translateY(1px); /* Efecto de presionar el botón */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 20px 25px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .register-container h1 {
+    font-size: 2em; /* Ajustamos el tamaño del título */
+  }
 }
