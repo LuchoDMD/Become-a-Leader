@@ -1,0 +1,14 @@
+<div class="menu">
+    <h1>Bienvenido al Juego</h1>
+    <div>
+      @if (tienePartida) {
+        <button (click)="onNuevaPartida()">Nueva Partida</button>
+        <button (click)="onSeleccionarPartida()">Cargar Partida</button>
+      }
+      @if (!tienePartida) {
+        <button (click)="onSeleccionarPartida()">Nueva Partida</button>
+      }
+      
+    </div>
+  </div>
+  

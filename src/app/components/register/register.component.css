@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-image: url('./ceruledge-de-pokemon_3840x2160_xtrafondos.com.jpg'); /* Cambia esta ruta a tu imagen */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+}
+
+.register-container {
+  
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  opacity: 0.85;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  color: #ffcc00; /* Color Pokémon */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 2px solid #ffcc00;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+legend {
+  font-size: 1.5em;
+  color: #ffcc00;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+input:focus {
+  border-color: #ffcc00;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e6b800;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}

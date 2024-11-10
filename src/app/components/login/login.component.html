@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="register-container">
+    <h1>INICIAR SESION</h1>
+    <fieldset>
+      <legend>¡Únete a la aventura!</legend>
+      <form [formGroup]="loginForm" (ngSubmit)="Login()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Coloque su Email" formControlName="email">
+
+        @if (loginForm.controls['email'].touched && loginForm.controls['email'].invalid && loginForm.controls['email'].dirty) {
+          @if (loginForm.controls['email'].getError('required')) {
+            <div class="error">El email es requerido</div>
+          }
+          @if (loginForm.controls['email'].getError('email')) {
+            <div class="error">Invalid email format</div>
+          }
+        }
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" placeholder="Coloque su contraseña" formControlName="password">
+
+        @if (loginForm.controls['password'].touched && loginForm.controls['password'].invalid && loginForm.controls['password'].dirty) {
+          <div class="error">Este campo es requerido</div>
+        }
+
+        <button type="submit">Guardar</button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+
+

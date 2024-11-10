@@ -1,0 +1,45 @@
+
+
+<div class="container">
+  <div class="register-container">
+    <h1>Registro de Entrenador Pokémon</h1>
+    <fieldset>
+      <legend>¡Únete a la aventura!</legend>
+      <form [formGroup]="formUsuario" (ngSubmit)="addUser()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Coloque su Email" formControlName="email">
+  
+        @if (formUsuario.controls['email'].touched && formUsuario.controls['email'].getError('required')) {
+          <div class="error">Este campo es requerido</div>
+        }
+        @if (formUsuario.controls['email'].touched && formUsuario.controls['email'].getError('minlength')) {
+          <div class="error">Requiere un mínimo de 3 letras</div>
+        }
+  
+        <label for="nick">Nickname:</label>
+        <input type="text" id="nick" placeholder="Coloque su Nickname" formControlName="nick">
+  
+        @if (formUsuario.controls['nick'].touched && formUsuario.controls['nick'].getError('required')) {
+          <div class="error">Este campo es requerido</div>
+        }
+        @if (formUsuario.controls['nick'].touched && formUsuario.controls['nick'].getError('minlength')) {
+          <div class="error">Requiere un mínimo de 3 letras</div>
+        }
+  
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" placeholder="Coloque su contraseña" formControlName="password">
+  
+        @if (formUsuario.controls['password'].touched && formUsuario.controls['password'].getError('required')) {
+          <div class="error">Este campo es requerido</div>
+        }
+        @if (formUsuario.controls['password'].touched && formUsuario.controls['password'].getError('minlength')) {
+          <div class="error">Requiere un mínimo de 8 letras</div>
+        }
+  
+        <button type="submit">Guardar</button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+  
+

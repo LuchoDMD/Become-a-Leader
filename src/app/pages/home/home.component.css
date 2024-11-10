@@ -1,0 +1,53 @@
+/* Establece el fondo de la página */
+:host {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-image: url('./ceruledge-de-pokemon_3840x2160_xtrafondos.com.jpg'); /* Cambia esta ruta a tu imagen */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+}
+
+
+.TITULO {
+    font-size: 48px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio desde la parte superior */
+    padding: 20px; /* Espaciado interno */
+    color: #333; /* Color del texto */
+    width: 100%; /* Ocupar todo el ancho */
+    max-width: 800px; /* Máximo ancho para que no se extienda demasiado */
+    border: 2px solid #007BFF; /* Opcional: borde */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo para el recuadro */
+nav {
+  background-color: rgba(199, 8, 8, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el recuadro */
+}
+
+/* Estilo para la lista */
+ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilo para los enlaces */
+a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: #333; /* Color del texto */
+  font-size: 20px; /* Tamaño de la fuente */
+  margin: 0 15px; /* Espaciado horizontal entre los enlaces */
+}
+
+a:hover {
+  color: #007BFF; /* Color del texto al pasar el mouse */
+}
