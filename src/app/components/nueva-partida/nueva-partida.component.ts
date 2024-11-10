@@ -1,8 +1,8 @@
+import { Entrenador } from './../../interface/entrenador';
 import { Component, OnInit } from '@angular/core';
 import { PartidaService } from '../../service/partida.service'; // Asegúrate de tener este servicio creado
 import { UserService } from '../../service/user.service';
 import { Partida } from '../../interface/partida.js';  // Asegúrate de tener esta interfaz creada
-import { Lider } from '../../interface/lider.js';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-nueva-partida',
@@ -25,7 +25,6 @@ export class NuevaPartidaComponent implements OnInit {
 
   // Variables de control
   selectedLider: string = '';
-  lideres: Lider[] = []; // Puedes cargar los lideres desde un servicio si es necesario
   id: string = '';
   constructor(private partidaService: PartidaService, private userService: UserService) {}
 
@@ -37,13 +36,9 @@ export class NuevaPartidaComponent implements OnInit {
       fecha_fin: new Date(),
       puntuacion: 0,  // Esto debería ser dinámico
       personaje: {
-        id: 'uuid-1234',  // Asigna un UUID o un valor adecuado
-        nombre: this.datos_partida.nick,
-        genero: this.selectedLider === 'lider1' ? 'chico' : 'chica', // Se puede ajustar según el lider seleccionado
-        rango: 'C',  // Debería definirse según el lider
-        dinero: 1000,  // Puede variar según la partida
+        id: this.id,  // Asigna un UUID o un valor adecuado
+        nombre: this.datos_partida.nick, // Se puede ajustar según el lider seleccionado
         equipo: [],  // Llenar según el tipo de Pokémon que seleccione
-        mochila: new Map(),  // Llenar según los ítems
       },
     };
 
