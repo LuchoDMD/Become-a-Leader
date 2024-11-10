@@ -6,6 +6,9 @@ import { Pokemon} from '../../interface/pokemon';
 import { tipos } from '../../interface/tipos';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { Partida } from '../../interface/partida.js';
+import { PartidaService } from '../../service/partida.service';
+import { Entrenador } from '../../interface/entrenador';
 
 @Component({
   selector: 'app-batalla',
@@ -17,10 +20,15 @@ import { Router } from '@angular/router';
 export class BatallaComponent {
   pokeapi = inject(PokeAPIService);
   teamService = inject(TeamService);
+  ps = inject(PartidaService);
 
   // Datos de la batalla
-  pokemonJugador: Pokemon | null = null;
-  pokemonRival: Pokemon | null = null;
+  idPartida: string = '';
+  partida: Partida | null = null;
+  jugador?: Entrenador;
+  rival:Pokemon[] = [];
+  pokemonJugador?: Pokemon;
+  pokemonRival?: Pokemon;
   movimientosJugador: Move[] = [];
   mensajeBatalla: string = '';
   movimientosRival: Move[] = [];
@@ -29,20 +37,43 @@ export class BatallaComponent {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.idPartida = localStorage.getItem('token')!;
+    this.ps.getPartidaByUserId(this.idPartida).subscribe({
+      next: (partida) => {
+        this.partida = partida;
+        this.jugador = partida?.personaje;
+      },
+      error: (error) => {
+        console.error('Error al obtener la partida', error);
+      }
+    })
     this.iniciarBatalla();
   }
 
   iniciarBatalla() {
         console.log("Iniciando batalla");
     // Asumimos que el primer Pokémon del entrenador es el que luchará
-        this.cargarPokemonAleatorioEntrenador();
-        this.generarPokemonRival();
+        /*this.cargarPokemonAleatorioEntrenador();*/
+        this.pokemonJugador = this.jugador?.equipo[0];
+        this.generarRival();
   }
 
-  generarPokemonRival() {
-    console.log("Generando pokemon rival");
-    const randomId = Math.floor(Math.random() * 150) + 1; // Generar ID aleatorio para un Pokémon
-    this.pokeapi.getPokemonByID(randomId.toString()).subscribe((data) => {
+  generarRival() {
+    console.log("Generando rival");
+    this.teamService.getPokemons().subscribe(
+      {
+        next: (data) => {
+          while(this.rival.length<6)
+          {
+            this.rival.push(data[Math.floor(Math.random() * data.length) + 1]);
+          }
+        },
+        error: (error :Error) => {
+          console.log("Error al cargar rival")
+        }
+      })
+      this.pokemonRival = this.rival[0];
+    /*this.pokeapi.getPokemonByID(randomId.toString()).subscribe((data) => {
       this.pokemonRival = {
         id: data.id,
         especie: data.name,
@@ -59,7 +90,7 @@ export class BatallaComponent {
         movimientos: this.generarMovimientosRival(data),
       };
       this.movimientosRival = this.pokemonRival.movimientos;
-    });
+    });*/
   }
 
   generarMovimientosRival(data: any): Move[] {
@@ -100,11 +131,10 @@ export class BatallaComponent {
     const daño = Math.floor(
       ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
     );
-  console.log("Daño:", daño);
+    console.log("Daño:", daño);
     defensor.vidaActual -= daño;
     if (defensor.vidaActual <= 0) {
       defensor.vidaActual = 0;
-      this.finalizarBatalla(atacante);
     }
 
     // Muestra el mensaje de ataque
@@ -117,6 +147,10 @@ export class BatallaComponent {
   }
 
   this.mostrarMensajeBatalla(mensaje);
+}
+
+comprobarEquipo(){
+
 }
 
 

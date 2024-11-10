@@ -12,7 +12,7 @@ export class PartidaService {
   constructor(private http: HttpClient) {}
 
   // Obtener partida por el id de usuario
-  getPartidaByUserId(id_usuario: number): Observable<Partida | null> {
+  getPartidaByUserId(id_usuario: string): Observable<Partida | null> {
     return this.http.get<Partida[]>(`${this.urlBase}?id_usuario=${id_usuario}`).pipe(
       map(partidas => partidas.length ? partidas[0] : null)  // Devuelve la primera partida o null
     );

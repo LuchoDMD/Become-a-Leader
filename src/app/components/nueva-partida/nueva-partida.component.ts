@@ -5,6 +5,8 @@ import { UserService } from '../../service/user.service';
 import { Partida } from '../../interface/partida.js';  // Asegúrate de tener esta interfaz creada
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Pokemon } from '../../interface/pokemon';
+import { TeamService } from '../../service/team.service';
 
 @Component({
   selector: 'app-nueva-partida',
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent implements OnInit {
-
+  ts= inject(TeamService);
   ngOnInit(): void {
     this.id = localStorage.getItem('token')!;
   }
@@ -33,6 +35,16 @@ export class NuevaPartidaComponent implements OnInit {
 
   // Método que se ejecuta cuando el formulario es enviado
   crearPartida() {
+    const cargarEquipo: Pokemon[] = [];
+    this.ts.getPokemonsByType(this.datos_partida.tipo).subscribe({
+      next: (pokemons: Pokemon[]) => {
+        console.log('Pokemons obtenidos', pokemons);
+        cargarEquipo.push(...pokemons);
+      },
+      error: (error: Error) => {
+        console.error('Error obteniendo Pokemons', error);
+      }
+    })
     const nuevaPartida: Partida = {
       id: this.id,  // Este debería ser el ID del usuario logueado, deberías obtenerlo desde el servicio
       fecha_inicio: new Date(),
@@ -42,7 +54,7 @@ export class NuevaPartidaComponent implements OnInit {
         id: this.id,  // Asigna un UUID o un valor adecuado
         nombre: this.datos_partida.nick, // Se puede ajustar según el lider seleccionado
         tipo: this.datos_partida.tipo,
-        equipo: [],  // Llenar según el tipo de Pokémon que seleccione
+        equipo: cargarEquipo,  // Llenar según el tipo de Pokémon que seleccione
       },
     };
 
