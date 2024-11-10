@@ -5,8 +5,8 @@ export interface Pokemon
 {
     id:string,
     especie:string,
-    genero:string, //m o f
-    tipos:string[], // Maximo 2
+    tipos:string[],
+    nivel:number, 
     vidaActual:number,
     estadisticas:Stats, 
     movimientos:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate

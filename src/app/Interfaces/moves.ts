@@ -5,5 +5,6 @@ export interface Move
     clase:string, //Fisico - Especial - Estado
     potencia:number,
     precision:number,
+    usos:number,
     pp:number //Cantidad de Usos
 }

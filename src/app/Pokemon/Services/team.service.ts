@@ -36,10 +36,12 @@ export class TeamService {
   updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
     return this.http.put<Pokemon>(this.urlBase+"/"+pokemon.id, pokemon);
   }
+
   //PATCH
   patchPokemon(id: string, partialData: Partial<Pokemon>): Observable<Pokemon> {
     return this.http.patch<Pokemon>(this.urlBase+"/"+id, partialData);
   }
+  
   //DELETE
   deletePokemon(id: string): Observable<void> {
     return this.http.delete<void>(this.urlBase+"/"+id);

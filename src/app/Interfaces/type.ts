@@ -1,179 +1,222 @@
 export interface Type 
 {
     name:string;
-    efectivity:[tipo: string, valor: number][] //Efectividad
+    efectivity:[tipo: string, valor: number][],
 }
 
 export const tipos: Type[] = [
     {
-        name: "Steel",
-        efectivity: 
-        [
-            ["Fairy",2],
-            ["Ice", 2],
-            ["Rock", 2],
-            ["Water", 0.5],
-            ["Fire", 0.5],
-            ["Fighting", 0.5],
-            ["Ground", 0.5]
-        ]
-    },
-    {
-        name: "Water",
-        efectivity: 
-        [
-            ["Fire", 2],
-            ["Ground", 2],
-            ["Rock", 2],
-            ["Dragon", 0.5],
-            ["Grass",0.5],
-            ["Electric", 0.5],
-            ["Grass", 0.5]
-        ]
-    },
-    {
-        name: "Bug",
-        efectivity: 
-        [
-            ["Grass", 2],
-            ["Psychic", 2],
-            ["Dark", 2],
-            ["Fire", 0.5],
-            ["Fighting", 0.5],
-            ["Flying", 0.5]
-        ]
-    },
-    {
-        name: "Dragon",
+        name: "steel",
         efectivity: [
-            ["Dragon", 2],
-            ["Steel", 0.5],
-            ["Ice", 0.5],
-            ["Steel", 0.5],
-            ["Dragon", 0.5],
-            ["Fairy", 0]
+            ["fairy", 2],
+            ["ice", 2],
+            ["rock", 2],
+            ["water", 0.5],
+            ["fire", 0.5],
+            ["fighting", 0.5],
+            ["ground", 0.5]
         ]
     },
     {
-        name: "Electric",
+        name: "water",
         efectivity: [
-            ["Water", 2],
-            ["Flying", 2],
-            ["Electric", 0.5],
-            ["Ground", 0]
+            ["fire", 2],
+            ["ground", 2],
+            ["rock", 2],
+            ["dragon", 0.5],
+            ["grass", 0.5],
+            ["electric", 0.5]
         ]
     },
     {
-        name: "Fire",
+        name: "bug",
         efectivity: [
-            ["Bug", 2],
-            ["Ice", 2],
-            ["Grass", 2],
-            ["Steel", 2],
-            ["Water", 0.5],
-            ["Rock", 0.5],
-            ["Ground", 0.5]
+            ["grass", 2],
+            ["psychic", 2],
+            ["dark", 2],
+            ["steel", 0.5],
+            ["ghost", 0.5],
+            ["fairy", 0.5],
+            ["fire", 0.5],
+            ["poison", 0.5],
+            ["fighting", 0.5],
+            ["flying", 0.5]
         ]
     },
     {
-        name: "Ghost",
+        name: "dragon",
         efectivity: [
-            ["Ghost", 2],
-            ["Psychic", 2],
-            ["Dark", 0.5],
-            ["Normal", 0]
-        ],
-
+            ["dragon", 2],
+            ["steel", 0.5],
+            ["fairy", 0]
+        ]
     },
     {
-        name: "Ice",
+        name: "electric",
         efectivity: [
-            ["Dragon", 2],
-            ["Flying", 2],
-            ["Grass", 2],
-            ["Ground", 2],
-            ["Fire", 0.5],
-            ["Fighting", 0.5],
-            ["Steel", 0.5]
+            ["water", 2],
+            ["flying", 2],
+            ["dragon", 0.5],
+            ["grass", 0.5],
+            ["electric", 0.5],
+            ["ground", 0]
         ]
     },
     {
-        name: "Fighting",
+        name: "fire",
         efectivity: [
-            ["Normal", 2],
-            ["Ice", 2],
-            ["Rock", 2],
-            ["Steel", 2],
-            ["Dark", 2],
-            ["Flying", 0.5],
-            ["Psychic", 0.5]
+            ["bug", 2],
+            ["ice", 2],
+            ["grass", 2],
+            ["steel", 2],
+            ["water", 0.5],
+            ["dragon", 0.5],
+            ["rock", 0.5],
+            ["ground", 0.5]
         ]
     },
     {
-        name: "Normal",
-        efectivity: 
-        [
-            ["Steel",0.5],
-            ["Rock",0.5],
-            ["Ghost", 0]
-        ]
-    },
-    {
-        name: "Grass",
-        efectivity:
-        [
-            ["Water", 2],
-            ["Rock", 2],
-            ["Ground", 2],
-            ["Fire", 0.5],
-            ["Bug", 0.5],
-            ["Flying", 0.5],
-            ["Ice", 0.5]
-        ]
-    },
-    {
-        name: "Psychic",
+        name: "ghost",
         efectivity: [
-            ["Fighting", 2],
-            ["Poison", 2],
-            ["Dark", 0.5],
-            ["Bug", 0.5],
-            ["Ghost", 0.5]
-        ],
- 
-    },
-    {
-        name: "Dark",
-        efectivity: 
-        [
-            ["Psychic", 2],
-            ["Fighting", 0.5],
-            ["Fairy", 0.5]
+            ["ghost", 2],
+            ["psychic", 2],
+            ["dark", 0.5],
+            ["normal", 0]
         ]
     },
     {
-        name: "Poison",
-        efectivity: 
-        [
-            ["Grass", 2],
-            ["Psychic", 0.5],
-            ["Ground", 0.5]
-        ],
-
+        name: "ice",
+        efectivity: [
+            ["dragon", 2],
+            ["flying", 2],
+            ["grass", 2],
+            ["ground", 2],
+            ["fire", 0.5],
+            ["fighting", 0.5],
+            ["steel", 0.5],
+            ["water", 0.5]
+        ]
     },
     {
-        name: "Fairy",
-        efectivity: 
-        [
-            ["Dragon" , 2],
-            ["Dark" , 2],
-            ["Fighting", 2],
-            ["Fire", 0.5],
-            ["Steel", 0.5],
-            ["Poison", 0.5],
+        name: "fighting",
+        efectivity: [
+            ["normal", 2],
+            ["ice", 2],
+            ["rock", 2],
+            ["steel", 2],
+            ["dark", 2],
+            ["flying", 0.5],
+            ["psychic", 0.5],
+            ["bug", 0.5],
+            ["fairy", 0.5],
+            ["poison", 0.5],
+            ["ghost", 0]
+        ]
+    },
+    {
+        name: "normal",
+        efectivity: [
+            ["steel", 0.5],
+            ["rock", 0.5],
+            ["ghost", 0]
+        ]
+    },
+    {
+        name: "grass",
+        efectivity: [
+            ["water", 2],
+            ["rock", 2],
+            ["ground", 2],
+            ["fire", 0.5],
+            ["bug", 0.5],
+            ["flying", 0.5],
+            ["ice", 0.5],
+            ["dragon", 0.5],
+            ["grass", 0.5],
+            ["poison", 0.5],
+            ["steel", 0.5]
+        ]
+    },
+    {
+        name: "psychic",
+        efectivity: [
+            ["fighting", 2],
+            ["poison", 2],
+            ["dark", 0],
+            ["bug", 0.5],
+            ["ghost", 0.5]
+        ]
+    },
+    {
+        name: "dark",
+        efectivity: [
+            ["psychic", 2],
+            ["ghost", 2],
+            ["fighting", 0.5],
+            ["fairy", 0.5],
+            ["dark", 0.5],
+        ]
+    },
+    {
+        name: "poison",
+        efectivity: [
+            ["grass", 2],
+            ["fairy", 2],
+            ["psychic", 0.5],
+            ["ground", 0.5],
+            ["poison", 0.5],
+            ["ghost", 0.5],
+            ["steel", 0],
+        ]
+    },
+    {
+        name: "fairy",
+        efectivity: [
+            ["dragon", 2],
+            ["dark", 2],
+            ["fighting", 2],
+            ["fire", 0.5],
+            ["steel", 0.5],
+            ["poison", 0.5]
+        ]
+    },
+    {
+        name: "flying",
+        efectivity: [
+            ["grass", 2],
+            ["fighting", 2],
+            ["bug", 2],
+            ["electric", 0.5],
+            ["rock", 0.5],
+            ["steel", 0.5]
+        ]
+    },
+    {
+        name: "ground",
+        efectivity: [
+            ["fire", 2],
+            ["electric", 2],
+            ["poison", 2],
+            ["rock", 2],
+            ["steel", 2],
+            ["grass", 0.5],
+            ["bug", 0.5],
+            ["flying", 0]  // Ground has no effect on flying types
+        ]
+    },
+    {
+        name: "rock",
+        efectivity: [
+            ["fire", 2],
+            ["ice", 2],
+            ["flying", 2],
+            ["bug", 2],
+            ["fighting", 0.5],
+            ["ground", 0.5],
+            ["steel", 0.5]
         ]
     }
 ];
 
 //Cualquier fortaleza o debilidad no incluida en el arreglo de tipos se asume que es 1.
-// 0 Nulo - 0.5 Poco Efectivo - 1 Ef>ectivo - 2 Muy Efectivo - 2 Superefectivo 
+// 0 Nulo - 0.5 Poco Efectivo - 1 Efectivo - 2 Muy Efectivo - >2 Superefectivo 
