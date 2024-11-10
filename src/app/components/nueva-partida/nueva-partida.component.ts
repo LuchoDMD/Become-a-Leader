@@ -1,9 +1,11 @@
 import { Entrenador } from './../../interface/entrenador';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PartidaService } from '../../service/partida.service'; // Asegúrate de tener este servicio creado
 import { UserService } from '../../service/user.service';
 import { Partida } from '../../interface/partida.js';  // Asegúrate de tener esta interfaz creada
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-nueva-partida',
   standalone: true,
@@ -27,6 +29,7 @@ export class NuevaPartidaComponent implements OnInit {
   selectedLider: string = '';
   id: string = '';
   constructor(private partidaService: PartidaService, private userService: UserService) {}
+  router = inject(Router);
 
   // Método que se ejecuta cuando el formulario es enviado
   crearPartida() {
@@ -46,7 +49,9 @@ export class NuevaPartidaComponent implements OnInit {
     this.partidaService.postPartida(nuevaPartida).subscribe({
       next:(respuesta) => {
         console.log('Partida creada', respuesta);
+        this.router.navigate(['/batalla']);
       },
+      
       error:(error: Error) => {
         console.error('Error creando la partida', error);
       }

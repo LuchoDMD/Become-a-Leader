@@ -1,11 +1,12 @@
-import { Estadisticas } from "./estadisticas";
+import { Stats } from "./stats";
+import { Move } from "./move";
 
-export interface Pokemon {
-    mote:string,
+export interface Pokemon 
+{
+    id:string,
+    especie:string,
+    tipos:string[], // Maximo 2
     vidaActual:number,
-    estadisticasActuales:Estadisticas,
-    nivel:number,
-    expTotal:number,
-    expActual:number,
-    expSignivel:number,
+    estadisticas:Stats, 
+    movimientos:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate
 }

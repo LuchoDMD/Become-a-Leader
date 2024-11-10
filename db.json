@@ -25,6 +25,18 @@
       "password": "sdasdasdas"
     }
   ],
-  "partidas": [],
+  "partidas": [
+    {
+      "id": "5504",
+      "fecha_inicio": "2024-11-10T18:55:23.602Z",
+      "fecha_fin": "2024-11-10T18:55:23.602Z",
+      "puntuacion": 0,
+      "personaje": {
+        "id": "5504",
+        "nombre": "Jorge",
+        "equipo": []
+      }
+    }
+  ],
   "pokemons": []
 }

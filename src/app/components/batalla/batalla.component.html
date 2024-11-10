@@ -1,0 +1,30 @@
+<div *ngIf="pokemonJugador && pokemonRival">
+    <h2>Batalla Pokémon</h2>
+    
+    <div>
+      <h3>Jugador</h3>
+      <p>{{ pokemonJugador?.especie }} (HP: {{ pokemonJugador?.vidaActual }}/{{ pokemonJugador?.estadisticas?.hp }})</p>
+      <ul>
+        <li *ngFor="let movimiento of movimientosJugador" (click)="iniciarTurno(movimiento)">
+          {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
+        </li>
+      </ul>
+    </div>
+  
+    <div>
+      <h3>Rival</h3>
+      <p>{{ pokemonRival?.especie }} (HP: {{ pokemonRival?.vidaActual }}/{{ pokemonRival?.estadisticas?.hp }})</p>
+    </div>
+  
+    <button (click)="cambiarPokemon()">Cambiar Pokémon</button>
+  </div>
+  
+  <div *ngIf="resultado">
+    <p>Resultado de la batalla: {{ resultado }}</p>
+  </div>
+
+  <!-- Cuadro de texto para mostrar los mensajes de batalla -->
+<div class="mensaje-batalla">
+  <p>{{ mensajeBatalla }}</p>
+</div>
+  
