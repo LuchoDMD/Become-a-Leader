@@ -6,8 +6,6 @@
     <form (ngSubmit)="crearPartida()">
       <label  id="nombre" for="">Nombre del Lider</label>
       <input type="text" [(ngModel)]="datos_partida.nick" [ngModelOptions]="{standalone:true}" required>
-
-
       <label id="escoge" for="">Escoge tu Lider</label>
       <select name="lider" id="lider" (change)="seleccionarLider($event)" [(ngModel)]="datos_partida.leader"
         [ngModelOptions]="{standalone:true}" required>

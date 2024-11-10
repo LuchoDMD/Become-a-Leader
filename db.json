@@ -40,24 +40,7 @@
     }
   ],
   "pokemons": [
-    {
-      "id": 12,
-      "especie": "butterfree",
-      "tipos": [
-        "bug",
-        "flying"
-      ],
-      "nivel": 100,
-      "vidaActual": 167,
-      "estadisticas": {
-        "hp": 167,
-        "atk": 229,
-        "def": 220,
-        "satk": 323,
-        "sdef": 287,
-        "spd": 269
-      },
-      "movimientos": []
-    }
+
+
   ]
 }
