@@ -41,7 +41,7 @@
   ],
   "pokemons": [
     {
-      "id": 130,
+      "id": "130",
       "especie": "gyarados",
       "tipos": [
         "water",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": 131,
+      "id": "131",
       "especie": "lapras",
       "tipos": [
         "water",
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "id": 134,
+      "id": "134",
       "especie": "vaporeon",
       "tipos": [
         "water"
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "id": 73,
+      "id": "73",
       "especie": "tentacruel",
       "tipos": [
         "water",
@@ -244,10 +244,10 @@
           "pp": 20
         },
         {
-          "nombre": "venoshock",
-          "tipo": "poison",
+          "nombre": "ice-beam",
+          "tipo": "ice",
           "clase": "special",
-          "potencia": 65,
+          "potencia": 90,
           "precision": 100,
           "usos": 10,
           "pp": 10
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "id": 141,
+      "id": "141",
       "especie": "kabutops",
       "tipos": [
         "rock",
@@ -320,7 +320,7 @@
       ]
     },
     {
-      "id": 260,
+      "id": "260",
       "especie": "swampert",
       "tipos": [
         "water",
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "id": 467,
+      "id": "467",
       "especie": "magmortar",
       "tipos": [
         "fire"
@@ -431,7 +431,7 @@
       ]
     },
     {
-      "id": 136,
+      "id": "136",
       "especie": "flareon",
       "tipos": [
         "fire"
@@ -486,7 +486,7 @@
       ]
     },
     {
-      "id": 555,
+      "id": "555",
       "especie": "darmanitan-standard",
       "tipos": [
         "fire"
@@ -541,7 +541,7 @@
       ]
     },
     {
-      "id": 59,
+      "id": "59",
       "especie": "arcanine",
       "tipos": [
         "fire"
@@ -596,7 +596,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "especie": "charizard",
       "tipos": [
         "fire",
@@ -652,7 +652,7 @@
       ]
     },
     {
-      "id": 324,
+      "id": "324",
       "especie": "torkoal",
       "tipos": [
         "fire"
@@ -707,7 +707,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "especie": "venusaur",
       "tipos": [
         "grass",
@@ -763,7 +763,7 @@
       ]
     },
     {
-      "id": 591,
+      "id": "591",
       "especie": "amoonguss",
       "tipos": [
         "grass",
@@ -819,7 +819,7 @@
       ]
     },
     {
-      "id": 470,
+      "id": "470",
       "especie": "leafeon",
       "tipos": [
         "grass"
@@ -874,7 +874,7 @@
       ]
     },
     {
-      "id": 286,
+      "id": "286",
       "especie": "breloom",
       "tipos": [
         "grass",
@@ -930,7 +930,7 @@
       ]
     },
     {
-      "id": 407,
+      "id": "407",
       "especie": "roserade",
       "tipos": [
         "grass",
@@ -986,7 +986,7 @@
       ]
     },
     {
-      "id": 460,
+      "id": "460",
       "especie": "abomasnow",
       "tipos": [
         "grass",
@@ -1042,7 +1042,7 @@
       ]
     },
     {
-      "id": 181,
+      "id": "181",
       "especie": "ampharos",
       "tipos": [
         "electric"
@@ -1097,7 +1097,7 @@
       ]
     },
     {
-      "id": 596,
+      "id": "596",
       "especie": "galvantula",
       "tipos": [
         "bug",
@@ -1153,7 +1153,7 @@
       ]
     },
     {
-      "id": 135,
+      "id": "135",
       "especie": "jolteon",
       "tipos": [
         "electric"
@@ -1208,7 +1208,7 @@
       ]
     },
     {
-      "id": 466,
+      "id": "466",
       "especie": "electivire",
       "tipos": [
         "electric"
@@ -1263,7 +1263,7 @@
       ]
     },
     {
-      "id": 171,
+      "id": "171",
       "especie": "lanturn",
       "tipos": [
         "water",
@@ -1315,6 +1315,4701 @@
           "precision": 100,
           "usos": 10,
           "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 604,
+      "especie": "eelektross",
+      "tipos": [
+        "electric"
+      ],
+      "nivel": 100,
+      "vidaActual": 208,
+      "estadisticas": {
+        "hp": 208,
+        "atk": 359,
+        "def": 291,
+        "satk": 364,
+        "sdef": 295,
+        "spd": 230
+      },
+      "movimientos": [
+        {
+          "nombre": "flamethrower",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunder",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 70,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "signal-beam",
+          "tipo": "bug",
+          "clase": "special",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "especie": "walrein",
+      "tipos": [
+        "ice",
+        "water"
+      ],
+      "nivel": 100,
+      "vidaActual": 249,
+      "estadisticas": {
+        "hp": 249,
+        "atk": 296,
+        "def": 323,
+        "satk": 349,
+        "sdef": 307,
+        "spd": 279
+      },
+      "movimientos": [
+        {
+          "nombre": "blizzard",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 70,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "surf",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 614,
+      "especie": "beartic",
+      "tipos": [
+        "ice"
+      ],
+      "nivel": 100,
+      "vidaActual": 234,
+      "estadisticas": {
+        "hp": 234,
+        "atk": 402,
+        "def": 286,
+        "satk": 263,
+        "sdef": 310,
+        "spd": 244
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "surf",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "especie": "jynx",
+      "tipos": [
+        "ice",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 184,
+      "estadisticas": {
+        "hp": 184,
+        "atk": 234,
+        "def": 218,
+        "satk": 374,
+        "sdef": 332,
+        "spd": 323
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "wake-up-slap",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 471,
+      "especie": "glaceon",
+      "tipos": [
+        "ice"
+      ],
+      "nivel": 100,
+      "vidaActual": 162,
+      "estadisticas": {
+        "hp": 162,
+        "atk": 238,
+        "def": 359,
+        "satk": 391,
+        "sdef": 307,
+        "spd": 276
+      },
+      "movimientos": [
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "water-pulse",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "signal-beam",
+          "tipo": "bug",
+          "clase": "special",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 362,
+      "especie": "glalie",
+      "tipos": [
+        "ice"
+      ],
+      "nivel": 100,
+      "vidaActual": 198,
+      "estadisticas": {
+        "hp": 198,
+        "atk": 293,
+        "def": 297,
+        "satk": 295,
+        "sdef": 288,
+        "spd": 292
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-fang",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "headbutt",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 473,
+      "especie": "mamoswine",
+      "tipos": [
+        "ice",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 265,
+      "estadisticas": {
+        "hp": 265,
+        "atk": 400,
+        "def": 287,
+        "satk": 287,
+        "sdef": 263,
+        "spd": 308
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-fang",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "avalanche",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "especie": "machamp",
+      "tipos": [
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 220,
+      "estadisticas": {
+        "hp": 220,
+        "atk": 395,
+        "def": 280,
+        "satk": 267,
+        "sdef": 309,
+        "spd": 242
+      },
+      "movimientos": [
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "cross-chop",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "especie": "hitmonchan",
+      "tipos": [
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 133,
+      "estadisticas": {
+        "hp": 133,
+        "atk": 339,
+        "def": 288,
+        "satk": 207,
+        "sdef": 354,
+        "spd": 293
+      },
+      "movimientos": [
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dizzy-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 448,
+      "especie": "lucario",
+      "tipos": [
+        "fighting",
+        "steel"
+      ],
+      "nivel": 100,
+      "vidaActual": 168,
+      "estadisticas": {
+        "hp": 168,
+        "atk": 353,
+        "def": 277,
+        "satk": 380,
+        "sdef": 276,
+        "spd": 322
+      },
+      "movimientos": [
+        {
+          "nombre": "aura-sphere",
+          "tipo": "fighting",
+          "clase": "special",
+          "potencia": 80,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "blaze-kick",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 85,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 237,
+      "especie": "hitmontop",
+      "tipos": [
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 143,
+      "estadisticas": {
+        "hp": 143,
+        "atk": 317,
+        "def": 327,
+        "satk": 197,
+        "sdef": 341,
+        "spd": 258
+      },
+      "movimientos": [
+        {
+          "nombre": "rolling-kick",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 85,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "high-jump-kick",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 130,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "sucker-punch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "close-combat",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 538,
+      "especie": "throh",
+      "tipos": [
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 267,
+      "estadisticas": {
+        "hp": 267,
+        "atk": 329,
+        "def": 288,
+        "satk": 207,
+        "sdef": 313,
+        "spd": 229
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "vital-throw",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": null,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "especie": "medicham",
+      "tipos": [
+        "fighting",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 161,
+      "estadisticas": {
+        "hp": 161,
+        "atk": 241,
+        "def": 289,
+        "satk": 256,
+        "sdef": 265,
+        "spd": 293
+      },
+      "movimientos": [
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "psybeam",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 65,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "high-jump-kick",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 130,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "dynamic-punch",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 50,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "especie": "arbok",
+      "tipos": [
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 156,
+      "estadisticas": {
+        "hp": 156,
+        "atk": 315,
+        "def": 276,
+        "satk": 265,
+        "sdef": 305,
+        "spd": 307
+      },
+      "movimientos": [
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "poison-tail",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 50,
+          "precision": 100,
+          "usos": 25,
+          "pp": 25
+        },
+        {
+          "nombre": "sludge-bomb",
+          "tipo": "poison",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 317,
+      "especie": "swalot",
+      "tipos": [
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 216,
+      "estadisticas": {
+        "hp": 216,
+        "atk": 281,
+        "def": 303,
+        "satk": 269,
+        "sdef": 304,
+        "spd": 232
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "seed-bomb",
+          "tipo": "grass",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "especie": "seviper",
+      "tipos": [
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 167,
+      "estadisticas": {
+        "hp": 167,
+        "atk": 330,
+        "def": 252,
+        "satk": 345,
+        "sdef": 273,
+        "spd": 274
+      },
+      "movimientos": [
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "poison-jab",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "bulldoze",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "facade",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "especie": "crobat",
+      "tipos": [
+        "poison",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 205,
+      "estadisticas": {
+        "hp": 205,
+        "atk": 311,
+        "def": 293,
+        "satk": 274,
+        "sdef": 309,
+        "spd": 396
+      },
+      "movimientos": [
+        {
+          "nombre": "x-scissor",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "cross-poison",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "acrobatics",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 55,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "especie": "toxicroak",
+      "tipos": [
+        "poison",
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 183,
+      "estadisticas": {
+        "hp": 183,
+        "atk": 348,
+        "def": 287,
+        "satk": 304,
+        "sdef": 252,
+        "spd": 322
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "poison-jab",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 452,
+      "especie": "drapion",
+      "tipos": [
+        "poison",
+        "dark"
+      ],
+      "nivel": 100,
+      "vidaActual": 151,
+      "estadisticas": {
+        "hp": 151,
+        "atk": 314,
+        "def": 366,
+        "satk": 268,
+        "sdef": 276,
+        "spd": 336
+      },
+      "movimientos": [
+        {
+          "nombre": "poison-jab",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "rock-tomb",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "especie": "nidoqueen",
+      "tipos": [
+        "poison",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 212,
+      "estadisticas": {
+        "hp": 212,
+        "atk": 345,
+        "def": 301,
+        "satk": 283,
+        "sdef": 300,
+        "spd": 302
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "poison-jab",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 537,
+      "especie": "seismitoad",
+      "tipos": [
+        "water",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 226,
+      "estadisticas": {
+        "hp": 226,
+        "atk": 331,
+        "def": 281,
+        "satk": 304,
+        "sdef": 268,
+        "spd": 299
+      },
+      "movimientos": [
+        {
+          "nombre": "surf",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "focus-punch",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 530,
+      "especie": "excadrill",
+      "tipos": [
+        "ground",
+        "steel"
+      ],
+      "nivel": 100,
+      "vidaActual": 269,
+      "estadisticas": {
+        "hp": 269,
+        "atk": 412,
+        "def": 265,
+        "satk": 233,
+        "sdef": 260,
+        "spd": 311
+      },
+      "movimientos": [
+        {
+          "nombre": "iron-head",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-tomb",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "shadow-claw",
+          "tipo": "ghost",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "especie": "donphan",
+      "tipos": [
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 212,
+      "estadisticas": {
+        "hp": 212,
+        "atk": 368,
+        "def": 377,
+        "satk": 256,
+        "sdef": 249,
+        "spd": 224
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-fang",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "play-rough",
+          "tipo": "fairy",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 472,
+      "especie": "gliscor",
+      "tipos": [
+        "ground",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 174,
+      "estadisticas": {
+        "hp": 174,
+        "atk": 316,
+        "def": 385,
+        "satk": 219,
+        "sdef": 277,
+        "spd": 331
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-fang",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "cross-poison",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 553,
+      "especie": "krookodile",
+      "tipos": [
+        "ground",
+        "dark"
+      ],
+      "nivel": 100,
+      "vidaActual": 208,
+      "estadisticas": {
+        "hp": 208,
+        "atk": 376,
+        "def": 295,
+        "satk": 264,
+        "sdef": 285,
+        "spd": 329
+      },
+      "movimientos": [
+        {
+          "nombre": "dragon-claw",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "thunder-fang",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "especie": "pidgeot",
+      "tipos": [
+        "normal",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 182,
+      "estadisticas": {
+        "hp": 182,
+        "atk": 299,
+        "def": 288,
+        "satk": 286,
+        "sdef": 268,
+        "spd": 351
+      },
+      "movimientos": [
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "steel-wing",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 90,
+          "usos": 25,
+          "pp": 25
+        },
+        {
+          "nombre": "heat-wave",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 95,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "giga-impact",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 628,
+      "especie": "braviary",
+      "tipos": [
+        "normal",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 239,
+      "estadisticas": {
+        "hp": 239,
+        "atk": 376,
+        "def": 278,
+        "satk": 250,
+        "sdef": 263,
+        "spd": 300
+      },
+      "movimientos": [
+        {
+          "nombre": "brave-bird",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "close-combat",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "shadow-claw",
+          "tipo": "ghost",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "especie": "pelipper",
+      "tipos": [
+        "water",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 160,
+      "estadisticas": {
+        "hp": 160,
+        "atk": 237,
+        "def": 340,
+        "satk": 335,
+        "sdef": 288,
+        "spd": 269
+      },
+      "movimientos": [
+        {
+          "nombre": "hydro-pump",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "hurricane",
+          "tipo": "flying",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 70,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "body-slam",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "especie": "swellow",
+      "tipos": [
+        "normal",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 146,
+      "estadisticas": {
+        "hp": 146,
+        "atk": 307,
+        "def": 275,
+        "satk": 290,
+        "sdef": 225,
+        "spd": 376
+      },
+      "movimientos": [
+        {
+          "nombre": "brave-bird",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "heat-wave",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 95,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "steel-wing",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 90,
+          "usos": 25,
+          "pp": 25
+        }
+      ]
+    },
+    {
+      "id": 567,
+      "especie": "archeops",
+      "tipos": [
+        "rock",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 199,
+      "estadisticas": {
+        "hp": 199,
+        "atk": 410,
+        "def": 261,
+        "satk": 378,
+        "sdef": 258,
+        "spd": 372
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "dragon-breath",
+          "tipo": "dragon",
+          "clase": "special",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "steel-wing",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 90,
+          "usos": 25,
+          "pp": 25
+        }
+      ]
+    },
+    {
+      "id": 398,
+      "especie": "staraptor",
+      "tipos": [
+        "normal",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 189,
+      "estadisticas": {
+        "hp": 189,
+        "atk": 372,
+        "def": 271,
+        "satk": 248,
+        "sdef": 252,
+        "spd": 354
+      },
+      "movimientos": [
+        {
+          "nombre": "close-combat",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "brave-bird",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "heat-wave",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 95,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "u-turn",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "especie": "alakazam",
+      "tipos": [
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 131,
+      "estadisticas": {
+        "hp": 131,
+        "atk": 212,
+        "def": 233,
+        "satk": 395,
+        "sdef": 314,
+        "spd": 396
+      },
+      "movimientos": [
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "focus-blast",
+          "tipo": "fighting",
+          "clase": "special",
+          "potencia": 120,
+          "precision": 70,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "energy-ball",
+          "tipo": "grass",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "especie": "espeon",
+      "tipos": [
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 138,
+      "estadisticas": {
+        "hp": 138,
+        "atk": 253,
+        "def": 247,
+        "satk": 416,
+        "sdef": 343,
+        "spd": 359
+      },
+      "movimientos": [
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "signal-beam",
+          "tipo": "bug",
+          "clase": "special",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "power-gem",
+          "tipo": "rock",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "especie": "slowbro",
+      "tipos": [
+        "water",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 225,
+      "estadisticas": {
+        "hp": 225,
+        "atk": 300,
+        "def": 382,
+        "satk": 333,
+        "sdef": 308,
+        "spd": 195
+      },
+      "movimientos": [
+        {
+          "nombre": "surf",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 475,
+      "especie": "gallade",
+      "tipos": [
+        "psychic",
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 168,
+      "estadisticas": {
+        "hp": 168,
+        "atk": 383,
+        "def": 260,
+        "satk": 271,
+        "sdef": 354,
+        "spd": 290
+      },
+      "movimientos": [
+        {
+          "nombre": "psycho-cut",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "leaf-blade",
+          "tipo": "grass",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "x-scissor",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 437,
+      "especie": "bronzong",
+      "tipos": [
+        "steel",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 159,
+      "estadisticas": {
+        "hp": 159,
+        "atk": 324,
+        "def": 359,
+        "satk": 300,
+        "sdef": 380,
+        "spd": 218
+      },
+      "movimientos": [
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "giga-impact",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "especie": "armaldo",
+      "tipos": [
+        "rock",
+        "bug"
+      ],
+      "nivel": 100,
+      "vidaActual": 176,
+      "estadisticas": {
+        "hp": 176,
+        "atk": 399,
+        "def": 347,
+        "satk": 282,
+        "sdef": 290,
+        "spd": 232
+      },
+      "movimientos": [
+        {
+          "nombre": "x-scissor",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "aqua-tail",
+          "tipo": "water",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-tomb",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "especie": "vespiquen",
+      "tipos": [
+        "bug",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 168,
+      "estadisticas": {
+        "hp": 168,
+        "atk": 297,
+        "def": 339,
+        "satk": 314,
+        "sdef": 362,
+        "spd": 226
+      },
+      "movimientos": [
+        {
+          "nombre": "sludge-bomb",
+          "tipo": "poison",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "air-cutter",
+          "tipo": "flying",
+          "clase": "special",
+          "potencia": 60,
+          "precision": 95,
+          "usos": 25,
+          "pp": 25
+        },
+        {
+          "nombre": "cross-poison",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "bug-buzz",
+          "tipo": "bug",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "especie": "heracross",
+      "tipos": [
+        "bug",
+        "fighting"
+      ],
+      "nivel": 100,
+      "vidaActual": 190,
+      "estadisticas": {
+        "hp": 190,
+        "atk": 388,
+        "def": 281,
+        "satk": 235,
+        "sdef": 329,
+        "spd": 303
+      },
+      "movimientos": [
+        {
+          "nombre": "megahorn",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 85,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "close-combat",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 637,
+      "especie": "volcarona",
+      "tipos": [
+        "bug",
+        "fire"
+      ],
+      "nivel": 100,
+      "vidaActual": 190,
+      "estadisticas": {
+        "hp": 190,
+        "atk": 266,
+        "def": 273,
+        "satk": 418,
+        "sdef": 350,
+        "spd": 314
+      },
+      "movimientos": [
+        {
+          "nombre": "flamethrower",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "bug-buzz",
+          "tipo": "bug",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "air-slash",
+          "tipo": "flying",
+          "clase": "special",
+          "potencia": 75,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "hurricane",
+          "tipo": "flying",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 70,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 291,
+      "especie": "ninjask",
+      "tipos": [
+        "bug",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 140,
+      "estadisticas": {
+        "hp": 140,
+        "atk": 329,
+        "def": 231,
+        "satk": 233,
+        "sdef": 223,
+        "spd": 457
+      },
+      "movimientos": [
+        {
+          "nombre": "x-scissor",
+          "tipo": "bug",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "facade",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "double-edge",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "especie": "pinsir",
+      "tipos": [
+        "bug"
+      ],
+      "nivel": 100,
+      "vidaActual": 161,
+      "estadisticas": {
+        "hp": 161,
+        "atk": 375,
+        "def": 331,
+        "satk": 263,
+        "sdef": 265,
+        "spd": 302
+      },
+      "movimientos": [
+        {
+          "nombre": "superpower",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "submission",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 80,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 464,
+      "especie": "rhyperior",
+      "tipos": [
+        "ground",
+        "rock"
+      ],
+      "nivel": 100,
+      "vidaActual": 278,
+      "estadisticas": {
+        "hp": 278,
+        "atk": 410,
+        "def": 390,
+        "satk": 238,
+        "sdef": 233,
+        "spd": 206
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "flamethrower",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 565,
+      "especie": "carracosta",
+      "tipos": [
+        "water",
+        "rock"
+      ],
+      "nivel": 100,
+      "vidaActual": 175,
+      "estadisticas": {
+        "hp": 175,
+        "atk": 337,
+        "def": 387,
+        "satk": 307,
+        "sdef": 258,
+        "spd": 200
+      },
+      "movimientos": [
+        {
+          "nombre": "waterfall",
+          "tipo": "water",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "superpower",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "especie": "aerodactyl",
+      "tipos": [
+        "rock",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 195,
+      "estadisticas": {
+        "hp": 195,
+        "atk": 327,
+        "def": 251,
+        "satk": 257,
+        "sdef": 279,
+        "spd": 400
+      },
+      "movimientos": [
+        {
+          "nombre": "sky-attack",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 140,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-fang",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 338,
+      "especie": "solrock",
+      "tipos": [
+        "rock",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 209,
+      "estadisticas": {
+        "hp": 209,
+        "atk": 332,
+        "def": 320,
+        "satk": 238,
+        "sdef": 243,
+        "spd": 267
+      },
+      "movimientos": [
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "flare-blitz",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "overheat",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 130,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 526,
+      "especie": "gigalith",
+      "tipos": [
+        "rock"
+      ],
+      "nivel": 100,
+      "vidaActual": 204,
+      "estadisticas": {
+        "hp": 204,
+        "atk": 383,
+        "def": 393,
+        "satk": 261,
+        "sdef": 293,
+        "spd": 195
+      },
+      "movimientos": [
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "headbutt",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "especie": "rampardos",
+      "tipos": [
+        "rock"
+      ],
+      "nivel": 100,
+      "vidaActual": 227,
+      "estadisticas": {
+        "hp": 227,
+        "atk": 465,
+        "def": 246,
+        "satk": 264,
+        "sdef": 237,
+        "spd": 230
+      },
+      "movimientos": [
+        {
+          "nombre": "head-smash",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "especie": "gengar",
+      "tipos": [
+        "ghost",
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 161,
+      "estadisticas": {
+        "hp": 161,
+        "atk": 276,
+        "def": 254,
+        "satk": 393,
+        "sdef": 290,
+        "spd": 375
+      },
+      "movimientos": [
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dark-pulse",
+          "tipo": "dark",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "energy-ball",
+          "tipo": "grass",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "sludge-bomb",
+          "tipo": "poison",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "especie": "dusclops",
+      "tipos": [
+        "ghost"
+      ],
+      "nivel": 100,
+      "vidaActual": 125,
+      "estadisticas": {
+        "hp": 125,
+        "atk": 285,
+        "def": 404,
+        "satk": 262,
+        "sdef": 375,
+        "spd": 181
+      },
+      "movimientos": [
+        {
+          "nombre": "shadow-punch",
+          "tipo": "ghost",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 609,
+      "especie": "chandelure",
+      "tipos": [
+        "ghost",
+        "fire"
+      ],
+      "nivel": 100,
+      "vidaActual": 136,
+      "estadisticas": {
+        "hp": 136,
+        "atk": 240,
+        "def": 317,
+        "satk": 414,
+        "sdef": 337,
+        "spd": 295
+      },
+      "movimientos": [
+        {
+          "nombre": "flamethrower",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "energy-ball",
+          "tipo": "grass",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dark-pulse",
+          "tipo": "dark",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 623,
+      "especie": "golurk",
+      "tipos": [
+        "ground",
+        "ghost"
+      ],
+      "nivel": 100,
+      "vidaActual": 208,
+      "estadisticas": {
+        "hp": 208,
+        "atk": 369,
+        "def": 302,
+        "satk": 250,
+        "sdef": 300,
+        "spd": 255
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 442,
+      "especie": "spiritomb",
+      "tipos": [
+        "ghost",
+        "dark"
+      ],
+      "nivel": 100,
+      "vidaActual": 126,
+      "estadisticas": {
+        "hp": 126,
+        "atk": 330,
+        "def": 341,
+        "satk": 311,
+        "sdef": 360,
+        "spd": 227
+      },
+      "movimientos": [
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dark-pulse",
+          "tipo": "dark",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "psybeam",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 65,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "water-pulse",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 60,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 478,
+      "especie": "froslass",
+      "tipos": [
+        "ice",
+        "ghost"
+      ],
+      "nivel": 100,
+      "vidaActual": 165,
+      "estadisticas": {
+        "hp": 165,
+        "atk": 301,
+        "def": 276,
+        "satk": 294,
+        "sdef": 291,
+        "spd": 345
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "especie": "dragonite",
+      "tipos": [
+        "dragon",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 201,
+      "estadisticas": {
+        "hp": 201,
+        "atk": 409,
+        "def": 324,
+        "satk": 348,
+        "sdef": 320,
+        "spd": 284
+      },
+      "movimientos": [
+        {
+          "nombre": "outrage",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "especie": "kingdra",
+      "tipos": [
+        "water",
+        "dragon"
+      ],
+      "nivel": 100,
+      "vidaActual": 187,
+      "estadisticas": {
+        "hp": 187,
+        "atk": 321,
+        "def": 337,
+        "satk": 314,
+        "sdef": 339,
+        "spd": 288
+      },
+      "movimientos": [
+        {
+          "nombre": "surf",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "dragon-pulse",
+          "tipo": "dragon",
+          "clase": "special",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "waterfall",
+          "tipo": "water",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "especie": "flygon",
+      "tipos": [
+        "ground",
+        "dragon"
+      ],
+      "nivel": 100,
+      "vidaActual": 175,
+      "estadisticas": {
+        "hp": 175,
+        "atk": 341,
+        "def": 286,
+        "satk": 298,
+        "sdef": 314,
+        "spd": 353
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "dragon-claw",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 373,
+      "especie": "salamence",
+      "tipos": [
+        "dragon",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 204,
+      "estadisticas": {
+        "hp": 204,
+        "atk": 415,
+        "def": 298,
+        "satk": 351,
+        "sdef": 290,
+        "spd": 355
+      },
+      "movimientos": [
+        {
+          "nombre": "dragon-claw",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "fire-fang",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 445,
+      "especie": "garchomp",
+      "tipos": [
+        "dragon",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 250,
+      "estadisticas": {
+        "hp": 250,
+        "atk": 390,
+        "def": 304,
+        "satk": 295,
+        "sdef": 302,
+        "spd": 327
+      },
+      "movimientos": [
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "outrage",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-fang",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 65,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        }
+      ]
+    },
+    {
+      "id": 612,
+      "especie": "haxorus",
+      "tipos": [
+        "dragon"
+      ],
+      "nivel": 100,
+      "vidaActual": 188,
+      "estadisticas": {
+        "hp": 188,
+        "atk": 429,
+        "def": 323,
+        "satk": 266,
+        "sdef": 271,
+        "spd": 329
+      },
+      "movimientos": [
+        {
+          "nombre": "dragon-claw",
+          "tipo": "dragon",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "iron-head",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 462,
+      "especie": "magnezone",
+      "tipos": [
+        "electric",
+        "steel"
+      ],
+      "nivel": 100,
+      "vidaActual": 181,
+      "estadisticas": {
+        "hp": 181,
+        "atk": 286,
+        "def": 356,
+        "satk": 376,
+        "sdef": 317,
+        "spd": 267
+      },
+      "movimientos": [
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "flash-cannon",
+          "tipo": "steel",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "thunder",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 70,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "tri-attack",
+          "tipo": "normal",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "especie": "steelix",
+      "tipos": [
+        "steel",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 175,
+      "estadisticas": {
+        "hp": 175,
+        "atk": 305,
+        "def": 552,
+        "satk": 267,
+        "sdef": 247,
+        "spd": 215
+      },
+      "movimientos": [
+        {
+          "nombre": "iron-tail",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 75,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 227,
+      "especie": "skarmory",
+      "tipos": [
+        "steel",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 172,
+      "estadisticas": {
+        "hp": 172,
+        "atk": 295,
+        "def": 433,
+        "satk": 230,
+        "sdef": 276,
+        "spd": 272
+      },
+      "movimientos": [
+        {
+          "nombre": "brave-bird",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "iron-head",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "steel-wing",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 90,
+          "usos": 25,
+          "pp": 25
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "especie": "aggron",
+      "tipos": [
+        "steel",
+        "rock"
+      ],
+      "nivel": 100,
+      "vidaActual": 170,
+      "estadisticas": {
+        "hp": 170,
+        "atk": 361,
+        "def": 485,
+        "satk": 271,
+        "sdef": 261,
+        "spd": 228
+      },
+      "movimientos": [
+        {
+          "nombre": "iron-tail",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 75,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 376,
+      "especie": "metagross",
+      "tipos": [
+        "steel",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 196,
+      "estadisticas": {
+        "hp": 196,
+        "atk": 400,
+        "def": 382,
+        "satk": 305,
+        "sdef": 311,
+        "spd": 282
+      },
+      "movimientos": [
+        {
+          "nombre": "meteor-mash",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 411,
+      "especie": "bastiodon",
+      "tipos": [
+        "rock",
+        "steel"
+      ],
+      "nivel": 100,
+      "vidaActual": 147,
+      "estadisticas": {
+        "hp": 147,
+        "atk": 240,
+        "def": 479,
+        "satk": 213,
+        "sdef": 419,
+        "spd": 172
+      },
+      "movimientos": [
+        {
+          "nombre": "iron-head",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "especie": "umbreon",
+      "tipos": [
+        "dark"
+      ],
+      "nivel": 100,
+      "vidaActual": 220,
+      "estadisticas": {
+        "hp": 220,
+        "atk": 267,
+        "def": 360,
+        "satk": 257,
+        "sdef": 380,
+        "spd": 245
+      },
+      "movimientos": [
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "iron-tail",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 75,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dark-pulse",
+          "tipo": "dark",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 248,
+      "especie": "tyranitar",
+      "tipos": [
+        "rock",
+        "dark"
+      ],
+      "nivel": 100,
+      "vidaActual": 243,
+      "estadisticas": {
+        "hp": 243,
+        "atk": 418,
+        "def": 341,
+        "satk": 330,
+        "sdef": 340,
+        "spd": 254
+      },
+      "movimientos": [
+        {
+          "nombre": "stone-edge",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 430,
+      "especie": "honchkrow",
+      "tipos": [
+        "dark",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 221,
+      "estadisticas": {
+        "hp": 221,
+        "atk": 391,
+        "def": 245,
+        "satk": 332,
+        "sdef": 229,
+        "spd": 288
+      },
+      "movimientos": [
+        {
+          "nombre": "night-slash",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aerial-ace",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "sucker-punch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "brave-bird",
+          "tipo": "flying",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 635,
+      "especie": "hydreigon",
+      "tipos": [
+        "dark",
+        "dragon"
+      ],
+      "nivel": 100,
+      "vidaActual": 217,
+      "estadisticas": {
+        "hp": 217,
+        "atk": 337,
+        "def": 308,
+        "satk": 371,
+        "sdef": 315,
+        "spd": 335
+      },
+      "movimientos": [
+        {
+          "nombre": "dark-pulse",
+          "tipo": "dark",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dragon-pulse",
+          "tipo": "dragon",
+          "clase": "special",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earth-power",
+          "tipo": "ground",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "flamethrower",
+          "tipo": "fire",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 461,
+      "especie": "weavile",
+      "tipos": [
+        "dark",
+        "ice"
+      ],
+      "nivel": 100,
+      "vidaActual": 159,
+      "estadisticas": {
+        "hp": 159,
+        "atk": 377,
+        "def": 261,
+        "satk": 216,
+        "sdef": 302,
+        "spd": 386
+      },
+      "movimientos": [
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "night-slash",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "brick-break",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "poison-jab",
+          "tipo": "poison",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "especie": "kangaskhan",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 234,
+      "estadisticas": {
+        "hp": 234,
+        "atk": 327,
+        "def": 289,
+        "satk": 209,
+        "sdef": 281,
+        "spd": 302
+      },
+      "movimientos": [
+        {
+          "nombre": "double-edge",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "especie": "ursaring",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 211,
+      "estadisticas": {
+        "hp": 211,
+        "atk": 408,
+        "def": 301,
+        "satk": 284,
+        "sdef": 303,
+        "spd": 243
+      },
+      "movimientos": [
+        {
+          "nombre": "facade",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "especie": "tauros",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 182,
+      "estadisticas": {
+        "hp": 182,
+        "atk": 337,
+        "def": 342,
+        "satk": 232,
+        "sdef": 290,
+        "spd": 361
+      },
+      "movimientos": [
+        {
+          "nombre": "double-edge",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "especie": "snorlax",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 359,
+      "estadisticas": {
+        "hp": 359,
+        "atk": 372,
+        "def": 265,
+        "satk": 270,
+        "sdef": 340,
+        "spd": 183
+      },
+      "movimientos": [
+        {
+          "nombre": "body-slam",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 241,
+      "especie": "miltank",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 208,
+      "estadisticas": {
+        "hp": 208,
+        "atk": 301,
+        "def": 331,
+        "satk": 224,
+        "sdef": 278,
+        "spd": 317
+      },
+      "movimientos": [
+        {
+          "nombre": "body-slam",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "zen-headbutt",
+          "tipo": "psychic",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 90,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 474,
+      "especie": "porygon-z",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 215,
+      "estadisticas": {
+        "hp": 215,
+        "atk": 291,
+        "def": 287,
+        "satk": 391,
+        "sdef": 279,
+        "spd": 330
+      },
+      "movimientos": [
+        {
+          "nombre": "tri-attack",
+          "tipo": "normal",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "especie": "granbull",
+      "tipos": [
+        "fairy"
+      ],
+      "nivel": 100,
+      "vidaActual": 229,
+      "estadisticas": {
+        "hp": 229,
+        "atk": 370,
+        "def": 274,
+        "satk": 235,
+        "sdef": 243,
+        "spd": 228
+      },
+      "movimientos": [
+        {
+          "nombre": "play-rough",
+          "tipo": "fairy",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "earthquake",
+          "tipo": "ground",
+          "clase": "physical",
+          "potencia": 100,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 468,
+      "especie": "togekiss",
+      "tipos": [
+        "fairy",
+        "flying"
+      ],
+      "nivel": 100,
+      "vidaActual": 198,
+      "estadisticas": {
+        "hp": 198,
+        "atk": 241,
+        "def": 321,
+        "satk": 366,
+        "sdef": 381,
+        "spd": 278
+      },
+      "movimientos": [
+        {
+          "nombre": "air-slash",
+          "tipo": "flying",
+          "clase": "special",
+          "potencia": 75,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "dazzling-gleam",
+          "tipo": "fairy",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "aura-sphere",
+          "tipo": "fighting",
+          "clase": "special",
+          "potencia": 80,
+          "precision": null,
+          "usos": 20,
+          "pp": 20
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "especie": "mr-mime",
+      "tipos": [
+        "psychic",
+        "fairy"
+      ],
+      "nivel": 100,
+      "vidaActual": 100,
+      "estadisticas": {
+        "hp": 100,
+        "atk": 209,
+        "def": 246,
+        "satk": 344,
+        "sdef": 376,
+        "spd": 296
+      },
+      "movimientos": [
+        {
+          "nombre": "dazzling-gleam",
+          "tipo": "fairy",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "especie": "vigoroth",
+      "tipos": [
+        "normal"
+      ],
+      "nivel": 100,
+      "vidaActual": 207,
+      "estadisticas": {
+        "hp": 207,
+        "atk": 298,
+        "def": 291,
+        "satk": 245,
+        "sdef": 261,
+        "spd": 324
+      },
+      "movimientos": []
+    },
+    {
+      "id": 282,
+      "especie": "gardevoir",
+      "tipos": [
+        "psychic",
+        "fairy"
+      ],
+      "nivel": 100,
+      "vidaActual": 175,
+      "estadisticas": {
+        "hp": 175,
+        "atk": 255,
+        "def": 285,
+        "satk": 392,
+        "sdef": 359,
+        "spd": 293
+      },
+      "movimientos": [
+        {
+          "nombre": "moonblast",
+          "tipo": "fairy",
+          "clase": "special",
+          "potencia": 95,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "psychic",
+          "tipo": "psychic",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "shadow-ball",
+          "tipo": "ghost",
+          "clase": "special",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "thunderbolt",
+          "tipo": "electric",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "especie": "mawile",
+      "tipos": [
+        "steel",
+        "fairy"
+      ],
+      "nivel": 100,
+      "vidaActual": 120,
+      "estadisticas": {
+        "hp": 120,
+        "atk": 326,
+        "def": 311,
+        "satk": 247,
+        "sdef": 233,
+        "spd": 228
+      },
+      "movimientos": [
+        {
+          "nombre": "play-rough",
+          "tipo": "fairy",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "iron-head",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "crunch",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "especie": "azumarill",
+      "tipos": [
+        "water",
+        "fairy"
+      ],
+      "nivel": 100,
+      "vidaActual": 232,
+      "estadisticas": {
+        "hp": 232,
+        "atk": 228,
+        "def": 291,
+        "satk": 261,
+        "sdef": 290,
+        "spd": 223
+      },
+      "movimientos": [
+        {
+          "nombre": "hydro-pump",
+          "tipo": "water",
+          "clase": "special",
+          "potencia": 110,
+          "precision": 80,
+          "usos": 5,
+          "pp": 5
+        },
+        {
+          "nombre": "draining-kiss",
+          "tipo": "fairy",
+          "clase": "special",
+          "potencia": 50,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-beam",
+          "tipo": "ice",
+          "clase": "special",
+          "potencia": 90,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "play-rough",
+          "tipo": "fairy",
+          "clase": "physical",
+          "potencia": 90,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        }
+      ]
+    },
+    {
+      "id": 625,
+      "especie": "bisharp",
+      "tipos": [
+        "dark",
+        "steel"
+      ],
+      "nivel": 100,
+      "vidaActual": 165,
+      "estadisticas": {
+        "hp": 165,
+        "atk": 385,
+        "def": 338,
+        "satk": 247,
+        "sdef": 261,
+        "spd": 286
+      },
+      "movimientos": [
+        {
+          "nombre": "metal-claw",
+          "tipo": "steel",
+          "clase": "physical",
+          "potencia": 50,
+          "precision": 95,
+          "usos": 35,
+          "pp": 35
+        },
+        {
+          "nombre": "rock-tomb",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 60,
+          "precision": 95,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "night-slash",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "giga-impact",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 150,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5
         }
       ]
     }
