@@ -62,7 +62,7 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/nueva-partida']);  // Si no hay partida, redirige a Nueva Partida
     }
   }
-  
+
   // Método para eliminar la partida actual
   eliminarPartida(): void {
     if (this.partida && this.usuario) {
@@ -76,7 +76,13 @@ export class MenuComponent implements OnInit {
       });
     }
   }
-  
+
+  logout()
+  {
+    this.userService.logout();
+    this.router.navigate(['']);
+  }
+
 
 }
 
