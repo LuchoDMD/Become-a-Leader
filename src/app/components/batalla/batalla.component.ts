@@ -2,10 +2,10 @@ import { Component, inject } from '@angular/core';
 import { PokeAPIService } from '../../service/poke-api.service';
 import { TeamService } from '../../service/team.service';
 import { Move } from '../../interface/move';
-import { Pokemon} from '../../interface/pokemon';
+import { Pokemon } from '../../interface/pokemon';
 import { tipos } from '../../interface/tipos';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-batalla',
@@ -26,17 +26,15 @@ export class BatallaComponent {
   movimientosRival: Move[] = [];
   resultado: string = '';
 
-  constructor(private router: Router) {}
-
   ngOnInit(): void {
     this.iniciarBatalla();
   }
 
   iniciarBatalla() {
-        console.log("Iniciando batalla");
+    console.log("Iniciando batalla");
     // Asumimos que el primer Pokémon del entrenador es el que luchará
-        this.cargarPokemonAleatorioEntrenador();
-        this.generarPokemonRival();
+    this.cargarPokemonAleatorioEntrenador();
+    this.generarPokemonRival();
   }
 
   generarPokemonRival() {
@@ -57,6 +55,7 @@ export class BatallaComponent {
           spd: data.stats[5].base_stat,
         },
         movimientos: this.generarMovimientosRival(data),
+        // sprite: data.sprites.front_default,
       };
       this.movimientosRival = this.pokemonRival.movimientos;
     });
@@ -100,7 +99,7 @@ export class BatallaComponent {
     const daño = Math.floor(
       ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
     );
-  console.log("Daño:", daño);
+    console.log("Daño:", daño);
     defensor.vidaActual -= daño;
     if (defensor.vidaActual <= 0) {
       defensor.vidaActual = 0;
@@ -108,21 +107,21 @@ export class BatallaComponent {
     }
 
     // Muestra el mensaje de ataque
-  let mensaje = (`${atacante.especie} usó ${movimiento.nombre}.`);
+    let mensaje = (`${atacante.especie} usó ${movimiento.nombre}.`);
 
-  if (factor > 1) {
-    mensaje += `\n¡Fue supereficaz`;
-  } else if (factor < 1) {
-    mensaje += `\nNo fue muy eficaz...`;
+    if (factor > 1) {
+      mensaje += `\n¡Fue supereficaz`;
+    } else if (factor < 1) {
+      mensaje += `\nNo fue muy eficaz...`;
+    }
+
+    this.mostrarMensajeBatalla(mensaje);
   }
 
-  this.mostrarMensajeBatalla(mensaje);
-}
 
-
-mostrarMensajeBatalla(mensaje: string) {
-  this.mensajeBatalla = mensaje;
-}
+  mostrarMensajeBatalla(mensaje: string) {
+    this.mensajeBatalla = mensaje;
+  }
 
 
   turnoRival() {
@@ -165,13 +164,13 @@ mostrarMensajeBatalla(mensaje: string) {
       console.log("Tipo defensor:", tipoDefensor);
       const efectividad = tipoAtacante.efectivity.find(([tipo, _]) => tipo === tipoDefensor.toLowerCase());
       if (efectividad) {
-          efectividadTotal *= efectividad[1];
+        efectividadTotal *= efectividad[1];
       } else {
-          efectividadTotal *= 1; // Si no está en la lista, es neutral
+        efectividadTotal *= 1; // Si no está en la lista, es neutral
       }
-  }
-  console.log("Efectividad:", efectividadTotal);
-  return efectividadTotal;
+    }
+    console.log("Efectividad:", efectividadTotal);
+    return efectividadTotal;
   }
 
   async cambiarPokemon() {
@@ -188,40 +187,29 @@ mostrarMensajeBatalla(mensaje: string) {
     } else {
       console.log("No se pudo obtener el equipo.");
     }
-}
+  }
 
 
   finalizarBatalla(ganador: Pokemon) {
     if (ganador === this.pokemonJugador) {
       this.resultado = 'victoria';
       // Guardar datos y redirigir a la sala de descanso
-      setTimeout(() => {
-        console.log('Guardando datos de batalla');
-        window.location.reload();
-      }, 3000)
     } else {
-      this.resultado = 'Perdiste rey';
-      alert(this.resultado);
-      setTimeout(() => {
-        this.router.navigate(['/menu']), 3000
-      })
-
+      this.resultado = 'derrota';
       // Redirigir a la pantalla de gameover
     }
   }
 
   cargarPokemonAleatorioEntrenador() {
-    console.log("Cargando pokemon aleatorio");
-    // Genera un ID aleatorio entre 1 y 151 (para los primeros Pokémon como ejemplo)
-    const randomId = Math.floor(Math.random() * 151) + 1;
+    const randomId = 27; // ID del Pokémon (puedes poner cualquier otro Pokémon de tu elección)
 
     this.pokeapi.getPokemonByID(randomId.toString()).subscribe(pokemonData => {
-      // Asigna los datos del Pokémon al equipo del entrenador
       this.pokemonJugador = {
         id: pokemonData.id,
         especie: pokemonData.name,
         tipos: pokemonData.types.map((tipo: any) => tipo.type.name),
         vidaActual: pokemonData.stats.find((stat: any) => stat.stat.name === 'hp').base_stat,
+        // sprite: pokemonData.sprites.back_default,
         estadisticas: {
           hp: pokemonData.stats.find((stat: any) => stat.stat.name === 'hp').base_stat,
           atk: pokemonData.stats.find((stat: any) => stat.stat.name === 'attack').base_stat,
@@ -231,17 +219,49 @@ mostrarMensajeBatalla(mensaje: string) {
           spd: pokemonData.stats.find((stat: any) => stat.stat.name === 'speed').base_stat,
         },
         movimientos: pokemonData.moves.slice(0, 4).map((move: any) => ({
-          nombre: move.move.name,
-          tipo: 'fighting', // Este valor se puede cargar con otro servicio si es necesario
-          clase: 'Physical', // Clase de ejemplo; debe ajustarse con el servicio correspondiente
-          potencia: 10, // Potencia de ejemplo
-          precision: 100,
-          pp: 10 // PP de ejemplo
+          nombre: move.move.name,  // Nombre del movimiento
+          url: move.move.url,      // URL del movimiento
         }))
       };
-      this.movimientosJugador = this.pokemonJugador.movimientos;
     });
   }
+
+
+  getButtonColor(tipo: string): string {
+    // Asegúrate de que el tipo no sea undefined o null
+    if (!tipo) {
+      console.error('Tipo de movimiento no definido:', tipo);
+      return '#4caf50'; // Valor por defecto en caso de error
+    }
+
+    // Definir los colores para los tipos de Pokémon
+    const tiposColores: { [key: string]: string } = {
+      'fire': '#FF5733',    // Rojo anaranjado
+      'water': '#3498db',    // Azul
+      'electric': '#f1c40f', // Amarillo
+      'grass': '#2ecc71',    // Verde
+      'psychic': '#9b59b6',  // Morado
+      'normal': '#95a5a6',    // Gris
+      'bug': '#8e44ad',      // Púrpura
+      'fighting': '#e74c3c', // Rojo oscuro
+      'ghost': '#34495e',    // Gris oscuro
+      'dark': '#2c3e50',     // Azul oscuro
+      'fairy': '#f39c12',    // Naranja
+      'dragon': '#9b59b6',   // Morado
+      'ice': '#00bfff',      // Azul claro
+      'poison': '#8e44ad',   // Púrpura
+      'rock': '#7f8c8d',     // Gris piedra
+      'steel': '#95a5a6',    // Gris acero
+      'ground': '#d35400',   // Naranja tierra
+      'flying': '#f39c12'    // Amarillo dorado
+    };
+
+    // Convertir el tipo a minúsculas y buscar en el objeto de colores
+    return tiposColores[tipo.toLowerCase()] || '#4caf50';  // Valor por defecto si no encuentra el tipo
+  }
+
+
+
 
 
 }

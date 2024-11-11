@@ -6,7 +6,7 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-image: url('../../../../public/assets/img/battle-background.png'); */
+  background-image: url('../../../../public/battle-background.png');
 }
 
 .pokemons-container {
