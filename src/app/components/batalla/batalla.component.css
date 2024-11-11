@@ -1,14 +1,21 @@
 /* Container principal de la batalla */
 .batalla-container {
-    text-align: center;
-    margin: 20px;
+    background-image: url('/fondo_inicio.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen se quede fija cuando se haga scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que la imagen ocupe toda la altura de la ventana */
+     margin: 0; /* Elimina el margen predeterminado */
+    overflow: hidden; /* Evita el desplazamiento de la página */
   }
   
   /* Titulo de la batalla */
   .titulo-batalla {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    text-align: center; /* Centra el título */
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
   }
   
   /* Contenedor de batalla (horizontal) */
@@ -53,7 +60,6 @@
   
   /* Lista de movimientos con estilo de botones */
   .movimientos {
-    list-style-type: none;
     padding: 0;
     margin: 10px 0;
   }
@@ -64,7 +70,6 @@
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5px;
-    cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
   }
@@ -75,13 +80,18 @@
   
   /* Estilo para los mensajes de batalla */
   .mensaje-batalla {
-    margin-top: 20px;
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
     padding: 10px;
     background-color: #f8d7da;
     color: #721c24;
     border-radius: 5px;
     font-size: 18px;
-  }
+    text-align: center;
+    max-width: 600px; /* Ajusta el ancho máximo */
+    width: 80%; /* Se adapta al tamaño de la pantalla */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra para resaltarlo */
+}
+
   
   /* Resultado final de la batalla */
   .resultado-batalla {
@@ -94,4 +104,24 @@
     border-radius: 5px;
   }
   
+  .BotoncitoLogout {
+    position: fixed;
+    top: 10px; /* Ajusta la distancia desde la parte superior de la pantalla */
+    right: 10px; /* Ajusta la distancia desde el lado derecho de la pantalla */
+    z-index: 1000; /* Asegura que el botón esté en el frente, sobre el fondo */
+  }
+  
+  .BotoncitoLogout button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #f44336; /* Cambia el color de fondo para destacarlo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+  }
+  
+  .BotoncitoLogout button:hover {
+    background-color: #d32f2f; /* Cambia el color al pasar el cursor por encima */
+  }
   

@@ -1,40 +1,41 @@
-<div *ngIf="pokemonJugador && pokemonRival" class="batalla-container">
+<div class ="batalla-container" *ngIf="pokemonJugador && pokemonRival">
   <h2 class="titulo-batalla">Batalla Pokémon</h2>
 
   <div class="batalla">
-    <!-- Recuadro del Jugador -->
     <div class="pokemon-container jugador">
       <h3>Jugador</h3>
-      <p>{{ pokemonJugador.especie }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
-      <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p> <!-- Cantidad de Pokémon restantes -->
-      <ul class="movimientos">
+      <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
+      <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
+      <ul>
         <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)" class="boton-movimiento">
-          {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
+          {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
         </li>
       </ul>
     </div>
 
-    <!-- VS central -->
     <div class="vs">VS.</div>
 
-    <!-- Recuadro del Rival -->
     <div class="pokemon-container rival">
       <h3>Rival</h3>
-      <p>{{ pokemonRival.especie }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
-      <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p> <!-- Cantidad de Pokémon restantes -->
+      <p>{{ transformarPrimeraLetra(pokemonRival.especie) }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
+      <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p>
     </div>
   </div>
 
-  <!-- Mensaje de batalla -->
   <div *ngIf="mensajeBatalla" class="mensaje-batalla">
     <p>{{ mensajeBatalla }}</p>
   </div>
 
-  <!-- Resultado final -->
   <div *ngIf="resultado" class="resultado-batalla">
     <p>{{ resultado }}</p>
   </div>
 </div>
+<div class="BotoncitoLogout">
+  <button type="button" (click)="navegarMenu()">MENU</button>
+  <button type="button" (click)="logout()">LOGOUT</button>
+</div>
+
+
 
 
 

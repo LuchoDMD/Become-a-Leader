@@ -52,7 +52,7 @@ export class NuevaPartidaComponent implements OnInit {
     this.ts.getPokemonsByType(this.datos_partida.tipo).subscribe({
       next: (pokemons: Pokemon[]) => {
         console.log('Pokemons obtenidos', pokemons);
-        cargarEquipo.push(...pokemons);
+        cargarEquipo.push(...pokemons.slice(0, 6));
         this.nuevaPartida.personaje.equipo = cargarEquipo;
         this.nuevaPartida.personaje.id = this.id;
         this.nuevaPartida.id = this.id;
