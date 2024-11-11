@@ -5,7 +5,7 @@
       <h3>Jugador</h3>
       <p>{{ pokemonJugador.especie }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
       <ul>
-        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)">
+        <li *ngFor="let movimiento of movimientosJugador" (click)="inciarRonda(movimiento)">
           {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
         </li>
       </ul>

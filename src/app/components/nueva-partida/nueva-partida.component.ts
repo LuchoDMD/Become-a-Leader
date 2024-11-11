@@ -27,6 +27,19 @@ export class NuevaPartidaComponent implements OnInit {
     tipo: '',
   };
 
+  nuevaPartida: Partida = {
+    id: '',
+    fecha_inicio: new Date(),
+    fecha_fin: new Date(),
+    puntuacion: 0,
+    personaje: {
+      id: '',
+      nombre: '',
+      tipo: '',
+      equipo:[]
+    }
+  }
+
   // Variables de control
   selectedLider: string = '';
   id: string = '';
@@ -40,34 +53,29 @@ export class NuevaPartidaComponent implements OnInit {
       next: (pokemons: Pokemon[]) => {
         console.log('Pokemons obtenidos', pokemons);
         cargarEquipo.push(...pokemons);
+        this.nuevaPartida.personaje.equipo = cargarEquipo;
+        this.nuevaPartida.personaje.id = this.id;
+        this.nuevaPartida.id = this.id;
+        this.nuevaPartida.personaje.nombre = this.datos_partida.nick;
+        this.nuevaPartida.personaje.tipo = this.datos_partida.tipo;
+        this.guardarPartidaEnBD(this.nuevaPartida);
       },
       error: (error: Error) => {
         console.error('Error obteniendo Pokemons', error);
       }
     })
-    const nuevaPartida: Partida = {
-      id: this.id,  // Este debería ser el ID del usuario logueado, deberías obtenerlo desde el servicio
-      fecha_inicio: new Date(),
-      fecha_fin: new Date(),
-      puntuacion: 0,  // Esto debería ser dinámico
-      personaje: {
-        id: this.id,  // Asigna un UUID o un valor adecuado
-        nombre: this.datos_partida.nick, // Se puede ajustar según el lider seleccionado
-        tipo: this.datos_partida.tipo,
-        equipo: cargarEquipo,  // Llenar según el tipo de Pokémon que seleccione
-      },
-    };
+  }
 
-    // Aquí se crea la partida a través del servicio
-    this.partidaService.postPartida(nuevaPartida).subscribe({
-      next:(respuesta) => {
-        console.log('Partida creada', respuesta);
+  guardarPartidaEnBD(partida: Partida) {
+    this.partidaService.postPartida(partida).subscribe({
+      next: (partida) => {
+        console.log('Partida creada en la BD', partida);
         this.router.navigate(['/batalla']);
-      },    
-      error:(error: Error) => {
-        console.error('Error creando la partida', error);
+      },
+      error: (error: Error) => {
+        console.error('Error al crear la partida en la BD', error);
       }
-    });
+    })
   }
 
   // Seleccionar el líder y actualizar la interfaz

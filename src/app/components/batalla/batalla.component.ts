@@ -42,12 +42,12 @@ export class BatallaComponent {
       next: (partida) => {
         this.partida = partida;
         this.jugador = partida?.personaje;
+        this.iniciarBatalla();
       },
       error: (error) => {
         console.error('Error al obtener la partida', error);
       }
     })
-    this.iniciarBatalla();
   }
 
   iniciarBatalla() {
@@ -56,6 +56,8 @@ export class BatallaComponent {
         /*this.cargarPokemonAleatorioEntrenador();*/
         this.pokemonJugador = this.jugador?.equipo[0];
         this.generarRival();
+        this.movimientosJugador=this.jugador?.equipo[0].movimientos!;
+
   }
 
   generarRival() {
@@ -67,30 +69,12 @@ export class BatallaComponent {
           {
             this.rival.push(data[Math.floor(Math.random() * data.length) + 1]);
           }
+          this.pokemonRival = this.rival[0];
         },
         error: (error :Error) => {
           console.log("Error al cargar rival")
         }
       })
-      this.pokemonRival = this.rival[0];
-    /*this.pokeapi.getPokemonByID(randomId.toString()).subscribe((data) => {
-      this.pokemonRival = {
-        id: data.id,
-        especie: data.name,
-        tipos: data.types.map((tipo: any) => tipo.type.name),
-        vidaActual: data.stats[0].base_stat,
-        estadisticas: {
-          hp: data.stats[0].base_stat,
-          atk: data.stats[1].base_stat,
-          def: data.stats[2].base_stat,
-          satk: data.stats[3].base_stat,
-          sdef: data.stats[4].base_stat,
-          spd: data.stats[5].base_stat,
-        },
-        movimientos: this.generarMovimientosRival(data),
-      };
-      this.movimientosRival = this.pokemonRival.movimientos;
-    });*/
   }
 
   generarMovimientosRival(data: any): Move[] {
@@ -109,16 +93,17 @@ export class BatallaComponent {
 
   inciarRonda(movimientoJugador: Move)
   {
-    while(this.rival.length>0 && this.jugador?.equipo.length!>0)
+    if(this.rival.length>0 && this.jugador?.equipo.length!>0)
     {
       this.realizarAtaque(movimientoJugador);
       if(this.rival[0].vidaActual===0)
       {
-        this.rival.pop();
+        this.rival.unshift();
+        console.log(this.rival);
       }
       else if(this.jugador?.equipo[0].vidaActual===0)
       {
-        this.jugador.equipo.pop();
+        this.jugador.equipo.unshift();
       }
     }
 
@@ -154,6 +139,7 @@ export class BatallaComponent {
 
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
     console.log("Realizando ataque");
+    console.log(movimiento.tipo)
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
     const daño = Math.floor(
       ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
