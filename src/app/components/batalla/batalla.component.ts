@@ -28,8 +28,8 @@ export class BatallaComponent {
   partida: Partida | null = null;
   jugador?: Entrenador;
   rival:Pokemon[] = [];
-  pokemonJugador?: Pokemon;
-  pokemonRival?: Pokemon;
+  pokemonJugador?: Pokemon | null = null;
+  pokemonRival?: Pokemon | null = null;
   movimientosJugador: Move[] = [];
   mensajeBatalla: string = '';
   movimientosRival: Move[] = [];
@@ -82,119 +82,186 @@ export class BatallaComponent {
   }
 
   realizarAtaque(movimientoJugador: Move) {
-    // Compara las velocidades y decide el orden de ataque
+    if (!this.pokemonJugador || !this.pokemonRival || this.pokemonJugador.vidaActual <= 0 || this.pokemonRival.vidaActual <= 0) {
+      return;
+    }
+  
     console.log("Equipo jugador:", this.jugador?.equipo);
     console.log("Equipo rival:", this.rival);
-    console.log("Movimientos jugador:", this.movimientosJugador);
-    console.log("Movimientos rival:", this.movimientosRival);
-    if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
+  
+    let cambiarPokemonJugador = false;
+    let cambiarPokemonRival = false;
+  
+    if (this.pokemonJugador.estadisticas.spd >= this.pokemonRival.estadisticas.spd) {
       // El Pokémon jugador ataca primero
-      console.log("Jugador ataca primero");
-      this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!);
-      console.log("Vida rival: "+this.pokemonRival!.vidaActual);
-      if (this.pokemonRival!.vidaActual > 0) {
-        setTimeout(() =>{
-          this.turnoRival()
-          if(this.pokemonJugador!.vidaActual<=0){
-            this.pokemonJugador = this.jugador?.equipo[0];
-          console.log("Pokemon jugador:", this.pokemonJugador);
-          console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
-          this.movimientosJugador=this.pokemonJugador?.movimientos!;
-          }
-          console.log("prueba2");
-        }, 2000);
-        
-        console.log("prueba");
+      this.calcularAtaque(movimientoJugador, this.pokemonJugador, this.pokemonRival);
+  
+      // Verifica si el Pokémon rival se desmayó
+      if (this.pokemonRival.vidaActual <= 0) {
+        console.log(`${this.pokemonRival.especie} se ha desmayado!`);
+        this.removerPokemonRival();
+        cambiarPokemonRival = true;
       }
-      else{
-        this.pokemonRival = this.rival[0];
-        console.log("Pokemon rival:", this.pokemonRival);
-        console.log("Movimientos rival:", this.pokemonRival?.movimientos);
-        this.movimientosRival=this.pokemonRival?.movimientos!;
-        if(this.pokemonJugador!.vidaActual<=0){
-          this.pokemonJugador = this.jugador?.equipo[0];
-          console.log("Pokemon jugador:", this.pokemonJugador);
-          console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
-          this.movimientosJugador=this.pokemonJugador?.movimientos!;
+      // Verifica si el Pokémon jugador se desmayó
+      if (this.pokemonJugador.vidaActual <= 0) {
+        console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
+        this.removerPokemonJugador(); // Remueve el Pokémon jugador desmayado
+          cambiarPokemonJugador = true;  // Marcar para cambiar el Pokémon jugador
+      }
+  
+      // Si hay cambio de Pokémon, hacemos el reemplazo
+    if (cambiarPokemonRival || cambiarPokemonJugador) {
+      setTimeout(() => {
+        if (cambiarPokemonRival) {
+          this.cambiarPokemonRival();
+        }
+        if (cambiarPokemonJugador) {
+          this.cambiarPokemonJugador();
+        }
+      }, 2000);  // Esperamos un poco para cambiar el Pokémon y continuar
+    } else {
+      // Si no hay cambio de Pokémon, el turno sigue
+      setTimeout(() => {
+          this.turnoRival();
+          if (this.pokemonJugador && this.pokemonJugador.vidaActual <= 0) {
+          console.log(`${this.pokemonJugador.especie} está desmayado! Realizando el cambio de Pokémon...`);
+          this.removerPokemonJugador(); // Cambiar al siguiente Pokémon del jugador
+        } else {
+          // Si el Pokémon del jugador sigue en pie, se puede proceder con el siguiente turno
+          console.log("El turno sigue normalmente...");
         }
       }
+        , 2000);
+    }
     } else {
       // El Pokémon rival ataca primero
-      console.log("Rival ataca primero");
       this.turnoRival();
-      console.log("Vida jugador: "+this.pokemonJugador!.vidaActual);
-      if (this.pokemonJugador!.vidaActual > 0) {
+  
+      // Verifica si el Pokémon jugador se desmayó
+      if (this.pokemonJugador.vidaActual <= 0) {
+        console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
+        this.removerPokemonJugador();
+        cambiarPokemonJugador = true;
+      }
+
+      // Verifica si el Pokémon rival se desmayó
+    if (this.pokemonRival.vidaActual <= 0) {
+      console.log(`${this.pokemonRival.especie} se ha desmayado!`);
+      this.removerPokemonRival(); // Remueve el Pokémon rival desmayado
+      cambiarPokemonRival = true;  // Marcar para cambiar el Pokémon rival
+    }
+  
+       // Si el jugador se desmaya, no permite que ataque
+       if (cambiarPokemonRival || cambiarPokemonJugador) {
         setTimeout(() => {
-
-          this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!)
-          if(this.pokemonRival!.vidaActual<=0){
-            this.pokemonRival = this.rival[0];
-            console.log("Pokemon rival:", this.pokemonRival);
-            console.log("Movimientos rival:", this.pokemonRival?.movimientos);
-            this.movimientosRival=this.pokemonRival?.movimientos!;
+          if (cambiarPokemonRival) {
+            this.cambiarPokemonRival();
           }
-          console.log("prueba2");
-        }, 2000);
-
-        console.log("prueba");
+          if (cambiarPokemonJugador) {
+            this.cambiarPokemonJugador();
+          }
+        }, 2000);  // Esperamos un poco para cambiar el Pokémon y continuar
+      } else {
+        // Si no hay cambio de Pokémon, el turno sigue
+        setTimeout(() => {
+          this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!)
+          if (this.pokemonRival && this.pokemonRival.vidaActual <= 0) {
+            console.log(`${this.pokemonRival.especie} está desmayado! Realizando el cambio de Pokémon...`);
+            this.removerPokemonRival();// Cambiar al siguiente Pokémon del jugador
+          } else {
+            // Si el Pokémon del jugador sigue en pie, se puede proceder con el siguiente turno
+            console.log("El turno sigue normalmente...");
+          }
+        },
+           2000);
       }
-      else{
-        this.pokemonJugador = this.jugador?.equipo[0];
-        console.log("Pokemon jugador:", this.pokemonJugador);
-        console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
-        this.movimientosJugador=this.pokemonJugador?.movimientos!;
-        if(this.pokemonRival!.vidaActual<=0){
-          this.pokemonRival = this.rival[0];
-          console.log("Pokemon rival:", this.pokemonRival);
-          console.log("Movimientos rival:", this.pokemonRival?.movimientos);
-          this.movimientosRival=this.pokemonRival?.movimientos!;
-        }
-      }
-
     }
   }
 
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
-    console.log(atacante.especie+" esta realizando "+movimiento.nombre);
+    console.log(`${atacante.especie} está realizando ${movimiento.nombre}`);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
-    const daño = Math.floor(
-      ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
-    );
-    console.log("Daño:", daño);
-    let mensaje = (`${atacante.especie} usó ${movimiento.nombre}.`);
+    const daño = Math.floor(((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor);
 
-    if (factor > 1) {
-      mensaje += `\n¡Fue supereficaz`;
-    } else if (factor < 1) {
-      mensaje += `\nNo fue muy eficaz...`;
-    }
-
-    this.mostrarMensajeBatalla(mensaje);
+    this.mostrarMensajeBatalla(`${atacante.especie} usó ${movimiento.nombre}. ${factor > 1 ? '¡Fue supereficaz!' : (factor < 1 ? 'No fue muy eficaz...' : '')}`);
     defensor.vidaActual -= daño;
-    if (defensor.vidaActual <= 0) {
-      defensor.vidaActual = 0;
-      if(this.pokemonJugador===defensor){
-        this.jugador?.equipo.shift();
-        console.log("Jugador se desmayo, Equipo restante del jugador:", this.jugador?.equipo);
-        if(this.jugador?.equipo.length===0){
-          this.finalizarBatalla(false);
-        }
-      }
-      else if(this.pokemonRival===defensor){
-        this.rival.shift();
-        console.log("Rival se desmayo, equipo restante del rival:", this.rival);
-        if(this.rival.length===0){
-          this.finalizarBatalla(true);
-        }
-      }
-      
-    }
+
+    if (defensor.vidaActual < 0) {
+    defensor.vidaActual = 0; // Evita valores negativos
+  }
 }
 
 mostrarMensajeBatalla(mensaje: string) {
   this.mensajeBatalla = mensaje;
 }
 
+removerPokemonJugador() {
+  // Remueve el primer Pokémon del equipo del jugador (el activo)
+  if (this.jugador && this.jugador.equipo.length > 0) {
+    this.jugador.equipo.shift();  // Remueve el Pokémon desmayado
+    if (this.jugador.equipo.length > 0) {
+      // Asigna el siguiente Pokémon del equipo
+      this.pokemonJugador = this.jugador.equipo[0];
+      this.pokemonJugador.vidaActual = this.pokemonJugador.estadisticas.hp; // Restablece vida completa
+      this.movimientosJugador = this.pokemonJugador.movimientos!;
+      console.log(`${this.pokemonJugador.especie} ha sido activado con vida completa.`);
+    } else {
+      this.pokemonJugador = null;  // Si no hay más Pokémon, dejamos el equipo vacío
+      console.log("No hay más Pokémon disponibles en el equipo.");
+      this.finalizarBatalla(false);
+    }
+  }
+}
+
+removerPokemonRival() {
+  // Remueve el primer Pokémon del equipo del rival (el activo)
+  if (this.rival && this.rival.length > 0) {
+    this.rival.shift();  // Remueve el Pokémon desmayado
+    if (this.rival.length > 0) {
+      // Asigna el siguiente Pokémon del equipo rival
+      this.pokemonRival = this.rival[0];
+      this.pokemonRival.vidaActual = this.pokemonRival.estadisticas.hp; // Restablece vida completa
+      this.movimientosRival = this.pokemonRival.movimientos!;
+      console.log(`${this.pokemonRival.especie} ha sido activado con vida completa.`);
+    } else {
+      this.pokemonRival = null;  // Si no hay más Pokémon, dejamos el equipo vacío
+      console.log("El rival no tiene más Pokémon disponibles.");
+      this.finalizarBatalla(true);
+    }
+  }
+}
+
+cambiarPokemonJugador() {
+  if (this.pokemonJugador) {
+    // Si ya no hay Pokémon disponibles, muestra mensaje de fin de batalla
+    if (this.jugador!.equipo.length > 0) {
+      this.pokemonJugador = this.jugador!.equipo[0];  // Asigna el siguiente Pokémon del jugador
+      this.pokemonJugador.vidaActual = this.pokemonJugador.estadisticas.hp;  // Vida completa
+      this.movimientosJugador = this.pokemonJugador.movimientos!;
+      console.log(`${this.pokemonJugador.especie} ha sido activado con vida completa.`);
+    } else {
+      console.log("No hay más Pokémon en tu equipo.");
+      this.finalizarBatalla(false);
+      // Aquí puedes agregar lógica para manejar fin de batalla si no hay más Pokémon
+    }
+  }
+}
+
+cambiarPokemonRival() {
+  if (this.pokemonRival) {
+    // Si ya no hay Pokémon disponibles, muestra mensaje de fin de batalla
+    if (this.rival.length > 0) {
+      this.pokemonRival = this.rival[0];  // Asigna el siguiente Pokémon del rival
+      this.pokemonRival.vidaActual = this.pokemonRival.estadisticas.hp;  // Vida completa
+      this.movimientosRival = this.pokemonRival.movimientos!;
+      console.log(`${this.pokemonRival.especie} ha sido activado con vida completa.`);
+    } else {
+      console.log("El rival no tiene más Pokémon.");
+      this.finalizarBatalla(true);
+      // Aquí también puedes manejar el fin de batalla si el rival ya no tiene Pokémon
+    }
+  }
+}
 
   turnoRival() {
     if (!this.pokemonRival || !this.pokemonJugador) return;
@@ -231,37 +298,44 @@ mostrarMensajeBatalla(mensaje: string) {
   return efectividadTotal;
   }
 
+  // Función para contar Pokémon restantes del jugador
+pokemonJugadorRestantes(): number {
+  return this.jugador?.equipo.filter(pokemon => pokemon.vidaActual > 0).length || 0;
+}
+
+// Función para contar Pokémon restantes del rival
+pokemonRivalRestantes(): number {
+  return this.rival?.filter(pokemon => pokemon.vidaActual > 0).length || 0;
+}
+
 
   finalizarBatalla(ganador: boolean) {
-    let puntajeNuevo=0;
-    if (ganador === true) {
-      
-      // Guardar datos y redirigir a la sala de descanso
+    let puntajeNuevo = 0;
+    if (ganador) {
+      this.resultado = '¡Ganaste!';
+      puntajeNuevo = (this.partida?.puntuacion ?? 0) + 1;
       setTimeout(() => {
-        console.log('Guardando datos de batalla');
-        alert("Ganaste rey!");
-        //HACER UN PATCH DEL PUNTAJE
-        puntajeNuevo=this.partida?.puntuacion!+1;
-        this.ps.actualizarPuntaje(this.partida?.id!,puntajeNuevo).subscribe(
+        this.ps.actualizarPuntaje(this.partida?.id!, puntajeNuevo).subscribe(
           {
             next: (response) => {
               console.log('Puntaje actualizado:', response);
+              window.location.reload();
             },
             error: (error: Error) => {
               console.error('Error al actualizar el puntaje:', error);
             }
           }
         );
-        window.location.reload();
-      }, 3000)
+        alert("Has ganado la batalla!");
+      }, 3000);
     } else {
-      this.resultado = 'Perdiste rey';
-      alert(this.resultado);
+      this.resultado = 'Perdiste la batalla';
       setTimeout(() => {
-        this.ps.eliminarPartida(this.partida?.id!)
-        this.router.navigate(['/menu'])
-        , 3000
-      })
+        alert("Has perdido la batalla!");
+        this.ps.eliminarPartida(this.partida?.id!).subscribe(() => {
+          this.router.navigate(['/menu']); // Redirige sin recargar
+        });
+      }, 3000);
     }
   }
 }

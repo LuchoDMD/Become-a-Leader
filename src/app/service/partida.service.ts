@@ -29,7 +29,6 @@ export class PartidaService {
   actualizarPuntaje(id: string, puntuacion: number): Observable<any> {
   return this.http.patch(`${this.urlBase}/${id}`, { puntuacion: puntuacion });
 }
-
 }
 
 

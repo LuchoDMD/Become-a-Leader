@@ -42,7 +42,7 @@
       "id": "55c2",
       "fecha_inicio": "2024-11-11T05:37:10.955Z",
       "fecha_fin": "2024-11-11T05:37:10.955Z",
-      "puntuacion": 1,
+      "puntuacion": 4,
       "personaje": {
         "id": "55c2",
         "nombre": "Jose",
@@ -1723,7 +1723,7 @@
       ]
     },
     {
-      "id": 604,
+      "id": "604",
       "especie": "eelektross",
       "tipos": [
         "electric"
@@ -1778,7 +1778,7 @@
       ]
     },
     {
-      "id": 365,
+      "id": "365",
       "especie": "walrein",
       "tipos": [
         "ice",
@@ -1834,7 +1834,7 @@
       ]
     },
     {
-      "id": 614,
+      "id": "614",
       "especie": "beartic",
       "tipos": [
         "ice"
@@ -1889,7 +1889,7 @@
       ]
     },
     {
-      "id": 124,
+      "id": "124",
       "especie": "jynx",
       "tipos": [
         "ice",
@@ -1945,7 +1945,7 @@
       ]
     },
     {
-      "id": 471,
+      "id": "471",
       "especie": "glaceon",
       "tipos": [
         "ice"
@@ -2000,7 +2000,7 @@
       ]
     },
     {
-      "id": 362,
+      "id": "362",
       "especie": "glalie",
       "tipos": [
         "ice"
@@ -2055,7 +2055,7 @@
       ]
     },
     {
-      "id": 473,
+      "id": "473",
       "especie": "mamoswine",
       "tipos": [
         "ice",
@@ -2111,7 +2111,7 @@
       ]
     },
     {
-      "id": 68,
+      "id": "68",
       "especie": "machamp",
       "tipos": [
         "fighting"
@@ -2166,7 +2166,7 @@
       ]
     },
     {
-      "id": 107,
+      "id": "107",
       "especie": "hitmonchan",
       "tipos": [
         "fighting"
@@ -2221,7 +2221,7 @@
       ]
     },
     {
-      "id": 448,
+      "id": "448",
       "especie": "lucario",
       "tipos": [
         "fighting",
@@ -2277,7 +2277,7 @@
       ]
     },
     {
-      "id": 237,
+      "id": "237",
       "especie": "hitmontop",
       "tipos": [
         "fighting"
@@ -2332,7 +2332,7 @@
       ]
     },
     {
-      "id": 538,
+      "id": "538",
       "especie": "throh",
       "tipos": [
         "fighting"
@@ -2387,7 +2387,7 @@
       ]
     },
     {
-      "id": 308,
+      "id": "308",
       "especie": "medicham",
       "tipos": [
         "fighting",
@@ -2443,7 +2443,7 @@
       ]
     },
     {
-      "id": 24,
+      "id": "24",
       "especie": "arbok",
       "tipos": [
         "poison"
@@ -2498,7 +2498,7 @@
       ]
     },
     {
-      "id": 317,
+      "id": "317",
       "especie": "swalot",
       "tipos": [
         "poison"
@@ -2553,7 +2553,7 @@
       ]
     },
     {
-      "id": 336,
+      "id": "336",
       "especie": "seviper",
       "tipos": [
         "poison"
@@ -2608,7 +2608,7 @@
       ]
     },
     {
-      "id": 169,
+      "id": "169",
       "especie": "crobat",
       "tipos": [
         "poison",
@@ -2664,7 +2664,7 @@
       ]
     },
     {
-      "id": 454,
+      "id": "454",
       "especie": "toxicroak",
       "tipos": [
         "poison",
@@ -2720,7 +2720,7 @@
       ]
     },
     {
-      "id": 452,
+      "id": "452",
       "especie": "drapion",
       "tipos": [
         "poison",
@@ -2776,7 +2776,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": "31",
       "especie": "nidoqueen",
       "tipos": [
         "poison",
@@ -2832,7 +2832,7 @@
       ]
     },
     {
-      "id": 537,
+      "id": "537",
       "especie": "seismitoad",
       "tipos": [
         "water",
@@ -2888,7 +2888,7 @@
       ]
     },
     {
-      "id": 530,
+      "id": "530",
       "especie": "excadrill",
       "tipos": [
         "ground",
@@ -2944,7 +2944,7 @@
       ]
     },
     {
-      "id": 232,
+      "id": "232",
       "especie": "donphan",
       "tipos": [
         "ground"
@@ -2999,7 +2999,7 @@
       ]
     },
     {
-      "id": 472,
+      "id": "472",
       "especie": "gliscor",
       "tipos": [
         "ground",
@@ -3055,7 +3055,7 @@
       ]
     },
     {
-      "id": 553,
+      "id": "553",
       "especie": "krookodile",
       "tipos": [
         "ground",
@@ -3111,7 +3111,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": "18",
       "especie": "pidgeot",
       "tipos": [
         "normal",
@@ -3167,7 +3167,7 @@
       ]
     },
     {
-      "id": 628,
+      "id": "628",
       "especie": "braviary",
       "tipos": [
         "normal",
@@ -3223,7 +3223,7 @@
       ]
     },
     {
-      "id": 279,
+      "id": "279",
       "especie": "pelipper",
       "tipos": [
         "water",
@@ -3279,7 +3279,7 @@
       ]
     },
     {
-      "id": 277,
+      "id": "277",
       "especie": "swellow",
       "tipos": [
         "normal",
@@ -3335,7 +3335,7 @@
       ]
     },
     {
-      "id": 567,
+      "id": "567",
       "especie": "archeops",
       "tipos": [
         "rock",
@@ -3391,7 +3391,7 @@
       ]
     },
     {
-      "id": 398,
+      "id": "398",
       "especie": "staraptor",
       "tipos": [
         "normal",
@@ -3447,7 +3447,7 @@
       ]
     },
     {
-      "id": 65,
+      "id": "65",
       "especie": "alakazam",
       "tipos": [
         "psychic"
@@ -3502,7 +3502,7 @@
       ]
     },
     {
-      "id": 196,
+      "id": "196",
       "especie": "espeon",
       "tipos": [
         "psychic"
@@ -3557,7 +3557,7 @@
       ]
     },
     {
-      "id": 80,
+      "id": "80",
       "especie": "slowbro",
       "tipos": [
         "water",
@@ -3613,7 +3613,7 @@
       ]
     },
     {
-      "id": 475,
+      "id": "475",
       "especie": "gallade",
       "tipos": [
         "psychic",
@@ -3669,7 +3669,7 @@
       ]
     },
     {
-      "id": 437,
+      "id": "437",
       "especie": "bronzong",
       "tipos": [
         "steel",
@@ -3725,7 +3725,7 @@
       ]
     },
     {
-      "id": 348,
+      "id": "348",
       "especie": "armaldo",
       "tipos": [
         "rock",
@@ -3781,7 +3781,7 @@
       ]
     },
     {
-      "id": 416,
+      "id": "416",
       "especie": "vespiquen",
       "tipos": [
         "bug",
@@ -3837,7 +3837,7 @@
       ]
     },
     {
-      "id": 214,
+      "id": "214",
       "especie": "heracross",
       "tipos": [
         "bug",
@@ -3893,7 +3893,7 @@
       ]
     },
     {
-      "id": 637,
+      "id": "637",
       "especie": "volcarona",
       "tipos": [
         "bug",
@@ -3949,7 +3949,7 @@
       ]
     },
     {
-      "id": 291,
+      "id": "291",
       "especie": "ninjask",
       "tipos": [
         "bug",
@@ -4005,7 +4005,7 @@
       ]
     },
     {
-      "id": 127,
+      "id": "127",
       "especie": "pinsir",
       "tipos": [
         "bug"
@@ -4060,7 +4060,7 @@
       ]
     },
     {
-      "id": 464,
+      "id": "464",
       "especie": "rhyperior",
       "tipos": [
         "ground",
@@ -4116,7 +4116,7 @@
       ]
     },
     {
-      "id": 565,
+      "id": "565",
       "especie": "carracosta",
       "tipos": [
         "water",
@@ -4172,7 +4172,7 @@
       ]
     },
     {
-      "id": 142,
+      "id": "142",
       "especie": "aerodactyl",
       "tipos": [
         "rock",
@@ -4228,7 +4228,7 @@
       ]
     },
     {
-      "id": 338,
+      "id": "338",
       "especie": "solrock",
       "tipos": [
         "rock",
@@ -4284,7 +4284,7 @@
       ]
     },
     {
-      "id": 526,
+      "id": "526",
       "especie": "gigalith",
       "tipos": [
         "rock"
@@ -4339,7 +4339,7 @@
       ]
     },
     {
-      "id": 409,
+      "id": "409",
       "especie": "rampardos",
       "tipos": [
         "rock"
@@ -4394,7 +4394,7 @@
       ]
     },
     {
-      "id": 94,
+      "id": "94",
       "especie": "gengar",
       "tipos": [
         "ghost",
@@ -4450,7 +4450,7 @@
       ]
     },
     {
-      "id": 356,
+      "id": "356",
       "especie": "dusclops",
       "tipos": [
         "ghost"
@@ -4505,7 +4505,7 @@
       ]
     },
     {
-      "id": 609,
+      "id": "609",
       "especie": "chandelure",
       "tipos": [
         "ghost",
@@ -4561,7 +4561,7 @@
       ]
     },
     {
-      "id": 623,
+      "id": "623",
       "especie": "golurk",
       "tipos": [
         "ground",
@@ -4617,7 +4617,7 @@
       ]
     },
     {
-      "id": 442,
+      "id": "442",
       "especie": "spiritomb",
       "tipos": [
         "ghost",
@@ -4673,7 +4673,7 @@
       ]
     },
     {
-      "id": 478,
+      "id": "478",
       "especie": "froslass",
       "tipos": [
         "ice",
@@ -4729,7 +4729,7 @@
       ]
     },
     {
-      "id": 149,
+      "id": "149",
       "especie": "dragonite",
       "tipos": [
         "dragon",
@@ -4785,7 +4785,7 @@
       ]
     },
     {
-      "id": 230,
+      "id": "230",
       "especie": "kingdra",
       "tipos": [
         "water",
@@ -4841,7 +4841,7 @@
       ]
     },
     {
-      "id": 330,
+      "id": "330",
       "especie": "flygon",
       "tipos": [
         "ground",
@@ -4897,7 +4897,7 @@
       ]
     },
     {
-      "id": 373,
+      "id": "373",
       "especie": "salamence",
       "tipos": [
         "dragon",
@@ -4953,7 +4953,7 @@
       ]
     },
     {
-      "id": 445,
+      "id": "445",
       "especie": "garchomp",
       "tipos": [
         "dragon",
@@ -5009,7 +5009,7 @@
       ]
     },
     {
-      "id": 612,
+      "id": "612",
       "especie": "haxorus",
       "tipos": [
         "dragon"
@@ -5064,7 +5064,7 @@
       ]
     },
     {
-      "id": 462,
+      "id": "462",
       "especie": "magnezone",
       "tipos": [
         "electric",
@@ -5120,7 +5120,7 @@
       ]
     },
     {
-      "id": 208,
+      "id": "208",
       "especie": "steelix",
       "tipos": [
         "steel",
@@ -5176,7 +5176,7 @@
       ]
     },
     {
-      "id": 227,
+      "id": "227",
       "especie": "skarmory",
       "tipos": [
         "steel",
@@ -5232,7 +5232,7 @@
       ]
     },
     {
-      "id": 306,
+      "id": "306",
       "especie": "aggron",
       "tipos": [
         "steel",
@@ -5288,7 +5288,7 @@
       ]
     },
     {
-      "id": 376,
+      "id": "376",
       "especie": "metagross",
       "tipos": [
         "steel",
@@ -5344,7 +5344,7 @@
       ]
     },
     {
-      "id": 411,
+      "id": "411",
       "especie": "bastiodon",
       "tipos": [
         "rock",
@@ -5400,7 +5400,7 @@
       ]
     },
     {
-      "id": 197,
+      "id": "197",
       "especie": "umbreon",
       "tipos": [
         "dark"
@@ -5455,7 +5455,7 @@
       ]
     },
     {
-      "id": 248,
+      "id": "248",
       "especie": "tyranitar",
       "tipos": [
         "rock",
@@ -5511,7 +5511,7 @@
       ]
     },
     {
-      "id": 430,
+      "id": "430",
       "especie": "honchkrow",
       "tipos": [
         "dark",
@@ -5567,7 +5567,7 @@
       ]
     },
     {
-      "id": 635,
+      "id": "635",
       "especie": "hydreigon",
       "tipos": [
         "dark",
@@ -5623,7 +5623,7 @@
       ]
     },
     {
-      "id": 461,
+      "id": "461",
       "especie": "weavile",
       "tipos": [
         "dark",
@@ -5679,7 +5679,7 @@
       ]
     },
     {
-      "id": 115,
+      "id": "115",
       "especie": "kangaskhan",
       "tipos": [
         "normal"
@@ -5734,7 +5734,7 @@
       ]
     },
     {
-      "id": 217,
+      "id": "217",
       "especie": "ursaring",
       "tipos": [
         "normal"
@@ -5789,7 +5789,7 @@
       ]
     },
     {
-      "id": 128,
+      "id": "128",
       "especie": "tauros",
       "tipos": [
         "normal"
@@ -5844,7 +5844,7 @@
       ]
     },
     {
-      "id": 143,
+      "id": "143",
       "especie": "snorlax",
       "tipos": [
         "normal"
@@ -5899,7 +5899,7 @@
       ]
     },
     {
-      "id": 241,
+      "id": "241",
       "especie": "miltank",
       "tipos": [
         "normal"
@@ -5954,7 +5954,7 @@
       ]
     },
     {
-      "id": 474,
+      "id": "474",
       "especie": "porygon-z",
       "tipos": [
         "normal"
@@ -6009,7 +6009,7 @@
       ]
     },
     {
-      "id": 210,
+      "id": "210",
       "especie": "granbull",
       "tipos": [
         "fairy"
@@ -6064,7 +6064,7 @@
       ]
     },
     {
-      "id": 468,
+      "id": "468",
       "especie": "togekiss",
       "tipos": [
         "fairy",
@@ -6120,7 +6120,7 @@
       ]
     },
     {
-      "id": 122,
+      "id": "122",
       "especie": "mr-mime",
       "tipos": [
         "psychic",
@@ -6176,7 +6176,7 @@
       ]
     },
     {
-      "id": 288,
+      "id": "288",
       "especie": "vigoroth",
       "tipos": [
         "normal"
@@ -6191,10 +6191,47 @@
         "sdef": 261,
         "spd": 324
       },
-      "movimientos": []
+      "movimientos": [
+        {
+          "nombre": "body-slam",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 85,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "drain-punch",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rock-slide",
+          "tipo": "rock",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 90,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ]
     },
     {
-      "id": 282,
+      "id": "282",
       "especie": "gardevoir",
       "tipos": [
         "psychic",
@@ -6250,7 +6287,7 @@
       ]
     },
     {
-      "id": 303,
+      "id": "303",
       "especie": "mawile",
       "tipos": [
         "steel",
@@ -6306,7 +6343,7 @@
       ]
     },
     {
-      "id": 184,
+      "id": "184",
       "especie": "azumarill",
       "tipos": [
         "water",
@@ -6362,7 +6399,7 @@
       ]
     },
     {
-      "id": 625,
+      "id": "625",
       "especie": "bisharp",
       "tipos": [
         "dark",

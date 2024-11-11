@@ -1,29 +1,40 @@
-<div *ngIf="pokemonJugador && pokemonRival">
-    <h2>Batalla Pokémon</h2>
+<div *ngIf="pokemonJugador && pokemonRival" class="batalla-container">
+  <h2 class="titulo-batalla">Batalla Pokémon</h2>
 
-    <div>
+  <div class="batalla">
+    <!-- Recuadro del Jugador -->
+    <div class="pokemon-container jugador">
       <h3>Jugador</h3>
       <p>{{ pokemonJugador.especie }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
-      <ul>
-        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)">
+      <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p> <!-- Cantidad de Pokémon restantes -->
+      <ul class="movimientos">
+        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)" class="boton-movimiento">
           {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
         </li>
       </ul>
     </div>
 
-    <div>
+    <!-- VS central -->
+    <div class="vs">VS.</div>
+
+    <!-- Recuadro del Rival -->
+    <div class="pokemon-container rival">
       <h3>Rival</h3>
       <p>{{ pokemonRival.especie }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
+      <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p> <!-- Cantidad de Pokémon restantes -->
     </div>
   </div>
 
-  <div *ngIf="resultado">
-    <p>Resultado de la batalla: {{ resultado }}</p>
+  <!-- Mensaje de batalla -->
+  <div *ngIf="mensajeBatalla" class="mensaje-batalla">
+    <p>{{ mensajeBatalla }}</p>
   </div>
 
-  <!-- Cuadro de texto para mostrar los mensajes de batalla -->
-<div class="mensaje-batalla">
-  <p>{{ mensajeBatalla }}</p>
+  <!-- Resultado final -->
+  <div *ngIf="resultado" class="resultado-batalla">
+    <p>{{ resultado }}</p>
+  </div>
 </div>
+
 
 
