@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { Partida } from '../../interface/partida.js';
 import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-batalla',
@@ -41,7 +42,9 @@ export class BatallaComponent {
     this.ps.getPartidaByUserId(this.idPartida).subscribe({
       next: (partida) => {
         this.partida = partida;
+        console.log('Partida obtenida:', partida);
         this.jugador = partida?.personaje;
+        console.log('Entrenador obtenido:', this.jugador);
         this.iniciarBatalla();
       },
       error: (error) => {
@@ -52,9 +55,8 @@ export class BatallaComponent {
 
   iniciarBatalla() {
         console.log("Iniciando batalla");
-    // Asumimos que el primer Pokémon del entrenador es el que luchará
-        /*this.cargarPokemonAleatorioEntrenador();*/
         this.pokemonJugador = this.jugador?.equipo[0];
+        console.log("Pokemon jugador:", this.pokemonJugador);
         this.generarRival();
         this.movimientosJugador=this.jugador?.equipo[0].movimientos!;
 
@@ -67,9 +69,11 @@ export class BatallaComponent {
         next: (data) => {
           while(this.rival.length<6)
           {
-            this.rival.push(data[Math.floor(Math.random() * data.length) + 1]);
+            this.rival.push(data[Math.floor(Math.random() * (data.length-1)) + 1]);
           }
           this.pokemonRival = this.rival[0];
+          this.movimientosRival=this.pokemonRival.movimientos!;
+          console.log("Pokemon rival:", this.pokemonRival);
         },
         error: (error :Error) => {
           console.log("Error al cargar rival")
@@ -77,95 +81,115 @@ export class BatallaComponent {
       })
   }
 
-  generarMovimientosRival(data: any): Move[] {
-    console.log("Generando movimientos rival");
-    // Seleccionar movimientos aleatorios del Pokémon rival
-    return data.moves.slice(0, 4).map((move: any) => ({
-      nombre: move.move.name,
-      tipo: 'fighting', // Deberás obtener el tipo real desde la API
-      clase: 'Fisico', // Según sea el caso
-      potencia: 10,
-      precision: 100,
-      pp: 10
-    }));
-  }
-
-
-  inciarRonda(movimientoJugador: Move)
-  {
-    if(this.rival.length>0 && this.jugador?.equipo.length!>0)
-    {
-      this.realizarAtaque(movimientoJugador);
-      if(this.rival[0].vidaActual===0)
-      {
-        this.rival.unshift();
-        console.log(this.rival);
-      }
-      else if(this.jugador?.equipo[0].vidaActual===0)
-      {
-        this.jugador.equipo.unshift();
-      }
-    }
-
-    if(this.rival.length===0)
-    {
-      this.finalizarBatalla(true);
-    }
-    else if(this.jugador?.equipo.length===0)
-    {
-      this.finalizarBatalla(false);
-    }
-
-  }
-
   realizarAtaque(movimientoJugador: Move) {
     // Compara las velocidades y decide el orden de ataque
+    console.log("Equipo jugador:", this.jugador?.equipo);
+    console.log("Equipo rival:", this.rival);
+    console.log("Movimientos jugador:", this.movimientosJugador);
+    console.log("Movimientos rival:", this.movimientosRival);
     if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
       // El Pokémon jugador ataca primero
       console.log("Jugador ataca primero");
       this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!);
+      console.log("Vida rival: "+this.pokemonRival!.vidaActual);
       if (this.pokemonRival!.vidaActual > 0) {
-        setTimeout(() => this.turnoRival(), 2000);
+        setTimeout(() =>{
+          this.turnoRival()
+          if(this.pokemonJugador!.vidaActual<=0){
+            this.pokemonJugador = this.jugador?.equipo[0];
+          console.log("Pokemon jugador:", this.pokemonJugador);
+          console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
+          this.movimientosJugador=this.pokemonJugador?.movimientos!;
+          }
+          console.log("prueba2");
+        }, 2000);
+        
+        console.log("prueba");
+      }
+      else{
+        this.pokemonRival = this.rival[0];
+        console.log("Pokemon rival:", this.pokemonRival);
+        console.log("Movimientos rival:", this.pokemonRival?.movimientos);
+        this.movimientosRival=this.pokemonRival?.movimientos!;
+        if(this.pokemonJugador!.vidaActual<=0){
+          this.pokemonJugador = this.jugador?.equipo[0];
+          console.log("Pokemon jugador:", this.pokemonJugador);
+          console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
+          this.movimientosJugador=this.pokemonJugador?.movimientos!;
+        }
       }
     } else {
       // El Pokémon rival ataca primero
       console.log("Rival ataca primero");
       this.turnoRival();
+      console.log("Vida jugador: "+this.pokemonJugador!.vidaActual);
       if (this.pokemonJugador!.vidaActual > 0) {
-        setTimeout(() => this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!), 2000);
+        setTimeout(() => {
+
+          this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!)
+          if(this.pokemonRival!.vidaActual<=0){
+            this.pokemonRival = this.rival[0];
+            console.log("Pokemon rival:", this.pokemonRival);
+            console.log("Movimientos rival:", this.pokemonRival?.movimientos);
+            this.movimientosRival=this.pokemonRival?.movimientos!;
+          }
+          console.log("prueba2");
+        }, 2000);
+
+        console.log("prueba");
       }
+      else{
+        this.pokemonJugador = this.jugador?.equipo[0];
+        console.log("Pokemon jugador:", this.pokemonJugador);
+        console.log("Movimientos jugador:", this.pokemonJugador?.movimientos);
+        this.movimientosJugador=this.pokemonJugador?.movimientos!;
+        if(this.pokemonRival!.vidaActual<=0){
+          this.pokemonRival = this.rival[0];
+          console.log("Pokemon rival:", this.pokemonRival);
+          console.log("Movimientos rival:", this.pokemonRival?.movimientos);
+          this.movimientosRival=this.pokemonRival?.movimientos!;
+        }
+      }
+
     }
   }
 
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
-    console.log("Realizando ataque");
-    console.log(movimiento.tipo)
+    console.log(atacante.especie+" esta realizando "+movimiento.nombre);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
     const daño = Math.floor(
       ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
     );
     console.log("Daño:", daño);
+    let mensaje = (`${atacante.especie} usó ${movimiento.nombre}.`);
+
+    if (factor > 1) {
+      mensaje += `\n¡Fue supereficaz`;
+    } else if (factor < 1) {
+      mensaje += `\nNo fue muy eficaz...`;
+    }
+
+    this.mostrarMensajeBatalla(mensaje);
     defensor.vidaActual -= daño;
     if (defensor.vidaActual <= 0) {
       defensor.vidaActual = 0;
+      if(this.pokemonJugador===defensor){
+        this.jugador?.equipo.shift();
+        console.log("Jugador se desmayo, Equipo restante del jugador:", this.jugador?.equipo);
+        if(this.jugador?.equipo.length===0){
+          this.finalizarBatalla(false);
+        }
+      }
+      else if(this.pokemonRival===defensor){
+        this.rival.shift();
+        console.log("Rival se desmayo, equipo restante del rival:", this.rival);
+        if(this.rival.length===0){
+          this.finalizarBatalla(true);
+        }
+      }
+      
     }
-
-    // Muestra el mensaje de ataque
-  let mensaje = (`${atacante.especie} usó ${movimiento.nombre}.`);
-
-  if (factor > 1) {
-    mensaje += `\n¡Fue supereficaz`;
-  } else if (factor < 1) {
-    mensaje += `\nNo fue muy eficaz...`;
-  }
-
-  this.mostrarMensajeBatalla(mensaje);
 }
-
-comprobarEquipo(){
-
-}
-
 
 mostrarMensajeBatalla(mensaje: string) {
   this.mensajeBatalla = mensaje;
@@ -184,20 +208,6 @@ mostrarMensajeBatalla(mensaje: string) {
     this.calcularAtaque(movimientoAleatorio, this.pokemonRival!, this.pokemonJugador!);
   }
 
-
-  /*realizarAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
-    console.log("Realizando ataque");
-    const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
-    const daño = Math.floor(
-      ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
-    );
-    console.log("Dano:", daño);
-    defensor.vidaActual -= daño;
-    if (defensor.vidaActual <= 0) {
-      defensor.vidaActual = 0;
-      this.finalizarBatalla(atacante);
-    }
-  }*/
 
   calcularEfectividad(tipoAtaque: string, tiposDefensor: string[]): number {
     console.log("Calculando efectividad");
@@ -221,6 +231,53 @@ mostrarMensajeBatalla(mensaje: string) {
   return efectividadTotal;
   }
 
+
+  finalizarBatalla(ganador: boolean) {
+    let puntajeNuevo=0;
+    if (ganador === true) {
+      
+      // Guardar datos y redirigir a la sala de descanso
+      setTimeout(() => {
+        console.log('Guardando datos de batalla');
+        alert("Ganaste rey!");
+        //HACER UN PATCH DEL PUNTAJE
+        puntajeNuevo=this.partida?.puntuacion!+1;
+        this.ps.actualizarPuntaje(this.partida?.id!,puntajeNuevo).subscribe(
+          {
+            next: (response) => {
+              console.log('Puntaje actualizado:', response);
+            },
+            error: (error: Error) => {
+              console.error('Error al actualizar el puntaje:', error);
+            }
+          }
+        );
+        window.location.reload();
+      }, 3000)
+    } else {
+      this.resultado = 'Perdiste rey';
+      alert(this.resultado);
+      setTimeout(() => {
+        this.ps.eliminarPartida(this.partida?.id!)
+        this.router.navigate(['/menu'])
+        , 3000
+      })
+    }
+  }
+}
+  /*realizarAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
+    console.log("Realizando ataque");
+    const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
+    const daño = Math.floor(
+      ((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor
+    );
+    console.log("Dano:", daño);
+    defensor.vidaActual -= daño;
+    if (defensor.vidaActual <= 0) {
+      defensor.vidaActual = 0;
+      this.finalizarBatalla(atacante);
+    }
+  }*/
   /*
   async cambiarPokemon() {
     // Esperamos a que la promesa se resuelva y obtenga el array de Pokémon
@@ -239,29 +296,6 @@ mostrarMensajeBatalla(mensaje: string) {
 }
 */
 
-  finalizarBatalla(ganador: boolean) {
-    let puntajeNuevo=0;
-    if (ganador === true) {
-      this.resultado = 'victoria';
-      // Guardar datos y redirigir a la sala de descanso
-      setTimeout(() => {
-        console.log('Guardando datos de batalla');
-        //HACER UN PATCH DEL PUNTAJE
-        puntajeNuevo=this.partida?.puntuacion!+1;
-        this.ps.actualizarPuntaje(this.partida?.id!,puntajeNuevo);
-        window.location.reload();
-      }, 3000)
-    } else {
-      this.resultado = 'Perdiste rey';
-      alert(this.resultado);
-      setTimeout(() => {
-        this.ps.eliminarPartida(this.partida?.id!)
-        this.router.navigate(['/menu'])
-        , 3000
-      })
-      // Redirigir a la pantalla de gameover
-    }
-  }
 /*
   cargarPokemonAleatorioEntrenador() {
     console.log("Cargando pokemon aleatorio");
@@ -297,4 +331,42 @@ mostrarMensajeBatalla(mensaje: string) {
   }
 */
 
-}
+  /*generarMovimientosRival(data: any): Move[] {
+    console.log("Generando movimientos rival");
+    // Seleccionar movimientos aleatorios del Pokémon rival
+    return data.moves.slice(0, 4).map((move: any) => ({
+      nombre: move.move.name,
+      tipo: 'fighting', // Deberás obtener el tipo real desde la API
+      clase: 'Fisico', // Según sea el caso
+      potencia: 10,
+      precision: 100,
+      pp: 10
+    }));
+  }*/
+
+     /*inciarRonda(movimientoJugador: Move)
+  {
+    if(this.rival.length>0 && this.jugador?.equipo.length!>0)
+    {
+      this.realizarAtaque(movimientoJugador);
+      if(this.rival[0].vidaActual===0)
+      {
+        this.rival.unshift();
+        console.log(this.rival);
+      }
+      else if(this.jugador?.equipo[0].vidaActual===0)
+      {
+        this.jugador.equipo.unshift();
+      }
+    }
+
+    if(this.rival.length===0)
+    {
+      this.finalizarBatalla(true);
+    }
+    else if(this.jugador?.equipo.length===0)
+    {
+      this.finalizarBatalla(false);
+    }
+
+  }*/

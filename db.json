@@ -23,17 +23,29 @@
       "email": "prueba@gmail.com",
       "nick": "Hola",
       "password": "sdasdasdas"
+    },
+    {
+      "id": "e176",
+      "email": "gonza@gmail.com",
+      "nick": "gonza",
+      "password": "gonza123"
+    },
+    {
+      "id": "55c2",
+      "email": "nacho@gmail.com",
+      "nick": "reputo",
+      "password": "abcd1234"
     }
   ],
   "partidas": [
     {
-      "id": "5504",
-      "fecha_inicio": "2024-11-11T02:39:08.838Z",
-      "fecha_fin": "2024-11-11T02:39:08.838Z",
-      "puntuacion": 0,
+      "id": "55c2",
+      "fecha_inicio": "2024-11-11T05:37:10.955Z",
+      "fecha_fin": "2024-11-11T05:37:10.955Z",
+      "puntuacion": 1,
       "personaje": {
-        "id": "5504",
-        "nombre": "AgustinaTrola",
+        "id": "55c2",
+        "nombre": "Jose",
         "tipo": "water",
         "equipo": [
           {
