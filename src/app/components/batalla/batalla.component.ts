@@ -93,7 +93,7 @@ export class BatallaComponent {
       }
     }
   }
-  
+
   realizarAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
     console.log("Realizando ataque");
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
@@ -127,16 +127,16 @@ mostrarMensajeBatalla(mensaje: string) {
 
   turnoRival() {
     if (!this.pokemonRival || !this.pokemonJugador) return;
-  
+
     // Selecciona un movimiento aleatorio del rival
     const movimientoAleatorio = this.movimientosRival[
       Math.floor(Math.random() * this.movimientosRival.length)
     ];
-  
+
     // Realiza el ataque del rival al jugador
     this.realizarAtaque(movimientoAleatorio, this.pokemonRival!, this.pokemonJugador!);
   }
-  
+
 
   /*realizarAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
     console.log("Realizando ataque");
@@ -151,7 +151,7 @@ mostrarMensajeBatalla(mensaje: string) {
       this.finalizarBatalla(atacante);
     }
   }*/
-  
+
   calcularEfectividad(tipoAtaque: string, tiposDefensor: string[]): number {
     console.log("Calculando efectividad");
     console.log("Tipo ataque:", tipoAtaque);
@@ -176,7 +176,7 @@ mostrarMensajeBatalla(mensaje: string) {
 
   async cambiarPokemon() {
     // Esperamos a que la promesa se resuelva y obtenga el array de Pokémon
-    const equipo = await this.teamService.getPokemons().toPromise(); 
+    const equipo = await this.teamService.getPokemons().toPromise();
     if (equipo) {
       const siguientePokemon = equipo.find((poke) => poke.vidaActual > 0);
       if (siguientePokemon) {
@@ -205,16 +205,16 @@ mostrarMensajeBatalla(mensaje: string) {
       setTimeout(() => {
         this.router.navigate(['/menu']), 3000
       })
-      
+
       // Redirigir a la pantalla de gameover
     }
   }
-  
+
   cargarPokemonAleatorioEntrenador() {
     console.log("Cargando pokemon aleatorio");
     // Genera un ID aleatorio entre 1 y 151 (para los primeros Pokémon como ejemplo)
     const randomId = Math.floor(Math.random() * 151) + 1;
-    
+
     this.pokeapi.getPokemonByID(randomId.toString()).subscribe(pokemonData => {
       // Asigna los datos del Pokémon al equipo del entrenador
       this.pokemonJugador = {
