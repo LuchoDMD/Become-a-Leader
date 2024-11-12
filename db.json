@@ -16,12 +16,12 @@
   "partidas": [
     {
       "id": "e385",
-      "fecha_inicio": "2024-11-12T13:29:51.044Z",
-      "fecha_fin": "2024-11-12T13:29:51.044Z",
+      "fecha_inicio": "2024-11-12T21:38:11.131Z",
+      "fecha_fin": "2024-11-12T21:38:11.131Z",
       "puntuacion": 0,
       "personaje": {
         "id": "e385",
-        "nombre": "3",
+        "nombre": "2",
         "tipo": "psychic",
         "equipo": [
           {

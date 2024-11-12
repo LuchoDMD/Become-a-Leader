@@ -36,6 +36,11 @@ export class BatallaComponent {
   resultado: string = '';
   UserService = inject(UserService);
 
+
+  //Agregar sprites
+  pokemonJugadorSprite:string='';
+  pokemonRivalSprite:string='';
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -52,6 +57,11 @@ export class BatallaComponent {
         console.error('Error al obtener la partida', error);
       }
     })
+  }
+
+  obtenerClaseTipoMovimiento(tipo: string): string {
+    console.log(tipo);
+    return tipo.toLocaleLowerCase();
   }
 
   iniciarBatalla() {
@@ -88,16 +98,16 @@ export class BatallaComponent {
     if (!this.pokemonJugador || !this.pokemonRival || this.pokemonJugador.vidaActual <= 0 || this.pokemonRival.vidaActual <= 0) {
       return;
     }
-  
+
     console.log("Equipo jugador:", this.jugador?.equipo);
     console.log("Equipo rival:", this.rival);
-  
+
     let cambiarPokemonJugador = false;
     let cambiarPokemonRival = false;
-  
+
     if (this.pokemonJugador.estadisticas.spd >= this.pokemonRival.estadisticas.spd) {
       this.calcularAtaque(movimientoJugador, this.pokemonJugador, this.pokemonRival);
-  
+
       if (this.pokemonRival.vidaActual <= 0) {
         console.log(`${this.pokemonRival.especie} se ha desmayado!`);
         this.removerPokemonRival();
@@ -106,9 +116,9 @@ export class BatallaComponent {
       if (this.pokemonJugador.vidaActual <= 0) {
         console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
         this.removerPokemonJugador();
-          cambiarPokemonJugador = true; 
+          cambiarPokemonJugador = true;
       }
-  
+
     if (cambiarPokemonRival || cambiarPokemonJugador) {
       setTimeout(() => {
         if (cambiarPokemonRival) {
@@ -131,7 +141,7 @@ export class BatallaComponent {
     }
     } else {
       this.turnoRival();
-  
+
       if (this.pokemonJugador.vidaActual <= 0) {
         console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
         this.removerPokemonJugador();
@@ -143,7 +153,7 @@ export class BatallaComponent {
        this.removerPokemonRival();
         cambiarPokemonRival = true;
       }
-  
+
        if (cambiarPokemonRival || cambiarPokemonJugador) {
         setTimeout(() => {
           if (cambiarPokemonRival) {
@@ -173,7 +183,7 @@ export class BatallaComponent {
     let defensor: Pokemon;
     let movimientoAtacante: Move;
     let chequearTurnoDefensor: string;
-  
+
     // Comparar las velocidades
     if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
       // Si el jugador es igual o más rápido que el rival
@@ -188,13 +198,13 @@ export class BatallaComponent {
       chequearTurnoDefensor = this.pokemonJugador!.id;
       movimientoAtacante = this.generarMovimientoRival();  // Generamos un movimiento aleatorio para el rival
     }
-  
+
     // Realizar el ataque
     this.realizarAtaque2(movimientoAtacante, atacante, defensor);
-  
+
     // Verificar si el defensor ha sido derrotado
     this.verificarCambio(defensor);
-  
+
     // Si el defensor sigue en pie, realizar el siguiente ataque
     if (chequearTurnoDefensor === defensor.id) {
       // Si es el jugador, usa su movimiento seleccionado
@@ -203,15 +213,15 @@ export class BatallaComponent {
       } else {
         movimientoAtacante = this.generarMovimientoRival();
       }
-  
+
       // Realizar el siguiente ataque
       this.realizarAtaque2(movimientoAtacante, defensor, atacante);
-  
+
       // Verificar si el atacante ha sido derrotado
       this.verificarCambio(atacante);
     }
   }
-  
+
 
   generarMovimientoRival(): Move {
     const movimientosPosibles = this.pokemonRival?.movimientos || [];
@@ -220,25 +230,25 @@ export class BatallaComponent {
   }
   realizarAtaque2(movimiento: Move, atacante: Pokemon, defensor: Pokemon): void {
     let danio = 0;
-  
+
     // El cálculo del daño dependerá de la clase del movimiento (físico, especial, estado)
     if (movimiento.clase === 'Fisico') {
       danio = Math.max(atacante.estadisticas.atk - defensor.estadisticas.def, 1);
     } else if (movimiento.clase === 'Especial') {
       danio = Math.max(atacante.estadisticas.satk - defensor.estadisticas.sdef, 1);
     }
-  
+
     // Aplicamos el daño
     defensor.vidaActual = Math.max(defensor.vidaActual - danio, 0);
-  
+
     // Mostrar el daño en consola o UI
     console.log(`${atacante.especie} atacó a ${defensor.especie} con ${movimiento.nombre} causando ${danio} de daño.`);
   }
-  
+
   verificarCambio(defensor: Pokemon): void {
     if (defensor.vidaActual <= 0) {
       console.log(`${defensor.especie} ha sido derrotado!`);
-  
+
       // Eliminar al defensor de su respectivo equipo (jugador o rival)
       if (defensor === this.pokemonJugador) {
         this.jugador?.equipo.shift();
@@ -249,8 +259,8 @@ export class BatallaComponent {
       }
     }
   }
-  
-/*-------------------------------------------------------------------------------------------------------------------------*/ 
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
     console.log(`${atacante.especie} está realizando ${movimiento.nombre}`);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
@@ -258,9 +268,9 @@ export class BatallaComponent {
     defensor.vidaActual -= daño;
     const mensajeAtaque=`${this.transformarPrimeraLetra(atacante.especie)} usó ${this.transformarPrimeraLetra(movimiento.nombre)}. ` +
       (factor > 1 ? '¡Fue supereficaz!' : (factor === 0 ? 'No tuvo ningún efecto...' : (factor < 1 ? 'No fue muy eficaz...' : '')))
-    
+
     this.mostrarMensajeBatalla(mensajeAtaque);
-    
+
     if (defensor.vidaActual < 0) {
       this.mostrarMensajeBatalla(mensajeAtaque + ` ${this.transformarPrimeraLetra(defensor.especie)} se ha desmayado!`);
     defensor.vidaActual = 0;
@@ -288,7 +298,7 @@ removerPokemonJugador() {
 
 removerPokemonRival() {
   if (this.rival && this.rival.length > 0) {
-    this.rival.shift(); 
+    this.rival.shift();
     if (this.rival.length > 0) {
       this.pokemonRival = this.rival[0];
       this.pokemonRival.vidaActual = this.pokemonRival.estadisticas.hp;
@@ -345,7 +355,7 @@ cambiarPokemonRival() {
     console.log("Calculando efectividad");
     console.log("Tipo ataque:", tipoAtaque);
     let efectividadTotal = 1;
-    
+
     const tipoAtacante = tipos.find(t => t.name === tipoAtaque.toLowerCase());
     if (!tipoAtacante) return efectividadTotal;
 
