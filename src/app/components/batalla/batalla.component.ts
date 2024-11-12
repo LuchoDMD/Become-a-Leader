@@ -71,7 +71,9 @@ export class BatallaComponent {
         next: (data) => {
           while(this.rival.length<6)
           {
-            this.rival.push(data[Math.floor(Math.random() * (data.length-1)) + 1]);
+            const pokemon = data[Math.floor(Math.random() * (data.length-1)) + 1];
+            pokemon.idEntrenador = "rival";
+            this.rival.push(pokemon);
           }
           this.pokemonRival = this.rival[0];
           this.movimientosRival=this.pokemonRival.movimientos!;
@@ -166,7 +168,90 @@ export class BatallaComponent {
       }
     }
   }
+/*---------------------------------------------------------------------------------------------------------------------------------------- */
+  batalla(movimientoSeleccionado: Move): void {
+    let atacante: Pokemon;
+    let defensor: Pokemon;
+    let movimientoAtacante: Move;
+    let chequearTurnoDefensor: string;
+  
+    // Comparar las velocidades
+    if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
+      // Si el jugador es igual o más rápido que el rival
+      atacante = this.pokemonJugador!;
+      defensor = this.pokemonRival!;
+      chequearTurnoDefensor = this.pokemonRival!.id;
+      movimientoAtacante = movimientoSeleccionado;
+    } else {
+      // Si el rival es más rápido
+      atacante = this.pokemonRival!;
+      defensor = this.pokemonJugador!;
+      chequearTurnoDefensor = this.pokemonJugador!.id;
+      movimientoAtacante = this.generarMovimientoRival();  // Generamos un movimiento aleatorio para el rival
+    }
+  
+    // Realizar el ataque
+    this.realizarAtaque2(movimientoAtacante, atacante, defensor);
+  
+    // Verificar si el defensor ha sido derrotado
+    this.verificarCambio(defensor);
+  
+    // Si el defensor sigue en pie, realizar el siguiente ataque
+    if (chequearTurnoDefensor === defensor.id) {
+      // Si es el jugador, usa su movimiento seleccionado
+      if (defensor === this.pokemonJugador) {
+        movimientoAtacante = movimientoSeleccionado;
+      } else {
+        movimientoAtacante = this.generarMovimientoRival();
+      }
+  
+      // Realizar el siguiente ataque
+      this.realizarAtaque2(movimientoAtacante, defensor, atacante);
+  
+      // Verificar si el atacante ha sido derrotado
+      this.verificarCambio(atacante);
+    }
+  }
+  
 
+  generarMovimientoRival(): Move {
+    const movimientosPosibles = this.pokemonRival?.movimientos || [];
+    const indiceAleatorio = Math.floor(Math.random() * movimientosPosibles.length);
+    return movimientosPosibles[indiceAleatorio];
+  }
+  realizarAtaque2(movimiento: Move, atacante: Pokemon, defensor: Pokemon): void {
+    let danio = 0;
+  
+    // El cálculo del daño dependerá de la clase del movimiento (físico, especial, estado)
+    if (movimiento.clase === 'Fisico') {
+      danio = Math.max(atacante.estadisticas.atk - defensor.estadisticas.def, 1);
+    } else if (movimiento.clase === 'Especial') {
+      danio = Math.max(atacante.estadisticas.satk - defensor.estadisticas.sdef, 1);
+    }
+  
+    // Aplicamos el daño
+    defensor.vidaActual = Math.max(defensor.vidaActual - danio, 0);
+  
+    // Mostrar el daño en consola o UI
+    console.log(`${atacante.especie} atacó a ${defensor.especie} con ${movimiento.nombre} causando ${danio} de daño.`);
+  }
+  
+  verificarCambio(defensor: Pokemon): void {
+    if (defensor.vidaActual <= 0) {
+      console.log(`${defensor.especie} ha sido derrotado!`);
+  
+      // Eliminar al defensor de su respectivo equipo (jugador o rival)
+      if (defensor === this.pokemonJugador) {
+        this.jugador?.equipo.shift();
+        this.pokemonJugador = this.jugador!.equipo[0];  // Siguiente Pokémon si hay alguno
+      } else {
+        this.rival.shift();
+        this.pokemonRival = this.rival[0];  // Siguiente Pokémon si hay alguno
+      }
+    }
+  }
+  
+/*-------------------------------------------------------------------------------------------------------------------------*/ 
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
     console.log(`${atacante.especie} está realizando ${movimiento.nombre}`);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);

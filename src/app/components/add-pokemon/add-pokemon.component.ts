@@ -29,7 +29,8 @@ export class AddPokemonComponent{
       nivel:0,
       vidaActual:0,
       estadisticas: {hp:0,atk:0,def:0,satk:0,sdef:0,spd:0},
-      movimientos:[]
+      movimientos:[],
+      idEntrenador:''
   };
 
   statsBase:Stats={
@@ -55,7 +56,8 @@ export class AddPokemonComponent{
       nivel:0,
       vidaActual:0,
       estadisticas: { hp:0, atk:0, def:0, satk:0, sdef:0, spd:0 },
-      movimientos:[]
+      movimientos:[],
+      idEntrenador:''
     }
     this.statsBase={
       hp:0,

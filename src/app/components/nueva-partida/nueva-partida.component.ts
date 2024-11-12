@@ -53,6 +53,9 @@ export class NuevaPartidaComponent implements OnInit {
       next: (pokemons: Pokemon[]) => {
         console.log('Pokemons obtenidos', pokemons);
         cargarEquipo.push(...pokemons.slice(0, 6));
+        cargarEquipo.forEach(pokemon => {
+          pokemon.idEntrenador = this.id; // Asigna el id del entrenador // Agrega al equipo
+        });
         this.nuevaPartida.personaje.equipo = cargarEquipo;
         this.nuevaPartida.personaje.id = this.id;
         this.nuevaPartida.id = this.id;
