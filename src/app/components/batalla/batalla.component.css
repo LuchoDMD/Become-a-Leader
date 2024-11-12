@@ -231,7 +231,7 @@
   box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho total */
 }
 
-
+/* hola */
 .boton-movimiento:hover {
   transform: scale(1.1);
 }
