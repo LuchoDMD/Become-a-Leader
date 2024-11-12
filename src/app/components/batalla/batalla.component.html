@@ -6,12 +6,13 @@
       <h3>Jugador</h3>
       <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
       <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
-      <ul>
-        <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento">
-          {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
-        </li>
-      </ul>
     </div>
+
+    <ul class="movimientos-container">
+      <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento">
+        {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
+      </li>
+    </ul>
 
     <div class="vs">VS.</div>
 
