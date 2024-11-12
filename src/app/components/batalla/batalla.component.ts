@@ -5,15 +5,11 @@ import { TeamService } from '../../service/team.service';
 import { Move } from '../../interface/move';
 import { Pokemon } from '../../interface/pokemon';
 import { tipos } from '../../interface/tipos';
-import { Partida } from '../../interface/partida.js';
-import { PartidaService } from '../../service/partida.service';
-import { Entrenador } from '../../interface/entrenador';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Partida } from '../../interface/partida.js';
 import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-batalla',
