@@ -10,7 +10,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PartidaComponent implements OnInit {
   mensajeCompleto = false;
-  mensajeLargo = "Bienvenido a Become a Leader. En este proyecto se simula una batalla de Lider Pokemon usando un equipo de un mismo tipo. Tu objetivo es pelear y acumular puntos. Buena Suerte!";
+  mensajeLargo = "Bienvenido a Become a Leader. En este proyecto se simula una batalla de Lider Pokemon usando un equipo de un mismo tipo. Tu objetivo es pelear y acumular puntos. Buena Suerte!.";
   mensajeActual = "";
   lineaIndex = 0;
 
@@ -26,7 +26,7 @@ export class PartidaComponent implements OnInit {
     this.lineaIndex++;
 
     if (this.lineaIndex < lineas.length) {
-      setTimeout(() => this.mostrarMensajeProgresivo(), 1000); // Ajusta el tiempo si es necesario
+      setTimeout(() => this.mostrarMensajeProgresivo(), 2000); // Ajusta el tiempo si es necesario
     } else {
       this.mensajeCompleto = true;
       this.navegarAMenu();

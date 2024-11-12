@@ -204,3 +204,20 @@ button:active {
   height: 60px;
   width: 60px;
 }
+
+.mensaje-aviso {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(47, 80, 46, 0.4);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
+  color: #ffcb05;
+  font-size: 1em;
+  text-align: center;
+  z-index: 100;
+  width: 80%; /* Ajusta el ancho como prefieras */
+  max-width: 450px; /* Máximo ancho */
+}

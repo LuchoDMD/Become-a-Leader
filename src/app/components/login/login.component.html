@@ -29,6 +29,9 @@
     </fieldset>
   </div>
 </div>
+<div *ngIf="mensaje && !isLoggedIn" class="mensaje-aviso">
+  <p>{{ mensaje }}</p>
+</div>
 <nav class="navbar">
   <img src="pokeball_icon.png" alt="fondo">
     <ul class="nav-links">
