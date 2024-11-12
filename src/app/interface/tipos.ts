@@ -30,7 +30,7 @@ export const tipos: Type[] = [
             ["rock", 2],
             ["dragon", 0.5],
             ["grass", 0.5],
-            ["electric", 0.5]
+            ["water", 0.5]
         ]
     },
     {

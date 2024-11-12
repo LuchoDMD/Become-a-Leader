@@ -1,59 +1,41 @@
-<div class="battle-screen">
-  <h2>Batalla Pokémon</h2>
-  <div *ngIf="pokemonJugador && pokemonRival" class="pokemons-container">
+<div class ="batalla-container" *ngIf="pokemonJugador && pokemonRival">
+  <h2 class="titulo-batalla">Batalla Pokémon</h2>
 
-
-    <div class="opponent-section">
-      <div class="pokemon-info" id="pokemon-info-enemigo">
-        <h3>{{ pokemonRival.especie }}</h3>
-        <!-- <p>HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }}</p> -->
-        <div class="health-bar">
-          <div [style.width.%]="pokemonRival.vidaActual / pokemonRival.estadisticas.hp * 100">{{ pokemonRival.vidaActual
-            }} / {{ pokemonRival.estadisticas.hp }}</div>
-        </div>
-      </div>
-      <!-- <img [src]="pokemonRival.sprite" alt="{{ pokemonRival.especie }}" id="sprite-pokemon-enemigo"> -->
-    </div>
-
-    <div class="player-section">
-      <div class="pokemon-info" id="pokemon-info-jugador">
-        <h3>{{ pokemonJugador.especie }}</h3>
-        <!-- <p>HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }}</p> -->
-        <div class="health-bar">
-          <div [style.width.%]="pokemonJugador.vidaActual / pokemonJugador.estadisticas.hp * 100">{{
-            pokemonJugador.vidaActual }} / {{ pokemonJugador.estadisticas.hp }}</div>
-        </div>
-      </div>
-      <!-- <img [src]="pokemonJugador.sprite" alt="{{ pokemonJugador.especie }}" id="sprite-pokemon-jugador"> -->
-      <!-- <ul>
-        <li *ngFor="let movimiento of movimientosJugador" (click)="iniciarTurno(movimiento)">
-          {{ movimiento.nombre }} - Potencia: {{ movimiento.potencia }}
+  <div class="batalla">
+    <div class="pokemon-container jugador">
+      <h3>Jugador</h3>
+      <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
+      <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
+      <ul>
+        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)" class="boton-movimiento">
+          {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
         </li>
       </ul> -->
     </div>
 
+    <div class="vs">VS.</div>
 
-
+    <div class="pokemon-container rival">
+      <h3>Rival</h3>
+      <p>{{ transformarPrimeraLetra(pokemonRival.especie) }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
+      <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p>
+    </div>
   </div>
-
-  <button (click)="cambiarPokemon()" id="btnCambiarPokemon">Cambiar Pokémon</button>
-
-  <div *ngIf="resultado">
-    <p>Resultado de la batalla: {{ resultado }}</p>
-  </div>
-
 
   <div *ngIf="mensajeBatalla" class="mensaje-batalla">
     <p>{{ mensajeBatalla }}</p>
   </div>
 
-  <div class="action-buttons">
-    <div *ngFor="let movimiento of pokemonJugador?.movimientos">
-      <button
-      >
-        {{ movimiento.nombre }}
-      </button>
-    </div>
+  <div *ngIf="resultado" class="resultado-batalla">
+    <p>{{ resultado }}</p>
   </div>
-
 </div>
+<div class="BotoncitoLogout">
+  <button type="button" (click)="navegarMenu()">MENU</button>
+  <button type="button" (click)="logout()">LOGOUT</button>
+</div>
+
+
+
+
+

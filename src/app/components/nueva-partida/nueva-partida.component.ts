@@ -5,6 +5,8 @@ import { UserService } from '../../service/user.service';
 import { Partida } from '../../interface/partida.js';  // Asegúrate de tener esta interfaz creada
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Pokemon } from '../../interface/pokemon';
+import { TeamService } from '../../service/team.service';
 
 @Component({
   selector: 'app-nueva-partida',
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent implements OnInit {
-
+  ts= inject(TeamService);
   ngOnInit(): void {
     this.id = localStorage.getItem('token')!;
   }
@@ -25,6 +27,19 @@ export class NuevaPartidaComponent implements OnInit {
     tipo: '',
   };
 
+  nuevaPartida: Partida = {
+    id: '',
+    fecha_inicio: new Date(),
+    fecha_fin: new Date(),
+    puntuacion: 0,
+    personaje: {
+      id: '',
+      nombre: '',
+      tipo: '',
+      equipo:[]
+    }
+  }
+
   // Variables de control
   selectedLider: string = '';
   id: string = '';
@@ -33,29 +48,37 @@ export class NuevaPartidaComponent implements OnInit {
 
   // Método que se ejecuta cuando el formulario es enviado
   crearPartida() {
-    const nuevaPartida: Partida = {
-      id: this.id,  // Este debería ser el ID del usuario logueado, deberías obtenerlo desde el servicio
-      fecha_inicio: new Date(),
-      fecha_fin: new Date(),
-      puntuacion: 0,  // Esto debería ser dinámico
-      personaje: {
-        id: this.id,  // Asigna un UUID o un valor adecuado
-        nombre: this.datos_partida.nick, // Se puede ajustar según el lider seleccionado
-        tipo: this.datos_partida.tipo,
-        equipo: [],  // Llenar según el tipo de Pokémon que seleccione
+    const cargarEquipo: Pokemon[] = [];
+    this.ts.getPokemonsByType(this.datos_partida.tipo).subscribe({
+      next: (pokemons: Pokemon[]) => {
+        console.log('Pokemons obtenidos', pokemons);
+        cargarEquipo.push(...pokemons.slice(0, 6));
+        cargarEquipo.forEach(pokemon => {
+          pokemon.idEntrenador = this.id; // Asigna el id del entrenador // Agrega al equipo
+        });
+        this.nuevaPartida.personaje.equipo = cargarEquipo;
+        this.nuevaPartida.personaje.id = this.id;
+        this.nuevaPartida.id = this.id;
+        this.nuevaPartida.personaje.nombre = this.datos_partida.nick;
+        this.nuevaPartida.personaje.tipo = this.datos_partida.tipo;
+        this.guardarPartidaEnBD(this.nuevaPartida);
       },
-    };
-
-    // Aquí se crea la partida a través del servicio
-    this.partidaService.postPartida(nuevaPartida).subscribe({
-      next:(respuesta) => {
-        console.log('Partida creada', respuesta);
-        this.router.navigate(['/batalla']);
-      },    
-      error:(error: Error) => {
-        console.error('Error creando la partida', error);
+      error: (error: Error) => {
+        console.error('Error obteniendo Pokemons', error);
       }
-    });
+    })
+  }
+
+  guardarPartidaEnBD(partida: Partida) {
+    this.partidaService.postPartida(partida).subscribe({
+      next: (partida) => {
+        console.log('Partida creada en la BD', partida);
+        this.router.navigate(['/batalla']);
+      },
+      error: (error: Error) => {
+        console.error('Error al crear la partida en la BD', error);
+      }
+    })
   }
 
   // Seleccionar el líder y actualizar la interfaz

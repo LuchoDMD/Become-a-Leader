@@ -13,6 +13,7 @@
       "password": "ejemplo123"
     }
   ],
+  "partidas": [],
   "pokemons": [
     {
       "id": "130",
@@ -90,5 +91,9 @@
         "equipo": []
       }
     }
+  ],
+  "pokemons": [
+
+
   ]
 }

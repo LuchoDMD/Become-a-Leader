@@ -29,7 +29,8 @@ export class AddPokemonComponent{
       nivel:0,
       vidaActual:0,
       estadisticas: {hp:0,atk:0,def:0,satk:0,sdef:0,spd:0},
-      movimientos:[]
+      movimientos:[],
+      idEntrenador:''
   };
 
   statsBase:Stats={
@@ -55,7 +56,8 @@ export class AddPokemonComponent{
       nivel:0,
       vidaActual:0,
       estadisticas: { hp:0, atk:0, def:0, satk:0, sdef:0, spd:0 },
-      movimientos:[]
+      movimientos:[],
+      idEntrenador:''
     }
     this.statsBase={
       hp:0,
@@ -184,42 +186,3 @@ export class AddPokemonComponent{
 
 
 }
-/*
-  // Obtener naturaleza aleatoria
-  private getNature(): string {
-    const natures = ['Hardy', 'Lonely', 'Brave', 'Adamant', 'Naughty', 'Bold'];
-    return natures[Math.floor(Math.random() * natures.length)];
-  }
-
-  private generateIVs(): any {
-    return {
-      hp: Math.floor(Math.random() * 32),
-      attack: Math.floor(Math.random() * 32),
-      defense: Math.floor(Math.random() * 32),
-      special_attack: Math.floor(Math.random() * 32),
-      special_defense: Math.floor(Math.random() * 32),
-      speed: Math.floor(Math.random() * 32),
-    };
-  }
-
-    private generateEVs(): any {
-    return {
-      hp: 0,
-      attack: 0,
-      defense: 0,
-      special_attack: 0,
-      special_defense: 0,
-      speed: 0,
-    };
-  }
-
-    incrementEV(evs: any, stat: string, value: number): any {
-    evs[stat] = Math.min(252, evs[stat] + value);
-    return evs;
-  }
-
-*/
-        /*const tipos= this.pokeAPI.types;
-        for(let i=0;i<tipos.length;i++){
-          console.log(tipos[i].type.name); //Esto para obtener los tipos del pokemon
-        }*/
