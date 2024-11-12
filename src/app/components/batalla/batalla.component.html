@@ -7,7 +7,7 @@
       <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
       <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
       <ul>
-        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)" class="boton-movimiento">
+        <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento">
           {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
         </li>
       </ul>

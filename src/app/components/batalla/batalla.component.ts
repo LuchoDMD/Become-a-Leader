@@ -174,7 +174,7 @@ export class BatallaComponent {
     let defensor: Pokemon;
     let movimientoAtacante: Move;
     let chequearTurnoDefensor: string;
-  
+    console.log("Iniciando batalla");
     // Comparar las velocidades
     if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
       // Si el jugador es igual o más rápido que el rival
@@ -182,22 +182,26 @@ export class BatallaComponent {
       defensor = this.pokemonRival!;
       chequearTurnoDefensor = this.pokemonRival!.id;
       movimientoAtacante = movimientoSeleccionado;
+      console.log("Jugador es el atacante");
+      console.log("Id del defensor:", chequearTurnoDefensor);
     } else {
       // Si el rival es más rápido
       atacante = this.pokemonRival!;
       defensor = this.pokemonJugador!;
       chequearTurnoDefensor = this.pokemonJugador!.id;
       movimientoAtacante = this.generarMovimientoRival();  // Generamos un movimiento aleatorio para el rival
+      console.log("Rival es el atacante");
+      console.log("Id del defensor:", chequearTurnoDefensor);
     }
-  
-    // Realizar el ataque
-    this.realizarAtaque2(movimientoAtacante, atacante, defensor);
-  
-    // Verificar si el defensor ha sido derrotado
-    this.verificarCambio(defensor);
-  
-    // Si el defensor sigue en pie, realizar el siguiente ataque
+    this.calcularAtaque(movimientoAtacante, atacante, defensor);
+    console.log("Id del defensor original:", defensor.id);
+    defensor = this.verificarCambio(defensor);
+    console.log("Id del defensor luego de verificarCambio:", defensor.id);
+ 
+  setTimeout(() => {
+      // Si el defensor sigue en pie, realizar el siguiente ataque
     if (chequearTurnoDefensor === defensor.id) {
+      console.log("Defensor sigue en pie");
       // Si es el jugador, usa su movimiento seleccionado
       if (defensor === this.pokemonJugador) {
         movimientoAtacante = movimientoSeleccionado;
@@ -206,11 +210,27 @@ export class BatallaComponent {
       }
   
       // Realizar el siguiente ataque
-      this.realizarAtaque2(movimientoAtacante, defensor, atacante);
+      this.calcularAtaque(movimientoAtacante, defensor, atacante);
   
       // Verificar si el atacante ha sido derrotado
       this.verificarCambio(atacante);
     }
+  }, 2000)
+    // Si el defensor sigue en pie, realizar el siguiente ataque
+   /* if (chequearTurnoDefensor === defensor.id) {
+      // Si es el jugador, usa su movimiento seleccionado
+      if (defensor === this.pokemonJugador) {
+        movimientoAtacante = movimientoSeleccionado;
+      } else {
+        movimientoAtacante = this.generarMovimientoRival();
+      }
+  
+      // Realizar el siguiente ataque
+      this.calcularAtaque(movimientoAtacante, defensor, atacante);
+  
+      // Verificar si el atacante ha sido derrotado
+      this.verificarCambio(atacante);
+    }*/
   }
   
 
@@ -236,19 +256,32 @@ export class BatallaComponent {
     console.log(`${atacante.especie} atacó a ${defensor.especie} con ${movimiento.nombre} causando ${danio} de daño.`);
   }
   
-  verificarCambio(defensor: Pokemon): void {
+  verificarCambio(defensor: Pokemon): Pokemon {
     if (defensor.vidaActual <= 0) {
       console.log(`${defensor.especie} ha sido derrotado!`);
   
       // Eliminar al defensor de su respectivo equipo (jugador o rival)
-      if (defensor === this.pokemonJugador) {
+      if (defensor.idEntrenador === this.pokemonJugador?.idEntrenador) {
         this.jugador?.equipo.shift();
-        this.pokemonJugador = this.jugador!.equipo[0];  // Siguiente Pokémon si hay alguno
+        if (this.jugador?.equipo.length === 0) {
+          console.log("El equipo del jugador ha sido derrotado.");
+          this.finalizarBatalla(false);
+        }
+        this.pokemonJugador = this.jugador!.equipo[0];
+        this.movimientosJugador=this.pokemonJugador.movimientos!;
+        defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno
       } else {
         this.rival.shift();
-        this.pokemonRival = this.rival[0];  // Siguiente Pokémon si hay alguno
+        if (this.rival.length === 0) {
+          console.log("El equipo del rival ha sido derrotado.");
+          this.finalizarBatalla(true); 
+        }
+        this.pokemonRival = this.rival[0];
+        this.movimientosRival=this.pokemonRival.movimientos!;
+        defensor = this.pokemonRival; // Siguiente Pokémon si hay alguno
       }
     }
+    return defensor;
   }
   
 /*-------------------------------------------------------------------------------------------------------------------------*/ 

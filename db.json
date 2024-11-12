@@ -1,71 +1,41 @@
 {
   "usuarios": [
     {
-      "id": "e385",
+      "id": "4efd",
       "email": "ejemplo@gmail.com",
       "nick": "ejemplo",
       "password": "ejemplo123"
-    },
-    {
-      "id": "8eb7",
-      "email": "ejemplo1@gmail.com",
-      "nick": "ejemplo",
-      "password": "ejemplo123"
-    },
-    {
-      "id": "f8d2",
-      "email": "pepe@gmail.com",
-      "nick": "pepe",
-      "password": "peeppepe"
     }
   ],
   "partidas": [
     {
-      "id": "f8d2",
-      "fecha_inicio": "2024-11-12T15:20:57.202Z",
-      "fecha_fin": "2024-11-12T15:20:57.202Z",
-      "puntuacion": 1,
+      "id": "4efd",
+      "fecha_inicio": "2024-11-12T22:15:04.164Z",
+      "fecha_fin": "2024-11-12T22:15:04.164Z",
+      "puntuacion": 2,
       "personaje": {
-        "id": "f8d2",
-        "nombre": "gfg",
-        "tipo": "rock",
+        "id": "4efd",
+        "nombre": "ejemplo",
+        "tipo": "flying",
         "equipo": [
           {
-            "id": "141",
-            "especie": "kabutops",
+            "id": "130",
+            "especie": "gyarados",
             "tipos": [
-              "rock",
-              "water"
+              "water",
+              "flying"
             ],
             "nivel": 100,
-            "vidaActual": 155,
+            "vidaActual": 210,
             "estadisticas": {
-              "hp": 155,
-              "atk": 376,
-              "def": 364,
-              "satk": 244,
-              "sdef": 287,
-              "spd": 299
+              "hp": 210,
+              "atk": 366,
+              "def": 296,
+              "satk": 260,
+              "sdef": 330,
+              "spd": 312
             },
             "movimientos": [
-              {
-                "nombre": "x-scissor",
-                "tipo": "bug",
-                "clase": "physical",
-                "potencia": 80,
-                "precision": 100,
-                "usos": 15,
-                "pp": 15
-              },
-              {
-                "nombre": "night-slash",
-                "tipo": "dark",
-                "clase": "physical",
-                "potencia": 70,
-                "precision": 100,
-                "usos": 15,
-                "pp": 15
-              },
               {
                 "nombre": "waterfall",
                 "tipo": "water",
@@ -76,52 +46,70 @@
                 "pp": 15
               },
               {
-                "nombre": "rock-slide",
-                "tipo": "rock",
+                "nombre": "crunch",
+                "tipo": "dark",
                 "clase": "physical",
-                "potencia": 75,
-                "precision": 90,
-                "usos": 10,
-                "pp": 10
-              }
-            ],
-            "idEntrenador": "f8d2"
-          },
-          {
-            "id": "567",
-            "especie": "archeops",
-            "tipos": [
-              "rock",
-              "flying"
-            ],
-            "nivel": 100,
-            "vidaActual": 199,
-            "estadisticas": {
-              "hp": 199,
-              "atk": 410,
-              "def": 261,
-              "satk": 378,
-              "sdef": 258,
-              "spd": 372
-            },
-            "movimientos": [
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
               {
-                "nombre": "earthquake",
-                "tipo": "ground",
+                "nombre": "avalanche",
+                "tipo": "ice",
                 "clase": "physical",
-                "potencia": 100,
+                "potencia": 60,
                 "precision": 100,
                 "usos": 10,
                 "pp": 10
               },
               {
-                "nombre": "rock-slide",
-                "tipo": "rock",
+                "nombre": "giga-impact",
+                "tipo": "normal",
                 "clase": "physical",
-                "potencia": 75,
+                "potencia": 150,
                 "precision": 90,
-                "usos": 10,
-                "pp": 10
+                "usos": 5,
+                "pp": 5
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "6",
+            "especie": "charizard",
+            "tipos": [
+              "fire",
+              "flying"
+            ],
+            "nivel": 100,
+            "vidaActual": 197,
+            "estadisticas": {
+              "hp": 197,
+              "atk": 298,
+              "def": 276,
+              "satk": 355,
+              "sdef": 307,
+              "spd": 330
+            },
+            "movimientos": [
+              {
+                "nombre": "flamethrower",
+                "tipo": "fire",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "ancient-power",
+                "tipo": "rock",
+                "clase": "special",
+                "potencia": 60,
+                "precision": 100,
+                "usos": 5,
+                "pp": 5
               },
               {
                 "nombre": "dragon-breath",
@@ -133,33 +121,33 @@
                 "pp": 20
               },
               {
-                "nombre": "steel-wing",
+                "nombre": "metal-claw",
                 "tipo": "steel",
                 "clase": "physical",
-                "potencia": 70,
-                "precision": 90,
-                "usos": 25,
-                "pp": 25
+                "potencia": 50,
+                "precision": 95,
+                "usos": 35,
+                "pp": 35
               }
             ],
-            "idEntrenador": "f8d2"
+            "idEntrenador": "4efd"
           },
           {
-            "id": "348",
-            "especie": "armaldo",
+            "id": "169",
+            "especie": "crobat",
             "tipos": [
-              "rock",
-              "bug"
+              "poison",
+              "flying"
             ],
             "nivel": 100,
-            "vidaActual": 176,
+            "vidaActual": 205,
             "estadisticas": {
-              "hp": 176,
-              "atk": 399,
-              "def": 347,
-              "satk": 282,
-              "sdef": 290,
-              "spd": 232
+              "hp": 205,
+              "atk": 311,
+              "def": 293,
+              "satk": 274,
+              "sdef": 309,
+              "spd": 396
             },
             "movimientos": [
               {
@@ -172,185 +160,53 @@
                 "pp": 15
               },
               {
-                "nombre": "earthquake",
-                "tipo": "ground",
+                "nombre": "cross-poison",
+                "tipo": "poison",
                 "clase": "physical",
-                "potencia": 100,
+                "potencia": 70,
                 "precision": 100,
-                "usos": 10,
-                "pp": 10
+                "usos": 20,
+                "pp": 20
               },
               {
-                "nombre": "aqua-tail",
-                "tipo": "water",
+                "nombre": "acrobatics",
+                "tipo": "flying",
                 "clase": "physical",
-                "potencia": 90,
-                "precision": 90,
-                "usos": 10,
-                "pp": 10
-              },
-              {
-                "nombre": "rock-tomb",
-                "tipo": "rock",
-                "clase": "physical",
-                "potencia": 60,
-                "precision": 95,
-                "usos": 15,
-                "pp": 15
-              }
-            ],
-            "idEntrenador": "f8d2"
-          },
-          {
-            "id": "464",
-            "especie": "rhyperior",
-            "tipos": [
-              "ground",
-              "rock"
-            ],
-            "nivel": 100,
-            "vidaActual": 278,
-            "estadisticas": {
-              "hp": 278,
-              "atk": 410,
-              "def": 390,
-              "satk": 238,
-              "sdef": 233,
-              "spd": 206
-            },
-            "movimientos": [
-              {
-                "nombre": "earthquake",
-                "tipo": "ground",
-                "clase": "physical",
-                "potencia": 100,
-                "precision": 100,
-                "usos": 10,
-                "pp": 10
-              },
-              {
-                "nombre": "rock-slide",
-                "tipo": "rock",
-                "clase": "physical",
-                "potencia": 75,
-                "precision": 90,
-                "usos": 10,
-                "pp": 10
-              },
-              {
-                "nombre": "flamethrower",
-                "tipo": "fire",
-                "clase": "special",
-                "potencia": 90,
+                "potencia": 55,
                 "precision": 100,
                 "usos": 15,
                 "pp": 15
               },
               {
-                "nombre": "thunderbolt",
-                "tipo": "electric",
-                "clase": "special",
-                "potencia": 90,
-                "precision": 100,
-                "usos": 15,
-                "pp": 15
-              }
-            ],
-            "idEntrenador": "f8d2"
-          },
-          {
-            "id": "565",
-            "especie": "carracosta",
-            "tipos": [
-              "water",
-              "rock"
-            ],
-            "nivel": 100,
-            "vidaActual": 175,
-            "estadisticas": {
-              "hp": 175,
-              "atk": 337,
-              "def": 387,
-              "satk": 307,
-              "sdef": 258,
-              "spd": 200
-            },
-            "movimientos": [
-              {
-                "nombre": "waterfall",
-                "tipo": "water",
+                "nombre": "crunch",
+                "tipo": "dark",
                 "clase": "physical",
                 "potencia": 80,
                 "precision": 100,
                 "usos": 15,
                 "pp": 15
-              },
-              {
-                "nombre": "earthquake",
-                "tipo": "ground",
-                "clase": "physical",
-                "potencia": 100,
-                "precision": 100,
-                "usos": 10,
-                "pp": 10
-              },
-              {
-                "nombre": "rock-slide",
-                "tipo": "rock",
-                "clase": "physical",
-                "potencia": 75,
-                "precision": 90,
-                "usos": 10,
-                "pp": 10
-              },
-              {
-                "nombre": "superpower",
-                "tipo": "fighting",
-                "clase": "physical",
-                "potencia": 120,
-                "precision": 100,
-                "usos": 5,
-                "pp": 5
               }
             ],
-            "idEntrenador": "f8d2"
+            "idEntrenador": "4efd"
           },
           {
-            "id": "142",
-            "especie": "aerodactyl",
+            "id": "472",
+            "especie": "gliscor",
             "tipos": [
-              "rock",
+              "ground",
               "flying"
             ],
             "nivel": 100,
-            "vidaActual": 195,
+            "vidaActual": 174,
             "estadisticas": {
-              "hp": 195,
-              "atk": 327,
-              "def": 251,
-              "satk": 257,
-              "sdef": 279,
-              "spd": 400
+              "hp": 174,
+              "atk": 316,
+              "def": 385,
+              "satk": 219,
+              "sdef": 277,
+              "spd": 331
             },
             "movimientos": [
-              {
-                "nombre": "sky-attack",
-                "tipo": "flying",
-                "clase": "physical",
-                "potencia": 140,
-                "precision": 90,
-                "usos": 5,
-                "pp": 5
-              },
-              {
-                "nombre": "rock-slide",
-                "tipo": "rock",
-                "clase": "physical",
-                "potencia": 75,
-                "precision": 90,
-                "usos": 10,
-                "pp": 10
-              },
               {
                 "nombre": "earthquake",
                 "tipo": "ground",
@@ -368,9 +224,141 @@
                 "precision": 95,
                 "usos": 15,
                 "pp": 15
+              },
+              {
+                "nombre": "cross-poison",
+                "tipo": "poison",
+                "clase": "physical",
+                "potencia": 70,
+                "precision": 100,
+                "usos": 20,
+                "pp": 20
+              },
+              {
+                "nombre": "rock-slide",
+                "tipo": "rock",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 90,
+                "usos": 10,
+                "pp": 10
               }
             ],
-            "idEntrenador": "f8d2"
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "18",
+            "especie": "pidgeot",
+            "tipos": [
+              "normal",
+              "flying"
+            ],
+            "nivel": 100,
+            "vidaActual": 182,
+            "estadisticas": {
+              "hp": 182,
+              "atk": 299,
+              "def": 288,
+              "satk": 286,
+              "sdef": 268,
+              "spd": 351
+            },
+            "movimientos": [
+              {
+                "nombre": "aerial-ace",
+                "tipo": "flying",
+                "clase": "physical",
+                "potencia": 60,
+                "precision": null,
+                "usos": 20,
+                "pp": 20
+              },
+              {
+                "nombre": "steel-wing",
+                "tipo": "steel",
+                "clase": "physical",
+                "potencia": 70,
+                "precision": 90,
+                "usos": 25,
+                "pp": 25
+              },
+              {
+                "nombre": "heat-wave",
+                "tipo": "fire",
+                "clase": "special",
+                "potencia": 95,
+                "precision": 90,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "giga-impact",
+                "tipo": "normal",
+                "clase": "physical",
+                "potencia": 150,
+                "precision": 90,
+                "usos": 5,
+                "pp": 5
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "628",
+            "especie": "braviary",
+            "tipos": [
+              "normal",
+              "flying"
+            ],
+            "nivel": 100,
+            "vidaActual": 239,
+            "estadisticas": {
+              "hp": 239,
+              "atk": 376,
+              "def": 278,
+              "satk": 250,
+              "sdef": 263,
+              "spd": 300
+            },
+            "movimientos": [
+              {
+                "nombre": "brave-bird",
+                "tipo": "flying",
+                "clase": "physical",
+                "potencia": 120,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "aerial-ace",
+                "tipo": "flying",
+                "clase": "physical",
+                "potencia": 60,
+                "precision": null,
+                "usos": 20,
+                "pp": 20
+              },
+              {
+                "nombre": "close-combat",
+                "tipo": "fighting",
+                "clase": "physical",
+                "potencia": 120,
+                "precision": 100,
+                "usos": 5,
+                "pp": 5
+              },
+              {
+                "nombre": "shadow-claw",
+                "tipo": "ghost",
+                "clase": "physical",
+                "potencia": 70,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
           }
         ]
       }
