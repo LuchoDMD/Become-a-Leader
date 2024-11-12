@@ -66,7 +66,10 @@ export class MenuComponent implements OnInit {
           this.tienePartida = false;
           this.router.navigate(['/nueva-partida']);
         },
-        error: (error: Error) => console.error("Error al eliminar la partida:", error),
+        error: (error: Error) => {
+          console.error("Error al eliminar la partida:", error);
+          this.router.navigate(['/nueva-partida']) // El juego debe permitir la creación de una partida en caso de que no exista una.
+        },
       });
     }
   }
