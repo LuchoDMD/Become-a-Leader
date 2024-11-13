@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
-import { Ranking } from '../../interface/ranking';
 
 
 @Component({
