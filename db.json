@@ -7,7 +7,361 @@
       "password": "ejemplo123"
     }
   ],
-  "partidas": [],
+  "partidas": [
+    {
+      "id": "4efd",
+      "fecha_inicio": "2024-11-13T19:13:47.996Z",
+      "fecha_fin": "2024-11-13T19:13:47.996Z",
+      "puntuacion": 0,
+      "personaje": {
+        "id": "4efd",
+        "nombre": "1",
+        "tipo": "ice",
+        "equipo": [
+          {
+            "id": "131",
+            "especie": "lapras",
+            "tipos": [
+              "water",
+              "ice"
+            ],
+            "nivel": 100,
+            "vidaActual": 307,
+            "estadisticas": {
+              "hp": 307,
+              "atk": 289,
+              "def": 281,
+              "satk": 313,
+              "sdef": 325,
+              "spd": 237
+            },
+            "movimientos": [
+              {
+                "nombre": "ice-beam",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "surf",
+                "tipo": "water",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "thunderbolt",
+                "tipo": "electric",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "460",
+            "especie": "abomasnow",
+            "tipos": [
+              "grass",
+              "ice"
+            ],
+            "nivel": 100,
+            "vidaActual": 227,
+            "estadisticas": {
+              "hp": 227,
+              "atk": 319,
+              "def": 309,
+              "satk": 325,
+              "sdef": 306,
+              "spd": 255
+            },
+            "movimientos": [
+              {
+                "nombre": "blizzard",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 110,
+                "precision": 70,
+                "usos": 5,
+                "pp": 5
+              },
+              {
+                "nombre": "ice-punch",
+                "tipo": "ice",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "energy-ball",
+                "tipo": "grass",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "rock-tomb",
+                "tipo": "rock",
+                "clase": "physical",
+                "potencia": 60,
+                "precision": 95,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "365",
+            "especie": "walrein",
+            "tipos": [
+              "ice",
+              "water"
+            ],
+            "nivel": 100,
+            "vidaActual": 249,
+            "estadisticas": {
+              "hp": 249,
+              "atk": 296,
+              "def": 323,
+              "satk": 349,
+              "sdef": 307,
+              "spd": 279
+            },
+            "movimientos": [
+              {
+                "nombre": "blizzard",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 110,
+                "precision": 70,
+                "usos": 5,
+                "pp": 5
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "surf",
+                "tipo": "water",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "crunch",
+                "tipo": "dark",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "614",
+            "especie": "beartic",
+            "tipos": [
+              "ice"
+            ],
+            "nivel": 100,
+            "vidaActual": 234,
+            "estadisticas": {
+              "hp": 234,
+              "atk": 402,
+              "def": 286,
+              "satk": 263,
+              "sdef": 310,
+              "spd": 244
+            },
+            "movimientos": [
+              {
+                "nombre": "ice-punch",
+                "tipo": "ice",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "surf",
+                "tipo": "water",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "aerial-ace",
+                "tipo": "flying",
+                "clase": "physical",
+                "potencia": 60,
+                "precision": null,
+                "usos": 20,
+                "pp": 20
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "124",
+            "especie": "jynx",
+            "tipos": [
+              "ice",
+              "psychic"
+            ],
+            "nivel": 100,
+            "vidaActual": 184,
+            "estadisticas": {
+              "hp": 184,
+              "atk": 234,
+              "def": 218,
+              "satk": 374,
+              "sdef": 332,
+              "spd": 323
+            },
+            "movimientos": [
+              {
+                "nombre": "ice-beam",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "psychic",
+                "tipo": "psychic",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "shadow-ball",
+                "tipo": "ghost",
+                "clase": "special",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "wake-up-slap",
+                "tipo": "fighting",
+                "clase": "physical",
+                "potencia": 70,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "471",
+            "especie": "glaceon",
+            "tipos": [
+              "ice"
+            ],
+            "nivel": 100,
+            "vidaActual": 162,
+            "estadisticas": {
+              "hp": 162,
+              "atk": 238,
+              "def": 359,
+              "satk": 391,
+              "sdef": 307,
+              "spd": 276
+            },
+            "movimientos": [
+              {
+                "nombre": "shadow-ball",
+                "tipo": "ghost",
+                "clase": "special",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "water-pulse",
+                "tipo": "water",
+                "clase": "special",
+                "potencia": 60,
+                "precision": 100,
+                "usos": 20,
+                "pp": 20
+              },
+              {
+                "nombre": "ice-beam",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "signal-beam",
+                "tipo": "bug",
+                "clase": "special",
+                "potencia": 75,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          }
+        ]
+      }
+    }
+  ],
   "rankings": [
     {
       "id": "974d",
