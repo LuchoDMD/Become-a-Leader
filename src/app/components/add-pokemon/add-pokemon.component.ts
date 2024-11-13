@@ -68,7 +68,6 @@ export class AddPokemonComponent{
       spd:0
     };
     this.iv=[];
-    this.moves=[];
   }
 
   //Busca los datos de un pokemon en la pokeAPI a travez del servicio
@@ -90,8 +89,8 @@ export class AddPokemonComponent{
       }
     });
   }
-  
-  //Agrega los movimientos a un arreglo de movimientos 
+
+  //Agrega los movimientos a un arreglo de movimientos
   agregarAtaque(moveName:string)
   {
     this.ps.getMoveByName(moveName).subscribe({
@@ -142,7 +141,7 @@ export class AddPokemonComponent{
       return Math.floor((((2 * base + iv + (ev / 4)) * level) / 100) + 5);
     }
   }
-  
+
   //Genera un numero random entre 0 y 84
   private generateEV(min:number,max:number){
     return Math.round(Math.floor(Math.random() * (max - min + 1)) + min);
@@ -153,7 +152,7 @@ export class AddPokemonComponent{
     this.pokemon.id=this.pokeAPI.id;
     this.pokemon.especie=this.pokeAPI.name;
     for(let i=0;i<this.pokeAPI.types.length;i++){
-      this.pokemon.tipos.push(this.pokeAPI.types[i].type.name); //Esto para obtener los tipos del pokemon 
+      this.pokemon.tipos.push(this.pokeAPI.types[i].type.name); //Esto para obtener los tipos del pokemon
     }
     this.pokemon.nivel=100;
     this.iv=this.generateIVs();
@@ -178,10 +177,12 @@ export class AddPokemonComponent{
         console.log("ERROR: "+err.message);
       }
     });
+    this.moves = [];
+    this.cleanBuffer();
   };
-  
-  
 
-  
+
+
+
 
 }
