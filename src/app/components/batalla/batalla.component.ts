@@ -6,7 +6,6 @@ import { TeamService } from '../../service/team.service';
 import { RankingService } from '../../service/ranking.service';
 import { Move } from '../../interface/move';
 import { Pokemon } from '../../interface/pokemon';
-import { Pokemon } from '../../interface/pokemon';
 import { tipos } from '../../interface/tipos';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
