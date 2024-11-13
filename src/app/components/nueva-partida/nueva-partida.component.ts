@@ -43,8 +43,9 @@ export class NuevaPartidaComponent implements OnInit {
   // Variables de control
   selectedLider: string = '';
   id: string = '';
-  constructor(private partidaService: PartidaService, private userService: UserService) {}
+  constructor(private partidaService: PartidaService) {}
   router = inject(Router);
+  us = inject(UserService);
 
   // Método que se ejecuta cuando el formulario es enviado
   crearPartida() {
@@ -84,5 +85,15 @@ export class NuevaPartidaComponent implements OnInit {
   // Seleccionar el líder y actualizar la interfaz
   seleccionarLider(event: any) {
     this.selectedLider = event.target.value;
+  }
+
+  navegarMenu()
+  {
+    this.router.navigate(['/menu']);
+  }
+  logout()
+  {
+    this.us.logout();
+    this.router.navigate(['']);
   }
 }

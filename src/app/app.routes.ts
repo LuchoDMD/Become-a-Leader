@@ -9,16 +9,18 @@ import { NuevaPartidaComponent } from './components/nueva-partida/nueva-partida.
 import { BatallaComponent } from './components/batalla/batalla.component';  
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 import { AuthGuard } from './service/auth-guard.service';
 
 export const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
+  { path: '', component:HomeComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent},
+  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] },
   { path: 'Partida', component: PartidaComponent, canActivate: [AuthGuard] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
-  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthGuard] },
-  { path: 'sobre-nosotros', component: SobreNosotrosComponent},
+  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthGuard] }, 
 ];

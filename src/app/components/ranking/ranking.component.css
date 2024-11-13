@@ -1,0 +1,137 @@
+/* General Reset y Estilos Base */
+html, body, :host {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que ocupe toda la altura */
+    width: 100%;  /* Asegura que ocupe todo el ancho */
+    font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Fondo principal */
+  :host {
+    background-image: url('../../../../public/fondo_inicio.jpg'); /* Nuevo fondo GIF */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+  
+  /* Estilos del título */
+  .titulo {
+    text-align: center;
+    font-size: 3.5em; /* Un tamaño grande pero controlado */
+    font-weight: 600;
+    color: #ffcb05; /* Amarillo Pokémon suave */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 100px; /* Espacio arriba */
+    font-family: 'Press Start 2P', cursive; /* Mantener un toque retro sin ser exagerado */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra sutil para resaltar */
+    transition: all 0.3s ease; /* Transición suave */
+    margin-bottom: 20px; /* Espacio adicional debajo del título */
+  }
+  
+  /* Efecto de resplandor en el título */
+  .titulo:hover {
+    text-shadow: 0 0 15px rgba(255, 203, 5, 0.8), 0 0 25px rgba(255, 203, 5, 0.6);
+  }
+  
+  /* Estilo de la tabla */
+table {
+    width: 80%;
+    margin: 20px auto; /* Centra la tabla en la página */
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para resaltar */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Encabezado de la tabla */
+table thead th {
+    padding: 15px;
+    background-color: #3b4cca; /* Color de fondo azul Pokémon */
+    color: #ffcb05; /* Texto en amarillo Pokémon */
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    border-bottom: 3px solid #ffcb05; /* Línea inferior en amarillo */
+}
+
+/* Filas de la tabla */
+table tbody tr {
+    transition: background-color 0.3s ease; /* Efecto suave al pasar el cursor */
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco para filas impares */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo gris claro para filas pares */
+}
+
+/* Estilo de las celdas */
+table tbody td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #3b4cca; /* Azul Pokémon para el texto */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Efecto hover para cada fila */
+table tbody tr:hover {
+    background-color: rgba(255, 203, 5, 0.2); /* Fondo amarillo claro al pasar el cursor */
+}
+
+.navbar{
+    width: 100%;
+    background-color: #1d1b1b; /* Blanco para un look limpio */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+/* Estilos para los botones */
+button {
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #000000;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transición suave */
+    margin-top: 20px;
+    width: 250px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .navbar .BotoncitoLogout {
+    display: flex;           /* Alinea los botones en fila */
+    gap: 10px;               /* Espacio de 10px entre los botones */
+  }
+  /* Efecto de hover en los botones */
+  button:hover {
+    background-color: #ff5733; /* Rojo Pokémon en hover */
+    transform: translateY(-3px); /* Efecto de levantamiento suave */
+  }
+  
+  /* Efecto de clic en los botones */
+  button:active {
+    background-color: #3b4cca; /* Azul al hacer clic */
+    transform: translateY(1px); /* Efecto de presionar el botón */
+  }

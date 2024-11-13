@@ -1,1 +1,25 @@
-<p>ranking works!</p>
+<div>
+    <h1 class="titulo">Ranking</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Posicion</th>
+                <th>Nombre</th>
+                <th>Puntaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ranking of rankings; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ ranking.nombre }}</td>
+                <td>{{ ranking.puntaje }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<nav class="navbar">
+    <div class="BotoncitoLogout">
+      <button type="button" (click)="navegarMenu()">MENU</button>
+      <button type="button" (click)="logout()">LOGOUT</button>
+    </div>
+</nav>

@@ -57,6 +57,9 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/nueva-partida']);
     }
   }
+  verRanking(): void {
+    this.router.navigate(['/ranking']);
+  }
 
   eliminarPartida(): void {
     if (this.partida && this.usuario) {
