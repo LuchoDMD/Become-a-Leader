@@ -59,14 +59,39 @@ export class BatallaComponent {
     })
   }
 
+  /**
+   * Convierte el tipo de un movimiento en una clase CSS de tipo de movimiento (en minúsculas).
+   * @param tipo El tipo de movimiento.
+   * @returns La clase de tipo de movimiento.
+   */
   obtenerClaseTipoMovimiento(tipo: string): string {
-    console.log(tipo);
     return tipo.toLocaleLowerCase();
+  }
+
+  obtenerUrlSprites(pokemon: Pokemon): string {
+    let ret = "";
+    this.pokeapi.getSpriteByID(pokemon.id).subscribe({
+      next: (data) => {
+        ret = data.sprites.front_default;
+      },
+      error: (error: Error) => {
+        ret = "Error al obtener el sprite";
+      }
+    })
+    return ret;
   }
 
   iniciarBatalla() {
     console.log("Iniciando batalla");
     this.pokemonJugador = this.jugador?.equipo[0];
+
+    //Prueba
+    this.jugador?.equipo.forEach(element => {
+      console.log(element);
+      console.log(this.obtenerUrlSprites(element));
+    });
+
+
     console.log("Pokemon jugador:", this.pokemonJugador);
     this.generarRival();
     this.movimientosJugador = this.jugador?.equipo[0].movimientos!;
