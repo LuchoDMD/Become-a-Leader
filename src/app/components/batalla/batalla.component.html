@@ -1,40 +1,51 @@
-<div class ="batalla-container" *ngIf="pokemonJugador && pokemonRival">
-  <h2 class="titulo-batalla">Batalla Pokémon</h2>
-
-  <div class="batalla">
-    <div class="pokemon-container jugador">
-      <h3>Jugador</h3>
-      <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
-      <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
+<div class ="fondo">
+  <div class ="batalla-container" *ngIf="pokemonJugador && pokemonRival">
+    <h2 class="titulo-batalla">Batalla Pokémon</h2>
+  
+    <div class="batalla">
+      <div class="pokemon-container jugador">
+        <h3>Jugador</h3>
+        <p>{{ transformarPrimeraLetra(pokemonJugador.especie) }} (HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }})</p>
+        <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
+      </div>
+  
+      <ul class="movimientos-container">
+        <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento">
+          {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
+        </li>
+      </ul>
+  
+      <div class="vs">VS.</div>
+  
+      <div class="pokemon-container rival">
+        <h3>Rival</h3>
+        <p>{{ transformarPrimeraLetra(pokemonRival.especie) }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
+        <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p>
+      </div>
     </div>
-
-    <ul class="movimientos-container">
-      <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento">
-        {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
-      </li>
-    </ul>
-
-    <div class="vs">VS.</div>
-
-    <div class="pokemon-container rival">
-      <h3>Rival</h3>
-      <p>{{ transformarPrimeraLetra(pokemonRival.especie) }} (HP: {{ pokemonRival.vidaActual }}/{{ pokemonRival.estadisticas.hp }})</p>
-      <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p>
+  <!-- Modal de resultado de batalla -->
+  
+    <div *ngIf="mensajeBatalla" class="mensaje-batalla">
+      <p>{{ mensajeBatalla }}</p>
+    </div>
+  
+    <div *ngIf="resultado" class="resultado-batalla">
+      <p>{{ resultado }}</p>
     </div>
   </div>
-
-  <div *ngIf="mensajeBatalla" class="mensaje-batalla">
-    <p>{{ mensajeBatalla }}</p>
+  <div class="modal" *ngIf="mostrarModal">
+    <div class="modal-contenido">
+      <h2>{{ resultado }}</h2>
+      <p>{{ mensajeModal }}</p>
+      <button (click)="cerrarModal()">Aceptar</button>
+    </div>
   </div>
-
-  <div *ngIf="resultado" class="resultado-batalla">
-    <p>{{ resultado }}</p>
+  <div class="BotoncitoLogout">
+    <button type="button" (click)="navegarMenu()">MENU</button>
+    <button type="button" (click)="logout()">LOGOUT</button>
   </div>
 </div>
-<div class="BotoncitoLogout">
-  <button type="button" (click)="navegarMenu()">MENU</button>
-  <button type="button" (click)="logout()">LOGOUT</button>
-</div>
+
 
 
 
