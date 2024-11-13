@@ -1,16 +1,18 @@
+import { Partida } from './../../interface/partida';
 import { UserService } from './../../service/user.service';
 import { Component, inject } from '@angular/core';
 import { PokeAPIService } from '../../service/poke-api.service';
 import { TeamService } from '../../service/team.service';
+import { RankingService } from '../../service/ranking.service';
 import { Move } from '../../interface/move';
 import { Pokemon } from '../../interface/pokemon';
 import { tipos } from '../../interface/tipos';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Partida } from '../../interface/partida.js';
 import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
-import { ThisReceiver } from '@angular/compiler';
+import { Ranking } from '../../interface/ranking';
+
 
 @Component({
   selector: 'app-batalla',
@@ -23,6 +25,7 @@ export class BatallaComponent {
   pokeapi = inject(PokeAPIService);
   teamService = inject(TeamService);
   ps = inject(PartidaService);
+  rs = inject(RankingService);
 
   // Datos de la batalla
   idPartida: string = '';
@@ -429,10 +432,10 @@ export class BatallaComponent {
   finalizarBatalla(ganador: boolean) {
     let puntajeNuevo = 0;
     if (ganador) {
-      this.resultado = '¡Ganaste!';
-      this.mensajeModal = 'Has ganado la batalla!';
-      this.mostrarModal = true;
       puntajeNuevo = (this.partida?.puntuacion ?? 0) + 1;
+      this.resultado = '¡Ganaste!';
+      this.mensajeModal = 'Has ganado la batalla! Sumaste 1 punto. Puntaje total: ' + puntajeNuevo;
+      this.mostrarModal = true;
       this.ps.actualizarPuntaje(this.partida?.id!, puntajeNuevo).subscribe({
         next: (response) => {
           console.log('Puntaje actualizado:', response);
@@ -442,9 +445,25 @@ export class BatallaComponent {
         }
       });
     } else {
+      const ranking = { nombre: '', usuario: '', puntaje: 0 };
+      puntajeNuevo = this.partida?.puntuacion ?? 0;
       this.resultado = 'Perdiste la batalla';
-      this.mensajeModal = 'Has perdido la batalla!';
+      this.mensajeModal = 'Has perdido la batalla!. Se guardo tu puntaje final. Puntaje total: ' + puntajeNuevo;
       this.mostrarModal = true;
+      console.log(this.jugador?.nombre!);
+      console.log(this.partida?.id!);
+      ranking!.nombre = this.jugador?.nombre!;
+      ranking!.usuario = this.partida?.id!;
+      ranking!.puntaje = puntajeNuevo;
+      this.rs.postRanking(ranking!).subscribe({
+          next: (response) => {
+            console.log('Ranking actualizado:', response);
+          },
+          error: (error: Error) => {
+            console.error('Error al actualizar el ranking:', error);
+          }
+        }
+      )
       this.ps.eliminarPartida(this.partida?.id!).subscribe({
         next: (response) => {
           console.log('Puntaje actualizado:', response);
@@ -460,7 +479,7 @@ export class BatallaComponent {
     this.mostrarModal = false; // Oculta el modal
     if (this.resultado === '¡Ganaste!') {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/ruta-batalla']); // Navegar de nuevo a la ruta deseada
+        this.router.navigate(['/batalla']); // Navegar de nuevo a la ruta deseada
     });
     }
     else {

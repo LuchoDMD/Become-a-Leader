@@ -8,6 +8,14 @@
     }
   ],
   "partidas": [],
+  "rankings": [
+    {
+      "id": "974d",
+      "nombre": "Eduardo",
+      "usuario": "4efd",
+      "puntaje": 0
+    }
+  ],
   "pokemons": [
     {
       "id": "130",

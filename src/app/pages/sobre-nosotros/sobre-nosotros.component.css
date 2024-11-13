@@ -1,0 +1,152 @@
+/* Reset general */
+html, body, :host {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que ocupe toda la altura */
+    width: 100%;  /* Asegura que ocupe todo el ancho */
+    font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Fondo principal */
+  
+  /* Título principal */
+  .TITULO {
+    text-align: center;
+    font-size: 3.5em; /* Un tamaño grande pero controlado */
+    font-weight: 600;
+    color: #ffcb05; /* Amarillo Pokémon suave */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 100px; /* Espacio arriba */
+    font-family: 'Press Start 2P', cursive; /* Mantener un toque retro sin ser exagerado */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra sutil para resaltar */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  /* Animación sutil de resplandor */
+  .TITULO:hover {
+    text-shadow: 0 0 15px rgba(255, 203, 5, 0.8), 0 0 25px rgba(255, 203, 5, 0.6);
+  }
+
+  .fotos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Aumenta el espacio entre fotos */
+    max-width: 800px; /* Amplía el contenedor si lo deseas */
+    margin: 0 auto;
+  }
+  
+  .foto {
+    width: 200px; /* Aumenta el ancho de cada foto */
+    height: 200px; /* Aumenta la altura de cada foto */
+    overflow: hidden;
+    border-radius: 50%; /* Mantiene las fotos redondeadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    background-color: #1d1b1b; /* Blanco para un look limpio */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .pokeball-icon {
+    width: 40px;
+    height: 40px;
+  
+    background-size: contain;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Color oscuro para el texto */
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s; /* Transición para el hover */
+  }
+  
+  .nav-links a:hover {
+    color: #ffcb05; /* Amarillo Pokémon suave al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de levantamiento sutil */
+  }
+  
+  .nav-links a:active {
+    color: #ff5733; /* Rojo al hacer clic */
+  }
+  
+  /* Botones */
+  button {
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transición suave */
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #ff5733; /* Rojo en hover */
+    transform: translateY(-3px); /* Efecto de levantamiento suave */
+  }
+  
+  button:active {
+    background-color: #3b4cca; /* Azul al hacer clic */
+    transform: translateY(1px); /* Efecto de presionar el botón */
+  }
+  
+  /* Fondo de las rutas (con estilo minimalista) */
+  
+  
+  
+  
+  /* Fondo y detalles gráficos */
+  :host {
+    background-image: url('https://media.giphy.com/media/Ml9qdzetfukLi7kCai/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .navbar img{
+    height: 60px;
+    width: 60px;
+  }

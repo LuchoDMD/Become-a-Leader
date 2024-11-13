@@ -8,6 +8,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { NuevaPartidaComponent } from './components/nueva-partida/nueva-partida.component';  // Ajusta la ruta según tu estructura
 import { BatallaComponent } from './components/batalla/batalla.component';  
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
+import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 import { AuthGuard } from './service/auth-guard.service';
 
 export const routes: Routes = [
@@ -19,4 +20,5 @@ export const routes: Routes = [
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
   { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthGuard] },
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent},
 ];
