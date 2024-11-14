@@ -68,31 +68,41 @@ export class BatallaComponent {
     return tipo.toLocaleLowerCase();
   }
 
-  obtenerUrlSprites(pokemon: Pokemon): string {
-    let ret = "";
-    this.pokeapi.getSpriteByID(pokemon.id).subscribe({
-      next: (data) => {
-        ret = data.sprites.front_default;
-      },
-      error: (error: Error) => {
-        ret = "Error al obtener el sprite";
+  obtenerUrlSprites(pokemon: Pokemon): Promise<{front_default:string, back_default:string}> {
+    return new Promise((resolve, reject) => {
+      this.pokeapi.getSpriteByID(pokemon.id).subscribe({
+        next: (data) => {
+          resolve({
+            front_default:data.front_default,
+            back_default:data.back_default
+          });
+        },
+        error: (error: Error) => { reject("Error al obtener el sprite"); }
+      });
+    });
+  }
+
+  async asignarSprites(equipo: Pokemon[] | undefined) {
+    // Prueba para sprites
+    for (const element of equipo || []) {
+      try {
+        const urls = await this.obtenerUrlSprites(element);
+        element.backSprite=urls.back_default;
+        element.frontSprite=urls.front_default;
       }
-    })
-    return ret;
+      catch {
+        console.error("Error al obtener urls de los sprites.");
+      }
+    }
   }
 
   iniciarBatalla() {
     console.log("Iniciando batalla");
+    this.asignarSprites(this.jugador?.equipo);
     this.pokemonJugador = this.jugador?.equipo[0];
-
-    //Prueba
-    this.jugador?.equipo.forEach(element => {
-      console.log(element);
-      console.log(this.obtenerUrlSprites(element));
-    });
-
-
     console.log("Pokemon jugador:", this.pokemonJugador);
+
+
     this.generarRival();
     this.movimientosJugador = this.jugador?.equipo[0].movimientos!;
 
@@ -108,6 +118,7 @@ export class BatallaComponent {
             pokemon.idEntrenador = "rival";
             this.rival.push(pokemon);
           }
+          this.asignarSprites(this.rival);
           this.pokemonRival = this.rival[0];
           this.movimientosRival = this.pokemonRival.movimientos!;
           console.log("Pokemon rival:", this.pokemonRival);
@@ -485,13 +496,13 @@ export class BatallaComponent {
       ranking!.usuario = this.partida?.id!;
       ranking!.puntaje = puntajeNuevo;
       this.rs.postRanking(ranking!).subscribe({
-          next: (response) => {
-            console.log('Ranking actualizado:', response);
-          },
-          error: (error: Error) => {
-            console.error('Error al actualizar el ranking:', error);
-          }
+        next: (response) => {
+          console.log('Ranking actualizado:', response);
+        },
+        error: (error: Error) => {
+          console.error('Error al actualizar el ranking:', error);
         }
+      }
       )
       this.ps.eliminarPartida(this.partida?.id!).subscribe({
         next: (response) => {
@@ -509,7 +520,7 @@ export class BatallaComponent {
     if (this.resultado === '¡Ganaste!') {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/batalla']); // Navegar de nuevo a la ruta deseada
-    });
+      });
     }
     else {
       this.router.navigate(['/menu']);
