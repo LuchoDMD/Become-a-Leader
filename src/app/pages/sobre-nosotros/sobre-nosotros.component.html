@@ -1,14 +1,13 @@
-<p>sobre-nosotros works!</p>
 <div class="TITULO">
     SOBRE NOSOTROS
 </div>
 
 <div class="fotos-container">
     <div class="foto" *ngFor="let foto of fotos">
-      <img [src]="foto" alt="Foto del equipo" />
+        <img [src]="foto.url" alt="Foto del equipo" />
+        <p class="pie-foto">{{ foto.texto }}</p> <!-- Aquí se muestra el texto correspondiente -->
     </div>
-  </div>
-  
+</div>
 
 <nav class="navbar">
     <img src="pokeball_icon.png" alt="fondo">

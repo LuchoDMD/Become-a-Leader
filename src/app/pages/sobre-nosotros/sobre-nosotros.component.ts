@@ -6,14 +6,14 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './sobre-nosotros.component.html',
-  styleUrl: './sobre-nosotros.component.css'
+  styleUrls: ['./sobre-nosotros.component.css'] // Corrige 'styleUrl' a 'styleUrls'
 })
 export class SobreNosotrosComponent {
-  fotos: string[] = [
-    'foto1.jpg',
-    'foto2.jpg',
-    'foto3.jpg',
-    'foto4.jpg',
-    'foto5.jpg'
+  fotos: { url: string, texto: string }[] = [
+    { url: 'foto1.jpg', texto: 'Texto para la foto 1' },
+    { url: 'foto2.jpg', texto: 'Texto para la foto 2' },
+    { url: 'foto3.jpg', texto: 'Texto para la foto 3' },
+    { url: 'foto4.jpg', texto: 'Texto para la foto 4' },
+    { url: 'foto5.jpg', texto: 'Texto para la foto 5' }
   ];
 }

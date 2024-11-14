@@ -47,22 +47,30 @@ export class LoginComponent implements OnInit{
     this.Login()
   }
 
-  Login()
-  {
-    if(this.loginForm.valid)
-    {
-      const {email,password}= this.loginForm.getRawValue()
-      this.us.login(email,password).subscribe((user:Usuario | boolean)=>{
-        if(user)
-        {
-          this.as.login(); 
-          console.log('Login successful:', user);
-          this.router.navigate(['Partida'])
-        }else{
-          console.log('Login failed')
+  Login() {
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.getRawValue();
+  
+      // Llamada al servicio para hacer login
+      this.us.login(email, password).subscribe(
+        (user: Usuario | boolean) => {
+          if (user) {
+            // Si el login es exitoso
+            this.as.login(); // Autenticar al usuario
+            console.log('Login successful:', user);
+            this.router.navigate(['Partida']); // Redirigir a la página de partida
+          } else {
+            // Si el login falla
+            this.mensaje = 'Credenciales incorrectas, por favor intente nuevamente.';
+            console.log('Login failed');
+          }
+        },
+        (error) => {
+          // En caso de error en la llamada
+          this.mensaje = 'Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde.';
+          console.log('Error en el login:', error);
         }
-      })
+      );
     }
   }
-
 }
