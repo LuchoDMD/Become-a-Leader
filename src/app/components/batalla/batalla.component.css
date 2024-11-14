@@ -1,185 +1,300 @@
+
+/* Colores por tipo de movimiento */
+.normal {
+  background-color: #A8A878;
+}
+.fire {
+  background-color: #FF5733;
+}
+.water {
+  background-color: #3399FF;
+}
+.grass {
+  background-color: #4CAF50;
+}
+.electric {
+  background-color: #FFFF00;
+}
+.ice {
+  background-color: #7FFFD4;
+}
+.fighting {
+  background-color: #D35400;
+}
+.poison {
+  background-color: #A040A0;
+}
+.ground {
+  background-color: #DB7093;
+}
+.flying {
+  background-color: #87CEEB;
+}
+.psychic {
+  background-color: #F08080;
+}
+.bug {
+  background-color: #F0E68C;
+}
+.rock {
+  background-color: #B0C4DE;
+}
+.ghost {
+  background-color: #7B68EE;
+}
+.dragon {
+  background-color: #6495ED;
+}
+.dark {
+  background-color: #000000;
+}
+.steel {
+  background-color: #B0C4DE;
+}
+.fairy {
+  background-color: #FFB6C1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Container principal de la batalla */
-.fondo {
-    background-image: url('/fondo_inicio.jpg'); /* Ruta de la imagen */
-    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
-    background-position: center center; /* Centra la imagen */
-    background-attachment: fixed; /* Hace que la imagen se quede fija cuando se haga scroll */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 100vh; /* Asegura que la imagen ocupe toda la altura de la ventana */
-    margin: 0; /* Elimina el margen predeterminado */
-    overflow: hidden; /* Evita el desplazamiento de la página */
-  }
-  
-  /* Titulo de la batalla */
-  .titulo-batalla {
-    text-align: center; /* Centra el título */
+.batalla-container {
+  background-image: url('/fondo_inicio.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  box-sizing: border-box; /* Asegura que el padding no afecte al tamaño */
+}
+
+/* Titulo de la batalla */
+.titulo-batalla {
+  text-align: center;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
-  }
-  
-  /* Contenedor de batalla (horizontal) */
-  .batalla {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;  /* Espaciado entre los recuadros */
-  }
-  
-  /* Estilo para los recuadros de Pokémon */
-  .pokemon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    padding: 10px;
-    margin: 0 10px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    background-color: #f7f7f7;
-  }
-  
-  /* Estilo para el jugador */
-  .jugador {
-    background-color: #d1e7ff; /* Azul para el jugador */
-  }
-  
-  /* Estilo para el rival */
-  .rival {
-    background-color: #ffcccb; /* Rojo claro para el rival */
-  }
-  
-  /* Estilo para el texto 'VS.' */
-  .vs {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* Lista de movimientos con estilo de botones */
-  .movimientos {
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  .boton-movimiento {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .boton-movimiento:hover {
-    background-color: #45a049;
-  }
-  
-  /* Estilo para los mensajes de batalla */
-  .mensaje-batalla {
-    margin: 20px auto; /* Centra el contenedor horizontalmente */
-    padding: 10px;
-    background-color: #f8d7da;
-    color: #721c24;
-    border-radius: 5px;
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px; /* Ajusta el ancho máximo */
-    width: 80%; /* Se adapta al tamaño de la pantalla */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra para resaltarlo */
+  color: white;
+}
+/* Contenedor de la información (jugador y rival) */
+.informacion {
+  display: flex;
+  justify-content: space-between; /* Asegura que el contenido se distribuya entre el jugador y el rival */
+  width: 100%;
+  max-width: 900px; /* Limita el ancho del contenedor */
+  padding: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  position: relative; /* Asegura que los elementos posicionados dentro se ubiquen correctamente */
 }
 
-  
-  /* Resultado final de la batalla */
-  .resultado-batalla {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #d4edda;
-    color: #155724;
-    border-radius: 5px;
-  }
-  
-  .BotoncitoLogout {
-    position: fixed;
-    top: 10px; /* Ajusta la distancia desde la parte superior de la pantalla */
-    right: 10px; /* Ajusta la distancia desde el lado derecho de la pantalla */
-    z-index: 1000; /* Asegura que el botón esté en el frente, sobre el fondo */
-  }
-  
-  .BotoncitoLogout button {
-    padding: 8px 16px;
-    font-size: 16px;
-    background-color: #f44336; /* Cambia el color de fondo para destacarlo */
-    color: white; /* Color del texto */
-    border: none;
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer;
-  }
-  
-  .BotoncitoLogout button:hover {
-    background-color: #d32f2f; /* Cambia el color al pasar el cursor por encima */
-  }
+/* Estilo para la información del Pokémon */
+.pokemon-info {
+  width: 45%; /* Ajusta el tamaño de cada bloque de Pokémon */
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .movimientos-container {
-    position: fixed;
-    bottom: 10px; /* Posición cerca de la parte inferior de la pantalla */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75%; /* Ocupa el 75% del ancho de la pantalla */
-    background-color: #f5f5f5;
-    border: 2px solid #333;
-    border-radius: 10px;
-    z-index: 1000 ;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    grid-template-rows: repeat(2, auto); /* Dos filas */
-    gap: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-  }
-  
-  .modal {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-contenido {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-  }
-  
-  .modal-contenido button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  
-  .modal-contenido button:hover {
-    background-color: #45a049;
-  }
-  
+.pokemon-info.jugador {
+  background-color: #d1e7ff; /* Azul para el jugador */
+  margin-left: auto;
+}
+
+.pokemon-info.rival {
+  background-color: #ffcccb; /* Rojo claro para el rival */
+  margin-right: auto;
+}
+
+.pokemon-info h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+.hp-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.hp-bar-inner {
+  height: 100%;
+  background-color: #4caf50;
+  width: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-out;
+}
+
+
+
+
+/* Contenedor de la batalla */
+.batalla {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+
+/* Sprite del Pokémon del jugador */
+.pokemon-sprite.jugador {
+  position: absolute;
+  bottom: 30%;  /* Desplazamos el Pokémon del jugador un poco más abajo */
+  left: 20%;    /* Ajustamos el sprite para que quede más cerca del borde izquierdo */
+}
+
+/* Sprite del Pokémon rival */
+.pokemon-sprite.rival {
+  position: absolute;
+  top: 30%;     /* Desplazamos el Pokémon rival un poco más arriba */
+  right: 20%;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.movimientos-container {
+  position: relative;
+  margin-left: auto;
+  width: 60%;
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-template-rows: repeat(2, auto); /*Dos filas*/
+  gap: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  list-style: none;
+}
+
+/* Lista de movimientos */
+.movimientos {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que el contenedor de los movimientos ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye el padding y border dentro del ancho total */
+}
+
+
+/* Botón de movimiento */
+.boton-movimiento {
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+  box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho total */
+}
+
+/* hola */
+.boton-movimiento:hover {
+  transform: scale(1.1);
+}
+
+
+/* Estilo para los mensajes de batalla */
+.mensaje-batalla {
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  width: 40%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  margin-right: 5px;
+}
+
+
+
+/* Resultado final de la batalla */
+.resultado-batalla {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de logout y menú */
+.BotoncitoLogout {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.BotoncitoLogout button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.BotoncitoLogout button:hover {
+  background-color: #d32f2f;
+}
+
+
+
+/* Animación para los mensajes */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
