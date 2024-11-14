@@ -278,13 +278,15 @@ export class BatallaComponent {
     console.log(`${atacante.especie} está realizando ${movimiento.nombre}`);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
     const daño = Math.floor(((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor);
+    console.log("Vida actual del defensor:", defensor.vidaActual);
+    console.log("Daño calculado:", daño);
     defensor.vidaActual -= daño;
     const mensajeAtaque = `${this.transformarPrimeraLetra(atacante.especie)} usó ${this.transformarPrimeraLetra(movimiento.nombre)}. ` +
       (factor > 1 ? '¡Fue supereficaz!' : (factor === 0 ? 'No tuvo ningún efecto...' : (factor < 1 ? 'No fue muy eficaz...' : '')))
 
     this.mostrarMensajeBatalla(mensajeAtaque);
-
-    if (defensor.vidaActual < 0) {
+    console.log("Vida restante del defensor: ", defensor.vidaActual);
+    if (defensor.vidaActual <= 0) {
       this.mostrarMensajeBatalla(mensajeAtaque + ` ${this.transformarPrimeraLetra(defensor.especie)} se ha desmayado!`);
       defensor.vidaActual = 0;
     }

@@ -7,13 +7,386 @@
       "password": "ejemplo123"
     }
   ],
-  "partidas": [],
+  "partidas": [
+    {
+      "id": "4efd",
+      "fecha_inicio": "2024-11-14T02:27:20.584Z",
+      "fecha_fin": "2024-11-14T02:27:20.584Z",
+      "puntuacion": 1,
+      "personaje": {
+        "id": "4efd",
+        "nombre": "Denise",
+        "tipo": "dragon",
+        "equipo": [
+          {
+            "id": "149",
+            "especie": "dragonite",
+            "tipos": [
+              "dragon",
+              "flying"
+            ],
+            "nivel": 100,
+            "vidaActual": 201,
+            "estadisticas": {
+              "hp": 201,
+              "atk": 409,
+              "def": 324,
+              "satk": 348,
+              "sdef": 320,
+              "spd": 284
+            },
+            "movimientos": [
+              {
+                "nombre": "outrage",
+                "tipo": "dragon",
+                "clase": "physical",
+                "potencia": 120,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "fire-punch",
+                "tipo": "fire",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "thunder-punch",
+                "tipo": "electric",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "230",
+            "especie": "kingdra",
+            "tipos": [
+              "water",
+              "dragon"
+            ],
+            "nivel": 100,
+            "vidaActual": 187,
+            "estadisticas": {
+              "hp": 187,
+              "atk": 321,
+              "def": 337,
+              "satk": 314,
+              "sdef": 339,
+              "spd": 288
+            },
+            "movimientos": [
+              {
+                "nombre": "surf",
+                "tipo": "water",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "ice-beam",
+                "tipo": "ice",
+                "clase": "special",
+                "potencia": 90,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "dragon-pulse",
+                "tipo": "dragon",
+                "clase": "special",
+                "potencia": 85,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "waterfall",
+                "tipo": "water",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "330",
+            "especie": "flygon",
+            "tipos": [
+              "ground",
+              "dragon"
+            ],
+            "nivel": 100,
+            "vidaActual": 175,
+            "estadisticas": {
+              "hp": 175,
+              "atk": 341,
+              "def": 286,
+              "satk": 298,
+              "sdef": 314,
+              "spd": 353
+            },
+            "movimientos": [
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "dragon-claw",
+                "tipo": "dragon",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "stone-edge",
+                "tipo": "rock",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 80,
+                "usos": 5,
+                "pp": 5
+              },
+              {
+                "nombre": "crunch",
+                "tipo": "dark",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "373",
+            "especie": "salamence",
+            "tipos": [
+              "dragon",
+              "flying"
+            ],
+            "nivel": 100,
+            "vidaActual": 204,
+            "estadisticas": {
+              "hp": 204,
+              "atk": 415,
+              "def": 298,
+              "satk": 351,
+              "sdef": 290,
+              "spd": 355
+            },
+            "movimientos": [
+              {
+                "nombre": "dragon-claw",
+                "tipo": "dragon",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "fire-fang",
+                "tipo": "fire",
+                "clase": "physical",
+                "potencia": 65,
+                "precision": 95,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "rock-slide",
+                "tipo": "rock",
+                "clase": "physical",
+                "potencia": 75,
+                "precision": 90,
+                "usos": 10,
+                "pp": 10
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "445",
+            "especie": "garchomp",
+            "tipos": [
+              "dragon",
+              "ground"
+            ],
+            "nivel": 100,
+            "vidaActual": 250,
+            "estadisticas": {
+              "hp": 250,
+              "atk": 390,
+              "def": 304,
+              "satk": 295,
+              "sdef": 302,
+              "spd": 327
+            },
+            "movimientos": [
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "outrage",
+                "tipo": "dragon",
+                "clase": "physical",
+                "potencia": 120,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "fire-fang",
+                "tipo": "fire",
+                "clase": "physical",
+                "potencia": 65,
+                "precision": 95,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "stone-edge",
+                "tipo": "rock",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 80,
+                "usos": 5,
+                "pp": 5
+              }
+            ],
+            "idEntrenador": "4efd"
+          },
+          {
+            "id": "612",
+            "especie": "haxorus",
+            "tipos": [
+              "dragon"
+            ],
+            "nivel": 100,
+            "vidaActual": 188,
+            "estadisticas": {
+              "hp": 188,
+              "atk": 429,
+              "def": 323,
+              "satk": 266,
+              "sdef": 271,
+              "spd": 329
+            },
+            "movimientos": [
+              {
+                "nombre": "dragon-claw",
+                "tipo": "dragon",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "iron-head",
+                "tipo": "steel",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              },
+              {
+                "nombre": "earthquake",
+                "tipo": "ground",
+                "clase": "physical",
+                "potencia": 100,
+                "precision": 100,
+                "usos": 10,
+                "pp": 10
+              },
+              {
+                "nombre": "crunch",
+                "tipo": "dark",
+                "clase": "physical",
+                "potencia": 80,
+                "precision": 100,
+                "usos": 15,
+                "pp": 15
+              }
+            ],
+            "idEntrenador": "4efd"
+          }
+        ]
+      }
+    }
+  ],
   "rankings": [
     {
       "id": "974d",
       "nombre": "Eduardo",
       "usuario": "4efd",
       "puntaje": 0
+    },
+    {
+      "id": "974d",
+      "nombre": "Jorge",
+      "usuario": "4efd",
+      "puntaje": 2
+    },
+    {
+      "id": "974d",
+      "nombre": "Manuel",
+      "usuario": "4efd",
+      "puntaje": 1
+    },
+    {
+      "id": "4afd",
+      "nombre": "sdsad",
+      "usuario": "4efd",
+      "puntaje": 2
     }
   ],
   "pokemons": [
