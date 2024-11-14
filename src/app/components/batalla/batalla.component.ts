@@ -516,6 +516,7 @@ export class BatallaComponent {
     }
   }
 
+
   navegarMenu() {
     this.router.navigate(['/menu']);
   }
