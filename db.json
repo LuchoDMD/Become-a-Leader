@@ -14,6 +14,18 @@
       "nombre": "Eduardo",
       "usuario": "4efd",
       "puntaje": 0
+    },
+    {
+      "id": "974d",
+      "nombre": "Jorge",
+      "usuario": "4efd",
+      "puntaje": 2
+    },
+    {
+      "id": "974d",
+      "nombre": "Manuel",
+      "usuario": "4efd",
+      "puntaje": 1
     }
   ],
   "pokemons": [

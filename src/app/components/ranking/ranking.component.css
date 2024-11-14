@@ -53,7 +53,7 @@ table {
 /* Encabezado de la tabla */
 table thead th {
     padding: 15px;
-    background-color: #3b4cca; /* Color de fondo azul Pokémon */
+    background-color: #1d1b1b; /* Color de fondo azul Pokémon */
     color: #ffcb05; /* Texto en amarillo Pokémon */
     font-size: 1.5em;
     text-transform: uppercase;
@@ -80,7 +80,7 @@ table tbody td {
     padding: 15px;
     text-align: center;
     font-size: 1.2em;
-    color: #3b4cca; /* Azul Pokémon para el texto */
+    color: #1d1b1b; /* Azul Pokémon para el texto */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -122,7 +122,11 @@ button {
   
   .navbar .BotoncitoLogout {
     display: flex;           /* Alinea los botones en fila */
-    gap: 10px;               /* Espacio de 10px entre los botones */
+    gap: 30px;               /* Espacio de 10px entre los botones */
+  }
+  .navbar .LogoutButton {
+    display: flex;
+    gap: 30px;          /* Alinea los botones en fila */              /* Espacio de 10px entre los botones */
   }
   /* Efecto de hover en los botones */
   button:hover {

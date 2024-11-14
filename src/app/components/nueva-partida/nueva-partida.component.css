@@ -109,16 +109,6 @@ button {
   margin-top: 20px;
 }
 
-button:hover {
-  background-color: #ff5733; /* Rojo en hover */
-  transform: translateY(-3px); /* Efecto de levantamiento suave */
-}
-
-button:active {
-  background-color: #3b4cca; /* Azul al hacer clic */
-  transform: translateY(1px); /* Efecto de presionar el botón */
-}
-
 /* Efecto para los elementos de "Aura" y "Bruno" */
 #aura, #bruno {
   margin-top: 20px;
@@ -185,9 +175,8 @@ label {
   z-index: 1000;
 }
 
-.navbar .BotoncitoLogout {
-  display: flex;           /* Alinea los botones en fila */
-  gap: 10px;    
+/* Estilos para los botones */
+button {
   background-color: #ffcb05; /* Amarillo Pokémon */
   color: #000000;
   border: none;
@@ -200,16 +189,25 @@ label {
   margin-top: 20px;
   width: 250px;
   text-align: center;
-  z-index: 1000;           /* Espacio de 10px entre los botones */
+  z-index: 1000;
+}
+
+.navbar .BotoncitoLogout {
+  display: flex;           /* Alinea los botones en fila */
+  gap: 30px;               /* Espacio de 10px entre los botones */
+}
+.navbar .LogoutButton {
+  display: flex;
+  gap: 30px;          /* Alinea los botones en fila */              /* Espacio de 10px entre los botones */
 }
 /* Efecto de hover en los botones */
-.navbar .BotoncitoLogout:hover {
+button:hover {
   background-color: #ff5733; /* Rojo Pokémon en hover */
   transform: translateY(-3px); /* Efecto de levantamiento suave */
 }
 
 /* Efecto de clic en los botones */
-.navbar .BotoncitoLogout:active {
+button:active {
   background-color: #3b4cca; /* Azul al hacer clic */
   transform: translateY(1px); /* Efecto de presionar el botón */
 }
