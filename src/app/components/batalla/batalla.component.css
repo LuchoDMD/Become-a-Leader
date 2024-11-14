@@ -1,3 +1,59 @@
+/* Colores por tipo de movimiento */
+.normal {
+  background-color: #A8A878;
+}
+.fire {
+  background-color: #FF5733;
+}
+.water {
+  background-color: #3399FF;
+}
+.grass {
+  background-color: #4CAF50;
+}
+.electric {
+  background-color: #FFFF00;
+}
+.ice {
+  background-color: #7FFFD4;
+}
+.fighting {
+  background-color: #D35400;
+}
+.poison {
+  background-color: #A040A0;
+}
+.ground {
+  background-color: #DB7093;
+}
+.flying {
+  background-color: #87CEEB;
+}
+.psychic {
+  background-color: #F08080;
+}
+.bug {
+  background-color: #F0E68C;
+}
+.rock {
+  background-color: #B0C4DE;
+}
+.ghost {
+  background-color: #7B68EE;
+}
+.dragon {
+  background-color: #6495ED;
+}
+.dark {
+  background-color: #000000;
+}
+.steel {
+  background-color: #B0C4DE;
+}
+.fairy {
+  background-color: #FFB6C1;
+}
+
 /* Container principal de la batalla */
 .fondo {
     background-image: url('/fondo_inicio.jpg'); /* Ruta de la imagen */
@@ -26,8 +82,147 @@
     gap: 20px;  /* Espaciado entre los recuadros */
   }
   
+/* Contenedor de la información (jugador y rival) */
+.informacion {
+  display: flex;
+  justify-content: space-between; /* Asegura que el contenido se distribuya entre el jugador y el rival */
+  width: 100%;
+  max-width: 100%; /* Limita el ancho del contenedor */
+  padding: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  position: relative; /* Asegura que los elementos posicionados dentro se ubiquen correctamente */
+}
+
+/* Estilo para la información del Pokémon */
+.pokemon-info {
+  width: 25%; /* Ajusta el tamaño de cada bloque de Pokémon */
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-info.jugador {
+  background-color: #d1e7ff; /* Azul para el jugador */
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.pokemon-info.rival {
+  background-color: #ffcccb; /* Rojo claro para el rival */
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+.pokemon-info h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+.hp-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.hp-bar-inner {
+  height: 100%;
+  background-color: #4caf50;
+  width: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-out;
+}
+
+
+
+
+/* Contenedor de la batalla */
+.batalla {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+
+/* Sprite del Pokémon del jugador */
+.pokemon-sprite.jugador {
+  position: relative;
+  bottom: 30%;  /* Desplazamos el Pokémon del jugador un poco más abajo */
+  left: 20%; 
+}
+
+/* Sprite del Pokémon rival */
+.pokemon-sprite.rival {
+  position: relative;
+  bottom: 30%;  /* Desplazamos el Pokémon del jugador un poco más abajo */
+  left: 20%; 
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  position: absolute;
+  left: 15%;
+}
+
+.movimientos-container {
+  position: relative;
+  margin-left: auto;
+  width: 60%;
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-template-rows: repeat(2, auto); /*Dos filas*/
+  gap: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  list-style: none;
+}
+
+/* Lista de movimientos */
+.movimientos {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Asegura que el contenedor de los movimientos ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye el padding y border dentro del ancho total */
+}
+.boton-movimiento {
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+  box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho total */
+}
+
   /* Estilo para los recuadros de Pokémon */
-  .pokemon-container {
+  /*.pokemon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +254,7 @@
   }
   
   /* Lista de movimientos con estilo de botones */
-  .movimientos {
+  /*.movimientos {
     padding: 0;
     margin: 10px 0;
   }
@@ -72,7 +267,7 @@
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s;
-  }
+  }*/
   
   .boton-movimiento:hover {
     background-color: #45a049;

@@ -60,6 +60,10 @@ export class BatallaComponent {
     })
   }
 
+  obtenerClaseTipoMovimiento(tipo: string): string {
+    return tipo.toLocaleLowerCase();
+  }
+
   iniciarBatalla() {
     console.log("Iniciando batalla");
     this.pokemonJugador = this.jugador?.equipo[0];
