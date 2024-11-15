@@ -101,16 +101,12 @@ html, body, :host {
     }
   }
   .navbar{
-    width: 100%;
     background-color: #1d1b1b; /* Blanco para un look limpio */
     padding: 10px 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
   }
   

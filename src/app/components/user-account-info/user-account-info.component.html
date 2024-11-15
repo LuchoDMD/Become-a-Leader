@@ -1,1 +1,32 @@
-<p>user-account-info works!</p>
+<div class="menu">
+    <h1>Tu cuenta</h1>
+    <div class="form-group">
+      <label for="nickname">Nickname</label>
+      <div class="input-group">
+        <input type="text" id="nickname" class="form-control" [(ngModel)]="usuario.nick" [disabled]="!editarNickname" />
+        <button class="btn btn-secondary btn-sm" (click)="editarNickname = !editarNickname">
+          {{ editarNickname ? 'Guardar' : 'Editar' }}
+        </button>
+      </div>
+      <label for="email">Email</label>
+      <div class="input-group">
+        <input type="email" id="email" class="form-control" [(ngModel)]="usuario.email" [disabled]="!editarEmail" />
+        <button class="btn btn-secondary btn-sm" (click)="editarEmail = !editarEmail">
+          {{ editarEmail ? 'Guardar' : 'Editar' }}
+        </button>
+      </div>
+      <button class="btn btn-primary" (click)="mostrarCambioClave = !mostrarCambioClave">
+        Cambiar tu clave
+      </button>
+      <div *ngIf="mostrarCambioClave">
+        <label for="currentPassword">Contraseña Actual</label>
+        <input type="password" id="currentPassword" class="form-control" [(ngModel)]="currentPassword" />
+        <label for="newPassword">Nueva Contraseña</label>
+        <input type="password" id="newPassword" class="form-control" [(ngModel)]="newPassword" />
+        <label for="confirmNewPassword">Confirmar Nueva Contraseña</label>
+        <input type="password" id="confirmNewPassword" class="form-control" [(ngModel)]="confirmNewPassword" />
+        <button class="btn btn-success" (click)="cambiarClave()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+  

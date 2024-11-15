@@ -1,19 +1,26 @@
-<p>user-profile works!</p>
+<nav class="navbar">
+    <div class="BotoncitoLogout">
+      <button (click)="onVolver()" type="button">VOLVER</button>
+    </div>
+</nav>
 <div class="menu">
     <h1>Tu perfil</h1>
 
     <div class="cuenta">
-        <button class="config_cuenta">Configuración de tu cuenta</button>
-        <app-user-account-info></app-user-account-info>
+        @if (verConfigCuenta && verInfoPartidas) {
+            <button (click)="activarConfigCuenta()" class="config_cuenta">Configuración de tu cuenta</button>
+        }
+        @if (verConfigCuenta && !verInfoPartidas) {
+            <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id"></app-user-account-info >
+        }
     </div>
 
     <div class="info_partidas">
-        <button class="info_partidas">Tus partidas</button>
-        <app-user-ingame-info></app-user-ingame-info>
+        @if (verConfigCuenta && verInfoPartidas) {
+            <button (click)="activarInfoPartidas()" class="info_partidas">Tus partidas</button>
+        }
+        @if (verInfoPartidas && !verConfigCuenta) {
+            <app-user-ingame-info></app-user-ingame-info>
+        }
     </div>
 </div>
-<nav class="navbar">
-  <div class="BotoncitoLogout">
-    <button type="button">VOLVER</button>
-  </div>
-</nav>
