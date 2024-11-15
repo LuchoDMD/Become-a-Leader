@@ -11,6 +11,7 @@ import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.compon
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { AuthGuard } from './service/auth-guard.service';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},
@@ -23,4 +24,5 @@ export const routes: Routes = [
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
   { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthGuard] }, 
+  { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]},
 ];
