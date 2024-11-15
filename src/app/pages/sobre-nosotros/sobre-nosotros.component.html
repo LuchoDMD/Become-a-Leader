@@ -5,7 +5,8 @@
 
 <div class="fotos-container">
     <div class="foto" *ngFor="let foto of fotos">
-      <img [src]="foto" alt="Foto del equipo" />
+        <img [src]="foto.url" alt="Foto del equipo" />
+      <p class="pie-foto">{{ foto.texto }}</p>
     </div>
   </div>
   

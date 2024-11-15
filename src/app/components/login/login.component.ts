@@ -9,25 +9,25 @@ import { AuthService } from '../../service/auth.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule,ReactiveFormsModule,CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   as = inject(AuthService);
   us = inject(UserService)
   fb = inject(FormBuilder);
-  router=inject(Router);
+  router = inject(Router);
   mensaje: string = '';
 
-  loginForm=this.fb.nonNullable.group({
-    email:['',[Validators.required,Validators.email]],
-    password: ['',[Validators.required]]
+  loginForm = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
   });
 
   @Output()
-  emitirUsuarioLogin= new EventEmitter<Usuario>();
+  emitirUsuarioLogin = new EventEmitter<Usuario>();
 
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
     this.route.queryParams.subscribe(params => {
@@ -47,21 +47,26 @@ export class LoginComponent implements OnInit{
     this.Login()
   }
 
-  Login()
-  {
-    if(this.loginForm.valid)
-    {
-      const {email,password}= this.loginForm.getRawValue()
-      this.us.login(email,password).subscribe((user:Usuario | boolean)=>{
-        if(user)
-        {
-          this.as.login(); 
-          console.log('Login successful:', user);
-          this.router.navigate(['Partida'])
-        }else{
-          console.log('Login failed')
+  Login() {
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.getRawValue()
+      this.us.login(email, password).subscribe(
+        (user: Usuario | boolean) => {
+          if (user) {
+            this.as.login();
+            console.log('Login successful:', user);
+            this.router.navigate(['Partida'])
+          } else {
+            this.mensaje = 'Credenciales incorrectas, por favor intente nuevamente.';
+            console.log('Login failed')
+          }
+        },
+        (error) => {
+          // En caso de error en la llamada
+          this.mensaje = 'Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde.';
+          console.log('Error en el login:', error);
         }
-      })
+      )
     }
   }
 
