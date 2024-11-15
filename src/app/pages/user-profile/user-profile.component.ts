@@ -46,4 +46,8 @@ export class UserProfileComponent implements OnInit {
     this.verConfigCuenta = false;
     this.verInfoPartidas = true;
   }
+
+  onSalir():void{
+    this.router.navigate(['/menu']);
+  }
 }
