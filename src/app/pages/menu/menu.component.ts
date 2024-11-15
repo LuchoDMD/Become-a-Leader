@@ -61,6 +61,10 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/ranking']);
   }
 
+  verPerfil():void{
+    this.router.navigate(['/perfil']);
+  }
+
   eliminarPartida(): void {
     if (this.partida && this.usuario) {
       this.partidaService.eliminarPartida(this.usuario.id).subscribe({

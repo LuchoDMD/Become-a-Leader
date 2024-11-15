@@ -1,0 +1,119 @@
+/* General Reset y Estilos Base */
+html, body, :host {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que ocupe toda la altura */
+    width: 100%;  /* Asegura que ocupe todo el ancho */
+    font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Fondo principal */
+  :host {
+    background-image: url('../../../../public/fondo_inicio.jpg'); /* Nuevo fondo GIF */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+  
+  /* Estilos del título */
+  .menu h1 {
+    text-align: center;
+    font-size: 3.5em; /* Un tamaño grande pero controlado */
+    font-weight: 600;
+    color: #ffcb05; /* Amarillo Pokémon suave */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 100px; /* Espacio arriba */
+    font-family: 'Press Start 2P', cursive; /* Mantener un toque retro sin ser exagerado */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra sutil para resaltar */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  /* Efecto de resplandor en el título */
+  .menu h1:hover {
+    text-shadow: 0 0 15px rgba(255, 203, 5, 0.8), 0 0 25px rgba(255, 203, 5, 0.6);
+  }
+  
+  /* Contenedor de botones */
+  .menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  
+  /* Estilos para los botones */
+  button {
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #000000;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transición suave */
+    margin-top: 20px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  /* Efecto de hover en los botones */
+  button:hover {
+    background-color: #ff5733; /* Rojo Pokémon en hover */
+    transform: translateY(-3px); /* Efecto de levantamiento suave */
+  }
+  
+  /* Efecto de clic en los botones */
+  button:active {
+    background-color: #3b4cca; /* Azul al hacer clic */
+    transform: translateY(1px); /* Efecto de presionar el botón */
+  }
+  
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .menu h1 {
+      font-size: 2.5em; /* Ajustamos el tamaño del título */
+      margin-top: 80px; /* Menos margen superior */
+    }
+  
+    button {
+      width: 200px; /* Botones un poco más pequeños en pantallas pequeñas */
+      font-size: 1.1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu h1 {
+      font-size: 2em; /* Título aún más pequeño en dispositivos muy pequeños */
+      margin-top: 60px;
+    }
+  
+    button {
+      width: 180px; /* Botones aún más pequeños */
+      font-size: 1em;
+    }
+  }
+  .navbar{
+    width: 100%;
+    background-color: #1d1b1b; /* Blanco para un look limpio */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  
+  
+  
