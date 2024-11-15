@@ -33,7 +33,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   onVolver(): void {
-    this.router.navigate(['/menu']);
+    this.verConfigCuenta = true;
+    this.verInfoPartidas = true;
   }
 
   activarConfigCuenta(): void {

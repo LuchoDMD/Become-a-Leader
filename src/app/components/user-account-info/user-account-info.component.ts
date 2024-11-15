@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class UserAccountInfoComponent implements OnInit {
   @Input() userId: string | null = null;
+  @Output() volver = new EventEmitter<void>();
+
   usuario: any = {};
   mostrarCambioClave = false;
   editarNickname = false;
@@ -48,5 +50,9 @@ export class UserAccountInfoComponent implements OnInit {
     } else {
       alert('Las nuevas contraseñas no coinciden.');
     }
+  }
+
+  onVolver(): void {
+    this.volver.emit();
   }
 }

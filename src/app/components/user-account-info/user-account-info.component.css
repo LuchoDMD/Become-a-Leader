@@ -87,7 +87,7 @@ html, body, :host {
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease;
-    margin: 10px 0;
+    margin-top: 20px;
     width: 250px;
     text-align: center;
   }

@@ -1,26 +1,17 @@
 <div class="menu">
-    <nav class="navbar">
-        <div class="BotoncitoLogout">
-          <button (click)="onVolver()" type="button" class="btnVolver">VOLVER</button>
-        </div>
+    <nav *ngIf="verConfigCuenta && verInfoPartidas" class="navbar">
+      <div class="BotoncitoLogout">
+        <button (click)="onVolver()" type="button" class="btnVolver">VOLVER</button>
+      </div>
     </nav>
     <h1>Tu perfil</h1>
-
     <div class="cuenta">
-        @if (verConfigCuenta && verInfoPartidas) {
-            <button (click)="activarConfigCuenta()" class="config_cuenta">Configuración de tu cuenta</button>
-        }
-        @if (verConfigCuenta && !verInfoPartidas) {
-            <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id"></app-user-account-info >
-        }
+      <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarConfigCuenta()" class="config_cuenta">Configuración de tu cuenta</button>
+      <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id" (volver)="onVolver()"></app-user-account-info>
     </div>
-
     <div class="info_partidas">
-        @if (verConfigCuenta && verInfoPartidas) {
-            <button (click)="activarInfoPartidas()" class="info_partidas">Tus partidas</button>
-        }
-        @if (verInfoPartidas && !verConfigCuenta) {
-            <app-user-ingame-info></app-user-ingame-info>
-        }
+      <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarInfoPartidas()" class="info_partidas">Tus partidas</button>
+      <app-user-ingame-info *ngIf="verInfoPartidas && !verConfigCuenta"></app-user-ingame-info>
     </div>
-</div>
+  </div>
+  
