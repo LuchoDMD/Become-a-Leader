@@ -67,13 +67,7 @@
       </ul>
     </div>
   
-    <div class="modal" *ngIf="mostrarModal">
-      <div class="modal-contenido">
-        <h2>{{ resultado }}</h2>
-        <p>{{ mensajeModal }}</p>
-        <button (click)="cerrarModal()">Aceptar</button>
-      </div>
-    </div>
+    
   
     <!-- Resultado de la batalla -->
     <div *ngIf="resultado" class="resultado-batalla">
@@ -83,7 +77,13 @@
   </div>
 </div>
 
-
+<div class="modal" *ngIf="mostrarModal">
+  <div class="modal-contenido">
+    <h2>{{ resultado }}</h2>
+    <p>{{ mensajeModal }}</p>
+    <button (click)="cerrarModal()">Aceptar</button>
+  </div>
+</div>
 <!-- Botones de logout y menú -->
 <div class="BotoncitoLogout">
   <button type="button" (click)="navegarMenu()">MENU</button>
