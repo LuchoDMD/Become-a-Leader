@@ -1,4 +1,9 @@
 <div class="fondo">
+  <div class="trainer-info">
+    <p><strong>Nombre del Entrenador:</strong> {{ jugador?.nombre }}</p>
+    <p><strong>Puntuación de Partida:</strong> {{ partida?.puntuacion }}</p>
+  </div>
+
   <div class="batalla-container" *ngIf="pokemonJugador && pokemonRival">
     <h2 class="titulo-batalla">Batalla Pokémon</h2>
   
@@ -60,7 +65,7 @@
     </div>
   
       <ul class="movimientos-container">
-        <li *ngFor="let movimiento of movimientosJugador" (click)="realizarAtaque(movimiento)" class="boton-movimiento"
+        <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento"
           [ngClass]="obtenerClaseTipoMovimiento(movimiento.tipo)">
           {{ transformarPrimeraLetra(movimiento.nombre) }} - Potencia: {{ movimiento.potencia }}
         </li>

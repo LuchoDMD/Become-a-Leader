@@ -55,6 +55,12 @@
   background-color: #FFB6C1;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que el body ocupe toda la altura disponible */
+}
+
 .fondo {
   background-image: url('/battle-background2.jpg'); /* Ruta de la imagen */
   background-size: cover; /* Hace que la imagen cubra toda la pantalla */
@@ -62,11 +68,23 @@
   background-attachment: fixed; /* Hace que la imagen se quede fija cuando se haga scroll */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   height: 100vh; /* Asegura que la imagen ocupe toda la altura de la ventana */
-   margin: 0; /* Elimina el margen predeterminado */
+  width: 100%;
+  margin: 0; /* Elimina el margen predeterminado */
   margin: 0; /* Elimina el margen predeterminado */
   overflow: hidden; /* Evita el desplazamiento de la página */
 }
 
+.trainer-info {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente opcional */
+  padding: 10px;
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* Para asegurarte de que esté encima de otros elementos */
+}
 
 /* Container principal de la batalla */
 .batalla-container {
@@ -167,6 +185,8 @@ div.batalla div img {
 /* Sprite del Pokémon del jugador */
 .pokemon-sprite.jugador {
   position: absolute;
+  width: 900px !important; /* Ajusta según el tamaño deseado */
+  height: auto; /* Mantén la proporción */
   bottom: 30%;  /* Desplazamos el Pokémon del jugador un poco más abajo */
   left: 20%;    /* Ajustamos el sprite para que quede más cerca del borde izquierdo */
 }

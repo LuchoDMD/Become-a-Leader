@@ -296,18 +296,22 @@ export class BatallaComponent {
           console.log("El equipo del jugador ha sido derrotado.");
           this.finalizarBatalla(false);
         }
-        this.pokemonJugador = this.jugador!.equipo[0];
-        this.movimientosJugador = this.pokemonJugador.movimientos!;
-        defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno
+        if(this.jugador!.equipo.length > 0){
+          this.pokemonJugador = this.jugador!.equipo[0];
+          this.movimientosJugador = this.pokemonJugador.movimientos!;
+          defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno 
+        }
       } else {
         this.rival.shift();
         if (this.rival.length === 0) {
           console.log("El equipo del rival ha sido derrotado.");
           this.finalizarBatalla(true);
         }
-        this.pokemonRival = this.rival[0];
-        this.movimientosRival = this.pokemonRival.movimientos!;
-        defensor = this.pokemonRival; // Siguiente Pokémon si hay alguno
+        if(this.rival.length > 0){
+          this.pokemonRival = this.rival[0];
+          this.movimientosRival = this.pokemonRival.movimientos!;
+          defensor = this.pokemonRival; // Siguiente Pokémon si hay alguno
+        }
       }
     }
     return defensor;
