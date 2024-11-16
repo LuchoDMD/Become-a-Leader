@@ -1,37 +1,65 @@
 <div class="menu">
-    <nav class="navbar">
-      <div class="BotoncitoLogout">
-        <button (click)="onVolver()" type="button" class="btnVolver">VOLVER</button>
-      </div>
-    </nav>
-    <h1>Tu cuenta</h1>
-    <div class="form-group">
-      <label class="label" for="nickname">Nickname</label>
-      <div class="input-group">
-        <input type="text" id="nickname" class="form-control" [(ngModel)]="usuario.nick" [disabled]="!editarNickname" />
-        <button class="btn btn-secondary btn-sm" (click)="editarNickname = !editarNickname">
-          {{ editarNickname ? 'Guardar' : 'Editar' }}
-        </button>
-      </div>
-      <label class="label" for="email">Email</label>
-      <div class="input-group">
-        <input type="email" id="email" class="form-control" [(ngModel)]="usuario.email" [disabled]="!editarEmail" />
-        <button class="btn btn-secondary btn-sm" (click)="editarEmail = !editarEmail">
-          {{ editarEmail ? 'Guardar' : 'Editar' }}
-        </button>
-      </div>
-      <button class="btn btn-primary" (click)="mostrarCambioClave = !mostrarCambioClave">
-        Cambiar tu clave
+  <nav class="navbar">
+    <div class="BotoncitoLogout">
+      <button (click)="onVolver()" type="button" class="btnVolver">VOLVER</button>
+    </div>
+  </nav>
+  <h1>Tu cuenta</h1>
+  <div class="form-group">
+    <label class="label" for="nickname">Nickname</label>
+    <div class="input-group">
+      <input type="text" id="nickname" class="form-control" [(ngModel)]="nickNameCopy" [disabled]="!editarNickname" />
+      <button class="btn btn-secondary btn-sm" *ngIf="!editarNickname" (click)="editarNickname = !editarNickname">
+        Editar
       </button>
-      <div *ngIf="mostrarCambioClave" class="clave">
-        <label class="label" for="currentPassword">Contraseña Actual</label>
-        <input type="password" id="currentPassword" class="form-control" [(ngModel)]="currentPassword" />
-        <label class="label" for="newPassword">Nueva Contraseña</label>
-        <input type="password" id="newPassword" class="form-control" [(ngModel)]="newPassword" />
-        <label class="label" for="confirmNewPassword">Confirmar Nueva Contraseña</label>
-        <input type="password" id="confirmNewPassword" class="form-control" [(ngModel)]="confirmNewPassword" />
-        <button class="btn btn-success" (click)="cambiarClave()">Guardar Cambios</button>
-      </div>
+      <button class="btn btn-secondary btn-sm" *ngIf="editarNickname" (click)="cambiarNickName()">
+        Guardar
+      </button>
+    </div>
+    <div class="invalid-feedback" *ngIf="showNickNameErrorMsg">
+      {{nickNameErrorMsg}}
+    </div>
+    <div class="success-message" *ngIf="this.cambioNickname">
+      ¡Nickname modificado correctamente!
+    </div>
+    <label class="label" for="email">Email</label>
+    <div class="input-group">
+      <!-- Llamar a verificarUsoEmail() cada vez que cambie el input del email -->
+      <input type="email" id="email" class="form-control" [(ngModel)]="emailCopy" 
+             [disabled]="!editarEmail" [class.is-invalid]="emailEnUso"
+             (input)="verificarUsoEmail()" />
+      <button class="btn btn-secondary btn-sm" *ngIf="!editarEmail" (click)="editarEmail = !editarEmail">
+        Editar
+      </button>
+      <!-- Botón de guardar deshabilitado si el email está en uso -->
+      <button class="btn btn-secondary btn-sm" *ngIf="editarEmail" [disabled]="emailEnUso" (click)="cambiarEmail()">
+        Guardar
+      </button>
+    </div>
+    <!-- Mostrar mensaje de error si el email está en uso -->
+    <div *ngIf="emailDistintoAlActualMsg" class="invalid-feedback">Debes indicar una dirección distinta a la actual.</div>
+    <div *ngIf="emailEnUsoMsg" class="invalid-feedback">Esta dirección ya se encuentra en uso</div>
+    <div *ngIf="cambioEmail" class="success-message">¡Dirección de correo modificada exitosamente!</div>
+    <button class="btn btn-primary" (click)="mostrarCambioClave = !mostrarCambioClave" (click)="desactivarAlertasClave()">
+      Cambiar tu clave
+    </button>
+    <div *ngIf="mostrarCambioClave" class="clave">
+      <label class="label" for="currentPassword">Contraseña Actual</label>
+      <input type="password" id="currentPassword" class="form-control" [(ngModel)]="currentPassword" />
+      <label class="label" for="newPassword">Nueva Contraseña</label>
+      <input type="password" id="newPassword" class="form-control" [(ngModel)]="newPassword" />
+      <label class="label" for="confirmNewPassword">Confirmar Nueva Contraseña</label>
+      <input type="password" id="confirmNewPassword" class="form-control" [(ngModel)]="confirmNewPassword" />
+      <button class="btn btn-success" (click)="cambiarClave()">Guardar Cambios</button>
+    </div>
+    <div>
+      <div class="invalid-feedback" *ngIf="claveDistintaALaActualMsg">Debes ingresar una contraseña distinta a la actual.</div>
+      <div class="invalid-feedback" *ngIf="clavesNuevasNoCoincidenMsg">Las contraseñas nuevas no coinciden.</div>
+      <div class="invalid-feedback" *ngIf="claveActualIncorrectaMsg">La contraseña actual indicada no es correcta.</div>
+      <div class="invalid-feedback" *ngIf="claveVaciaMsg">No has ingresado ninguna clave.</div>
+    </div>
+    <div class="success-message" *ngIf="cambioClave">
+      ¡Contraseña cambiada exitosamente!
     </div>
   </div>
-  
+</div>

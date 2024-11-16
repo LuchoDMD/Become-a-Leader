@@ -2,8 +2,14 @@
   "usuarios": [
     {
       "id": "4efd",
-      "email": "ejemplo@gmail.com",
-      "nick": "ejemplo",
+      "email": "ejemplo11@gmail.com",
+      "nick": "ninjaaaaa",
+      "password": "123"
+    },
+    {
+      "id": "c91e",
+      "email": "ejemplo1@gmail.com",
+      "nick": "ejemplo1",
       "password": "ejemplo123"
     }
   ],

@@ -41,6 +41,10 @@ export class UserService {
     );
   }
 
+  updateUser(id:string, usuario:Usuario):Observable<Usuario>{
+    return this.http.put<Usuario>(`${this.urlBase}/${id}`, usuario);
+  }
+
   login(email: string, password: string): Observable<Usuario | boolean> {
     return this.http.get<Usuario[]>(`${this.urlBase}?email=${email}&password=${password}`).pipe(
       tap(users => {
@@ -66,14 +70,5 @@ export class UserService {
     return !!localStorage.getItem('token');
   }
 
-  // Nuevo método para cambiar la contraseña
-  changePassword(id: string | null, currentPassword: string, newPassword: string): Observable<any> {
-    const url = `${this.urlBase}/change-password`;
-    return this.http.post(url, { id, currentPassword, newPassword }).pipe(
-      catchError(err => {
-        console.error('Error changing password:', err);
-        return of(null);
-      })
-    );
-  }
+  
 }
