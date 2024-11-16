@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,12 @@ export class PokeAPIService {
   //MOVES
   getMoveByName(name:string):Observable<any>{
     return this.http.get<any>(this.url+"move/"+name);
+  }
+  //SPRITES
+  getSpritesByID(id:string):Observable<any>{
+    return this.http.get<any>(this.url+"pokemon/"+id).pipe(
+      map( (data:any) => data.sprites)
+    );
   }
 }
 

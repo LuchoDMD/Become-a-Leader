@@ -8,8 +8,8 @@
                 <div>
                     <h4>Informacion Basica</h4>
                     <ul>
-                        <img [src]="pokeAPI.sprites.front_default" alt="">
-                        <li>ID: {{pokeAPI.id}}</li> 
+                        <img [src]="pokeAPI.sprites.front_default" [alt]="['pokeAPI.id'+' - '+'pokeAPI.especie']">
+                        <li>ID: {{pokeAPI.id}} </li> 
                         <li>Nombre: {{pokeAPI.name}}</li>
                         <li>Tipo: @for (t of pokeAPI.types; track $index) {
                             {{t?.type.name}}

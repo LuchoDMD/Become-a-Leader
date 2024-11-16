@@ -31,7 +31,7 @@ export class TeamService {
       )
     );
   }
-
+  
   //PUT
   updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
     return this.http.put<Pokemon>(this.urlBase+"/"+pokemon.id, pokemon);

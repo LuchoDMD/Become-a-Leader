@@ -1,0 +1,13 @@
+<nav>
+    <a>Agregar</a>
+    <a>Ver Lista</a>
+</nav>
+<div>
+    <h4>Listado de Pokemons</h4>
+    <ul>
+        @for (pokemon of pokemons; track $index) 
+        {
+            <li> {{$index}} <img [src]="pIcons[$index]" alt="Icono" class="pokemon-icon"> <a [routerLink]="['detail/'+pokemon.id]">{{pokemon.id}} - {{pokemon.especie}} </a></li>
+        }
+    </ul>
+</div>
