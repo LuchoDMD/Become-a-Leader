@@ -73,8 +73,8 @@ export class BatallaComponent {
       this.pokeapi.getSpriteByID(pokemon.id).subscribe({
         next: (data) => {
           resolve({
-            front_default:data.front_default,
-            back_default:data.back_default
+            front_default:data.versions["generation-v"]["black-white"]["animated"]["front_default"],
+            back_default:data.versions["generation-v"]["black-white"]["animated"]["back_default"],
           });
         },
         error: (error: Error) => { reject("Error al obtener el sprite"); }
@@ -216,7 +216,7 @@ export class BatallaComponent {
         if(this.jugador!.equipo.length > 0){
           this.pokemonJugador = this.jugador!.equipo[0];
           this.movimientosJugador = this.pokemonJugador.movimientos!;
-          defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno 
+          defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno
         }
       } else {
         this.rival.shift();
