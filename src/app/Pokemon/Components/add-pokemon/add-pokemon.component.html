@@ -1,45 +1,63 @@
-<section>
+<body>
+  <section>
+    <!-- Barra de navegación -->
     <nav>
-        <a [routerLink]="['add']">Agregar</a>
-        <a [routerLink]="['']">Ver Lista</a>
+      <a [routerLink]="['add']">Agregar</a>
+      <a [routerLink]="['']">Ver Lista</a>
     </nav>
-    <fieldset>
-        <legend>AgregarPokemon</legend>
-        <form action="">
-            <label for="pokeID">ID: </label> <input type="text" name="pokeID" id="pokeID" [(ngModel)]="pokeID" placeholder="Ingresar nro del pokemon"> <button type="button" (click)="generarPokemon(pokeID)">Buscar</button>
-            @if (pokeAPI) 
-            {
-                <div>
-                    <h4>Informacion Basica</h4>
-                    <ul>
-                        <img [src]="pokeAPI.sprites.front_default" [alt]="['pokeAPI.id'+' - '+'pokeAPI.especie']">
-                        <li>ID: {{pokeAPI.id}} </li> 
-                        <li>Nombre: {{pokeAPI.name}}</li>
-                        <li>Tipo: @for (t of pokeAPI.types; track $index) {
-                            {{t?.type.name}}
-                        }</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Estadisticas</h4>
-                    <ul>
-                        @for (st of pokeAPI.stats; track $index) {
-                            <li>{{st?.stat.name}}:{{st?.base_stat}} </li>
-                        }
-                    </ul>
-                </div>
-                <div>
-                    <h4>Ataques</h4>
-                    <h6>Los movimientos de tipo estatus no pueden ser agregados</h6>
-                    <ul>
-                        @for(move of pokeAPI.moves;track $index){
-                            <li>{{move.move.name}} - <button (click)="agregarAtaque(move.move.name)">Agregar</button></li>
-                        }
-                    </ul>
-                </div>
-            }
-            <button type="submit">Guardar</button>
-        </form>
-    </fieldset>
-</section>
 
+    <!-- Formulario de agregar Pokémon -->
+    <fieldset>
+      <legend>Agregar Pokémon</legend>
+      <form>
+        <!-- Entrada para ID del Pokémon -->
+        <label for="pokeID">ID: </label>
+        <input type="text" name="pokeID" id="pokeID" [(ngModel)]="pokeID" placeholder="Ingresar número del Pokémon">
+
+        <!-- Botón para buscar Pokémon -->
+        <button type="button" (click)="generarPokemon(pokeID)">Buscar</button>
+
+        <!-- Si se obtiene la respuesta de la API -->
+        <div *ngIf="pokeAPI">
+          <h4>Información Básica</h4>
+          <ul>
+            <!-- Imagen del Pokémon -->
+            <li>
+              <img [src]="pokeAPI.sprites.front_default" [alt]="pokeAPI.id + ' - ' + pokeAPI.name" class="pokemon-icon">
+            </li>
+            <!-- ID y nombre del Pokémon -->
+            <li>ID: {{pokeAPI.id}}</li>
+            <li>Nombre: {{pokeAPI.name}}</li>
+            <li>Tipo:
+              <span *ngFor="let t of pokeAPI.types; let i = index">
+                {{t?.type.name}}<span *ngIf="i < pokeAPI.types.length - 1">,</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sección de estadísticas -->
+        <div *ngIf="pokeAPI">
+          <h4>Estadísticas Base</h4>
+          <ul>
+            <li *ngFor="let st of pokeAPI.stats">{{st?.stat.name}}: {{st?.base_stat}}</li>
+          </ul>
+        </div>
+
+        <!-- Sección de movimientos -->
+        <div *ngIf="pokeAPI">
+          <h4>Ataques</h4>
+          <h6>Los movimientos de tipo estatus no pueden ser agregados</h6>
+          <ul>
+            <li *ngFor="let move of pokeAPI.moves">
+              {{move.move.name}} - <button (click)="agregarAtaque(move.move.name)">Agregar</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Botón para guardar -->
+        <button type="submit">Guardar</button>
+      </form>
+    </fieldset>
+  </section>
+</body>
