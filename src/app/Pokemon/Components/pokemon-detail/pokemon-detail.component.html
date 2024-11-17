@@ -48,8 +48,11 @@
             </table>
         </div>
         <br>
-        <button type="button">Modificar</button>
-        <button type="button">Eliminar</button>
+        @if (pokemon?.id) 
+        {
+            <button type="button" (click)="irAModificar(pokemon?.id ?? '')">Modificar</button>
+        }
+        <button type="button" (click)="borrarPokemon(pokemon?.id ?? '')">Eliminar</button>
     </article>
 </section>
 

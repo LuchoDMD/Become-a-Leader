@@ -50,7 +50,6 @@ export class PokemonListComponent implements OnInit
             next:(data: any)=>{
               let icon = data.versions?.['generation-vii']?.icons?.front_default;
               if(icon){
-                console.log("Icon: "+icon);
                 this.pIcons[i]=icon;
               }
               icon="";

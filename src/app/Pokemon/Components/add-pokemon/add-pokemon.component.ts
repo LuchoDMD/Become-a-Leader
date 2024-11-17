@@ -6,12 +6,13 @@ import { Pokemon } from '../../../Interfaces/pokemon';
 import { Move } from '../../../Interfaces/moves';
 import { Stats } from '../../../Interfaces/estadisticas';
 import { TeamService } from '../../Services/team.service';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-add-pokemon',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './add-pokemon.component.html',
   styleUrl: './add-pokemon.component.css'
 })
@@ -149,11 +150,14 @@ export class AddPokemonComponent{
   addPokemonBD(){
     this.pokemon.id=this.pokeAPI.id;
     this.pokemon.especie=this.pokeAPI.name;
+    //Almacena los tipos
     for(let i=0;i<this.pokeAPI.type.length;i++){
       this.pokemon.tipos.push(this.pokeAPI.types[i].type.name); //Esto para obtener los tipos del pokemon 
     }
     this.pokemon.nivel=100;
+    //Genera los IVs
     this.iv=this.generateIVs();
+    //Calcula las estadisticas
     this.pokemon.estadisticas=
     {
       hp: this.calculateStats(this.statsBase.hp, this.iv.hp, this.generateEV(1,84) ,this.pokemon.nivel,false),

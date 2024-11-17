@@ -1,1 +1,72 @@
-<p>edit-pokemon works!</p>
+<section>
+    <h1>{{pokemon.especie}} Editar Movimientos</h1>
+    <div>
+        <h2>Actuales</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Clase</th>
+                    <th>Potencia</th>
+                    <th>Precision</th>
+                    <th>Usos</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    @for (movimientos of pokemon.movimientos; track $index) 
+                    {
+                        <tr>
+                            <td>{{movimientos.nombre}}</td>
+                            <td>{{movimientos.tipo}}</td>
+                            <td>{{movimientos.clase}}</td>
+                            <td>{{movimientos.potencia}}</td>
+                            <td>{{movimientos.precision}}</td>
+                            <td>{{movimientos.pp}}</td>
+                            <input (click)="seleccionarMovimiento($index)" type="button" value="Seleccionar">
+                        </tr>
+                    }
+            </tbody>
+            <tfoot> <td>@if (pokemonMoveID!=undefined && pokemonMoveID!=-1){ Movimiento a cambiar: {{pokemon.movimientos[pokemonMoveID].nombre }} }</td> </tfoot>
+        </table>
+        
+    </div>
+    <div>
+        <h2>Lista de Movimientos</h2>
+        @if (pokemonMoveID!=undefined && pokemonMoveID!=-1) 
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Clase</th>
+                        <th>Potencia</th>
+                        <th>Precision</th>
+                        <th>Usos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @for (move of movesList; track $index) 
+                        {
+                            <tr>
+                                <td>{{move.nombre}}</td>
+                                <td>{{move.tipo}}</td>
+                                <td>{{move.clase}}</td>
+                                <td>{{move.potencia}}</td>
+                                <td>{{move.precision}}</td>
+                                <td>{{move.pp}}</td>
+                                @if (pokemonMoveID!=-1) {
+                                    <input (click)="cambiarMovimientos(pokemonMoveID,$index)" type="button" value="Cambiar">
+                                }
+                                <!-- Se rompe luego del septimo movimiento ver como arreglar -->
+                            </tr>
+                        }
+                </tbody>
+            </table>
+        }   
+    </div>
+    <button type="submit" (click)="guardarCambios()">Guardar</button>
+    <button type="button" (click)="volverALista()">Volver a Lista</button>
+</section>

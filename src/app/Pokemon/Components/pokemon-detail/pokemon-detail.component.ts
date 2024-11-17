@@ -45,7 +45,7 @@ export class PokemonDetailComponent implements OnInit
       error:(err:Error)=>{
         console.log("ERROR: "+err.message);
       }
-    })
+    });
     this.ps.getSpritesByID(this.pokeID).subscribe({
       next:(data)=>{
         this.sprites=data; //Almaceno los sprites desde el servicio pokeAPI
@@ -59,8 +59,12 @@ export class PokemonDetailComponent implements OnInit
   volverALista(){
     this.route.navigate([''])
   }
+
+  irAModificar(id:string){
+    this.route.navigate(['edit/'+id]);
+  };
   
   borrarPokemon(id:string){
-
+    this.ts.deletePokemon(id).subscribe();
   }
 }
