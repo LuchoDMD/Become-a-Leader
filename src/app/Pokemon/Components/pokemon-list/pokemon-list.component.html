@@ -1,13 +1,17 @@
-<nav>
+<body>
+  <nav>
     <a [routerLink]="['add']">Agregar</a>
     <a [routerLink]="['list']">Ver Lista</a>
 </nav>
+<section class="fondodiv">
 <div>
     <h4>Listado de Pokemons</h4>
     <ul>
-        @for (pokemon of pokemons; track $index) 
+        @for (pokemon of pokemons; track $index)
         {
             <li> <img [src]="pIcons[$index]" alt="Icono" class="pokemon-icon"> <a [routerLink]="['detail/'+pokemon.id]">{{pokemon.id}} - {{pokemon.especie}} </a></li>
         }
     </ul>
 </div>
+</section>
+</body>

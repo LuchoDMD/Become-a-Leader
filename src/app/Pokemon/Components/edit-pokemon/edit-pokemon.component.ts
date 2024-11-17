@@ -20,23 +20,23 @@ export class EditPokemonComponent implements OnInit
     id:'',
     especie:'',
     tipos:[],
-    nivel:0, 
+    nivel:0,
     vidaActual:0,
     estadisticas:
-    { 
+    {
       hp:0,
       atk:0,
       def:0,
       satk:0,
       sdef:0,
-      spd:0 
-    }, 
+      spd:0
+    },
     movimientos:[]
   };
   movesList:Move[]=[];
   pokeID:string='';     //Se utiliza en el ngOnInit para almacenar el ID de la ruta
   pokemonMoveID:number=-1; // almacena el id del arreglo de pokemonMovimientos
-  moveListID:number=-1;   // almacena el id del arreglo de moveList 
+  moveListID:number=-1;   // almacena el id del arreglo de moveList
 
   //Injectables
   ps=inject(PokeAPIService);
@@ -45,13 +45,13 @@ export class EditPokemonComponent implements OnInit
   aroute=inject(ActivatedRoute);
 
   //Metodos
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     //Almaceno el id del pokemon obtenido desde la url
     this.aroute.paramMap.subscribe({
       next:(params)=>{
         if(params.get('id')){
-          this.pokeID=params.get('id')??''; 
+          this.pokeID=params.get('id')??'';
         }
       },
       error:(err:Error)=>{
@@ -61,7 +61,7 @@ export class EditPokemonComponent implements OnInit
     //Almaceno el pokemon para mostrar su informacion
     this.ts.getPokemonByID(this.pokeID).subscribe({
       next:(data:Pokemon)=>{
-        this.pokemon=data; 
+        this.pokemon=data;
       },
       error:(err:Error)=>{
         console.log("ERROR: "+err.message);
@@ -69,9 +69,10 @@ export class EditPokemonComponent implements OnInit
     });
     //Obtengo la informacion del pokemon .
     this.ps.getPokemonByID(this.pokeID).subscribe({
-      next:(poke:any)=> 
+      next:(poke:any)=>
       {
         if(poke){
+          let j=0;
           for(let i=0;i<poke.moves.length;i++)
           {
             this.ps.getMoveByName(poke.moves[i].move.name).subscribe({
@@ -86,7 +87,8 @@ export class EditPokemonComponent implements OnInit
                     usos:move.pp,
                     pp:move.pp,
                   }
-                  this.movesList[i]=m;
+                  this.movesList[j]=m;
+                  j++
                 }
               },
               error:(err:Error)=>{
@@ -109,7 +111,7 @@ export class EditPokemonComponent implements OnInit
   {
     this.route.navigate(['']);
   }
-  
+
   //Intercambio de movimientos
   cambiarMovimientos(indexMovP:number, indexMoveList:number)
   {
@@ -119,7 +121,7 @@ export class EditPokemonComponent implements OnInit
       this.moveListID=-1;
     }
   }
-  
+
   guardarCambios(){
     this.ts.updatePokemon(this.pokemon.id,this.pokemon).subscribe({
       next:()=>{
@@ -135,5 +137,5 @@ export class EditPokemonComponent implements OnInit
 }
 
 
-  
+
 

@@ -1,7 +1,9 @@
-<section>
+<body>
+  <section>
     <input type="button" (click)="volverALista()" value="Volver">
-    <h1>{{pokemon?.id}} - {{pokemon?.especie}}</h1>
+
     <article>
+      <h1>{{pokemon?.id}} - {{pokemon?.especie}}</h1>
         <div>
             <img [src]="sprites.front_default" [alt]="['pokemon?.especie'+'.jpg']">
         </div>
@@ -48,11 +50,13 @@
             </table>
         </div>
         <br>
-        @if (pokemon?.id) 
+        @if (pokemon?.id)
         {
             <button type="button" (click)="irAModificar(pokemon?.id ?? '')">Modificar</button>
         }
         <button type="button" (click)="borrarPokemon(pokemon?.id ?? '')">Eliminar</button>
     </article>
 </section>
+
+</body>
 

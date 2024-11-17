@@ -5,7 +5,7 @@ import { AddPokemonComponent } from "./Pokemon/Components/add-pokemon/add-pokemo
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AddPokemonComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

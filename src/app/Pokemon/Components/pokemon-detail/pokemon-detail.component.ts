@@ -10,7 +10,7 @@ import { switchMap } from 'rxjs';
   standalone: true,
   imports: [],
   templateUrl: './pokemon-detail.component.html',
-  styleUrl: './pokemon-detail.component.css'
+  styleUrls: ['./pokemon-detail.component.css']
 })
 export class PokemonDetailComponent implements OnInit
 {
@@ -26,7 +26,7 @@ export class PokemonDetailComponent implements OnInit
   aroute=inject(ActivatedRoute);
 
   //Metodos
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     this.aroute.paramMap.subscribe({
       next:(params)=>{
@@ -63,7 +63,7 @@ export class PokemonDetailComponent implements OnInit
   irAModificar(id:string){
     this.route.navigate(['edit/'+id]);
   };
-  
+
   borrarPokemon(id:string){
     this.ts.deletePokemon(id).subscribe();
   }
