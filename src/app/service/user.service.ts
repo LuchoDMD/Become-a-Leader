@@ -70,5 +70,9 @@ export class UserService {
     return !!localStorage.getItem('token');
   }
 
+  deleteUser(id:string):Observable<void>
+  {
+    return this.http.delete<void>(this.urlBase+'/'+id);
+  }
   
 }

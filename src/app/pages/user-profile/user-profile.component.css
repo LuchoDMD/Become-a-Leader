@@ -17,7 +17,7 @@ html, body, :host {
   background-image: url('../../../../public/fondo_inicio.jpg'); /* Nuevo fondo GIF */
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  position:relative;
 }
 
 /* Estilos del título */
@@ -114,5 +114,61 @@ button:active {
   z-index: 1000;
 }
 
+.pokemon-icon 
+{
+    width: 50px; /* Tamaño pequeño para el icono */
+    height: 50px;
+  }
 
+  .datos_partida {
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #000000;
+    border: none;
+    font-size: 1.2em;
+    padding: 12px 24px;
+    width: 250px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px; /* Smooth corners */
+  }
+  
+.informacion_general{
+  background-color: #ffcb05; /* Amarillo Pokémon */
+  color: #000000;
+  border: none;
+  font-size: 2.5em;
+  padding: 20px 40px;
+  width: 300px;
+  margin-top: auto;
+  text-align: center;
+}
 
+/* Contenedor principal para las columnas */
+.contenedor-principal {
+  display: flex; /* Flexbox para disposición en columnas */
+  justify-content: space-between; /* Espacio uniforme entre las columnas */
+  align-items: flex-start; /* Alinea las columnas en la parte superior */
+  padding: 20px;
+  gap: 40px; /* Espacio entre las columnas */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+/* Estilos para las columnas */
+.columna-informacion {
+  flex: 1; /* Ocupa más espacio si hay espacio disponible */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  min-width: 300px; /* Ancho mínimo para la columna */
+}
+
+.columna-botones {
+  flex: 0.3; /* Ocupa menos espacio que la columna de información */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  min-width: 200px; /* Ancho mínimo para la columna */
+}

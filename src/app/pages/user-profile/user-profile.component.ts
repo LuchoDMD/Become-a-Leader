@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../service/user.service';
+import { Entrenador } from './../../interface/entrenador';
+import { Partida } from './../../interface/partida';
+import { UserService } from './../../service/user.service';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAccountInfoComponent } from '../../components/user-account-info/user-account-info.component';
 import { CommonModule } from '@angular/common';
+import { PartidaService } from '../../service/partida.service';
+import { PokeAPIService } from '../../service/poke-api.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,11 +19,26 @@ export class UserProfileComponent implements OnInit {
   usuario: any;
   verConfigCuenta: boolean = true;
   verInfoPartidas: boolean = true;
+  userService = inject(UserService);
+  partidaService = inject(PartidaService);
+  pokeApiService = inject(PokeAPIService);
+  partida: Partida = {
+    id: '',
+    fecha_inicio: new Date,
+    puntuacion: 0,
+    personaje: {
+      id: '',
+      nombre: '',
+      tipo: '',
+      equipo: []
+    }
+  };
+  sprites: string[] = [];
 
   constructor(
     private router: Router,
     private us: UserService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -27,7 +46,16 @@ export class UserProfileComponent implements OnInit {
       this.us.getUserByID(token).subscribe({
         next: (res) => this.usuario = res,
         error: (err) => console.error('Error al obtener el usuario: ' + err + '.')
-      });
+      })
+      this.partidaService.getPartidaByUserId(token).subscribe({
+        next: (data: Partida | null) => {
+          this.partida = data!;
+          //console.log(this.partida);
+        },
+        error(err: Error) {
+          console.log(err.message);
+        }
+      })
     }
   }
 
@@ -46,7 +74,23 @@ export class UserProfileComponent implements OnInit {
     this.verInfoPartidas = true;
   }
 
-  onSalir():void{
+  onSalir(): void {
     this.router.navigate(['/menu']);
   }
+  eliminarUsuario() {
+    if (this.usuario) {
+      this.userService.deleteUser(this.usuario.id).subscribe({
+        next: () => {
+          alert("Se elimino el usuario exitosamente");
+          this.userService.logout();
+          this.router.navigate(['']);
+        },
+        error: (err: Error) => {
+          console.log(err.message);
+        }
+      })
+    }
+  }
+
+
 }
