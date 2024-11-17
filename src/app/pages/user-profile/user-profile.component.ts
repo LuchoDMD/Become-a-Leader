@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { UserAccountInfoComponent } from '../../components/user-account-info/user-account-info.component';
-import { UserIngameInfoComponent } from '../../components/user-ingame-info/user-ingame-info.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [UserAccountInfoComponent, UserIngameInfoComponent, CommonModule],
+  imports: [UserAccountInfoComponent, CommonModule],
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })

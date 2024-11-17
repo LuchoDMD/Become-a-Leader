@@ -9,9 +9,5 @@
       <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarConfigCuenta()" class="config_cuenta">Configuración de tu cuenta</button>
       <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id" (volver)="onVolver()"></app-user-account-info>
     </div>
-    <div class="info_partidas">
-      <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarInfoPartidas()" class="info_partidas">Tus partidas</button>
-      <app-user-ingame-info *ngIf="verInfoPartidas && !verConfigCuenta"></app-user-ingame-info>
-    </div>
   </div>
   
