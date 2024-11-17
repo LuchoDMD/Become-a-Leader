@@ -1,23 +1,13 @@
-/* General Reset y Estilos Base */
-html, body, :host {
+/* Fondo principal */
+body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Asegura que ocupe toda la altura */
-  width: 100%;  /* Asegura que ocupe todo el ancho */
-  font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Fondo principal */
-:host {
   background-image: url('../../../../public/fondo_inicio.jpg'); /* Nuevo fondo GIF */
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
   position:relative;
+  justify-content: center;
 }
 
 /* Estilos del título */
@@ -114,7 +104,7 @@ button:active {
   z-index: 1000;
 }
 
-.pokemon-icon 
+.pokemon-icon
 {
     width: 50px; /* Tamaño pequeño para el icono */
     height: 50px;
@@ -131,7 +121,7 @@ button:active {
     text-align: center;
     border-radius: 8px; /* Smooth corners */
   }
-  
+
 .informacion_general{
   background-color: #ffcb05; /* Amarillo Pokémon */
   color: #000000;
@@ -147,7 +137,7 @@ button:active {
 .contenedor-principal {
   display: flex; /* Flexbox para disposición en columnas */
   justify-content: space-between; /* Espacio uniforme entre las columnas */
-  align-items: flex-start; /* Alinea las columnas en la parte superior */
+   /* Alinea las columnas en la parte superior */
   padding: 20px;
   gap: 40px; /* Espacio entre las columnas */
   width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
