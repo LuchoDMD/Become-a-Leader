@@ -29,15 +29,20 @@ export class MenuComponent implements OnInit {
       this.userService.getUserByID(token).subscribe(usuario => {
         this.usuario = usuario;
         if (this.usuario) {
-          this.partidaService.getPartidaByUserId(this.usuario.id).subscribe(partida => {
-            this.partida = partida;
-            this.tienePartida = !!partida;
+          this.partidaService.getPartidaByUserId(this.usuario.id).subscribe( {
+            next: (partida: Partida | null) => {
+              this.partida = partida;
+              this.tienePartida = !!partida;
+            },
+            error: () => {
+            }
+            
           });
         }
       });
     }
   }
-
+  
   onSeleccionarPartida(): void {
     if (this.tienePartida) {
       this.router.navigate(['/batalla']);

@@ -22,10 +22,10 @@ html, body {
 }
 
 .bienvenida-container {
-    position: fixed; /* Para que el contenedor esté fijo en la parte inferior */
-    bottom: 20px; /* Distancia desde la parte inferior */
-    left: 50%; /* Para centrar horizontalmente */
-    transform: translateX(-50%); /* Ajusta el contenedor al centro */
+    position: fixed; /* Fija el contenedor relativo a la ventana */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro real */
     background: rgba(255, 255, 255, 0.8);
     border: 4px solid #007bff; /* Color y grosor del borde */
     border-radius: 10px; /* Esquinas redondeadas */
@@ -36,7 +36,8 @@ html, body {
   }
 
   .mensaje {
-    font-size: 16px; /* Ajusta el tamaño de la fuente según lo necesites */
+    font-size: 25px; /* Ajusta el tamaño de la fuente según lo necesites */
+    align-items: center;
     text-align: center; /* Centrar el texto dentro del contenedor */
     line-height: 1.5; /* Espaciado entre líneas */
   }

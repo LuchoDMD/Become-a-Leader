@@ -1,4 +1,3 @@
-<p>sobre-nosotros works!</p>
 <div class="TITULO">
     SOBRE NOSOTROS
 </div>
@@ -6,10 +5,9 @@
 <div class="fotos-container">
     <div class="foto" *ngFor="let foto of fotos">
         <img [src]="foto.url" alt="Foto del equipo" />
-      <p class="pie-foto">{{ foto.texto }}</p>
+        <a [href]="foto.urlGitHub" class="pie-foto" target="_blank">{{ foto.texto }}</a>
     </div>
-  </div>
-  
+</div>
 
 <nav class="navbar">
     <img src="pokeball_icon.png" alt="fondo">
@@ -22,7 +20,6 @@
             <a routerLinkActive="active" routerLink="/register">REGISTER</a>
             |
             <a routerLinkActive="active" routerLink="/login-admin">ADMIN</a>
-
         </li>
     </ul>
 </nav>

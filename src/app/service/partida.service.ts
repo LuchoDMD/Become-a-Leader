@@ -9,13 +9,11 @@ import { Partida } from '../interface/partida.js';  // Ajusta la ruta a la inter
 export class PartidaService {
   private urlBase = 'http://localhost:3000/partidas';  // Ruta donde obtienes las partidas
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Obtener partida por el id de usuario
   getPartidaByUserId(id_usuario: string): Observable<Partida | null> {
-    return this.http.get<Partida[]>(`${this.urlBase}?id_usuario=${id_usuario}`).pipe(
-      map(partidas => partidas.length ? partidas[0] : null)  // Devuelve la primera partida o null
-    );
+    return this.http.get<Partida>(this.urlBase + '/' + id_usuario);
   }
 
   // Crear o actualizar partida
@@ -27,8 +25,12 @@ export class PartidaService {
   }
 
   actualizarPuntaje(id: string, puntuacion: number): Observable<any> {
-  return this.http.patch(`${this.urlBase}/${id}`, { puntuacion: puntuacion });
-}
+    return this.http.patch(`${this.urlBase}/${id}`, { puntuacion: puntuacion });
+  }
 }
 
-
+/*getPartidaByUserId(id_usuario: string): Observable<Partida | null> {
+    return this.http.get<Partida[]>(`${this.urlBase}?id_usuario=${id_usuario}`).pipe(
+      map(partidas => partidas.length ? partidas[0] : null)  // Devuelve la primera partida o null
+    );
+  }*/

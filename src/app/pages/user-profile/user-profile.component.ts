@@ -41,6 +41,7 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('token: ' + localStorage.getItem('token'));
     const token = localStorage.getItem('token');
     if (token) {
       this.us.getUserByID(token).subscribe({
@@ -49,11 +50,12 @@ export class UserProfileComponent implements OnInit {
       })
       this.partidaService.getPartidaByUserId(token).subscribe({
         next: (data: Partida | null) => {
-          this.partida = data!;
+          if(data){
+            this.partida = data!;
+          }
           //console.log(this.partida);
         },
-        error(err: Error) {
-          console.log(err.message);
+        error() {
         }
       })
     }
@@ -79,6 +81,16 @@ export class UserProfileComponent implements OnInit {
   }
   eliminarUsuario() {
     if (this.usuario) {
+      if(this.partida){
+        this.partidaService.eliminarPartida(this.partida.id).subscribe({
+          next: () => {
+            console.log('Partida eliminada');
+          },
+          error: (err: Error) => {
+            console.log("Error al eliminar la partida: " + err.message);
+          }
+        })
+      }
       this.userService.deleteUser(this.usuario.id).subscribe({
         next: () => {
           alert("Se elimino el usuario exitosamente");

@@ -18,23 +18,28 @@
             <li>Email: {{usuario?.email}}</li>
           </ul>
           <h2>Datos de la Partida</h2>
-          <ng-container *ngIf="partida">
-            <ul>
-              <li>Fecha de inicio: {{partida.fecha_inicio}}</li>
-              <li>Puntuación actual: {{partida.puntuacion}}</li>
-            </ul>
-            <h3>Personaje</h3>
-            <ul>
-              <li>Nombre: {{partida.personaje.nombre}}</li>
-              <li>Tipo: {{partida.personaje.tipo}}</li>
-            </ul>
-            <h4>Equipo</h4>
-            <ol>
-              <li *ngFor="let pokemon of partida.personaje.equipo">
-                {{pokemon.especie}}
-              </li>
-            </ol>
-          </ng-container>
+          @if(partida.id != ''){
+            <ng-container *ngIf="partida">
+              <ul>
+                <li>Fecha de inicio: {{partida.fecha_inicio}}</li>
+                <li>Puntuación actual: {{partida.puntuacion}}</li>
+              </ul>
+              <h3>Personaje</h3>
+              <ul>
+                <li>Nombre: {{partida.personaje.nombre}}</li>
+                <li>Tipo: {{partida.personaje.tipo}}</li>
+              </ul>
+              <h4>Equipo</h4>
+              <ol>
+                <li *ngFor="let pokemon of partida.personaje.equipo">
+                  {{pokemon.especie}}
+                </li>
+              </ol>
+            </ng-container>
+          }
+          @else{
+            <p>No hay partida activa</p>
+          }
         </div>
       </div>
 
