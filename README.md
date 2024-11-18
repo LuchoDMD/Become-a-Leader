@@ -45,44 +45,45 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto en tu máquina l
 ## Funcionalidad
 La aplicación tiene las siguientes funcionalidades clave:
 
-- Crear e iniciar sesión de usuario: Los usuarios pueden registrarse y acceder a su cuenta.
-- Manejo de la base de datos de Pokémon como administrador: Los administradores pueden gestionar la lista de Pokémon disponibles para las batallas.
-- Crear una partida: Los jugadores pueden elegir un tipo de Pokémon y comenzar una partida.
-- Luchar contra entrenadores generados al azar: El jugador se enfrentará a entrenadores con Pokémon de un tipo aleatorio.
-- Sistema de puntajes: Cada victoria otorga un punto. El jugador continúa luchando hasta que pierda.
-- Guardar el puntaje: Al perder, la partida se elimina y se guarda el puntaje del jugador en la tabla de clasificación.
+- **Crear e iniciar sesión de usuario:** Los usuarios pueden registrarse y acceder a su cuenta.
+- **Manejo de la base de datos de Pokémon como administrador:** Los administradores pueden gestionar la lista de Pokémon disponibles para las batallas.
+- **Crear una partida: Los jugadores pueden elegir un tipo de Pokémon y comenzar una partida.
+- **Luchar contra entrenadores generados al azar:** El jugador se enfrentará a entrenadores con Pokémon de un tipo aleatorio.
+- **Sistema de puntajes:** Cada victoria otorga un punto. El jugador continúa luchando hasta que pierda.
+- **Guardar el puntaje:** Al perder, la partida se elimina y se guarda el puntaje del jugador en la tabla de clasificación.
 
 ## Estructura del proyecto
-public/
-├── # Contiene todos los archivos de imagen para el proyecto
-src/
-├── app/
-│   ├── components/
-│   │    ├──add-pokemon         # Agregar Pokemon a la base de datos desde la PokeAPI
-│   │    ├──batalla             # Metodos y logica de las batallas
-│   │    ├──edit-pokemon        # Editar informacion de un Pokemon en particular
-│   │    ├──pokemon-detail      # Detalle de la informacion de un Pokemon
-│   │    ├──pokemon-list        # Lista de los Pokemon almacenados en la base de datos
-│   │    ├──ranking             # Tabla de puntajes y clasificaciones
-│   │    ├──user-account-info   # Manejo de la informacion de la cuenta del usuario
-│   ├── interface/              # Estructuras globales de los objetos usados en la aplicacion
-│   ├── pages/
-│   │    ├──home                # Pagina de inicio de la aplicacion
-│   │    ├──login               # Pantalla de inicio de sesion de usuarios
-│   │    ├──login-admin         # Pantalla de inicio de sesion para el administrador
-│   │    ├──menu                # Menu de juego del usuario
-│   │    ├──nueva-partida       # Creacion de una nueva partida para un usuario
-│   │    ├──partida             # Mensaje de bienvenida para los jugadores
-│   │    ├──register            # Creacion de usuarios
-│   │    ├──sobre-nosotros      # Informacion y enlaces de los desarrolladores
-│   │    ├──user-profile        # Visualizar detalles de la cuenta del usuario
-│   ├── services/               # Servicios para manejar la lógica (usuario, batalla, etc.)
-│   ├── app.routes.ts           # Configuracion de rutas del proyecto
-├── index.html                  # Página principal de la app
-│
-db.json
-├── # Base de datos del proyecto
-
+```
+  public/
+  ├── # Contiene todos los archivos de imagen para el proyecto
+  src/
+  ├── app/
+  │   ├── components/
+  │   │    ├──add-pokemon         # Agregar Pokemon a la base de datos desde la PokeAPI
+  │   │    ├──batalla             # Metodos y logica de las batallas
+  │   │    ├──edit-pokemon        # Editar informacion de un Pokemon en particular
+  │   │    ├──pokemon-detail      # Detalle de la informacion de un Pokemon
+  │   │    ├──pokemon-list        # Lista de los Pokemon almacenados en la base de datos
+  │   │    ├──ranking             # Tabla de puntajes y clasificaciones
+  │   │    ├──user-account-info   # Manejo de la informacion de la cuenta del usuario
+  │   ├── interface/              # Estructuras globales de los objetos usados en la aplicacion
+  │   ├── pages/
+  │   │    ├──home                # Pagina de inicio de la aplicacion
+  │   │    ├──login               # Pantalla de inicio de sesion de usuarios
+  │   │    ├──login-admin         # Pantalla de inicio de sesion para el administrador
+  │   │    ├──menu                # Menu de juego del usuario
+  │   │    ├──nueva-partida       # Creacion de una nueva partida para un usuario
+  │   │    ├──partida             # Mensaje de bienvenida para los jugadores
+  │   │    ├──register            # Creacion de usuarios
+  │   │    ├──sobre-nosotros      # Informacion y enlaces de los desarrolladores
+  │   │    ├──user-profile        # Visualizar detalles de la cuenta del usuario
+  │   ├── services/               # Servicios para manejar la lógica (usuario, batalla, etc.)
+  │   ├── app.routes.ts           # Configuracion de rutas del proyecto
+  ├── index.html                  # Página principal de la app
+  │
+  db.json
+  ├── # Base de datos del proyecto
+```
 ## Contacto
     Si tienes preguntas o sugerencias, no dudes en contactarnos:
 
