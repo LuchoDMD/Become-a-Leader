@@ -12,6 +12,9 @@ import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.co
 import { RankingComponent } from './components/ranking/ranking.component';
 import { AuthGuard } from './service/auth-guard.service';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},
@@ -23,6 +26,10 @@ export const routes: Routes = [
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
-  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthGuard] }, 
+  { path: 'add-pokemon', component: AddPokemonComponent}, 
   { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]},
+  { path: 'pokemon-list', component:PokemonListComponent},
+  { path: 'pokemon-detail/:id', component:PokemonDetailComponent },
+  { path: 'pokemon-edit/:id', component:EditPokemonComponent },
+
 ];

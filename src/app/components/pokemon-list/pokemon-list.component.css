@@ -1,17 +1,18 @@
-/* Fondo oscuro para el cuerpo */
-body {
+body{
   background-color: #333;
-  font-family: Arial, sans-serif;  /* Fuente más legible */
-  color: #fff;
-  margin: 0;
-  padding: 0;
-
 }
+
+
+.pokemon-icon
+{
+    width: 50px; /* Tamaño pequeño para el icono */
+    height: 50px;
+  }
 
 /* Estilos para el contenedor del nav */
 nav {
   padding: 10px;
-  background-color: #444;
+  background-color: #444;  /* Gris más claro para el fondo del nav */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -19,60 +20,15 @@ nav {
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: #fff;  /* Texto blanco */
   font-weight: bold;
-  font-size: 16px;
 }
 
 nav a:hover {
-  color: #007bff;
+  color: #007bff;  /* Cambia el color al pasar el ratón */
 }
 
-/* Estilos para el contenedor del formulario */
-fieldset {
-  background-color: #444;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-legend {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-}
-
-/* Estilo de los inputs y botones */
-input, button {
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-}
-
-input[type="text"] {
-  width: 80%;
-  background-color: #222;
-  color: #fff;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Estilo para los bloques de información */
+/* Estilos para la sección de listado */
 div {
   text-align: center;
   padding: 20px;
@@ -83,11 +39,12 @@ h4 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000000;  /* Texto blanco */
 }
 
 /* Estilo de la lista de pokemones */
 ul {
+
   list-style: none;
   padding: 0;
   display: flex;
@@ -99,8 +56,8 @@ ul {
 /* Estilo de cada ítem de Pokémon */
 li {
   width: 180px;
-  background-color: #4a4848;
-  border: 2px solid #ddd;
+  background-color: #ffffff;  /* Fondo blanco para los recuadros de los pokemones */
+  border: 2px solid #ddd;     /* Borde gris claro */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -108,6 +65,7 @@ li {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto al pasar el ratón sobre el recuadro del Pokémon */
 li:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -125,16 +83,24 @@ li:hover {
 /* Estilo para los enlaces (nombres y ids) */
 a {
   text-decoration: none;
-  color: #333;
+  color: #333;  /* Color de texto oscuro para los enlaces */
   font-size: 14px;
   font-weight: bold;
 }
 
 a:hover {
-  color: #007bff;
+  color: #007bff;  /* Color al pasar el ratón sobre los enlaces */
+}
+
+/* Estilo para el id y nombre */
+li a {
+  display: block;
+  margin-top: 10px;
 }
 
 /* Eliminar cualquier margen o espacio alrededor de la página */
+
+/* Asegurar que el contenido se ajuste a la pantalla */
 div {
   max-width: 100%;
   box-sizing: border-box;

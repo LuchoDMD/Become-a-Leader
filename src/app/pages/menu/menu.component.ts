@@ -47,7 +47,8 @@ export class MenuComponent implements OnInit {
   }
 
   onNuevaPartida(): void {
-    if (this.tienePartida) {    const confirmacion = confirm(
+    if (this.tienePartida) {    
+      const confirmacion = confirm(
         "Ya tienes una partida guardada. ¿Deseas eliminarla para comenzar una nueva?"
       );
       if (confirmacion) {

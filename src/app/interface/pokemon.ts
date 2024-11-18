@@ -10,7 +10,7 @@ export interface Pokemon
     vidaActual:number,
     estadisticas:Stats,
     movimientos:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate
-    idEntrenador:string;
+    idEntrenador?:string;
     frontSprite?:string;
     backSprite?:string;
 }

@@ -33,8 +33,8 @@ export class TeamService {
   }
 
   //PUT
-  updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
-    return this.http.put<Pokemon>(this.urlBase+"/"+pokemon.id, pokemon);
+  updatePokemon(id:string ,pokemon: Pokemon): Observable<Pokemon> {
+    return this.http.put<Pokemon>(this.urlBase+"/"+id, pokemon);
   }
   //PATCH
   patchPokemon(id: string, partialData: Partial<Pokemon>): Observable<Pokemon> {
