@@ -47,7 +47,7 @@ La aplicación tiene las siguientes funcionalidades clave:
 
 - Crear e iniciar sesión de usuario: Los usuarios pueden registrarse y acceder a su cuenta.
 - Manejo de la base de datos de Pokémon como administrador: Los administradores pueden gestionar la lista de Pokémon disponibles para las batallas.
-- Crear una partida:** Los jugadores pueden elegir un tipo de Pokémon y comenzar una partida.
+- Crear una partida: Los jugadores pueden elegir un tipo de Pokémon y comenzar una partida.
 - Luchar contra entrenadores generados al azar: El jugador se enfrentará a entrenadores con Pokémon de un tipo aleatorio.
 - Sistema de puntajes: Cada victoria otorga un punto. El jugador continúa luchando hasta que pierda.
 - Guardar el puntaje: Al perder, la partida se elimina y se guarda el puntaje del jugador en la tabla de clasificación.
