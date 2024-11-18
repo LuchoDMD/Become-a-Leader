@@ -1,11 +1,11 @@
 
 import { Routes, CanActivate } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PartidaComponent } from './pages/partida/partida.component';
 import { MenuComponent } from './pages/menu/menu.component';
-import { NuevaPartidaComponent } from './components/nueva-partida/nueva-partida.component';  // Ajusta la ruta según tu estructura
+import { NuevaPartidaComponent } from './pages/nueva-partida/nueva-partida.component';  // Ajusta la ruta según tu estructura
 import { BatallaComponent } from './components/batalla/batalla.component';  
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';

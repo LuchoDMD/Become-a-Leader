@@ -1,4 +1,4 @@
-import { Entrenador } from './../../interface/entrenador';
+import { Entrenador } from '../../interface/entrenador';
 import { Component, inject, OnInit } from '@angular/core';
 import { PartidaService } from '../../service/partida.service'; // Asegúrate de tener este servicio creado
 import { UserService } from '../../service/user.service';

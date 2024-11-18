@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { Usuario } from './../../interface/user.interface';
+import { Usuario } from '../../interface/user.interface';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../service/user.service';
