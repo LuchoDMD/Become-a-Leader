@@ -214,5 +214,7 @@ export class UserAccountInfoComponent implements OnInit {
 
   onVolver(): void {
     this.volver.emit();
+    console.log("hola");
   }
+  
 }
