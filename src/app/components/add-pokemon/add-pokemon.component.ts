@@ -7,6 +7,7 @@ import { Move } from '../../interface/move';
 import { Stats } from '../../interface/stats';
 import { TeamService } from '../../service/team.service';
 import { Router, RouterModule } from '@angular/router';
+import { UserService } from '../../service/user.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class AddPokemonComponent{
   pokeID:string="";
   ps=inject(PokeAPIService);
   ts=inject(TeamService);
+  us=inject(UserService);
   routes=inject(Router);
   pokeAPI:any;
 
@@ -192,6 +194,10 @@ export class AddPokemonComponent{
 
 
   };
+  logout() {
+    this.us.logoutAdmin();
+    this.routes.navigate(['']);
+  }
 }
 /*
   // Obtener naturaleza aleatoria

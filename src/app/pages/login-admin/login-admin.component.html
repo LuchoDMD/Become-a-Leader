@@ -1,9 +1,9 @@
 <body>
   <div class="container">
     <div class="register-container">
-      <h1>INICIAR SESION</h1>
+      <h1>INICIAR SESION DE ADMIN</h1>
       <fieldset>
-        <legend>¡Únete a la aventura!</legend>
+        <legend>Opciones de desarrollo</legend>
         <form [formGroup]="loginForm" (ngSubmit)="Login()">
           <label for="email">Email:</label>
           <input type="text" id="email" placeholder="Coloque su Email" formControlName="email">
@@ -38,14 +38,12 @@
         <li>
           <a routerLinkActive="active" routerLink="/">INICIO</a>
           |
+          <a routerLinkActive="active" routerLink="/">LOGIN</a>
+          |
           <a routerLinkActive="active" routerLink="/register">REGISTER</a>
           |
           <a routerLinkActive="active" routerLink="/sobre-nosotros">SOBRE NOSOTROS</a>
-          |
-          <a routerLinkActive="active" routerLink="/login-admin">ADMIN</a>
         </li>
       </ul>
     </nav>
 </body>
-
-

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+
+import { Routes, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +15,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
+import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+import { AuthAdmin } from './service/auth-admin.service';
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},
@@ -26,10 +28,10 @@ export const routes: Routes = [
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
-  { path: 'add-pokemon', component: AddPokemonComponent}, 
+  { path: 'login-admin', component: LoginAdminComponent },
+  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]}, 
   { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]},
-  { path: 'pokemon-list', component:PokemonListComponent},
-  { path: 'pokemon-detail/:id', component:PokemonDetailComponent },
-  { path: 'pokemon-edit/:id', component:EditPokemonComponent },
-
+  { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]},
+  { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] },
+  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] }
 ];

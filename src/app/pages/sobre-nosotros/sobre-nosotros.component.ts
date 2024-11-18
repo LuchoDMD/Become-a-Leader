@@ -10,10 +10,10 @@ import { RouterModule } from '@angular/router';
 })
 export class SobreNosotrosComponent {
   fotos: { url: string, texto: string }[] = [
-    { url: 'foto1.jpg', texto: 'Texto para la foto 1' },
-    { url: 'foto2.jpg', texto: 'Texto para la foto 2' },
-    { url: 'foto3.jpg', texto: 'Texto para la foto 3' },
-    { url: 'foto4.jpg', texto: 'Texto para la foto 4' },
-    { url: 'foto5.jpg', texto: 'Texto para la foto 5' }
+    { url: 'foto1.jpg', texto: 'Quimey Varela' },
+    { url: 'foto2.jpg', texto: 'Luciano Buda' },
+    { url: 'foto3.jpg', texto: 'Tomas Dallier' },
+    { url: 'foto4.jpg', texto: 'Ignacio Malaguti' },
+    { url: 'foto5.jpg', texto: 'Gonzalo Varela' }
   ];
 }

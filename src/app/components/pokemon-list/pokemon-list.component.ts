@@ -1,9 +1,11 @@
+
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TeamService } from '../../service/team.service';
 import { PokeAPIService } from '../../service/poke-api.service';
 import { Pokemon } from '../../interface/pokemon';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -23,6 +25,7 @@ export class PokemonListComponent implements OnInit
     ts= inject(TeamService);
     ps= inject(PokeAPIService);
     route= inject(Router);
+    us = inject(UserService);
 
     //Metodos
     ngOnInit(): void {
@@ -65,6 +68,11 @@ export class PokemonListComponent implements OnInit
     enviarADetalles(id:string)
     {
       this.route.navigate(['detail/'+id]);
+    }
+
+    logout() {
+      this.us.logoutAdmin();
+      this.route.navigate(['']);
     }
 }
 

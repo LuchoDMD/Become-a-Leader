@@ -10,7 +10,7 @@
     <!-- Contenedor principal para las dos columnas -->
     <div class="contenedor-principal">
       <!-- Primera columna para información de la cuenta y datos de la partida -->
-      <div class="columna-informacion"*ngIf="verInfoPartidas">
+      <div class="columna-informacion" *ngIf="verInfoPartidas">
         <div class="cuenta">
           <h2>Información General</h2>
           <ul>
@@ -48,6 +48,6 @@
           <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id" (volver)="onVolver()"></app-user-account-info>
         </div>
       </div>
-    </div>
-  </div>
+    </div> <!-- Cierra contenedor-principal -->
+  </div> <!-- Cierra menu -->
 </body>
