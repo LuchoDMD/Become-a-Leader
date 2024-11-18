@@ -8,8 +8,9 @@ import { map, Observable } from 'rxjs';
 })
 export class TeamService {
   http=inject(HttpClient);
-  urlBase="http://localhost:3000/pokemons"
-  
+
+  urlBase="http://localhost:3000/pokemons";
+
   //POST:
   addPokemon(pokemon:Pokemon):Observable<Pokemon>{
     return this.http.post<Pokemon>(this.urlBase, pokemon);
@@ -19,8 +20,13 @@ export class TeamService {
   getPokemons():Observable<Pokemon[]>{
     return this.http.get<Pokemon[]>(this.urlBase);
   }
-  
+
   getPokemonByID(id:string):Observable<Pokemon>{
+    console.log('id solicitado: '+id);
+    return this.http.get<Pokemon>(this.urlBase+"/"+id);
+  }
+
+  getPokemonPorId(id:string):Observable<Pokemon>{
     return this.http.get<Pokemon>(this.urlBase+"/"+id);
   }
 

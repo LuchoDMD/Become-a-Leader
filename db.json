@@ -3,7 +3,7 @@
     {
       "id": "4efd",
       "email": "ejemplo@gmail.com",
-      "nick": "xXcarlitosXx",
+      "nick": "xXignacioCrackXx",
       "password": "ejemplo123"
     },
     {
@@ -6482,6 +6482,119 @@
       "idEntrenador": ""
     },
     {
+      "id": "25",
+      "especie": "pikachu",
+      "tipos": [
+        "electric"
+      ],
+      "nivel": 100,
+      "vidaActual": 109,
+      "estadisticas": {
+        "hp": 109,
+        "atk": 258,
+        "def": 226,
+        "satk": 244,
+        "sdef": 246,
+        "spd": 298
+      },
+      "movimientos": [
+        {
+          "nombre": "mega-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "slam",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 75,
+          "usos": 20,
+          "pp": 20
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "2",
+      "especie": "ivysaur",
+      "tipos": [
+        "grass",
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 158,
+      "estadisticas": {
+        "hp": 158,
+        "atk": 252,
+        "def": 238,
+        "satk": 282,
+        "sdef": 309,
+        "spd": 251
+      },
+      "movimientos": [
+        {
+          "nombre": "cut",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 50,
+          "precision": 95,
+          "usos": 30,
+          "pp": 30
+        },
+        {
+          "nombre": "bind",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 15,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "headbutt",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 70,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "tackle",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 35,
+          "pp": 35
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
       "id": "1",
       "especie": "bulbasaur",
       "tipos": [
@@ -6489,14 +6602,14 @@
         "poison"
       ],
       "nivel": 100,
-      "vidaActual": 130,
+      "vidaActual": 117,
       "estadisticas": {
-        "hp": 130,
-        "atk": 229,
+        "hp": 117,
+        "atk": 242,
         "def": 220,
-        "satk": 256,
-        "sdef": 281,
-        "spd": 212
+        "satk": 290,
+        "sdef": 259,
+        "spd": 228
       },
       "movimientos": [
         {
@@ -6527,13 +6640,296 @@
           "pp": 20
         },
         {
-          "nombre": "vine-whip",
+          "nombre": "strength",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "5",
+      "especie": "charmeleon",
+      "tipos": [
+        "fire"
+      ],
+      "nivel": 100,
+      "vidaActual": 141,
+      "estadisticas": {
+        "hp": 141,
+        "atk": 255,
+        "def": 233,
+        "satk": 297,
+        "sdef": 262,
+        "spd": 292
+      },
+      "movimientos": [
+        {
+          "nombre": "mega-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "mega-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "1",
+      "especie": "bulbasaur",
+      "tipos": [
+        "grass",
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 122,
+      "estadisticas": {
+        "hp": 122,
+        "atk": 241,
+        "def": 224,
+        "satk": 271,
+        "sdef": 261,
+        "spd": 226
+      },
+      "movimientos": [
+        {
+          "nombre": "double-edge",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "razor-leaf",
           "tipo": "grass",
           "clase": "physical",
-          "potencia": 45,
+          "potencia": 55,
+          "precision": 95,
+          "usos": 25,
+          "pp": 25
+        },
+        {
+          "nombre": "petal-dance",
+          "tipo": "grass",
+          "clase": "special",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 10,
+          "pp": 10
+        },
+        {
+          "nombre": "rage",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 20,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "34",
+      "especie": "nidoking",
+      "tipos": [
+        "poison",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 211,
+      "estadisticas": {
+        "hp": 211,
+        "atk": 331,
+        "def": 300,
+        "satk": 292,
+        "sdef": 308,
+        "spd": 309
+      },
+      "movimientos": [
+        {
+          "nombre": "mega-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "ice-punch",
+          "tipo": "ice",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "30",
+      "especie": "nidorina",
+      "tipos": [
+        "poison"
+      ],
+      "nivel": 100,
+      "vidaActual": 170,
+      "estadisticas": {
+        "hp": 170,
+        "atk": 256,
+        "def": 265,
+        "satk": 237,
+        "sdef": 235,
+        "spd": 231
+      },
+      "movimientos": [
+        {
+          "nombre": "double-kick",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 30,
+          "precision": 100,
+          "usos": 30,
+          "pp": 30
+        },
+        {
+          "nombre": "tackle",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 35,
+          "pp": 35
+        },
+        {
+          "nombre": "double-edge",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 120,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "bite",
+          "tipo": "dark",
+          "clase": "physical",
+          "potencia": 60,
           "precision": 100,
           "usos": 25,
           "pp": 25
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "31",
+      "especie": "nidoqueen",
+      "tipos": [
+        "poison",
+        "ground"
+      ],
+      "nivel": 100,
+      "vidaActual": 212,
+      "estadisticas": {
+        "hp": 212,
+        "atk": 325,
+        "def": 317,
+        "satk": 268,
+        "sdef": 290,
+        "spd": 292
+      },
+      "movimientos": [
+        {
+          "nombre": "mega-punch",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 80,
+          "precision": 85,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "thunder-punch",
+          "tipo": "electric",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "fire-punch",
+          "tipo": "fire",
+          "clase": "physical",
+          "potencia": 75,
+          "precision": 100,
+          "usos": 15,
+          "pp": 15
         }
       ],
       "idEntrenador": ""
@@ -6545,13 +6941,13 @@
         "electric"
       ],
       "nivel": 100,
-      "vidaActual": 108,
+      "vidaActual": 112,
       "estadisticas": {
-        "hp": 108,
-        "atk": 235,
-        "def": 222,
-        "satk": 234,
-        "sdef": 243,
+        "hp": 112,
+        "atk": 241,
+        "def": 219,
+        "satk": 232,
+        "sdef": 247,
         "spd": 312
       },
       "movimientos": [
@@ -6595,49 +6991,48 @@
       "idEntrenador": ""
     },
     {
-      "id": 2,
-      "especie": "ivysaur",
+      "id": "78",
+      "especie": "rapidash",
       "tipos": [
-        "grass",
-        "poison"
+        "fire"
       ],
       "nivel": 100,
-      "vidaActual": 168,
+      "vidaActual": 139,
       "estadisticas": {
-        "hp": 168,
-        "atk": 248,
-        "def": 276,
-        "satk": 282,
-        "sdef": 291,
-        "spd": 257
+        "hp": 139,
+        "atk": 343,
+        "def": 259,
+        "satk": 308,
+        "sdef": 311,
+        "spd": 337
       },
       "movimientos": [
         {
-          "nombre": "cut",
+          "nombre": "pay-day",
           "tipo": "normal",
           "clase": "physical",
-          "potencia": 50,
-          "precision": 95,
-          "usos": 30,
-          "pp": 30
-        },
-        {
-          "nombre": "bind",
-          "tipo": "normal",
-          "clase": "physical",
-          "potencia": 15,
-          "precision": 85,
+          "potencia": 40,
+          "precision": 100,
           "usos": 20,
           "pp": 20
         },
         {
-          "nombre": "vine-whip",
-          "tipo": "grass",
+          "nombre": "stomp",
+          "tipo": "normal",
           "clase": "physical",
-          "potencia": 45,
+          "potencia": 65,
           "precision": 100,
-          "usos": 25,
-          "pp": 25
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "double-kick",
+          "tipo": "fighting",
+          "clase": "physical",
+          "potencia": 30,
+          "precision": 100,
+          "usos": 30,
+          "pp": 30
         },
         {
           "nombre": "headbutt",
@@ -6647,6 +7042,63 @@
           "precision": 100,
           "usos": 15,
           "pp": 15
+        }
+      ],
+      "idEntrenador": ""
+    },
+    {
+      "id": "79",
+      "especie": "slowpoke",
+      "tipos": [
+        "water",
+        "psychic"
+      ],
+      "nivel": 100,
+      "vidaActual": 207,
+      "estadisticas": {
+        "hp": 207,
+        "atk": 267,
+        "def": 274,
+        "satk": 201,
+        "sdef": 207,
+        "spd": 181
+      },
+      "movimientos": [
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
+        },
+        {
+          "nombre": "pay-day",
+          "tipo": "normal",
+          "clase": "physical",
+          "potencia": 40,
+          "precision": 100,
+          "usos": 20,
+          "pp": 20
         }
       ],
       "idEntrenador": ""

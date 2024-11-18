@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Partida } from '../interface/partida.js';  // Ajusta la ruta a la interface de partida
-import { Ranking } from '../interface/ranking.js';
 
 @Injectable({
   providedIn: 'root'

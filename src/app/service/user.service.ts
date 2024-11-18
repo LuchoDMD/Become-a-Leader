@@ -74,5 +74,5 @@ export class UserService {
   {
     return this.http.delete<void>(this.urlBase+'/'+id);
   }
-  
+
 }

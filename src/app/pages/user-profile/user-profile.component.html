@@ -8,9 +8,9 @@
     <h1>Tu perfil</h1>
 
     <!-- Contenedor principal para las dos columnas -->
-<div class="contenedor-principal">
+    <div class="contenedor-principal">
       <!-- Primera columna para información de la cuenta y datos de la partida -->
-      <div class="columna-informacion">
+      <div class="columna-informacion"*ngIf="verInfoPartidas">
         <div class="cuenta">
           <h2>Información General</h2>
           <ul>
@@ -18,39 +18,36 @@
             <li>Email: {{usuario?.email}}</li>
           </ul>
           <h2>Datos de la Partida</h2>
-          @if(partida) {
-            <ul class="">
-              <li>Fecha de inicio:{{partida.fecha_inicio}}</li>
-              <li>Puntuación actual:{{partida.puntuacion}}</li>
+          <ng-container *ngIf="partida">
+            <ul>
+              <li>Fecha de inicio: {{partida.fecha_inicio}}</li>
+              <li>Puntuación actual: {{partida.puntuacion}}</li>
             </ul>
             <h3>Personaje</h3>
             <ul>
-              <li>Nombre:{{partida.personaje.nombre}}</li>
-              <li>Tipo:{{partida.personaje.tipo}}</li>
-              <h4>Equipo</h4>
-              <ol>
-                @for (pokemon of partida.personaje.equipo; track $index) {
-                  <p>{{sprites[$index]}}</p>
-                  <li>{{pokemon.especie}} <img class="pokemon-icon" [src]="sprites[$index]" [alt]="pokemon.especie"></li>
-                }
-              </ol>
+              <li>Nombre: {{partida.personaje.nombre}}</li>
+              <li>Tipo: {{partida.personaje.tipo}}</li>
             </ul>
-          } @else {
-
-          }
+            <h4>Equipo</h4>
+            <ol>
+              <li *ngFor="let pokemon of partida.personaje.equipo">
+                {{pokemon.especie}}
+              </li>
+            </ol>
+          </ng-container>
         </div>
       </div>
 
       <!-- Segunda columna para botones -->
       <div class="columna-botones">
         <div class="cuenta">
-          <button class="config_cuenta" type="button" (click)="eliminarUsuario()"> Eliminar cuenta</button>
-          <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarConfigCuenta()" class="config_cuenta">Modificar cuenta</button>
+          <button class="config_cuenta" type="button" (click)="eliminarUsuario()">Eliminar cuenta</button>
+          <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarConfigCuenta()" class="config_cuenta">
+            Modificar cuenta
+          </button>
           <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id" (volver)="onVolver()"></app-user-account-info>
         </div>
       </div>
     </div>
   </div>
-
 </body>
-

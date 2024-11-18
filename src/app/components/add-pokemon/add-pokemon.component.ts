@@ -6,7 +6,7 @@ import { Pokemon } from '../../interface/pokemon';
 import { Move } from '../../interface/move';
 import { Stats } from '../../interface/stats';
 import { TeamService } from '../../service/team.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
@@ -17,9 +17,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './add-pokemon.component.css'
 })
 export class AddPokemonComponent{
-  pokeID="";
+  pokeID:string="";
   ps=inject(PokeAPIService);
   ts=inject(TeamService);
+  routes=inject(Router);
   pokeAPI:any;
 
   pokemon:Pokemon={
@@ -90,8 +91,8 @@ export class AddPokemonComponent{
       }
     });
   }
-  
-  //Agrega los movimientos a un arreglo de movimientos 
+
+  //Agrega los movimientos a un arreglo de movimientos
   agregarAtaque(moveName:string)
   {
     this.ps.getMoveByName(moveName).subscribe({
@@ -142,7 +143,7 @@ export class AddPokemonComponent{
       return Math.floor((((2 * base + iv + (ev / 4)) * level) / 100) + 5);
     }
   }
-  
+
   //Genera un numero random entre 0 y 84
   private generateEV(min:number,max:number){
     return Math.round(Math.floor(Math.random() * (max - min + 1)) + min);
@@ -150,11 +151,11 @@ export class AddPokemonComponent{
 
   //Agrega el pokemon a la db.json en el apartado pokemons
   addPokemonBD(){
-    this.pokemon.id=this.pokeAPI.id;
+    this.pokemon.id=this.pokeAPI.id.toString();
     this.pokemon.especie=this.pokeAPI.name;
     //Almacena los tipos
     for(let i=0;i<this.pokeAPI.types.length;i++){
-      this.pokemon.tipos.push(this.pokeAPI.types[i].type.name); //Esto para obtener los tipos del pokemon 
+      this.pokemon.tipos.push(this.pokeAPI.types[i].type.name); //Esto para obtener los tipos del pokemon
     }
     this.pokemon.nivel=100;
     //Genera los IVs
@@ -177,13 +178,19 @@ export class AddPokemonComponent{
     this.ts.addPokemon(this.pokemon).subscribe({
       next:(data)=>{
         console.log("Pokemon Agregado");
+
       },
       error:(err:Error)=>{
         console.log('ERROR: '+err.message);
       }
     });
-    console.log("Pokemon Agregado");
     this.cleanBuffer();
+
+
+    alert("Pokemon Agregado");
+    this.routes.navigate(['pokemon-list']);
+
+
   };
 }
 /*
@@ -220,8 +227,8 @@ export class AddPokemonComponent{
     return evs;
   }
 
-*/ 
+*/
         /*const tipos= this.pokeAPI.types;
         for(let i=0;i<tipos.length;i++){
-          console.log(tipos[i].type.name); //Esto para obtener los tipos del pokemon 
+          console.log(tipos[i].type.name); //Esto para obtener los tipos del pokemon
         }*/

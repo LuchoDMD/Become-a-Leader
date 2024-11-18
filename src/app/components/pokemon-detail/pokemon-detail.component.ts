@@ -49,9 +49,8 @@ export class PokemonDetailComponent implements OnInit
     });
     console.log(this.pokeID);
     if(this.pokeID != undefined){
-      this.ts.getPokemonByID(this.pokeID).subscribe({
+      this.ts.getPokemonPorId(this.pokeID).subscribe({
         next:(data:Pokemon)=>{
-          console.log(data);
           this.pokemon=data; //Almaceno el pokemon para mostrar su informacion
         },
         error:(err:Error)=>{
@@ -67,7 +66,7 @@ export class PokemonDetailComponent implements OnInit
         }
       })
     }
-    
+
   }
 
   volverALista(){
