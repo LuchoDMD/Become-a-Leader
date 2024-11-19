@@ -31,36 +31,7 @@ export class RegisterComponent {
 
     usuarioService= inject(UserService);
     router=inject(Router);
-/*
-    addUser()
-    {
-      if (this.formUsuario.invalid)
-        {
-          return
-        }
 
-      const user = this.formUsuario.getRawValue();//Obtiene los datos del formulario con el metodo getRawValue
-
-      this.usuarioService.getUserByEmail(user.email).subscribe({
-        next:(user: Usuario | null)=>{
-          alert('Este email ya esta registrado')
-        }, error: (e: Error)=>{
-          this.emitirUsuario.emit(user);  //Emite el evento con los datos del usuario
-
-          this.altaBD(user); //Envia los datos a la base de datos con el metodo altaDB
-
-          this.formUsuario.reset({ //Resetea el formulario
-            email: '',
-            nick: '',
-            password: ''
-          });
-        }
-      },error=>{
-        console.error('Error al verificar el email:', error)
-      }
-    )
-    }
-*/
 
 addUser() {
   if (this.formUsuario.invalid) {
@@ -108,3 +79,34 @@ addUser() {
       )
     }
 }
+
+/*
+    addUser()
+    {
+      if (this.formUsuario.invalid)
+        {
+          return
+        }
+
+      const user = this.formUsuario.getRawValue();//Obtiene los datos del formulario con el metodo getRawValue
+
+      this.usuarioService.getUserByEmail(user.email).subscribe({
+        next:(user: Usuario | null)=>{
+          alert('Este email ya esta registrado')
+        }, error: (e: Error)=>{
+          this.emitirUsuario.emit(user);  //Emite el evento con los datos del usuario
+
+          this.altaBD(user); //Envia los datos a la base de datos con el metodo altaDB
+
+          this.formUsuario.reset({ //Resetea el formulario
+            email: '',
+            nick: '',
+            password: ''
+          });
+        }
+      },error=>{
+        console.error('Error al verificar el email:', error)
+      }
+    )
+    }
+*/
