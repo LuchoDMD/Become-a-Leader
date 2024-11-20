@@ -78,7 +78,7 @@ export class EditPokemonComponent implements OnInit
             this.ps.getMoveByName(poke.moves[i].move.name).subscribe({
               next:(move)=>{
                 if(move.damage_class.name!='status' && move.power>0){
-                  let m:Move={
+                  let mov:Move={
                     nombre:move.name,
                     tipo:move.type.name,
                     clase:move.damage_class.name,
@@ -87,8 +87,13 @@ export class EditPokemonComponent implements OnInit
                     usos:move.pp,
                     pp:move.pp,
                   }
+<<<<<<< Updated upstream
                   this.movesList[j]=m;
                   j++
+=======
+                  this.movesList[j]=mov;
+                  j++;
+>>>>>>> Stashed changes
                 }
               },
               error:(err:Error)=>{
@@ -109,7 +114,7 @@ export class EditPokemonComponent implements OnInit
 
   volverALista()
   {
-    this.route.navigate(['']);
+    this.route.navigate(['list']);
   }
 
   //Intercambio de movimientos

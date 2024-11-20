@@ -57,7 +57,7 @@ export class PokemonDetailComponent implements OnInit
   }
 
   volverALista(){
-    this.route.navigate([''])
+    this.route.navigate(['list'])
   }
 
   irAModificar(id:string){

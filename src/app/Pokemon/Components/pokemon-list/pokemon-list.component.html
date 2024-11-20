@@ -9,8 +9,8 @@
     <ul>
         @for (pokemon of pokemons; track $index)
         {
-            <li> <img [src]="pIcons[$index]" alt="Icono" class="pokemon-icon"> <a [routerLink]="['detail/'+pokemon.id]">{{pokemon.id}} - {{pokemon.especie}} </a></li>
-        }
+            <li> <img [src]="pIcons[$index]" alt="Icono" class="pokemon-icon"> <a [routerLink]="['/detail/'+pokemon.id]">{{pokemon.id}} - {{pokemon.especie}} </a></li>
+        } <!-- [routerLink]="['/detail', pokemon.id]" -->
     </ul>
 </div>
 </section>
