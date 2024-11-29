@@ -50,7 +50,7 @@ export class UserProfileComponent implements OnInit {
       })
       this.partidaService.getPartidaByUserId(token).subscribe({
         next: (data: Partida | null) => {
-          if(data){
+          if (data) {
             this.partida = data!;
           }
           //console.log(this.partida);
@@ -80,29 +80,33 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['/menu']);
   }
   eliminarUsuario() {
-    if (this.usuario) {
-      if(this.partida){
-        this.partidaService.eliminarPartida(this.partida.id).subscribe({
+    const confirmacion = confirm(
+      "¿Deseas eliminarla tu perfil?"
+    );
+    if (confirmacion) {
+      if (this.usuario) {
+
+        if (this.partida) {
+          this.partidaService.eliminarPartida(this.partida.id).subscribe({
+            next: () => {
+              console.log('Partida eliminada');
+            },
+            error: (err: Error) => {
+              console.log("Error al eliminar la partida: " + err.message);
+            }
+          })
+        }
+        this.userService.deleteUser(this.usuario.id).subscribe({
           next: () => {
-            console.log('Partida eliminada');
+            alert("Se elimino el usuario exitosamente");
+            this.userService.logout();
+            this.router.navigate(['']);
           },
           error: (err: Error) => {
-            console.log("Error al eliminar la partida: " + err.message);
+            console.log(err.message);
           }
         })
       }
-      this.userService.deleteUser(this.usuario.id).subscribe({
-        next: () => {
-          alert("Se elimino el usuario exitosamente");
-          this.userService.logout();
-          this.router.navigate(['']);
-        },
-        error: (err: Error) => {
-          console.log(err.message);
-        }
-      })
     }
   }
-
-
 }

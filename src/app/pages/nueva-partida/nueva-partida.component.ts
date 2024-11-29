@@ -49,6 +49,12 @@ export class NuevaPartidaComponent implements OnInit {
 
   // Método que se ejecuta cuando el formulario es enviado
   crearPartida() {
+
+    if (!this.datos_partida.nick || !this.datos_partida.leader || !this.datos_partida.tipo) {
+      alert("Por favor, complete todos los campos antes de crear la partida.");
+      return; // Detiene la ejecución si falta algún dato
+    }
+    
     const cargarEquipo: Pokemon[] = [];
     this.ts.getPokemonsByType(this.datos_partida.tipo).subscribe({
       next: (pokemons: Pokemon[]) => {

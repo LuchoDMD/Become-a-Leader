@@ -62,41 +62,65 @@ export class UserAccountInfoComponent implements OnInit {
   }
 
   cambiarClave(): void {
+    // Desactivar todas las alertas de error antes de la validación
     this.desactivarAlertasClave();
-    if (this.currentPassword === this.usuario.password) { ///Debe conocer su password actual...
-      if (this.newPassword === this.confirmNewPassword &&
-        this.newPassword !== this.currentPassword &&
-        this.newPassword !== ""
-      ) {
-        this.usuario.password = this.newPassword;
-        this.userService.updateUser(this.usuario.id, this.usuario).subscribe({
-          next: () => {
-            console.log("usuario actualizado...");
-            this.mostrarCambioClave = false;
-            this.cambioClave = true;
-            setTimeout(() => {
-              this.cambioClave = false;
-            }, 3000);
-          },
-          error: (err) => { console.error("Error al actualizar el usuario: " + err + ".") },
-        })
-      }
-      else {
-        if (this.newPassword === this.currentPassword) {
-          this.claveDistintaALaActualMsg = true;
-        }
-        else if (this.newPassword !== this.confirmNewPassword) {
-          this.clavesNuevasNoCoincidenMsg = true;
-        }
-        else if (this.newPassword === "") {
-          this.claveVaciaMsg = true;
-        }
-      }
-    }
-    else {
+  
+    // Eliminar espacios extra (trim) en las contraseñas
+    const currentPasswordTrimmed = this.currentPassword.trim();
+    const newPasswordTrimmed = this.newPassword.trim();
+  
+    // Imprimir las contraseñas para verificar sus valores
+    console.log('Contraseña actual ingresada:', this.currentPassword);
+    console.log('Contraseña actual sin espacios:', currentPasswordTrimmed);
+    console.log('Nueva contraseña ingresada:', this.newPassword);
+    console.log('Nueva contraseña sin espacios:', newPasswordTrimmed);
+    console.log('Confirmar nueva contraseña:', this.confirmNewPassword);
+  
+    // Verificar si la contraseña actual es correcta
+    if (currentPasswordTrimmed !== this.usuario.password) {
+      console.log('La contraseña actual es incorrecta');
       this.claveActualIncorrectaMsg = true;
-
+      return; // Detener la ejecución si la contraseña actual es incorrecta
     }
+  
+    // Verificar que la nueva contraseña sea diferente de la actual
+    if (newPasswordTrimmed === currentPasswordTrimmed) {
+      console.log('La nueva contraseña es igual a la actual');
+      this.claveDistintaALaActualMsg = true;
+      return;
+    }
+  
+    // Verificar que las nuevas contraseñas coincidan
+    if (newPasswordTrimmed !== this.confirmNewPassword.trim()) {
+      console.log('Las nuevas contraseñas no coinciden');
+      this.clavesNuevasNoCoincidenMsg = true;
+      return;
+    }
+  
+    // Verificar que la nueva contraseña no esté vacía
+    if (newPasswordTrimmed === "") {
+      console.log('La nueva contraseña está vacía');
+      this.claveVaciaMsg = true;
+      return;
+    }
+  
+    // Si todas las validaciones pasaron, proceder con la actualización
+    console.log('Todas las validaciones pasaron, se actualizará la contraseña');
+  
+    this.usuario.password = newPasswordTrimmed;
+    this.userService.updateUser(this.usuario.id, this.usuario).subscribe({
+      next: () => {
+        console.log("Contraseña actualizada exitosamente.");
+        this.mostrarCambioClave = false;
+        this.cambioClave = true;
+        setTimeout(() => {
+          this.cambioClave = false;
+        }, 3000);
+      },
+      error: (err) => {
+        console.error("Error al actualizar la contraseña: " + err);
+      }
+    });
   }
 
 

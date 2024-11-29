@@ -78,15 +78,21 @@ export class PokemonDetailComponent implements OnInit
   };
 
   borrarPokemon(id:string){
-    this.ts.deletePokemon(id).subscribe(
-      {
-        next:()=>{
-          this.route.navigate(['pokemon-list']);
-        },
-        error:(error:Error)=>{
-          console.log("Error al borrar pokemon: "+error.message);
-        }
-      }
+    const confirmacion = confirm(
+      "¿Deseas eliminarla el Pokemon de la Base de Datos?"
     );
+    if (confirmacion) {
+      this.ts.deletePokemon(id).subscribe(
+        {
+          next:()=>{
+            alert("Pokemon borrado exitosamente");
+            this.route.navigate(['pokemon-list']);
+          },
+          error:(error:Error)=>{
+            console.log("Error al borrar pokemon: "+error.message);
+          }
+        }
+      ); 
+    }
   }
 }
