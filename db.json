@@ -5,6 +5,18 @@
       "email": "ejemplo1@gmail.com",
       "nick": "ejemplo1",
       "password": "ejemplo123"
+    },
+    {
+      "id": "5a3a",
+      "email": "ejemplo@gmail.com",
+      "nick": "ejemplo",
+      "password": "ejemplo123"
+    },
+    {
+      "id": "28bc",
+      "email": "??????????@44444.com",
+      "nick": "pepe",
+      "password": "pepe1234"
     }
   ],
   "partidas": [],

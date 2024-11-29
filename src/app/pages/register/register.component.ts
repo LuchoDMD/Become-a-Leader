@@ -24,7 +24,9 @@ export class RegisterComponent {
   fb=inject(FormBuilder);
 
     formUsuario=this.fb.nonNullable.group({
-      email:['',[Validators.required]],
+      email:['',[Validators.required, Validators.email, Validators.minLength(3), Validators.pattern(
+        /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com)$/
+      )]],
       nick: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(15)]]
     })

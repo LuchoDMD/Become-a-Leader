@@ -14,6 +14,12 @@
           @if (formUsuario.controls['email'].touched && formUsuario.controls['email'].getError('minlength')) {
             <div class="error">Requiere un mínimo de 3 letras</div>
           }
+          @if (formUsuario.controls['email'].errors?.['email']) {
+            <div class="error">El formato de email es incorrecto</div>
+          }
+          @if (formUsuario.controls['email'].errors?.['pattern']) {
+            <div class="error">Solo se permiten correos de dominios: gmail.com, yahoo.com, hotmail.com</div>
+          }
     
           <label for="nick">Nickname:</label>
           <input type="text" id="nick" placeholder="Coloque su Nickname" formControlName="nick">
