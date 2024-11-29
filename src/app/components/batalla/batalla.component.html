@@ -6,7 +6,7 @@
 
   <div class="batalla-container" *ngIf="pokemonJugador && pokemonRival">
     <h2 class="titulo-batalla">Batalla Pokémon</h2>
-  
+
     <div class="informacion">
       <!-- Información del Pokémon rival -->
       <div class="pokemon-info rival">
@@ -19,33 +19,34 @@
         <p>Pokémon restantes: {{ pokemonRivalRestantes() }}</p>
       </div>
     </div>
-  
+
     <div class="batalla">
       <!-- Sprite del Pokémon rival -->
       <div class="pokemon-sprite rival">
         <img [src]="pokemonRival.frontSprite" alt="{{ pokemonRival.especie }}">
       </div>
-  
+
       <!-- Sprite del Pokémon del jugador -->
       <div class="pokemon-sprite jugador">
         <img [src]="pokemonJugador.backSprite" alt="{{ pokemonJugador.especie }}">
       </div>
     </div>
-  
+
     <div class="informacion">
       <!-- Información del Pokémon del jugador -->
       <div class="pokemon-info jugador">
         <h3>{{ transformarPrimeraLetra(pokemonJugador.especie) }}</h3>
         <p>HP: {{ pokemonJugador.vidaActual }}/{{ pokemonJugador.estadisticas.hp }}</p>
         <div class="hp-bar">
-          <div class="hp-bar-inner" [style.width.%]="(pokemonJugador.vidaActual / pokemonJugador.estadisticas.hp) * 100">
+          <div class="hp-bar-inner"
+            [style.width.%]="(pokemonJugador.vidaActual / pokemonJugador.estadisticas.hp) * 100">
           </div>
         </div>
         <p>Pokémon restantes: {{ pokemonJugadorRestantes() }}</p>
       </div>
     </div>
-  
-  
+
+
     <!-- Lista de movimientos del jugador -->
     <!-- <div class="movimientos-container">
       <ul class="movimientos">
@@ -55,15 +56,15 @@
         </li>
       </ul>
     </div> -->
-  
-  
+
+
     <div class="container">
-  
-    <!-- Mensajes de batalla -->
-    <div *ngIf="mensajeBatalla" class="mensaje-batalla">
-      <p>{{ mensajeBatalla }}</p>
-    </div>
-  
+
+      <!-- Mensajes de batalla -->
+      <div *ngIf="mensajeBatalla" class="mensaje-batalla">
+        <p>{{ mensajeBatalla }}</p>
+      </div>
+
       <ul class="movimientos-container">
         <li *ngFor="let movimiento of movimientosJugador" (click)="batalla(movimiento)" class="boton-movimiento"
           [ngClass]="obtenerClaseTipoMovimiento(movimiento.tipo)">
@@ -71,15 +72,16 @@
         </li>
       </ul>
     </div>
-  
-    
-  
+    <aside>
+      <button type="button" class="boton-cambio">Cambiar Poke</button>
+    </aside>
     <!-- Resultado de la batalla -->
     <div *ngIf="resultado" class="resultado-batalla">
       <p>{{ resultado }}</p>
     </div>
-  
+
   </div>
+ 
 </div>
 
 <div class="modal" *ngIf="mostrarModal">
