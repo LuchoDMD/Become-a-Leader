@@ -255,23 +255,6 @@ div.batalla div img {
   transform: scale(1.1);
 }
 
-.boton-cambio {
-  z-index: 1000;
-  position: fixed; /* O 'absolute' si no quieres que quede fijo al hacer scroll */
-  right: 0;
-  top: 90%; /* Opcional: para centrarlo verticalmente */
-  transform: translateY(-50%); /* Opcional: para ajustar la posición */
-  color: white;
-  padding: 10px 20px;
-  margin: 5px 0;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s, transform 0.2s;
-  cursor: pointer;
-  user-select: none;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Hace que los botones ocupen todo el ancho disponible *//* Asegura que el padding se incluya dentro del ancho total */
-  background-color: #007BFF; /* Color azul */
-}
 /* Estilo para los mensajes de batalla */
 .mensaje-batalla {
   padding: 10px;
