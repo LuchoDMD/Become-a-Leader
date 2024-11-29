@@ -57,7 +57,7 @@ export class LoginAdminComponent {
             console.log('Login successful:', admin);
             this.router.navigate(['add-pokemon']);
           } else {
-            this.mensaje = 'Credenciales incorrectas, por favor intente nuevamente.';
+            this.mensaje = 'Credenciales incorrectas, por favor ingrese con credenciales de administrador.';
             console.log('Login failed')
           }
         },
