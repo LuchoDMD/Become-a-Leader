@@ -10,13 +10,19 @@
       "id": "5a3a",
       "email": "ejemplo@gmail.com",
       "nick": "ejemplo",
-      "password": "ejemplo123"
+      "password": "ejemplo1234"
     },
     {
       "id": "28bc",
       "email": "??????????@44444.com",
       "nick": "pepe",
       "password": "pepe1234"
+    },
+    {
+      "id": "deba",
+      "email": "ejemplo2@gmail.com",
+      "nick": "ejemplo",
+      "password": "ejemplo123"
     }
   ],
   "partidas": [],
@@ -62,6 +68,12 @@
       "nombre": "Hector",
       "usuario": "4efd",
       "puntaje": 0
+    },
+    {
+      "id": "482a",
+      "nombre": "Jorge",
+      "usuario": "5a3a",
+      "puntaje": 1
     }
   ],
   "pokemons": [
@@ -251,13 +263,13 @@
       },
       "movimientos": [
         {
-          "nombre": "scald",
-          "tipo": "water",
+          "nombre": "weather-ball",
+          "tipo": "normal",
           "clase": "special",
-          "potencia": 80,
+          "potencia": 50,
           "precision": 100,
-          "usos": 15,
-          "pp": 15
+          "usos": 10,
+          "pp": 10
         },
         {
           "nombre": "cross-poison",
