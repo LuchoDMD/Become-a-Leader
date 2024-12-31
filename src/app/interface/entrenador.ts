@@ -5,5 +5,6 @@ export interface Entrenador {
     id:string,
     nombre:string,
     tipo:string,
+    lider: string,
     equipo:Pokemon[], //Min:1 Max:6
 }

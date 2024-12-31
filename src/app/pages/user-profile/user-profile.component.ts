@@ -29,6 +29,7 @@ export class UserProfileComponent implements OnInit {
     personaje: {
       id: '',
       nombre: '',
+      lider: '',
       tipo: '',
       equipo: []
     }

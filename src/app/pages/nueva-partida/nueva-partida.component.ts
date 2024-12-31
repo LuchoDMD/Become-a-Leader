@@ -35,6 +35,7 @@ export class NuevaPartidaComponent implements OnInit {
     personaje: {
       id: '',
       nombre: '',
+      lider: '',
       tipo: '',
       equipo:[]
     }
