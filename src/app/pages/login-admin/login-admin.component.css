@@ -1,0 +1,231 @@
+/* General reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que la altura se ocupe completamente */
+    font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+  }
+  
+  /* Fondo animado */
+  body {
+    background-color: #333333; /* Fondo gris oscuro */
+    background-size: cover; /* Cubre toda la pantalla */
+  
+  }
+  
+  /* Fondo principal */
+  
+  
+  /* Estilos para el contenedor general */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    position: relative; /* Necesario para que el fondo no se superponga al formulario */
+    z-index: 1;
+    background-image: url('https://media.giphy.com/media/Ml9qdzetfukLi7kCai/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para el formulario */
+  .register-container {
+    background-color: rgba(47, 80, 46, 0.4); /* Fondo del formulario oscuro con algo de transparencia */
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Sombra suave */
+    width: 100%;
+    max-width: 450px; /* Máximo ancho para el formulario */
+    z-index: 2; /* Asegura que el formulario quede encima del fondo */
+  }
+  
+  /* Título */
+  .register-container h1 {
+    font-size: 2.5em;
+    color: #ffcb05; /* Amarillo Pokémon */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2); /* Efecto de resplandor suave */
+  }
+  
+  /* Leyenda */
+  .register-container legend {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: white; /* Cambia el color de los labels a blanco */
+    font-size: 16px; /* Tamaño de fuente ajustado, puedes cambiarlo */
+    font-weight: bold; /* Opcional, si prefieres el texto en negrita */
+    display: block; /* Asegura que el label esté en una línea propia */
+    margin-bottom: 8px; /* Espacio debajo del label */
+  }
+  
+  /* Estilo de los inputs */
+  input[type="text"],
+  input[type="password"] {
+    width: 93%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #ffcb05; /* Resaltamos el borde al hacer foco */
+    background-color: #fff;
+  }
+  
+  /* Estilo para los mensajes de error */
+  .error {
+    color: #ff5733; /* Rojo Pokémon */
+    font-size: 0.9em;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+  }
+  
+  /* Estilo del botón */
+  button {
+    width: 100%;
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #fff;
+    font-size: 1.2em;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+  }
+  
+  button:hover {
+    background-color: #ff5733; /* Rojo al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de elevación */
+  }
+  
+  button:active {
+    background-color: #3b4cca; /* Azul al hacer clic */
+    transform: translateY(1px); /* Efecto de presionar el botón */
+  }
+  
+  /* Media queries para pantallas más pequeñas */
+  @media (max-width: 480px) {
+    .register-container {
+      padding: 20px 25px; /* Menos padding en pantallas pequeñas */
+    }
+  
+    .register-container h1 {
+      font-size: 2em; /* Ajustamos el tamaño del título */
+    }
+  }
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    background-color: #1d1b1b; /* Blanco para un look limpio */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .pokeball-icon {
+    width: 40px;
+    height: 40px;
+  
+    background-size: contain;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Color oscuro para el texto */
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s; /* Transición para el hover */
+  }
+  
+  .nav-links a:hover {
+    color: #ffcb05; /* Amarillo Pokémon suave al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de levantamiento sutil */
+  }
+  
+  .nav-links a:active {
+    color: #ff5733; /* Rojo al hacer clic */
+  }
+  
+  /* Botones */
+  button {
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transición suave */
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #ff5733; /* Rojo en hover */
+    transform: translateY(-3px); /* Efecto de levantamiento suave */
+  }
+  
+  button:active {
+    background-color: #3b4cca; /* Azul al hacer clic */
+    transform: translateY(1px); /* Efecto de presionar el botón */
+  }
+  .navbar img{
+    height: 60px;
+    width: 60px;
+  }
+  
+  .mensaje-aviso {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 80, 46, 0.4);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
+    color: #ffcb05;
+    font-size: 1em;
+    text-align: center;
+    z-index: 1000;
+    width: 80%; /* Ajusta el ancho como prefieras */
+    max-width: 450px; /* Máximo ancho */
+  }

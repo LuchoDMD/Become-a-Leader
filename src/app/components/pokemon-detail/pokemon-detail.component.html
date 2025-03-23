@@ -1,0 +1,64 @@
+<body>
+  <section>
+    <input type="button" (click)="volverALista()" value="Volver">
+
+    <article>
+      <h1>{{pokemon.id}} - {{pokemon.especie}}</h1>
+        <div>
+            @if (sprites) {
+                <img [src]="sprites.front_default" [alt]="['pokemon.especie'+'.jpg']">
+            }  
+        </div>
+        <div>
+            <h3>Infomacion General</h3>
+            <ul>
+                <li>Nivel: {{ pokemon.nivel }}</li>
+                <li>Tipos: {{ pokemon.tipos }}</li>
+            </ul>
+            <h3>Estadisticas</h3>
+            <ul>
+                <li>Vida: {{pokemon.estadisticas.hp}}</li>
+                <li>Ataque Fisico: {{pokemon.estadisticas.atk}} </li>
+                <li>Defensa Fisica: {{pokemon.estadisticas.def}} </li>
+                <li>Ataque Especial: {{pokemon.estadisticas.satk}} </li>
+                <li>Defensa Especial: {{pokemon.estadisticas.sdef}} </li>
+                <li>Velocidad: {{pokemon.estadisticas.spd}}</li>
+            </ul>
+
+            <h3>Movimientos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Clase</th>
+                        <th>Potencia</th>
+                        <th>Precision</th>
+                        <th>UsosMaximos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(movimiento of pokemon.movimientos; track $index){
+                        <tr>
+                            <td> {{movimiento.nombre}} </td>
+                            <td> {{movimiento.tipo}} </td>
+                            <td> {{movimiento.clase}} </td>
+                            <td> {{movimiento.potencia}} </td>
+                            <td> {{movimiento.precision}} </td>
+                            <td> {{movimiento.pp}} </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br>
+        @if (pokemon.id)
+        {
+            <button type="button" (click)="irAModificar(pokemon.id)">Modificar</button>
+        }
+        <button type="button" (click)="borrarPokemon(pokemon.id)">Eliminar</button>
+    </article>
+</section>
+
+</body>
+

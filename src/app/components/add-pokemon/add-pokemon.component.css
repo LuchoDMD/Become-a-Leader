@@ -1,0 +1,141 @@
+/* Fondo oscuro para el cuerpo */
+body {
+  background-color: #333;
+  font-family: Arial, sans-serif;  /* Fuente más legible */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* Estilos para el contenedor del nav */
+nav {
+  padding: 10px;
+  background-color: #444;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+/* Estilos para el contenedor del formulario */
+fieldset {
+  background-color: #444;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+legend {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Estilo de los inputs y botones */
+input, button {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: 80%;
+  background-color: #222;
+  color: #fff;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para los bloques de información */
+div {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Título de la sección */
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Estilo de la lista de pokemones */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilo de cada ítem de Pokémon */
+li {
+  width: 180px;
+  background-color: #4a4848;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las imágenes de los Pokémon */
+.pokemon-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Estilo para los enlaces (nombres y ids) */
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+/* Eliminar cualquier margen o espacio alrededor de la página */
+div {
+  max-width: 100%;
+  box-sizing: border-box;
+}

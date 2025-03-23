@@ -10,23 +10,23 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PartidaComponent implements OnInit {
   mensajeCompleto = false;
-  mensajeLargo = "Hola! Bienvenido al Proyecto Lincoln. Este trabajo fue realizado por Varela, Varela, Buda, Dallier y Malagutti para las materias de Laboratorio 4 y Metodologia en sistemas. Este proyecto se trata sobre simular un juego de Pokemon donde tu eres el lider de Gimnasio de una ciudad y debes enfrentarte a tantos entrenadores como sea posible. Cada victoria te da dinero y cada derrota te restara dinero. Cuando te quedes sin dinero, se acaba el juego y tu puntaje de victorias se sube a una tabla de clasificaciones. Puedes elegir el tipo que quieras para el gimnasio. Empezemos!";
+  mensajeLargo = "Bienvenido a Become a Leader. En este proyecto se simulan batallas de Lider Pokemon contra entrenadores, usando un equipo de un mismo tipo. Tu objetivo es acumular la mayor cantidad victorias y sumar puntos. Recuerda que cuando pierdes, tu partida se elimina y tu puntaje se guarda en la tabla de puntajes. Entrando al juego... ";
   mensajeActual = "";
   lineaIndex = 0;
 
   constructor(private router: Router) {}
 
-  ngOnInit() { // Cambia aquí
+  ngOnInit() {
     this.mostrarMensajeProgresivo();
   }
 
   mostrarMensajeProgresivo() {
     const lineas = this.mensajeLargo.split('. '); // Divide por puntos
-    this.mensajeActual += lineas[this.lineaIndex] + ". ";
+    this.mensajeActual = lineas[this.lineaIndex] + ".<br>";
     this.lineaIndex++;
 
     if (this.lineaIndex < lineas.length) {
-      setTimeout(() => this.mostrarMensajeProgresivo(), 2000); // Ajusta el tiempo si es necesario
+      setTimeout(() => this.mostrarMensajeProgresivo(), 3000); // Ajusta el tiempo si es necesario
     } else {
       this.mensajeCompleto = true;
       this.navegarAMenu();

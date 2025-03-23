@@ -1,0 +1,178 @@
+/* Reset general */
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  background-color: #333;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Fondo con un estilo animado */
+
+/* Navbar Volver */
+input[type="button"] {
+  background-color: #ffcb05; /* Amarillo Pokémon */
+  color: #000000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute; /* Mueve el botón de Volver */
+  top: 20px; /* Ajusta la distancia desde la parte superior */
+  left: 20px; /* Ajusta la distancia desde la izquierda */
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+  transition: all 0.3s ease;
+}
+
+/* Efecto Hover del botón Volver */
+input[type="button"]:hover {
+  background-color: #ff5733; /* Rojo Pokémon */
+  transform: translateY(-3px);
+}
+
+/* Título de la página de detalles */
+h1 {
+  font-size: 2em;
+  color: #ffcb05; /* Amarillo Pokémon */
+  text-transform: uppercase;
+  margin-top: 2px; /* Aumentamos el espacio superior */
+  font-family: 'Press Start 2P', cursive; /* Estilo retro */
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+
+/* Efecto de resplandor sobre el título */
+h1:hover {
+  text-shadow: 0 0 20px rgba(255, 203, 5, 0.8), 0 0 30px rgba(255, 203, 5, 0.6);
+}
+
+/* Contenedor principal (el artículo) */
+article {
+  background-color: rgba(45, 42, 42, 0.9); /* Fondo semitransparente */
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor de la imagen del Pokémon */
+article > div:first-of-type {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+article > div:first-of-type img {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección de información general */
+h3 {
+  font-size: 1.8em;
+  color: #ffcb05; /* Amarillo Pokémon */
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+ul li {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li span {
+  color: #ff5733; /* Rojo Pokémon */
+}
+
+/* Sección de movimientos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+table th {
+  background-color: #1d1b1b;
+  color: #fff;
+}
+
+table td {
+  background-color: #f4f4f4;
+}
+
+table tr:hover {
+  background-color: #ffcb05; /* Amarillo Pokémon al pasar el ratón */
+  color: #1d1b1b;
+  cursor: pointer;
+}
+
+/* Botón Modificar y Eliminar */
+button {
+  background-color: #ffcb05; /* Amarillo Pokémon */
+  color: #000000;
+  border: none;
+  font-size: 1.2em;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff5733; /* Rojo en hover */
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #3b4cca; /* Azul al hacer clic */
+  transform: translateY(1px);
+}
+
+button:first-of-type {
+  background-color: #ffcb05; /* Amarillo Pokémon */
+}
+
+button:first-of-type:hover {
+  background-color: #ff5733; /* Rojo en hover */
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+table a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+table a:hover {
+  color: #ff5733; /* Rojo en hover */
+  transform: scale(1.05);
+}
