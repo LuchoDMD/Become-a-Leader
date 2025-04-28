@@ -20,6 +20,7 @@ import { Entrenador } from '../../interface/entrenador';
   templateUrl: './batalla.component.html',
   styleUrls: ['./batalla.component.css']
 })
+
 export class BatallaComponent {
   pokeapi = inject(PokeAPIService);
   teamService = inject(TeamService);
@@ -27,6 +28,8 @@ export class BatallaComponent {
   rs = inject(RankingService);
 
   // Datos de la batalla
+  cambioPokemon: boolean = false;
+  contadorDeDuelos: number = 0;
   idPartida: string = '';
   partida: Partida | null = null;
   jugador?: Entrenador;
@@ -41,7 +44,20 @@ export class BatallaComponent {
   mensajeModal: string = '';
   UserService = inject(UserService);
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  contadorSumar()
+{
+  this.contadorDeDuelos+=1;
+}
+
+verificarContador()
+{
+  if(this.contadorDeDuelos>3)
+  {
+    this.cambioPokemon=true;
+  }
+}
 
   ngOnInit(): void {
     this.idPartida = localStorage.getItem('token')!;
@@ -96,6 +112,8 @@ export class BatallaComponent {
     }
   }
 
+
+  //Metodo para iniciar la batalla, este metodo genera el rival del entrenador y asigna los sprites a los pokemon del entrenador como tambien sus movimientos
   iniciarBatalla() {
     console.log("Iniciando batalla");
     this.asignarSprites(this.jugador?.equipo);
@@ -108,6 +126,11 @@ export class BatallaComponent {
 
   }
 
+
+  //Metodo para generar un rival, Utiliza el servicio teamService para obtener todos los pokemons de la api
+  //Luego con ese arreglo selecciona uno al azar y lo coloca en una constante pokemon
+  //Se le asigna un id de entrenador al rival y se colocan los pokemons dentro del arreglo rival, esto lo repetira 6 veces
+  //Se asignan los sprites y los movimientos a cada pokemon del arreglo rival
   generarRival() {
     console.log("Generando rival");
     this.teamService.getPokemons().subscribe(
@@ -130,6 +153,11 @@ export class BatallaComponent {
   }
 
   /*---------------------------------------------------------------------------------------------------------------------------------------- */
+
+  //METODO GENERAL DE BATALLA, utiliza variables para asignar el pokemon atacante y el pokemon defensor, ademas del movimiento atacante
+  //Dependiendo de la velocidad del pokemon del entrenador y del rival se decidira cual sera el pokemon atacante y el defensor
+  //Luego se calcula el daño del ataque dependiendo del pokemon atacante y defensor y del movimiento que utilice el atacante
+  //Se verifica si el pokemon rival sigue con vida, si es asi se genera un ataque con ese pokemon
   batalla(movimientoSeleccionado: Move): void {
     let atacante: Pokemon;
     let defensor: Pokemon;
@@ -180,6 +208,7 @@ export class BatallaComponent {
   }
 
 
+  //
   generarMovimientoRival(): Move {
     const movimientosPosibles = this.pokemonRival?.movimientos || [];
     const indiceAleatorio = Math.floor(Math.random() * movimientosPosibles.length);
@@ -212,17 +241,20 @@ export class BatallaComponent {
         if (this.jugador?.equipo.length === 0) {
           console.log("El equipo del jugador ha sido derrotado.");
           this.finalizarBatalla(false);
+          this.contadorDeDuelos=0;
         }
         if(this.jugador!.equipo.length > 0){
           this.pokemonJugador = this.jugador!.equipo[0];
           this.movimientosJugador = this.pokemonJugador.movimientos!;
-          defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno 
+          defensor = this.pokemonJugador; // Siguiente Pokémon si hay alguno
         }
       } else {
         this.rival.shift();
         if (this.rival.length === 0) {
           console.log("El equipo del rival ha sido derrotado.");
           this.finalizarBatalla(true);
+          this.contadorSumar();
+          this.verificarContador();
         }
         if(this.rival.length > 0){
           this.pokemonRival = this.rival[0];
@@ -356,155 +388,4 @@ export class BatallaComponent {
     this.router.navigate(['']);
   }
 }
-/*
-  realizarAtaque(movimientoJugador: Move) {
-    if (!this.pokemonJugador || !this.pokemonRival || this.pokemonJugador.vidaActual <= 0 || this.pokemonRival.vidaActual <= 0) {
-      return;
-    }
 
-    console.log("Equipo jugador:", this.jugador?.equipo);
-    console.log("Equipo rival:", this.rival);
-
-    let cambiarPokemonJugador = false;
-    let cambiarPokemonRival = false;
-
-    if (this.pokemonJugador.estadisticas.spd >= this.pokemonRival.estadisticas.spd) {
-      this.calcularAtaque(movimientoJugador, this.pokemonJugador, this.pokemonRival);
-
-      if (this.pokemonRival.vidaActual <= 0) {
-        console.log(`${this.pokemonRival.especie} se ha desmayado!`);
-        this.removerPokemonRival();
-        cambiarPokemonRival = true;
-      }
-      if (this.pokemonJugador.vidaActual <= 0) {
-        console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
-        this.removerPokemonJugador();
-        cambiarPokemonJugador = true;
-      }
-
-      if (cambiarPokemonRival || cambiarPokemonJugador) {
-        setTimeout(() => {
-          if (cambiarPokemonRival) {
-            this.cambiarPokemonRival();
-          }
-          if (cambiarPokemonJugador) {
-            this.cambiarPokemonJugador();
-          }
-        }, 2000);
-      } else {
-        setTimeout(() => {
-          this.turnoRival();
-          if (this.pokemonJugador && this.pokemonJugador.vidaActual <= 0) {
-            console.log(`${this.pokemonJugador.especie} está desmayado! Realizando el cambio de Pokémon...`);
-            this.removerPokemonJugador();
-            console.log("El turno sigue normalmente...");
-          }
-        }
-          , 2000);
-      }
-    } else {
-      this.turnoRival();
-
-      if (this.pokemonJugador.vidaActual <= 0) {
-        console.log(`${this.pokemonJugador.especie} se ha desmayado!`);
-        this.removerPokemonJugador();
-        cambiarPokemonJugador = true;
-      }
-
-      if (this.pokemonRival.vidaActual <= 0) {
-        console.log(`${this.pokemonRival.especie} se ha desmayado!`);
-        this.removerPokemonRival();
-        cambiarPokemonRival = true;
-      }
-
-      if (cambiarPokemonRival || cambiarPokemonJugador) {
-        setTimeout(() => {
-          if (cambiarPokemonRival) {
-            this.cambiarPokemonRival();
-          }
-          if (cambiarPokemonJugador) {
-            this.cambiarPokemonJugador();
-          }
-        }, 2000);
-      } else {
-        setTimeout(() => {
-          this.calcularAtaque(movimientoJugador, this.pokemonJugador!, this.pokemonRival!)
-          if (this.pokemonRival && this.pokemonRival.vidaActual <= 0) {
-            console.log(`${this.pokemonRival.especie} está desmayado! Realizando el cambio de Pokémon...`);
-            this.removerPokemonRival();
-          } else {
-            console.log("El turno sigue normalmente...");
-          }
-        },
-          2000);
-      }
-    }
-  } */
-/*removerPokemonJugador() {
-  if (this.jugador && this.jugador.equipo.length > 0) {
-    this.jugador.equipo.shift();
-    if (this.jugador.equipo.length > 0) {
-      this.pokemonJugador = this.jugador.equipo[0];
-      this.pokemonJugador.vidaActual = this.pokemonJugador.estadisticas.hp;
-      console.log(`${this.pokemonJugador.especie} ha sido activado con vida completa.`);
-    } else {
-      this.pokemonJugador = null;
-      console.log("No hay más Pokémon disponibles en el equipo.");
-      this.finalizarBatalla(false);
-    }
-  }
-}
-
-removerPokemonRival() {
-  if (this.rival && this.rival.length > 0) {
-    this.rival.shift();
-    if (this.rival.length > 0) {
-      this.pokemonRival = this.rival[0];
-      this.pokemonRival.vidaActual = this.pokemonRival.estadisticas.hp;
-      this.movimientosRival = this.pokemonRival.movimientos!;
-      console.log(`${this.pokemonRival.especie} ha sido activado con vida completa.`);
-    } else {
-      this.pokemonRival = null;
-      console.log("El rival no tiene más Pokémon disponibles.");
-      this.finalizarBatalla(true);
-    }
-  }
-}
-
-cambiarPokemonJugador() {
-  if (this.pokemonJugador) {
-    if (this.jugador!.equipo.length > 0) {
-      this.pokemonJugador = this.jugador!.equipo[0];
-      this.pokemonJugador.vidaActual = this.pokemonJugador.estadisticas.hp;
-      this.movimientosJugador = this.pokemonJugador.movimientos!;
-      console.log(`${this.pokemonJugador.especie} ha sido activado con vida completa.`);
-    } else {
-      console.log("No hay más Pokémon en tu equipo.");
-      this.finalizarBatalla(false);
-    }
-  }
-}
-
-cambiarPokemonRival() {
-  if (this.pokemonRival) {
-    if (this.rival.length > 0) {
-      this.pokemonRival = this.rival[0];
-      this.pokemonRival.vidaActual = this.pokemonRival.estadisticas.hp;
-      this.movimientosRival = this.pokemonRival.movimientos!;
-      console.log(`${this.pokemonRival.especie} ha sido activado con vida completa.`);
-    } else {
-      console.log("El rival no tiene más Pokémon.");
-      this.finalizarBatalla(true);
-    }
-  }
-}
-
-turnoRival() {
-  if (!this.pokemonRival || !this.pokemonJugador) return;
-
-  const movimientoAleatorio = this.movimientosRival[
-    Math.floor(Math.random() * this.movimientosRival.length)
-  ];
-
-  this.calcularAtaque(movimientoAleatorio, this.pokemonRival!, this.pokemonJugador!);
-}*/

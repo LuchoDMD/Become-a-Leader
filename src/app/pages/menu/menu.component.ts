@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     private userService: UserService,
     private partidaService: PartidaService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -36,23 +36,23 @@ export class MenuComponent implements OnInit {
             },
             error: () => {
             }
-            
+
           });
         }
       });
     }
   }
-  
+
   onSeleccionarPartida(): void {
     if (this.tienePartida) {
-      this.router.navigate(['/batalla']);
+      this.router.navigate(['/mapa']);
     } else {
       this.router.navigate(['/nueva-partida']);
     }
   }
 
   onNuevaPartida(): void {
-    if (this.tienePartida) {    
+    if (this.tienePartida) {
       const confirmacion = confirm(
         "Ya tienes una partida guardada. ¿Deseas eliminarla para comenzar una nueva?"
       );

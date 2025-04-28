@@ -26,9 +26,6 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required]]
   });
 
-  @Output()
-  emitirUsuarioLogin = new EventEmitter<Usuario>();
-
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
     this.route.queryParams.subscribe(params => {
       if (params['mensaje']) {

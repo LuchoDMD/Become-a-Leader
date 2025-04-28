@@ -74,7 +74,7 @@ export class NuevaPartidaComponent implements OnInit {
     this.partidaService.postPartida(partida).subscribe({
       next: (partida) => {
         console.log('Partida creada en la BD', partida);
-        this.router.navigate(['/batalla']);
+        this.router.navigate(['/mapa']);
       },
       error: (error: Error) => {
         console.error('Error al crear la partida en la BD', error);
