@@ -17,11 +17,11 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { AuthAdmin } from './service/auth-admin.service';
-import { MapaComponent } from './mapa/mapa.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 import { CentroPokemonComponent } from './centro-pokemon/centro-pokemon.component';
 import { RutaComponent } from './ruta/ruta.component';
-import { GimnasioComponent } from './gimnasio/gimnasio.component';
-import { VerPerfilGimComponent } from './ver-perfil-gim/ver-perfil-gim.component';
+import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
+import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},

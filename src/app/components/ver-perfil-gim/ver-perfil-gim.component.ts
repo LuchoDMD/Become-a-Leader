@@ -1,10 +1,10 @@
 import { Component, OnInit , inject} from '@angular/core';
-import { UserAccountInfoComponent } from '../components/user-account-info/user-account-info.component';
+import { UserAccountInfoComponent } from '../user-account-info/user-account-info.component';
 import { CommonModule } from '@angular/common';
-import { Partida } from '../interface/partida';
-import { PartidaService } from '../service/partida.service';
-import { PokeAPIService } from '../service/poke-api.service';
-import { UserService } from '../service/user.service';
+import { Partida } from '../../interface/partida';
+import { PartidaService } from '../../service/partida.service';
+import { PokeAPIService } from '../../service/poke-api.service';
+import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 
 @Component({

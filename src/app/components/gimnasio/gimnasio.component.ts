@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { UserService } from '../service/user.service';
+import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
-import { PartidaService } from '../service/partida.service';
-import { Partida } from '../interface/partida.js';
+import { PartidaService } from '../../service/partida.service';
+import { Partida } from '../../interface/partida.js';
 
 
 @Component({
