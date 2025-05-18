@@ -22,6 +22,7 @@ import { CentroPokemonComponent } from './components/centro-pokemon/centro-pokem
 import { RutaComponent } from './components/ruta/ruta.component';
 import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
 import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
+import { InventarioComponent } from './pages/inventario/inventario.component';
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},
@@ -43,5 +44,6 @@ export const routes: Routes = [
   { path: 'perfil-gim', component: VerPerfilGimComponent},
   { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]},
   { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] },
-  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] }
+  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] },
+  { path: 'inventario', component:InventarioComponent}
 ];

@@ -1,7 +1,7 @@
 body {
   width: 100vw;
   height: 57vw;
-  background-image: url('../../../public/GIMNASIO.png');
+  background-image: url('../../../../public/GIMNASIO.png');
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0;

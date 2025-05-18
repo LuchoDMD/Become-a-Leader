@@ -1,0 +1,12 @@
+html, body, :host{
+  background-image: url('/battle-background2.jpg'); /* Ruta de la imagen */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-position: center center; /* Centra la imagen */
+  background-attachment: fixed; /* Hace que la imagen se quede fija cuando se haga scroll */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Asegura que la imagen ocupe toda la altura de la ventana */
+  width: 100%;
+  margin: 0; /* Elimina el margen predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+  overflow: hidden; /* Evita el desplazamiento de la página */
+}
