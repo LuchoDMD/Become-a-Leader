@@ -4,7 +4,7 @@
   background-color: #A8A878;
 }
 .fire {
-  background-color: #FF5733;
+  background-color: #ff8f33;
 }
 .water {
   background-color: #3399FF;
@@ -13,19 +13,19 @@
   background-color: #4CAF50;
 }
 .electric {
-  background-color: #ffff0070;
+  background-color: #ffee00;
 }
 .ice {
   background-color: #7FFFD4;
 }
 .fighting {
-  background-color: #D35400;
+  background-color: #a00606;
 }
 .poison {
   background-color: #A040A0;
 }
 .ground {
-  background-color: #DB7093;
+  background-color: #85612f;
 }
 .flying {
   background-color: #87CEEB;
@@ -37,7 +37,7 @@
   background-color: #b1f08c;
 }
 .rock {
-  background-color: #B0C4DE;
+  background-color: #5d5f6278;
 }
 .ghost {
   background-color: #7B68EE;
@@ -52,7 +52,7 @@
   background-color: #B0C4DE;
 }
 .fairy {
-  background-color: #FFB6C1;
+  background-color: #ef61d3;
 }
 
 html, body {

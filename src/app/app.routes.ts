@@ -18,8 +18,8 @@ import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.com
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { AuthAdmin } from './service/auth-admin.service';
 import { MapaComponent } from './components/mapa/mapa.component';
-import { CentroPokemonComponent } from './centro-pokemon/centro-pokemon.component';
-import { RutaComponent } from './ruta/ruta.component';
+import { CentroPokemonComponent } from './components/centro-pokemon/centro-pokemon.component';
+import { RutaComponent } from './components/ruta/ruta.component';
 import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
 import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
 
