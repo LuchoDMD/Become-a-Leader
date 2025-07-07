@@ -4,10 +4,11 @@ import { UserService } from '../../service/user.service';
 import { Partida } from '../../interface/partida.js';  // Asegúrate de tener esta interfaz creada
 import { Lider } from '../../interface/lider.js';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-nueva-partida',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './nueva-partida.component.html',
   styleUrl: './nueva-partida.component.css'
 })

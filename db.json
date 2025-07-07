@@ -40,6 +40,21 @@
         "equipo": [],
         "mochila": {}
       }
+    },
+    {
+      "id": "610a",
+      "fecha_inicio": "2025-04-20T00:23:34.902Z",
+      "fecha_fin": "2025-04-20T00:23:34.902Z",
+      "puntuacion": 0,
+      "personaje": {
+        "id": "uuid-1234",
+        "nombre": "carlitos",
+        "genero": "chico",
+        "rango": "C",
+        "dinero": 1000,
+        "equipo": [],
+        "mochila": {}
+      }
     }
   ],
   "pokemons": []

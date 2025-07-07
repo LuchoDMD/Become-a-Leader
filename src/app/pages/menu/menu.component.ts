@@ -57,6 +57,7 @@ export class MenuComponent implements OnInit {
       );
       if (confirmacion) {
         this.eliminarPartida();  // Llama a un método para eliminar la partida actual
+        this.router.navigate(['/nueva-partida']);  // Si no hay partida, redirige a Nueva Partida
       }
     } else {
       this.router.navigate(['/nueva-partida']);  // Si no hay partida, redirige a Nueva Partida
