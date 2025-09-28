@@ -12,6 +12,9 @@ html, body, :host {
   position: absolute;
   top: 0;
   left: 0;
+  background-image: url('https://media.giphy.com/media/Ml9qdzetfukLi7kCai/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Fondo principal */
@@ -115,9 +118,7 @@ button:active {
 
 /* Fondo y detalles gráficos */
 :host {
-  background-image: url('https://media.giphy.com/media/Ml9qdzetfukLi7kCai/giphy.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
+  
 }
 
 .navbar img{

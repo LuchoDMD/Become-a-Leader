@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     private userService: UserService,
     private partidaService: PartidaService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -29,9 +29,14 @@ export class MenuComponent implements OnInit {
       this.userService.getUserByID(token).subscribe(usuario => {
         this.usuario = usuario;
         if (this.usuario) {
-          this.partidaService.getPartidaByUserId(this.usuario.id).subscribe(partida => {
-            this.partida = partida;
-            this.tienePartida = !!partida;
+          this.partidaService.getPartidaByUserId(this.usuario.id).subscribe( {
+            next: (partida: Partida | null) => {
+              this.partida = partida;
+              this.tienePartida = !!partida;
+            },
+            error: () => {
+            }
+
           });
         }
       });
@@ -40,14 +45,15 @@ export class MenuComponent implements OnInit {
 
   onSeleccionarPartida(): void {
     if (this.tienePartida) {
-      this.router.navigate(['/batalla']);
+      this.router.navigate(['/mapa']);
     } else {
       this.router.navigate(['/nueva-partida']);
     }
   }
 
   onNuevaPartida(): void {
-    if (this.tienePartida) {    const confirmacion = confirm(
+    if (this.tienePartida) {
+      const confirmacion = confirm(
         "Ya tienes una partida guardada. ¿Deseas eliminarla para comenzar una nueva?"
       );
       if (confirmacion) {
@@ -56,6 +62,13 @@ export class MenuComponent implements OnInit {
     } else {
       this.router.navigate(['/nueva-partida']);
     }
+  }
+  verRanking(): void {
+    this.router.navigate(['/ranking']);
+  }
+
+  verPerfil():void{
+    this.router.navigate(['/perfil']);
   }
 
   eliminarPartida(): void {
@@ -66,7 +79,10 @@ export class MenuComponent implements OnInit {
           this.tienePartida = false;
           this.router.navigate(['/nueva-partida']);
         },
-        error: (error: Error) => console.error("Error al eliminar la partida:", error),
+        error: (error: Error) => {
+          console.error("Error al eliminar la partida:", error);
+          this.router.navigate(['/nueva-partida']) // El juego debe permitir la creación de una partida en caso de que no exista una.
+        },
       });
     }
   }

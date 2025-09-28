@@ -1,0 +1,76 @@
+body {
+  width: 100vw;
+  height: 57vw;
+  background-image: url('../../../../public/GIMNASIO.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0;
+  display: flex; /* Usaremos Flexbox en el body para centrar verticalmente el contenido */
+  flex-direction: column; /* Alinear los elementos del body en columna */
+  align-items: center; /* Centrar horizontalmente los elementos del body */
+  justify-content: flex-start; /* Comenzar la distribución vertical desde el inicio */
+}
+
+.navbar {
+  width: 100%; /* Ocupa todo el ancho para que los botones se distribuyan bien */
+  background-color: #1d1b1b;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Centra los botones de la barra de navegación */
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar button { /* Aplica estilos a todos los botones dentro de .navbar */
+  width: auto; /* Ajusta el ancho al contenido */
+  margin: 0 10px; /* Espacio entre los botones */
+}
+
+.gimnasio-pokemon {
+  display: flex; /* Para controlar la alineación de sus hijos (navbar y botoncito) */
+  flex-direction: column; /* Alinear los hijos en columna */
+  align-items: center; /* Centrar horizontalmente los hijos */
+  width: 100%; /* Asegura que ocupe todo el ancho del body */
+  height: auto; /* Ajusta la altura al contenido */
+}
+
+.botoncito {
+  /* position: relative; Ya no es necesario con Flexbox en el body */
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente dentro de este div */
+  /* align-items: center; No es estrictamente necesario si solo hay un elemento */
+  /* text-align: center; No es necesario en un contenedor flex para centrar el hijo */
+  margin-top: 700px; /* Ajusta el espacio entre la navbar y el botón */
+  width: 100%; /* Asegura que el div ocupe todo el ancho para el centrado */
+}
+
+.botoncito button.boton-batalla { /* Estilos específicos para el botón de batalla */
+  width: auto; /* Ajusta el ancho al contenido del botón de batalla */
+  padding: 15px 30px; /* Un poco más de padding para que destaque */
+  font-size: 1.4em; /* Un poco más grande */
+}
+
+button { /* Estilos generales para todos los botones (se aplicarán a los de la navbar también) */
+  background-color: #ffcb05;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #ff5733;
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #3b4cca;
+  transform: translateY(1px);
+}
