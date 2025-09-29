@@ -1,4 +1,5 @@
-export interface Usuario {
+export interface Usuario 
+{
   id?:number,
   email:string,
   nick:string,

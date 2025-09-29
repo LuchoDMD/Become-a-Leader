@@ -2,7 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Usuario } from '../../interface/user.interface';
+import { Usuario } from '../../interface/usuario';
 
 @Component({
   selector: 'app-user-account-info',

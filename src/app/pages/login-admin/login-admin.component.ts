@@ -1,5 +1,5 @@
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Usuario } from './../../interface/user.interface';
+import { Usuario } from '../../interface/usuario';
 import { Component, Output, EventEmitter, Inject, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UserService } from '../../service/user.service';

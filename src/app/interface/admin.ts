@@ -1,4 +1,5 @@
-export interface Admin {
+export interface Admin 
+{
     id: string;
     email: string;
     password: string;

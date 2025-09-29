@@ -1,9 +1,10 @@
-
 import { Pokemon } from "./pokemon";
 
-export interface Entrenador {
+export interface Entrenador 
+{
     id:string,
     nombre:string,
-    tipo:string,
+    dinero:number,
     equipo:Pokemon[], //Min:1 Max:6
 }
+

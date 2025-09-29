@@ -5,5 +5,6 @@ export interface Partida {
     fecha_inicio:Date,
     fecha_fin?:Date,
     puntuacion:number,
-    personaje:Entrenador;
+    personaje:Entrenador,
+    dinero:number
 }
