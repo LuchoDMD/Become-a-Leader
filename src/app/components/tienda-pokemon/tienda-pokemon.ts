@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './tienda-pokemon.html',
   styleUrl: './tienda-pokemon.css'
 })
-export class TiendaPokemon {
+export class TiendaPokemonComponent {
 
 }

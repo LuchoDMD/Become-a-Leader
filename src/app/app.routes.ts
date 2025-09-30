@@ -21,28 +21,30 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { CentroPokemonComponent } from './components/centro-pokemon/centro-pokemon.component';
 import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
 import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
-import { InventarioComponent } from './pages/inventario/inventario.component';
+import { TiendaPokemonComponent } from './components/tienda-pokemon/tienda-pokemon';
+
 
 export const routes: Routes = [
   { path: '', component:HomeComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent}, //ok
+  { path: 'login', component: LoginComponent}, //ok
   { path: 'sobre-nosotros', component: SobreNosotrosComponent},
-  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] },
-  { path: 'Partida', component: PartidaComponent, canActivate: [AuthGuard] },
-  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
-  { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
-  { path: 'mapa', component: MapaComponent},
-  { path: 'centro-pokemon', component: CentroPokemonComponent},
-  { path: 'gimnasio', component: GimnasioComponent},
-  { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
-  { path: 'login-admin', component: LoginAdminComponent },
-  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]},
-  { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]},
-  { path: 'perfil-gim', component: VerPerfilGimComponent},
-  { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]},
-  { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] },
-  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] },
+  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] }, //ok
+  { path: 'Partida', component: PartidaComponent, canActivate: [AuthGuard] }, //ok
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] }, //ok
+  { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] }, //ok
+  { path: 'mapa', component: MapaComponent}, //ok
+  { path: 'centro-pokemon', component: CentroPokemonComponent}, //falta completar el codigo
+  { path: 'tienda-pokemon', component: TiendaPokemonComponent}, //falta completar el codigo
+  { path: 'gimnasio', component: GimnasioComponent}, //falta completar el codigo
+  { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] }, //modificar para visualizar al jugador y a los entrenadores
+  { path: 'login-admin', component: LoginAdminComponent }, //ok
+  { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]}, //ok
+  { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]}, //ok
+  { path: 'perfil-gim', component: VerPerfilGimComponent}, //aun no se que hace
+  { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]}, //puede ser util para el jugador
+  { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] }, //puede ser util para el jugador
+  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] }, //puede ser util para el jugador
 ];
 
 /*
