@@ -19,7 +19,6 @@ import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { AuthAdmin } from './service/auth-admin.service';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { CentroPokemonComponent } from './components/centro-pokemon/centro-pokemon.component';
-import { RutaComponent } from './components/ruta/ruta.component';
 import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
 import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
 import { InventarioComponent } from './pages/inventario/inventario.component';
@@ -35,7 +34,6 @@ export const routes: Routes = [
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
   { path: 'mapa', component: MapaComponent},
   { path: 'centro-pokemon', component: CentroPokemonComponent},
-  { path: 'ruta', component: RutaComponent},
   { path: 'gimnasio', component: GimnasioComponent},
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
   { path: 'login-admin', component: LoginAdminComponent },
@@ -45,5 +43,31 @@ export const routes: Routes = [
   { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]},
   { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] },
   { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] },
-  { path: 'inventario', component:InventarioComponent}
 ];
+
+/*
+  El orden de los componentes
+      '' -> login
+      login <-> register
+      login -> menu
+      menu -> n.partida
+      menu <-> perfil
+      n.partida -> mapa
+      mapa -> batalla
+      mapa -> centro-pokemon
+      centro-pokemon -> curar
+      centro-pokemon -> editar-equipo <-> pokemon-edit.
+      tienda-pokemon -> comprar pack pokemon.
+      tienda-pokemon -> comprar totem.
+      mapa -> tienda-pokemon.
+      mapa -> gimnasio.
+      mapa -> perfil.
+      gimnasio -> batalla.
+ */
+
+/*
+      gimnasio previsualiza un combate como sucede en pokemon
+      y luego entra a la batalla. 
+      Con un totem puedes curar al equipo completo o a un pokemon durante la horda.
+      Precio a definir. Quizas haya 2 objetos unicos.(No mas).
+*/
