@@ -113,15 +113,15 @@ button:active {
 
 /* Fondo de las rutas (con estilo minimalista) */
 
-
-
-
-/* Fondo y detalles gráficos */
-:host {
-  
-}
-
 .navbar img{
   height: 60px;
   width: 60px;
 }
+
+
+/* Fondo y detalles gráficos 
+host {
+  
+}
+*/
+

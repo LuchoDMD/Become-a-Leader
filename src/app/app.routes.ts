@@ -29,22 +29,22 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent}, //ok
   { path: 'login', component: LoginComponent}, //ok
   { path: 'sobre-nosotros', component: SobreNosotrosComponent},
-  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard] }, //ok
-  { path: 'Partida', component: PartidaComponent, canActivate: [AuthGuard] }, //ok
+  { path: 'ranking', component: RankingComponent, canActivate: [AuthGuard]}, //ok
+  { path: 'partida', component: PartidaComponent, canActivate: [AuthGuard]}, //ok
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] }, //ok
-  { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] }, //ok
-  { path: 'mapa', component: MapaComponent}, //ok
-  { path: 'centro-pokemon', component: CentroPokemonComponent}, //falta completar el codigo
-  { path: 'tienda-pokemon', component: TiendaPokemonComponent}, //falta completar el codigo
+  { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard]}, //ok
+  { path: 'mapa', component: MapaComponent, canActivate: [AuthGuard]}, //ok
+  { path: 'centro-pokemon', component: CentroPokemonComponent, canActivate: [AuthGuard]}, //falta completar el codigo
+  { path: 'tienda-pokemon', component: TiendaPokemonComponent, canActivate: [AuthGuard]}, //falta completar el codigo
   { path: 'gimnasio', component: GimnasioComponent}, //falta completar el codigo
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] }, //modificar para visualizar al jugador y a los entrenadores
   { path: 'login-admin', component: LoginAdminComponent }, //ok
   { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]}, //ok
   { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]}, //ok
-  { path: 'perfil-gim', component: VerPerfilGimComponent}, //aun no se que hace
+  { path: 'perfil-gim', component: VerPerfilGimComponent, canActivate: [AuthGuard]}, //aun no se que hace
   { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]}, //puede ser util para el jugador
-  { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] }, //puede ser util para el jugador
-  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] }, //puede ser util para el jugador
+  { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin]}, //puede ser util para el jugador
+  { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin]}, //puede ser util para el jugador
 ];
 
 /*
@@ -68,8 +68,10 @@ export const routes: Routes = [
  */
 
 /*
-      gimnasio previsualiza un combate como sucede en pokemon
+      Gimnasio previsualiza un combate como sucede en pokemon
       y luego entra a la batalla. 
       Con un totem puedes curar al equipo completo o a un pokemon durante la horda.
       Precio a definir. Quizas haya 2 objetos unicos.(No mas).
+      Definir un parametro para evaluar la cantidad de dinero de los entrenadores 
+      sea multiplo de 250.
 */
