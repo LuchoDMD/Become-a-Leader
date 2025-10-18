@@ -29,8 +29,3 @@ export class PartidaService {
   }
 }
 
-/*getPartidaByUserId(id_usuario: string): Observable<Partida | null> {
-    return this.http.get<Partida[]>(`${this.urlBase}?id_usuario=${id_usuario}`).pipe(
-      map(partidas => partidas.length ? partidas[0] : null)  // Devuelve la primera partida o null
-    );
-  }*/

@@ -17,10 +17,7 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { AuthAdmin } from './service/auth-admin.service';
-import { MapaComponent } from './components/mapa/mapa.component';
-import { CentroPokemonComponent } from './components/centro-pokemon/centro-pokemon.component';
 import { RutaComponent } from './components/ruta/ruta.component';
-import { GimnasioComponent } from './components/gimnasio/gimnasio.component';
 import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
 import { InventarioComponent } from './pages/inventario/inventario.component';
 
@@ -33,10 +30,7 @@ export const routes: Routes = [
   { path: 'Partida', component: PartidaComponent, canActivate: [AuthGuard] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'nueva-partida', component: NuevaPartidaComponent, canActivate: [AuthGuard] },
-  { path: 'mapa', component: MapaComponent},
-  { path: 'centro-pokemon', component: CentroPokemonComponent},
   { path: 'ruta', component: RutaComponent},
-  { path: 'gimnasio', component: GimnasioComponent},
   { path: 'batalla', component: BatallaComponent, canActivate: [AuthGuard] },
   { path: 'login-admin', component: LoginAdminComponent },
   { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]},

@@ -45,7 +45,7 @@ export class MenuComponent implements OnInit {
 
   onSeleccionarPartida(): void {
     if (this.tienePartida) {
-      this.router.navigate(['/mapa']);
+      this.router.navigate(['/batalla']);
     } else {
       this.router.navigate(['/nueva-partida']);
     }
