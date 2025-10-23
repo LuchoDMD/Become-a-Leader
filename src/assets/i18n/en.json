@@ -1,0 +1,44 @@
+{
+  "account": {
+    "back": "GO BACK",
+    "title": "Your Account",
+    "nickname": "Nickname",
+    "email": "Email",
+    "changePassword": "Change your password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password"
+  },
+  "actions": {
+    "edit": "Edit",
+    "save": "Save",
+    "saveChanges": "Save Changes"
+  },
+  "alerts": {
+    "nicknameEmpty": "You cannot leave the field empty.",
+    "nicknameSame": "You already have this nickname",
+    "nicknameSuccess": "Nickname successfully modified!",
+    "emailSame": "You must enter a different address than the current one.",
+    "emailInUse": "This address is already in use",
+    "emailSuccess": "Email address successfully modified!",
+    "passwordDifferent": "You must enter a password different from the current one.",
+    "passwordMismatch": "New passwords do not match.",
+    "currentPasswordIncorrect": "The current password provided is incorrect.",
+    "passwordEmpty": "You have not entered any password.",
+    "passwordSuccess": "Password changed successfully!"
+  },
+  "profile": {
+    "title": "Your Profile",
+    "generalInfo": "General Information",
+    "gameData": "Game Data",
+    "startDate": "Start Date",
+    "currentScore": "Current Score",
+    "character": "Character",
+    "name": "Name",
+    "type": "Type",
+    "team": "Team",
+    "noActiveGame": "No active game",
+    "deleteAccount": "Delete Account",
+    "modifyAccount": "Modify Account"
+  }
+}

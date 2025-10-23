@@ -1,3 +1,44 @@
 {
-    
+  "account": {
+    "back": "VOLVER",
+    "title": "Tu cuenta",
+    "nickname": "Nickname",
+    "email": "Email",
+    "changePassword": "Cambiar tu clave",
+    "currentPassword": "Contraseña Actual",
+    "newPassword": "Nueva Contraseña",
+    "confirmNewPassword": "Confirmar Nueva Contraseña"
+  },
+  "actions": {
+    "edit": "Editar",
+    "save": "Guardar",
+    "saveChanges": "Guardar Cambios"
+  },
+  "alerts": {
+    "nicknameEmpty": "No puedes dejar el campo vacío.",
+    "nicknameSame": "Ya tienes este nickname",
+    "nicknameSuccess": "¡Nickname modificado correctamente!",
+    "emailSame": "Debes indicar una dirección distinta a la actual.",
+    "emailInUse": "Esta dirección ya se encuentra en uso",
+    "emailSuccess": "¡Dirección de correo modificada exitosamente!",
+    "passwordDifferent": "Debes ingresar una contraseña distinta a la actual.",
+    "passwordMismatch": "Las contraseñas nuevas no coinciden.",
+    "currentPasswordIncorrect": "La contraseña actual indicada no es correcta.",
+    "passwordEmpty": "No has ingresado ninguna clave.",
+    "passwordSuccess": "¡Contraseña cambiada exitosamente!"
+  },
+  "profile": {
+    "title": "Tu perfil",
+    "generalInfo": "Información General",
+    "gameData": "Datos de la Partida",
+    "startDate": "Fecha de inicio",
+    "currentScore": "Puntuación actual",
+    "character": "Personaje",
+    "name": "Nombre",
+    "type": "Tipo",
+    "team": "Equipo",
+    "noActiveGame": "No hay partida activa",
+    "deleteAccount": "Eliminar cuenta",
+    "modifyAccount": "Modificar cuenta"
+  }
 }

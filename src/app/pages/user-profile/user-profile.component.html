@@ -2,57 +2,79 @@
   <div class="menu">
     <nav *ngIf="verConfigCuenta && verInfoPartidas" class="navbar">
       <div class="BotoncitoLogout">
-        <button (click)="onSalir()" type="button" class="btnVolver">VOLVER</button>
+        <button (click)="onSalir()" type="button" class="btnVolver">
+          {{ "account.back" | translate }}
+        </button>
       </div>
     </nav>
-    <h1>Tu perfil</h1>
+    <h1>{{ "profile.title" | translate }}</h1>
 
-    <!-- Contenedor principal para las dos columnas -->
     <div class="contenedor-principal">
-      <!-- Primera columna para información de la cuenta y datos de la partida -->
       <div class="columna-informacion" *ngIf="verInfoPartidas">
         <div class="cuenta">
-          <h2>Información General</h2>
+          <h2>{{ "profile.generalInfo" | translate }}</h2>
           <ul>
-            <li>Nombre: {{usuario?.nick}}</li>
-            <li>Email: {{usuario?.email}}</li>
+            <li>{{ "account.nickname" | translate }}: {{ usuario?.nick }}</li>
+            <li>{{ "account.email" | translate }}: {{ usuario?.email }}</li>
           </ul>
-          <h2>Datos de la Partida</h2>
+          <h2>{{ "profile.gameData" | translate }}</h2>
           @if(partida.id != ''){
-            <ng-container *ngIf="partida">
-              <ul>
-                <li>Fecha de inicio: {{partida.fecha_inicio}}</li>
-                <li>Puntuación actual: {{partida.puntuacion}}</li>
-              </ul>
-              <h3>Personaje</h3>
-              <ul>
-                <li>Nombre: {{partida.personaje.nombre}}</li>
-                <li>Tipo: {{partida.personaje.tipo}}</li>
-              </ul>
-              <h4>Equipo</h4>
-              <ol>
-                <li *ngFor="let pokemon of partida.personaje.equipo">
-                  {{pokemon.especie}}
-                </li>
-              </ol>
-            </ng-container>
-          }
-          @else{
-            <p>No hay partida activa</p>
+          <ng-container *ngIf="partida">
+            <ul>
+              <li>
+                {{ "profile.startDate" | translate }}:
+                {{ partida.fecha_inicio }}
+              </li>
+              <li>
+                {{ "profile.currentScore" | translate }}:
+                {{ partida.puntuacion }}
+              </li>
+            </ul>
+            <h3>{{ "profile.character" | translate }}</h3>
+            <ul>
+              <li>
+                {{ "profile.name" | translate }}: {{ partida.personaje.nombre }}
+              </li>
+              <li>
+                {{ "profile.type" | translate }}: {{ partida.personaje.tipo }}
+              </li>
+            </ul>
+            <h4>{{ "profile.team" | translate }}</h4>
+            <ol>
+              <li *ngFor="let pokemon of partida.personaje.equipo">
+                {{ pokemon.especie }}
+              </li>
+            </ol>
+          </ng-container>
+          } @else{
+          <p>{{ "profile.noActiveGame" | translate }}</p>
           }
         </div>
       </div>
 
-      <!-- Segunda columna para botones -->
       <div class="columna-botones">
         <div class="cuenta">
-          <button class="config_cuenta" type="button" (click)="eliminarUsuario()">Eliminar cuenta</button>
-          <button *ngIf="verConfigCuenta && verInfoPartidas" (click)="activarConfigCuenta()" class="config_cuenta">
-            Modificar cuenta
+          <button
+            class="config_cuenta"
+            type="button"
+            (click)="eliminarUsuario()"
+          >
+            {{ "profile.deleteAccount" | translate }}
           </button>
-          <app-user-account-info *ngIf="verConfigCuenta && !verInfoPartidas" [userId]="usuario?.id" (volver)="onVolver()"></app-user-account-info>
+          <button
+            *ngIf="verConfigCuenta && verInfoPartidas"
+            (click)="activarConfigCuenta()"
+            class="config_cuenta"
+          >
+            {{ "profile.modifyAccount" | translate }}
+          </button>
+          <app-user-account-info
+            *ngIf="verConfigCuenta && !verInfoPartidas"
+            [userId]="usuario?.id"
+            (volver)="onVolver()"
+          ></app-user-account-info>
         </div>
       </div>
-    </div> <!-- Cierra contenedor-principal -->
-  </div> <!-- Cierra menu -->
+    </div>
+  </div>
 </body>

@@ -116,12 +116,38 @@ button:active {
 
 
 
-/* Fondo y detalles gráficos */
-:host {
-  
-}
 
 .navbar img{
   height: 60px;
   width: 60px;
+}
+
+
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Pushes the element as far right as possible */
+}
+
+.lang-switcher .lang-btn {
+    background-color: #3b4cca; /* Blue color */
+    color: #fff;
+    border: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 0; /* Remove the large margin from the general button style */
+}
+
+.lang-switcher .lang-btn:hover {
+    background-color: #ffcb05; /* Yellow on hover */
+    transform: none; /* Remove the lift effect to keep it simple */
+}
+
+.lang-switcher .lang-btn:active {
+    background-color: #ff5733; /* Red on click */
+    transform: none;
 }

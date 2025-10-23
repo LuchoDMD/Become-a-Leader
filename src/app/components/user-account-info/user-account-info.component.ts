@@ -1,13 +1,14 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, inject } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Usuario } from '../../interface/user.interface';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-account-info',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslateModule],
   templateUrl: './user-account-info.component.html',
   styleUrls: ['./user-account-info.component.css']
 })
@@ -15,6 +16,8 @@ export class UserAccountInfoComponent implements OnInit {
   @Input() userId: string | null = null;
   @Output() volver = new EventEmitter<void>();
 
+  
+  translate = inject(TranslateService); 
   usuario: any = {};
 
   cambioNickname: boolean = false;
@@ -121,9 +124,9 @@ export class UserAccountInfoComponent implements OnInit {
     }
     else {
       if (this.nickNameCopy === "")
-        this.nickNameErrorMsg = "No puedes dejar al campo vacío."
+        this.nickNameErrorMsg = "alerts.NicknameEmpty";
       else if (this.nickNameCopy === this.usuario.nick)
-        this.nickNameErrorMsg = "Ya tienes este nickname";
+        this.nickNameErrorMsg = "alerts.NicknameSame";
       this.showNickNameErrorMsg = true;
       this.editarNickname=true;
     }

@@ -7,11 +7,12 @@ import { UserAccountInfoComponent } from '../../components/user-account-info/use
 import { CommonModule } from '@angular/common';
 import { PartidaService } from '../../service/partida.service';
 import { PokeAPIService } from '../../service/poke-api.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [UserAccountInfoComponent, CommonModule],
+  imports: [UserAccountInfoComponent, CommonModule,TranslateModule],
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
@@ -33,6 +34,8 @@ export class UserProfileComponent implements OnInit {
       equipo: []
     }
   };
+
+  translate = inject(TranslateService);
   sprites: string[] = [];
 
   constructor(

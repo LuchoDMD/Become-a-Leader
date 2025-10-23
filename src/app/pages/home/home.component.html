@@ -1,22 +1,25 @@
 <body>
-  <div class="TITULO">
-    BECOME A LEADER
-</div>
+  <div class="TITULO">BECOME A LEADER</div>
 
-<nav class="navbar">
-  <img src="pokeball_icon.png" alt="fondo">
+  <nav class="navbar">
+    <img src="pokeball_icon.png" alt="fondo" />
     <ul class="nav-links">
       <li>
         <a routerLinkActive="active" routerLink="/login">LOGIN</a>
         |
         <a routerLinkActive="active" routerLink="/register">REGISTER</a>
         |
-        <a routerLinkActive="active" routerLink="/sobre-nosotros">SOBRE NOSOTROS</a>
+        <a routerLinkActive="active" routerLink="/sobre-nosotros"
+          >SOBRE NOSOTROS</a
+        >
         |
         <a routerLinkActive="active" routerLink="/login-admin">ADMIN</a>
+        |
+        <a (click)="changeLang('es')">ES</a>
+        |
+        <a (click)="changeLang('en')">EN</a>
       </li>
     </ul>
   </nav>
   <router-outlet></router-outlet>
 </body>
-
