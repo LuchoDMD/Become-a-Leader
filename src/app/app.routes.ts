@@ -16,7 +16,6 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { AuthAdmin } from './service/auth-admin.service';
-import { VerPerfilGimComponent } from './components/ver-perfil-gim/ver-perfil-gim.component';
 import { InventarioComponent } from './pages/inventario/inventario.component';
 
 export const routes: Routes = [
@@ -32,7 +31,6 @@ export const routes: Routes = [
   { path: 'login-admin', component: LoginAdminComponent },
   { path: 'add-pokemon', component: AddPokemonComponent, canActivate: [AuthAdmin]},
   { path: 'perfil', component: UserProfileComponent, canActivate: [AuthGuard]},
-  { path: 'perfil-gim', component: VerPerfilGimComponent},
   { path: 'pokemon-list', component:PokemonListComponent, canActivate: [AuthAdmin]},
   { path: 'pokemon-detail/:id', component:PokemonDetailComponent, canActivate: [AuthAdmin] },
   { path: 'pokemon-edit/:id', component:EditPokemonComponent, canActivate: [AuthAdmin] },

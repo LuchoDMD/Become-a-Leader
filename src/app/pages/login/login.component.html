@@ -6,12 +6,7 @@
         <legend>{{ "login.legend" | translate }}</legend>
         <form [formGroup]="loginForm" (ngSubmit)="Login()">
           <label for="email">{{ "login.emailLabel" | translate }}:</label>
-          <input
-            type="text"
-            id="email"
-            [placeholder]="'login.emailPlaceholder' | translate"
-            formControlName="email"
-          />
+          <input type="text" id="email" [placeholder]="'login.emailPlaceholder' | translate" formControlName="email" />
 
           @if (loginForm.controls['email'].touched &&
           loginForm.controls['email'].invalid &&
@@ -22,12 +17,8 @@
           <div class="error">{{ "alerts.emailInvalid" | translate }}</div>
           } }
           <label for="password">{{ "login.passwordLabel" | translate }}:</label>
-          <input
-            type="password"
-            id="password"
-            [placeholder]="'login.passwordPlaceholder' | translate"
-            formControlName="password"
-          />
+          <input type="password" id="password" [placeholder]="'login.passwordPlaceholder' | translate"
+            formControlName="password" />
 
           @if (loginForm.controls['password'].touched &&
           loginForm.controls['password'].invalid) {
@@ -48,19 +39,19 @@
       <li>
         <a routerLinkActive="active" routerLink="/">{{
           "NAV.BEGINNING" | translate
-        }}</a>
+          }}</a>
         |
         <a routerLinkActive="active" routerLink="/register">{{
           "NAV.REGISTER" | translate
-        }}</a>
+          }}</a>
         |
         <a routerLinkActive="active" routerLink="/sobre-nosotros">{{
           "NAV.ABOUT_US" | translate
-        }}</a>
+          }}</a>
         |
         <a routerLinkActive="active" routerLink="/login-admin">{{
           "NAV.ADMIN" | translate
-        }}</a>
+          }}</a>
       </li>
     </ul>
   </nav>

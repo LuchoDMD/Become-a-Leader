@@ -1,48 +1,48 @@
 <body>
   <div class="container">
     <div class="register-container">
-      <h1>Registro de Entrenador Pokémon</h1>
+      <h1>{{"register.title"|translate}}</h1>
       <fieldset>
-        <legend>¡Únete a la aventura!</legend>
+        <legend>{{"login.legend"|translate}}</legend>
         <form [formGroup]="formUsuario" (ngSubmit)="addUser()">
-          <label for="email">Email:</label>
-          <input type="text" id="email" placeholder="Coloque su Email" formControlName="email">
+          <label for="email">{{"login.emailLabel"|translate}}:</label>
+          <input type="text" id="email" [placeholder]="'login.emailPlaceholder' | translate" formControlName="email">
     
           @if (formUsuario.controls['email'].touched && formUsuario.controls['email'].getError('required')) {
-            <div class="error">Este campo es requerido</div>
+            <div class="error">{{"alerts.emailRequired"|translate}}</div>
           }
           @if (formUsuario.controls['email'].touched && formUsuario.controls['email'].getError('minlength')) {
-            <div class="error">Requiere un mínimo de 3 letras</div>
+            <div class="error">{{"alerts.minLengthEmail"|translate}}</div>
           }
     
-          <label for="nick">Nickname:</label>
-          <input type="text" id="nick" placeholder="Coloque su Nickname" formControlName="nick">
+          <label for="nick">{{"register.nickLabel"|translate}}:</label>
+          <input type="text" id="nick" [placeholder]="'register.nickPlaceholder' | translate" formControlName="nick">
     
           @if (formUsuario.controls['nick'].touched && formUsuario.controls['nick'].getError('required')) {
-            <div class="error">Este campo es requerido</div>
+            <div class="error">{{"alerts.nicknameEmpty"|translate}}</div>
           }
           @if (formUsuario.controls['nick'].touched && formUsuario.controls['nick'].getError('minlength')) {
-            <div class="error">Requiere un mínimo de 3 letras</div>
+            <div class="error">{{"alerts.minLengthNick"|translate}}</div>
           }
           @if (formUsuario.controls['nick'].touched && formUsuario.controls['nick'].getError('maxlength')) {
-            <div class="error">El nick debe tener como maximo 10 caracteres</div>
+            <div class="error">{{"alerts.maxLengthNick"|translate}}</div>
           }
     
-          <label for="password">Contraseña:</label>
-          <input type="password" id="password" placeholder="Coloque su contraseña" formControlName="password">
+          <label for="password">{{"login.passwordLabel"|translate}}:</label>
+          <input type="password" id="password" [placeholder]="'login.passwordPlaceholder' | translate" formControlName="password">
     
           @if (formUsuario.controls['password'].touched && formUsuario.controls['password'].getError('required')) {
-            <div class="error">Este campo es requerido</div>
+            <div class="error">{{"alerts.passwordRequired"|translate}}</div>
           }
           @if (formUsuario.controls['password'].touched && formUsuario.controls['password'].getError('minlength')) {
-            <div class="error">Requiere un mínimo de 8 letras</div>
+            <div class="error">{{"alerts.minLengthPassword"|translate}}</div>
           }
           @if (formUsuario.controls['password'].touched && formUsuario.controls['password'].getError('maxlength')) {
-            <div class="error">La contraseña debe tener como maximo 15 caracteres</div>
+            <div class="error">{{"alerts.maxLengthPassword"|translate}}</div>
           }
           
     
-          <button type="submit">Guardar</button>
+          <button type="submit">{{"actions.save"|translate}}</button>
         </form>
       </fieldset>
     </div>
@@ -51,13 +51,15 @@
     <img src="pokeball_icon.png" alt="fondo">
       <ul class="nav-links">
         <li>
-          <a routerLinkActive="active" routerLink="/">INICIO</a>
-          |
-          <a routerLinkActive="active" routerLink="/login">LOGIN</a>
-          |
-          <a routerLinkActive="active" routerLink="/sobre-nosotros">SOBRE NOSOTROS</a>
-          |
-          <a routerLinkActive="active" routerLink="/login-admin">ADMIN</a>
+        <a routerLinkActive="active" routerLink="/">{{"NAV.BEGINNING"|translate}}</a>
+        |
+        <a routerLinkActive="active" routerLink="/login">{{"NAV.LOGIN"|translate}}</a>
+        |
+        <a routerLinkActive="active" routerLink="/sobre-nosotros"
+          >{{"NAV.ABOUT_US"|translate}}</a
+        >
+        |
+        <a routerLinkActive="active" routerLink="/login-admin">{{"NAV.ADMIN"|translate}}</a>
         </li>
       </ul>
     </nav>
