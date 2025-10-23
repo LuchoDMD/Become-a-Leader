@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-
+import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root'
 })
 export class PokeAPIService {
   http = inject(HttpClient);
   url = 'https://pokeapi.co/api/v2/';
+  private translate_service = inject(TranslateService);
 
 
   //POKEMON
