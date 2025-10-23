@@ -25,7 +25,12 @@
     "passwordMismatch": "Las contraseñas nuevas no coinciden.",
     "currentPasswordIncorrect": "La contraseña actual indicada no es correcta.",
     "passwordEmpty": "No has ingresado ninguna clave.",
-    "passwordSuccess": "¡Contraseña cambiada exitosamente!"
+    "passwordSuccess": "¡Contraseña cambiada exitosamente!",
+    "emailRequired": "El email es requerido",
+    "emailInvalid": "Formato de email inválido",
+    "passwordRequired": "Este campo es requerido",
+    "incorrectCredentials": "Credenciales incorrectas, por favor intente nuevamente.",
+    "loginApiError": "Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde."
   },
   "profile": {
     "title": "Tu perfil",
@@ -40,5 +45,20 @@
     "noActiveGame": "No hay partida activa",
     "deleteAccount": "Eliminar cuenta",
     "modifyAccount": "Modificar cuenta"
+  },
+  "login": {
+    "title": "INICIAR SESIÓN",
+    "legend": "¡Únete a la aventura!",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Coloque su Email",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Coloque su contraseña",
+    "submit": "Iniciar Sesión"
+  },
+    "NAV":{
+    "LOGIN":"LOG IN",
+    "REGISTER": "REGISTER",
+    "ABOUT_US":"Sobre Nosotros",
+    "ADMIN":"ADMIN"
   }
 }

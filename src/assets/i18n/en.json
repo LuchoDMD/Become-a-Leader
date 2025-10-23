@@ -15,11 +15,16 @@
     "saveChanges": "Save Changes"
   },
   "alerts": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "passwordRequired": "This field is required",
+    "incorrectCredentials": "Incorrect credentials, please try again.",
+    "loginApiError": "There was an error trying to log in. Please try again later.",
     "nicknameEmpty": "You cannot leave the field empty.",
-    "nicknameSame": "You already have this nickname",
+    "nicknameSame": "You already have this nickname.",
     "nicknameSuccess": "Nickname successfully modified!",
     "emailSame": "You must enter a different address than the current one.",
-    "emailInUse": "This address is already in use",
+    "emailInUse": "This address is already in use.",
     "emailSuccess": "Email address successfully modified!",
     "passwordDifferent": "You must enter a password different from the current one.",
     "passwordMismatch": "New passwords do not match.",
@@ -40,5 +45,20 @@
     "noActiveGame": "No active game",
     "deleteAccount": "Delete Account",
     "modifyAccount": "Modify Account"
+  },
+    "login": {
+    "title": "LOG IN",
+    "legend": "Join the Adventure!",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Log In"
+  },
+  "NAV":{
+    "LOGIN":"LOG IN",
+    "REGISTER": "REGISTER",
+    "ABOUT_US":"ABOUT US",
+    "ADMIN":"ADMIN"
   }
 }

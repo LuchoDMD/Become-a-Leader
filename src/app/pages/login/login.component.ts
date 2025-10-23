@@ -5,16 +5,18 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../service/auth.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule, TranslateModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
 
+  translate = inject(TranslateService);
   as = inject(AuthService);
   us = inject(UserService)
   fb = inject(FormBuilder);
@@ -54,14 +56,17 @@ export class LoginComponent implements OnInit {
             console.log('Login successful:', user);
             this.router.navigate(['Partida'])
           } else {
-            this.mensaje = 'Credenciales incorrectas, por favor intente nuevamente.';
-            console.log('Login failed')
+            this.translate.get('alerts.incorrectCredentials').subscribe(translation => {
+              this.mensaje = translation; 
+            })
+            console.log('Login failed');
           }
         },
         (error) => {
-          // En caso de error en la llamada
-          this.mensaje = 'Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde.';
-          console.log('Error en el login:', error);
+          this.translate.get('alerts.loginApiError').subscribe(translation => {
+            this.mensaje = translation; 
+          });
+          console.log('Login error:', error); 
         }
       )
     }
