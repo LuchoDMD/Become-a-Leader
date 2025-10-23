@@ -30,7 +30,14 @@
     "emailInvalid": "Formato de email inválido",
     "passwordRequired": "Este campo es requerido",
     "incorrectCredentials": "Credenciales incorrectas, por favor intente nuevamente.",
-    "loginApiError": "Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde."
+    "loginApiError": "Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde.",
+    "minLengthEmail": "Requiere un mínimo de 3 letras",
+    "minLengthNick": "Requiere un mínimo de 3 letras",
+    "maxLengthNick": "El nick debe tener como maximo 10 caracteres",
+    "minLengthPassword": "Requiere un mínimo de 8 letras",
+    "maxLengthPassword": "La contraseña debe tener como maximo 15 caracteres",
+    "registerSuccess": "{{nick}} se ha registrado correctamente :)"
+    
   },
   "profile": {
     "title": "Tu perfil",
@@ -59,6 +66,12 @@
     "LOGIN":"LOG IN",
     "REGISTER": "REGISTER",
     "ABOUT_US":"Sobre Nosotros",
-    "ADMIN":"ADMIN"
+    "ADMIN":"ADMIN",
+    "BEGINNING":"INICIO"
+  },
+  "register": {
+    "title": "Registro de Entrenador Pokémon",
+    "nickLabel": "Nickname",
+    "nickPlaceholder": "Coloque su Nickname"
   }
 }

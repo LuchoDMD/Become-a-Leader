@@ -1,30 +1,40 @@
 <body>
   <div class="container">
     <div class="register-container">
-      <h1>{{"login.title"|translate}} </h1>
+      <h1>{{ "login.title" | translate }}</h1>
       <fieldset>
-        <legend>{{"login.legend"|translate}}</legend>
+        <legend>{{ "login.legend" | translate }}</legend>
         <form [formGroup]="loginForm" (ngSubmit)="Login()">
-          <label for="email">{{"login.emailLabel"|translate}}:</label>
-          <input type="text" id="email" [placeholder]="'login.emailPlaceholder' | translate" formControlName="email">
+          <label for="email">{{ "login.emailLabel" | translate }}:</label>
+          <input
+            type="text"
+            id="email"
+            [placeholder]="'login.emailPlaceholder' | translate"
+            formControlName="email"
+          />
 
-          @if (loginForm.controls['email'].touched && loginForm.controls['email'].invalid && loginForm.controls['email'].dirty) {
-            @if (loginForm.controls['email'].getError('required')) {
-              <div class="error">{{"alerts.emailRequired"|translate}}</div>
-            }
-            @if (loginForm.controls['email'].getError('email')) {
-              <div class="error">{{"alerts.emailInvalid"|translate}}</div>
-            }
+          @if (loginForm.controls['email'].touched &&
+          loginForm.controls['email'].invalid &&
+          loginForm.controls['email'].dirty) { @if
+          (loginForm.controls['email'].getError('required')) {
+          <div class="error">{{ "alerts.emailRequired" | translate }}</div>
+          } @if (loginForm.controls['email'].getError('email')) {
+          <div class="error">{{ "alerts.emailInvalid" | translate }}</div>
+          } }
+          <label for="password">{{ "login.passwordLabel" | translate }}:</label>
+          <input
+            type="password"
+            id="password"
+            [placeholder]="'login.passwordPlaceholder' | translate"
+            formControlName="password"
+          />
+
+          @if (loginForm.controls['password'].touched &&
+          loginForm.controls['password'].invalid) {
+          <div class="error">{{ "alerts.passwordRequired" | translate }}</div>
           }
 
-          <label for="password">{{"login.passwordLabel"|translate}}:</label>
-          <input type="password" id="password" [placeholder]="'login.passwordPlaceholder' | translate" formControlName="password">
-
-          @if (loginForm.controls['password'].touched && loginForm.controls['password'].invalid && loginForm.controls['password'].dirty) {
-            <div class="error">{{"alerts.passwordRequired"|translate}}</div>
-          }
-
-          <button type="submit">{{"login.submit"|translate}}</button>
+          <button type="submit">{{ "login.submit" | translate }}</button>
         </form>
       </fieldset>
     </div>
@@ -33,19 +43,25 @@
     <p>{{ mensaje }}</p>
   </div>
   <nav class="navbar">
-    <img src="pokeball_icon.png" alt="fondo">
-      <ul class="nav-links">
-        <li>
-          <a routerLinkActive="active" routerLink="/">{{"NAV.LOGIN"|translate}}</a>
-          |
-          <a routerLinkActive="active" routerLink="/register">{{"NAV.REGISTER"|translate}}</a>
-          |
-          <a routerLinkActive="active" routerLink="/sobre-nosotros">{{"NAV.ABOUT_US"|translate}}</a>
-          |
-          <a routerLinkActive="active" routerLink="/login-admin">{{"NAV.ADMIN"|translate}}</a>
-        </li>
-      </ul>
-    </nav>
+    <img src="pokeball_icon.png" alt="fondo" />
+    <ul class="nav-links">
+      <li>
+        <a routerLinkActive="active" routerLink="/">{{
+          "NAV.BEGINNING" | translate
+        }}</a>
+        |
+        <a routerLinkActive="active" routerLink="/register">{{
+          "NAV.REGISTER" | translate
+        }}</a>
+        |
+        <a routerLinkActive="active" routerLink="/sobre-nosotros">{{
+          "NAV.ABOUT_US" | translate
+        }}</a>
+        |
+        <a routerLinkActive="active" routerLink="/login-admin">{{
+          "NAV.ADMIN" | translate
+        }}</a>
+      </li>
+    </ul>
+  </nav>
 </body>
-
-

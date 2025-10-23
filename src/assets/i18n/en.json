@@ -30,7 +30,13 @@
     "passwordMismatch": "New passwords do not match.",
     "currentPasswordIncorrect": "The current password provided is incorrect.",
     "passwordEmpty": "You have not entered any password.",
-    "passwordSuccess": "Password changed successfully!"
+    "passwordSuccess": "Password changed successfully!",
+    "minLengthEmail": "Requires a minimum of 3 characters",
+    "minLengthNick": "Requires a minimum of 3 characters",
+    "maxLengthNick": "Nickname must have a maximum of 10 characters",
+    "minLengthPassword": "Requires a minimum of 8 characters",
+    "maxLengthPassword": "Password must have a maximum of 15 characters",
+    "registerSuccess": "{{nick}} has been registered successfully :)"
   },
   "profile": {
     "title": "Your Profile",
@@ -59,6 +65,13 @@
     "LOGIN":"LOG IN",
     "REGISTER": "REGISTER",
     "ABOUT_US":"ABOUT US",
-    "ADMIN":"ADMIN"
+    "ADMIN":"ADMIN",
+    "BEGINNING":"BEGINNING"
+  },
+  "register": {
+    "title": "Pokémon Trainer Registration",
+    "nickLabel": "Nickname",
+    "nickPlaceholder": "Enter your Nickname"
   }
+  
 }

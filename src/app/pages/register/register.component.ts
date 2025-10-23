@@ -5,17 +5,19 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule,TranslateModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 
 
 export class RegisterComponent {
+  translate=inject(TranslateService);
 
 
   @Output()
@@ -45,6 +47,9 @@ addUser() {
       console.log(existingUser);
       if (existingUser) {
         alert('Este email ya está registrado');
+        this.translate.get('alerts.emailInUse').subscribe((res:string)=>{
+          alert(res);
+        })
       } else {
         console.log(user);
         this.emitirUsuario.emit(user);  // Emitir el evento con los datos del usuario
@@ -68,7 +73,9 @@ addUser() {
         { //Si se agrega el usuario muestra una alerta con el nombre del usuario agregado, sino no.
           next:(user)=>
           {
-            alert(`${user.nick} Se ha registrado correctamente :)`)
+            this.translate.get('alerts.registerSuccess', { nick: user.nick }).subscribe(translation => {
+            alert(translation);
+          });
             this.router.navigate(['']);
           },
           error:(err: Error)=>
@@ -79,34 +86,3 @@ addUser() {
       )
     }
 }
-
-/*
-    addUser()
-    {
-      if (this.formUsuario.invalid)
-        {
-          return
-        }
-
-      const user = this.formUsuario.getRawValue();//Obtiene los datos del formulario con el metodo getRawValue
-
-      this.usuarioService.getUserByEmail(user.email).subscribe({
-        next:(user: Usuario | null)=>{
-          alert('Este email ya esta registrado')
-        }, error: (e: Error)=>{
-          this.emitirUsuario.emit(user);  //Emite el evento con los datos del usuario
-
-          this.altaBD(user); //Envia los datos a la base de datos con el metodo altaDB
-
-          this.formUsuario.reset({ //Resetea el formulario
-            email: '',
-            nick: '',
-            password: ''
-          });
-        }
-      },error=>{
-        console.error('Error al verificar el email:', error)
-      }
-    )
-    }
-*/
