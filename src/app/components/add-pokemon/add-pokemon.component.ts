@@ -8,12 +8,13 @@ import { Stats } from '../../interface/stats';
 import { TeamService } from '../../service/team.service';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../service/user.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-add-pokemon',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule,TranslateModule],
   templateUrl: './add-pokemon.component.html',
   styleUrl: './add-pokemon.component.css'
 })
@@ -22,6 +23,7 @@ export class AddPokemonComponent {
   ps = inject(PokeAPIService);
   ts = inject(TeamService);
   us = inject(UserService);
+  translate = inject(TranslateService);
   routes = inject(Router);
   pokeAPI: any;
 

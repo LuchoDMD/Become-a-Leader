@@ -1,64 +1,84 @@
 <body>
   <section>
-    <input type="button" (click)="volverALista()" value="Volver">
+    <button type="button" (click)="volverALista()">
+      {{ "actions.back" | translate }}
+    </button>
 
     <article>
-      <h1>{{pokemon.id}} - {{pokemon.especie}}</h1>
-        <div>
-            @if (sprites) {
-                <img [src]="sprites.front_default" [alt]="['pokemon.especie'+'.jpg']">
-            }  
-        </div>
-        <div>
-            <h3>Infomacion General</h3>
-            <ul>
-                <li>Nivel: {{ pokemon.nivel }}</li>
-                <li>Tipos: {{ pokemon.tipos }}</li>
-            </ul>
-            <h3>Estadisticas</h3>
-            <ul>
-                <li>Vida: {{pokemon.estadisticas.hp}}</li>
-                <li>Ataque Fisico: {{pokemon.estadisticas.atk}} </li>
-                <li>Defensa Fisica: {{pokemon.estadisticas.def}} </li>
-                <li>Ataque Especial: {{pokemon.estadisticas.satk}} </li>
-                <li>Defensa Especial: {{pokemon.estadisticas.sdef}} </li>
-                <li>Velocidad: {{pokemon.estadisticas.spd}}</li>
-            </ul>
-
-            <h3>Movimientos</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
-                        <th>Clase</th>
-                        <th>Potencia</th>
-                        <th>Precision</th>
-                        <th>UsosMaximos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for(movimiento of pokemon.movimientos; track $index){
-                        <tr>
-                            <td> {{movimiento.nombre}} </td>
-                            <td> {{movimiento.tipo}} </td>
-                            <td> {{movimiento.clase}} </td>
-                            <td> {{movimiento.potencia}} </td>
-                            <td> {{movimiento.precision}} </td>
-                            <td> {{movimiento.pp}} </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <br>
-        @if (pokemon.id)
-        {
-            <button type="button" (click)="irAModificar(pokemon.id)">Modificar</button>
+      <h1>{{ pokemon.id }} - {{ pokemon.especie }}</h1>
+      <div>
+        @if (sprites) {
+        <img [src]="sprites.front_default" [alt]="pokemon.especie + '.jpg'" />
         }
-        <button type="button" (click)="borrarPokemon(pokemon.id)">Eliminar</button>
+      </div>
+      <div>
+        <h3>{{ "pokemonDetail.generalInfo" | translate }}</h3>
+        <ul>
+          <li>{{ "pokemonDetail.level" | translate }}: {{ pokemon.nivel }}</li>
+          <li>{{ "pokemonDetail.types" | translate }}: {{ pokemon.tipos }}</li>
+        </ul>
+        <h3>{{ "pokemonDetail.stats" | translate }}</h3>
+        <ul>
+          <li>
+            {{ "pokemonDetail.hp" | translate }}: {{ pokemon.estadisticas.hp }}
+          </li>
+          <li>
+            {{ "pokemonDetail.physAttack" | translate }}:
+            {{ pokemon.estadisticas.atk }}
+          </li>
+          <li>
+            {{ "pokemonDetail.physDefense" | translate }}:
+            {{ pokemon.estadisticas.def }}
+          </li>
+          <li>
+            {{ "pokemonDetail.specAttack" | translate }}:
+            {{ pokemon.estadisticas.satk }}
+          </li>
+          <li>
+            {{ "pokemonDetail.specDefense" | translate }}:
+            {{ pokemon.estadisticas.sdef }}
+          </li>
+          <li>
+            {{ "pokemonDetail.speed" | translate }}:
+            {{ pokemon.estadisticas.spd }}
+          </li>
+        </ul>
+
+        <h3>{{ "pokemonDetail.moves" | translate }}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>{{ "pokemonDetail.moveName" | translate }}</th>
+              <th>{{ "pokemonDetail.moveType" | translate }}</th>
+              <th>{{ "pokemonDetail.moveClass" | translate }}</th>
+              <th>{{ "pokemonDetail.movePower" | translate }}</th>
+              <th>{{ "pokemonDetail.moveAccuracy" | translate }}</th>
+              <th>{{ "pokemonDetail.movePP" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(movimiento of pokemon.movimientos; track $index){
+            <tr>
+              <td>{{ movimiento.nombre }}</td>
+              <td>{{ movimiento.tipo }}</td>
+              <td>{{ movimiento.clase }}</td>
+              <td>{{ movimiento.potencia }}</td>
+              <td>{{ movimiento.precision }}</td>
+              <td>{{ movimiento.pp }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <br />
+      @if (pokemon.id) {
+      <button type="button" (click)="irAModificar(pokemon.id)">
+        {{ "actions.modify" | translate }}
+      </button>
+      }
+      <button type="button" (click)="borrarPokemon(pokemon.id)">
+        {{ "actions.delete" | translate }}
+      </button>
     </article>
-</section>
-
+  </section>
 </body>
-

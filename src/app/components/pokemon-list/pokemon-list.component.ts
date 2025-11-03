@@ -6,11 +6,12 @@ import { TeamService } from '../../service/team.service';
 import { PokeAPIService } from '../../service/poke-api.service';
 import { Pokemon } from '../../interface/pokemon';
 import { UserService } from '../../service/user.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,TranslateModule],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
@@ -26,6 +27,7 @@ export class PokemonListComponent implements OnInit
     ps= inject(PokeAPIService);
     route= inject(Router);
     us = inject(UserService);
+    translate = inject(TranslateService);
 
     //Metodos
     ngOnInit(): void {

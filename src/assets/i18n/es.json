@@ -12,7 +12,16 @@
   "actions": {
     "edit": "Editar",
     "save": "Guardar",
-    "saveChanges": "Guardar Cambios"
+    "saveChanges": "Guardar Cambios",
+    "logout": "LOGOUT",
+    "modify": "Modificar",
+    "delete": "Eliminar",
+    "back": "VOLVER",
+    "add": "Agregar",
+    "search": "Buscar",
+    "backToList": "Volver a la lista de Pokemon",
+    "select":"Seleccionar",
+    "change":"Cambiar"
   },
   "alerts": {
     "nicknameEmpty": "No puedes dejar el campo vacío.",
@@ -37,7 +46,12 @@
     "minLengthPassword": "Requiere un mínimo de 8 letras",
     "maxLengthPassword": "La contraseña debe tener como maximo 15 caracteres",
     "registerSuccess": "{{nick}} se ha registrado correctamente :)"
-    
+  },
+  "game": {
+    "welcomeTitle": "Bienvenido al juego",
+    "newGame": "Nueva Partida",
+    "loadGame": "Cargar Partida",
+    "ranking": "Ranking"
   },
   "profile": {
     "title": "Tu perfil",
@@ -62,16 +76,64 @@
     "passwordPlaceholder": "Coloque su contraseña",
     "submit": "Iniciar Sesión"
   },
-    "NAV":{
-    "LOGIN":"LOG IN",
+  "NAV": {
+    "LOGIN": "LOG IN",
     "REGISTER": "REGISTER",
-    "ABOUT_US":"SOBRE NOSOTROS",
-    "ADMIN":"ADMIN",
-    "BEGINNING":"INICIO"
+    "ABOUT_US": "SOBRE NOSOTROS",
+    "ADMIN": "ADMIN",
+    "BEGINNING": "INICIO",
+    "MENU": "MENU",
+    "POKEMON_LIST": "Lista Pokemon"
   },
   "register": {
     "title": "Registro de Entrenador Pokémon",
     "nickLabel": "Nickname",
     "nickPlaceholder": "Coloque su Nickname"
-  }
+  },
+  "ranking": {
+    "position": "Posición",
+    "name": "Nombre",
+    "score": "Puntaje"
+  },
+  "pokemonDetail": {
+    "generalInfo": "Información General",
+    "level": "Nivel",
+    "types": "Tipos",
+    "stats": "Estadísticas",
+    "hp": "Vida",
+    "physAttack": "Ataque Físico",
+    "physDefense": "Defensa Física",
+    "specAttack": "Ataque Especial",
+    "specDefense": "Defensa Especial",
+    "speed": "Velocidad",
+    "moves": "Movimientos",
+    "moveName": "Nombre",
+    "moveType": "Tipo",
+    "moveClass": "Clase",
+    "movePower": "Potencia",
+    "moveAccuracy": "Precisión",
+    "movePP": "Usos Máximos"
+  },
+  "pokemonList": {
+    "title": "Lista de Pokemons "
+  },
+  "addPokemon": {
+    "title": "Agregar Pokémon",
+    "idLabel": "ID",
+    "idPlaceholder": "Ingresar número del Pokémon",
+    "basicInfo": "Información Básica",
+    "idApi": "ID",
+    "nameApi": "Nombre",
+    "typeApi": "Tipo",
+    "baseStats": "Estadísticas Base",
+    "attacks": "Ataques",
+    "statusMoveRestriction": "Los movimientos de tipo estatus no pueden ser agregados"
+  },
+  "editMoves": {
+    "titleSuffix": "Editar Movimientos",
+    "currentMoves": "Movimientos Actuales",
+    "move-to-change": "Movimiento a cambiar",
+    "availableMoves": "Lista de Movimientos Disponibles",
+    "uses": "Usos"
+}
 }

@@ -1,20 +1,19 @@
 <div class="menu">
-    <h1>Bienvenido al Juego</h1>
+    <h1>{{ "game.welcomeTitle" | translate }}</h1>
     <div>
       @if (tienePartida) {
-        <button (click)="onNuevaPartida()">Nueva Partida</button>
-        <button (click)="onSeleccionarPartida()">Cargar Partida</button>
+        <button (click)="onNuevaPartida()">{{ "game.newGame" | translate }}</button>
+        <button (click)="onSeleccionarPartida()">{{ "game.loadGame" | translate }}</button>
       }
       @if (!tienePartida) {
-        <button (click)="onSeleccionarPartida()">Nueva Partida</button>
+        <button (click)="onSeleccionarPartida()">{{ "game.newGame" | translate }}</button>
       }
-      <button (click)="verRanking()">Ranking</button>
-      <button (click)="verPerfil()" class="perfil">Ver tu perfil</button>
+      <button (click)="verRanking()">{{ "game.ranking" | translate }}</button>
+      <button (click)="verPerfil()" class="perfil">{{ "profile.modifyAccount" | translate }}</button>
     </div>
-  </div>
-  <nav class="navbar">
+</div>
+<nav class="navbar">
     <div class="BotoncitoLogout">
-      <button type="button" (click)="logout()">LOGOUT</button>
+      <button type="button" (click)="logout()">{{ "actions.logout" | translate }}</button>
     </div>
-  </nav>
-
+</nav>

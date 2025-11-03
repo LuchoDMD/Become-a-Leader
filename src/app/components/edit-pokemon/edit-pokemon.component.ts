@@ -5,16 +5,18 @@ import { TeamService } from '../../service/team.service';
 import { Move } from '../../interface/move';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-pokemon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './edit-pokemon.component.html',
   styleUrl: './edit-pokemon.component.css'
 })
 export class EditPokemonComponent implements OnInit
 {
+
   //Variables
   pokemon:Pokemon={
     id:'',
@@ -44,6 +46,7 @@ export class EditPokemonComponent implements OnInit
   ts=inject(TeamService);
   route=inject(Router);
   aroute=inject(ActivatedRoute);
+  translate = inject(TranslateModule);
 
   //Metodos
   ngOnInit(): void

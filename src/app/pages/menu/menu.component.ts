@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../service/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PartidaService } from '../../service/partida.service';
 import { Partida } from '../../interface/partida.js';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule,RouterModule],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
@@ -16,6 +17,7 @@ export class MenuComponent implements OnInit {
   usuario: any;
   partida: Partida | null = null;
   tienePartida: boolean = false;
+    translate = inject(TranslateService);
 
   constructor(
     private userService: UserService,

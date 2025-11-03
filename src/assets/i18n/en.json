@@ -12,7 +12,16 @@
   "actions": {
     "edit": "Edit",
     "save": "Save",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "logout": "LOGOUT",
+    "modify": "Modify",
+    "delete": "Delete",
+    "back": "GO BACK",
+    "add":"Add",
+    "search":"Search",
+    "backToList":"Go to the list of Pokemon",
+    "select":"Select",
+    "change":"Change"
   },
   "alerts": {
     "emailRequired": "Email is required",
@@ -38,6 +47,12 @@
     "maxLengthPassword": "Password must have a maximum of 15 characters",
     "registerSuccess": "{{nick}} has been registered successfully :)"
   },
+  "game": {
+    "welcomeTitle": "Welcome to the game",
+    "newGame": "New Game",
+    "loadGame": "Load Game",
+    "ranking": "Ranking"
+  },
   "profile": {
     "title": "Your Profile",
     "generalInfo": "General Information",
@@ -52,7 +67,7 @@
     "deleteAccount": "Delete Account",
     "modifyAccount": "Modify Account"
   },
-    "login": {
+  "login": {
     "title": "LOG IN",
     "legend": "Join the Adventure!",
     "emailLabel": "Email",
@@ -61,17 +76,64 @@
     "passwordPlaceholder": "Enter your password",
     "submit": "Log In"
   },
-  "NAV":{
-    "LOGIN":"LOG IN",
+  "NAV": {
+    "LOGIN": "LOG IN",
     "REGISTER": "REGISTER",
-    "ABOUT_US":"ABOUT US",
-    "ADMIN":"ADMIN",
-    "BEGINNING":"BEGINNING"
+    "ABOUT_US": "ABOUT US",
+    "ADMIN": "ADMIN",
+    "BEGINNING": "BEGINNING",
+    "MENU": "MENU",
+    "POKEMON_LIST":"List of Pokemon"
   },
   "register": {
     "title": "Pokémon Trainer Registration",
     "nickLabel": "Nickname",
     "nickPlaceholder": "Enter your Nickname"
-  }
-  
+  },
+  "ranking": {
+    "position": "Position",
+    "name": "Name",
+    "score": "Score"
+  },
+  "pokemonDetail": {
+    "generalInfo": "General Information",
+    "level": "Level",
+    "types": "Types",
+    "stats": "Statistics",
+    "hp": "HP",
+    "physAttack": "Physical Attack",
+    "physDefense": "Physical Defense",
+    "specAttack": "Special Attack",
+    "specDefense": "Special Defense",
+    "speed": "Speed",
+    "moves": "Moves",
+    "moveName": "Name",
+    "moveType": "Type",
+    "moveClass": "Class",
+    "movePower": "Power",
+    "moveAccuracy": "Accuracy",
+    "movePP": "Max Uses"
+  },
+  "pokemonList":{
+    "title":"List of Pokemon "
+  },
+  "addPokemon": {
+    "title": "Add Pokémon",
+    "idLabel": "ID",
+    "idPlaceholder": "Enter Pokémon number",
+    "basicInfo": "Basic Information",
+    "idApi": "ID",
+    "nameApi": "Name",
+    "typeApi": "Type",
+    "baseStats": "Base Stats",
+    "attacks": "Attacks",
+    "statusMoveRestriction": "Status type moves cannot be added"
+},
+"editMoves": {
+    "titleSuffix": "Edit Moves",
+    "currentMoves": "Current Moves",
+    "move-to-change": "Move to change",
+    "availableMoves": "Available Moves List",
+    "uses": "Uses"
+}
 }

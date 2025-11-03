@@ -4,11 +4,12 @@ import { TeamService } from '../../service/team.service';
 import { PokeAPIService } from '../../service/poke-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './pokemon-detail.component.html',
   styleUrls: ['./pokemon-detail.component.css']
 })
@@ -33,6 +34,7 @@ export class PokemonDetailComponent implements OnInit
   ps=inject(PokeAPIService);
   route= inject(Router);
   aroute=inject(ActivatedRoute);
+  translate = inject(TranslateService);
 
   //Metodos
   ngOnInit(): void
