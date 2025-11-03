@@ -57,16 +57,17 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['Partida'])
           } else {
             this.translate.get('alerts.incorrectCredentials').subscribe(translation => {
-              this.mensaje = translation; 
+              this.mensaje = translation;
             })
             console.log('Login failed');
+
           }
         },
         (error) => {
           this.translate.get('alerts.loginApiError').subscribe(translation => {
-            this.mensaje = translation; 
+            this.mensaje = translation;
           });
-          console.log('Login error:', error); 
+          console.log('Login error:', error);
         }
       )
     }

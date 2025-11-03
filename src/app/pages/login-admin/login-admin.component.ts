@@ -6,11 +6,12 @@ import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../service/auth.service';
 import { Admin } from '../../interface/admin';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-admin',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule, TranslateModule],
   templateUrl: './login-admin.component.html',
   styleUrl: './login-admin.component.css'
 })
@@ -26,6 +27,7 @@ export class LoginAdminComponent {
     password: ['', [Validators.required]]
   });
 
+  translate = inject(TranslateService);
   @Output()
   emitirUsuarioLogin = new EventEmitter<Usuario>();
 
@@ -47,6 +49,8 @@ export class LoginAdminComponent {
     this.Login()
   }
 
+
+
   Login() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.getRawValue()
@@ -57,17 +61,21 @@ export class LoginAdminComponent {
             console.log('Login successful:', admin);
             this.router.navigate(['add-pokemon']);
           } else {
-            this.mensaje = 'Credenciales incorrectas, por favor intente nuevamente.';
+            this.translate.get('alerts.incorrectCredentials').subscribe(translation => {
+              this.mensaje = translation;
+            });
             console.log('Login failed')
           }
         },
         (error) => {
-          // En caso de error en la llamada
-          this.mensaje = 'Hubo un error al intentar iniciar sesión. Por favor, inténtelo más tarde.';
+          this.translate.get('alerts.loginApiError').subscribe(translation => {
+            this.mensaje = translation;
+          });
           console.log('Error en el login:', error);
         }
       )
     }
   }
+
 
 }
