@@ -37,6 +37,7 @@ export class MenuComponent implements OnInit {
               this.tienePartida = !!partida;
             },
             error: () => {
+              
             }
 
           });

@@ -1,59 +1,96 @@
 <div class="menu">
-  <h1 class="title-main">BECOME A LEADER</h1> <!-- Título principal -->
-  <h2>Bienvenido al Juego</h2>
+  <!-- Título principal -->
+  <h1 class="title-main" [translate]="'menu.mainTitle'">BECOME A LEADER</h1>
+  <h2 [translate]="'menu.welcome'">Bienvenido al Juego</h2>
   <fieldset>
-    <legend>Nueva Partida</legend>
+    <legend [translate]="'menu.newGame'">Nueva Partida</legend>
     <form (ngSubmit)="crearPartida()">
-      <label  id="nombre" for="">Nombre del Lider</label>
-      <input type="text" [(ngModel)]="datos_partida.nick" [ngModelOptions]="{standalone:true}" required>
-      <label id="escoge" for="">Escoge tu Lider</label>
-      <select name="lider" id="lider" (change)="seleccionarLider($event)" [(ngModel)]="datos_partida.leader"
-        [ngModelOptions]="{standalone:true}" required>
-        <option value="" selected disabled>Selecciona un líder</option>
-        <option value="lider1">Lider 1</option>
-        <option value="lider2">Lider 2</option>
+      <label id="nombre" for="" [translate]="'menu.leaderName'"
+        >Nombre del Lider</label
+      >
+      <input
+        type="text"
+        [(ngModel)]="datos_partida.nick"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+
+      <label id="escoge" for="" [translate]="'menu.chooseLeader'"
+        >Escoge tu Lider</label
+      >
+      <select
+        name="lider"
+        id="lider"
+        (change)="seleccionarLider($event)"
+        [(ngModel)]="datos_partida.leader"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      >
+        <option value="" selected disabled [translate]="'menu.selectLeader'">
+          Selecciona un líder
+        </option>
+        <option value="lider1" [translate]="'menu.leader1'">Lider 1</option>
+        <option value="lider2" [translate]="'menu.leader2'">Lider 2</option>
       </select>
+
       @if (selectedLider==='lider1') {
-      <div id="aura">Aura</div>
-      <img src="aura.png" alt="Lider1">
-      }
-      @if (selectedLider==='lider2') {
-      <div id="bruno">Bruno</div>
-      <img src="bruno.png" alt="Lider2">
+      <div id="aura" [translate]="'menu.leader1Name'">Aura</div>
+      <img src="aura.png" alt="Lider1" />
+      } @if (selectedLider==='lider2') {
+      <div id="bruno" [translate]="'menu.leader2Name'">Bruno</div>
+      <img src="bruno.png" alt="Lider2" />
       }
       <!-- Muestra diferente contenido según el líder seleccionado -->
 
-      <label id="tipos" for="tipo">Escoge tu tipo</label>
-      <select name="tipo" id="tipo" [(ngModel)]="datos_partida.tipo" [ngModelOptions]="{standalone:true}" required>
-        <option value="" selected disabled>Sin seleccionar</option>
-        <option value="steel">Acero</option>
-        <option value="water">Agua</option>
-        <option value="bug">Bicho</option>
-        <option value="dragon">Dragón</option>
-        <option value="electric">Eléctrico</option>
-        <option value="ghost">Fantasma</option>
-        <option value="fire">Fuego</option>
-        <option value="fairy">Hada</option>
-        <option value="ice">Hielo</option>
-        <option value="fighting">Lucha</option>
-        <option value="normal">Normal</option>
-        <option value="grass">Planta</option>
-        <option value="psychic">Psíquico</option>
-        <option value="rock">Roca</option>
-        <option value="dark">Siniestro</option>
-        <option value="poison">Veneno</option>
-        <option value="flying">Volador</option>
+      <label id="tipos" for="tipo" [translate]="'menu.chooseType'"
+        >Escoge tu tipo</label
+      >
+      <select
+        name="tipo"
+        id="tipo"
+        [(ngModel)]="datos_partida.tipo"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      >
+        <option value="" selected disabled [translate]="'menu.notSelected'">
+          Sin seleccionar
+        </option>
+        <option value="steel" [translate]="'types.steel'">Acero</option>
+        <option value="water" [translate]="'types.water'">Agua</option>
+        <option value="bug" [translate]="'types.bug'">Bicho</option>
+        <option value="dragon" [translate]="'types.dragon'">Dragón</option>
+        <option value="electric" [translate]="'types.electric'">
+          Eléctrico
+        </option>
+        <option value="ghost" [translate]="'types.ghost'">Fantasma</option>
+        <option value="fire" [translate]="'types.fire'">Fuego</option>
+        <option value="fairy" [translate]="'types.fairy'">Hada</option>
+        <option value="ice" [translate]="'types.ice'">Hielo</option>
+        <option value="fighting" [translate]="'types.fighting'">Lucha</option>
+        <option value="normal" [translate]="'types.normal'">Normal</option>
+        <option value="grass" [translate]="'types.grass'">Planta</option>
+        <option value="psychic" [translate]="'types.psychic'">Psíquico</option>
+        <option value="rock" [translate]="'types.rock'">Roca</option>
+        <option value="dark" [translate]="'types.dark'">Siniestro</option>
+        <option value="poison" [translate]="'types.poison'">Veneno</option>
+        <option value="flying" [translate]="'types.flying'">Volador</option>
       </select>
 
-      <button type="submit">Crear Partida</button>
+      <button type="submit" [translate]="'actions.createGame'">
+        Crear Partida
+      </button>
     </form>
   </fieldset>
 </div>
 <nav class="navbar">
   <div class="BotoncitoLogout">
-    <button type="button" (click)="navegarMenu()">MENU</button>
+    <button type="button" (click)="navegarMenu()" [translate]="'NAV.MENU'">
+      MENU
+    </button>
   </div>
   <div class="LogoutButton">
-    <button type="button" (click)="logout()">LOGOUT</button>
+    <button type="button" (click)="logout()" [translate]="'actions.logout'">
+      LOGOUT
+    </button>
   </div>
 </nav>

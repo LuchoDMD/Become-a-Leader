@@ -17,11 +17,12 @@
     "modify": "Modify",
     "delete": "Delete",
     "back": "GO BACK",
-    "add":"Add",
-    "search":"Search",
-    "backToList":"Go to the list of Pokemon",
-    "select":"Select",
-    "change":"Change"
+    "add": "Add",
+    "search": "Search",
+    "backToList": "Go to the list of Pokemon",
+    "select": "Select",
+    "change": "Change",
+    "createGame": "Create new game"
   },
   "alerts": {
     "emailRequired": "Email is required",
@@ -76,6 +77,25 @@
     "passwordPlaceholder": "Enter your password",
     "submit": "Log In"
   },
+  "types": {
+    "steel": "Steel",
+    "water": "Water",
+    "bug": "Bug",
+    "dragon": "Dragon",
+    "electric": "Electric",
+    "ghost": "Ghost",
+    "fire": "Fire",
+    "fairy": "Fairy",
+    "ice": "Ice",
+    "fighting": "Fighting",
+    "normal": "Normal",
+    "grass": "Grass",
+    "psychic": "Psychic",
+    "rock": "Rock",
+    "dark": "Dark",
+    "poison": "Poison",
+    "flying": "Flying"
+  },
   "NAV": {
     "LOGIN": "LOG IN",
     "REGISTER": "REGISTER",
@@ -83,7 +103,7 @@
     "ADMIN": "ADMIN",
     "BEGINNING": "BEGINNING",
     "MENU": "MENU",
-    "POKEMON_LIST":"List of Pokemon"
+    "POKEMON_LIST": "List of Pokemon"
   },
   "register": {
     "title": "Pokémon Trainer Registration",
@@ -114,8 +134,8 @@
     "moveAccuracy": "Accuracy",
     "movePP": "Max Uses"
   },
-  "pokemonList":{
-    "title":"List of Pokemon "
+  "pokemonList": {
+    "title": "List of Pokemon "
   },
   "addPokemon": {
     "title": "Add Pokémon",
@@ -128,12 +148,68 @@
     "baseStats": "Base Stats",
     "attacks": "Attacks",
     "statusMoveRestriction": "Status type moves cannot be added"
-},
-"editMoves": {
+  },
+  "editMoves": {
     "titleSuffix": "Edit Moves",
     "currentMoves": "Current Moves",
     "move-to-change": "Move to change",
     "availableMoves": "Available Moves List",
     "uses": "Uses"
-}
+  },
+  "batalla": {
+    "title": "You Won!",
+    "defeatTitle": "Battle Lost",
+    "victoryMsg": "You won the battle! You gained {{puntosGanados}} point. Total score: {{puntajeNuevo}}. Loading next battle...",
+    "defeatMsg": "You lost the battle! Your final score was saved. Total score: {{puntajeNuevo}}.",
+    "superEffective": "It was super effective!",
+    "notVeryEffective": "It was not very effective...",
+    "noEffect": "It had no effect...",
+    "fainted": "has fainted!",
+    "usedMove": "used",
+    "isDefeated": "has been defeated!",
+    "errorSpriteFetch": "Error fetching sprite",
+    "status": {
+      "loadingBattle": "Initiating battle",
+      "generatingRival": "Generating rival",
+      "pokemonPlayer": "Player's Pokémon:",
+      "pokemonRival": "Rival's Pokémon:",
+      "attackingPlayer": "Player is attacking",
+      "attackingRival": "Rival is attacking",
+      "defenderId": "Defender ID:",
+      "originalDefenderId": "Original Defender ID:",
+      "newDefenderId": "Defender ID after checking for switch:",
+      "defenderStanding": "Defender is still standing",
+      "performingMove": "is performing",
+      "playerTeamDefeated": "Player's team has been defeated.",
+      "rivalTeamDefeated": "Rival's team has been defeated.",
+      "calculatingEffectiveness": "Calculating effectiveness",
+      "attackType": "Attack Type:",
+      "defenderType": "Defender Type:",
+      "effectiveness": "Effectiveness:",
+      "errorRivalLoad": "Error loading rival"
+    }
+  },
+  "menu": {
+    "mainTitle": "BECOME A LEADER",
+    "welcome": "Welcome to the game",
+    "newGame": "New game",
+    "leaderName": "Leader name",
+    "chooseLeader": "Choose your leader",
+    "selectLeader": "Select a leader",
+    "leader1": "Leader 1",
+    "leader2": "Leader 2",
+    "leader1Name": "Aura",
+    "leader2Name": "Bruno",
+    "chooseType": "Choose your type",
+    "notSelected": "Not selected"
+  },
+  "log": {
+    "spriteUrlError": "Error fetching sprite URLs.",
+    "scoreUpdated": "Score updated:",
+    "scoreUpdateError": "Error updating score:",
+    "rankingUpdated": "Ranking updated:",
+    "rankingUpdateError": "Error updating ranking:",
+    "gameDeleted": "Game deleted:",
+    "gameDeleteError": "Error deleting game:"
+  }
 }

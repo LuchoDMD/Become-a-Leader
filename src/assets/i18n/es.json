@@ -20,8 +20,9 @@
     "add": "Agregar",
     "search": "Buscar",
     "backToList": "Volver a la lista de Pokemon",
-    "select":"Seleccionar",
-    "change":"Cambiar"
+    "select": "Seleccionar",
+    "change": "Cambiar",
+    "createGame": "Crear Partida"
   },
   "alerts": {
     "nicknameEmpty": "No puedes dejar el campo vacío.",
@@ -95,6 +96,25 @@
     "name": "Nombre",
     "score": "Puntaje"
   },
+  "types": {
+    "steel": "Acero",
+    "water": "Agua",
+    "bug": "Bicho",
+    "dragon": "Dragón",
+    "electric": "Eléctrico",
+    "ghost": "Fantasma",
+    "fire": "Fuego",
+    "fairy": "Hada",
+    "ice": "Hielo",
+    "fighting": "Lucha",
+    "normal": "Normal",
+    "grass": "Planta",
+    "psychic": "Psíquico",
+    "rock": "Roca",
+    "dark": "Siniestro",
+    "poison": "Veneno",
+    "flying": "Volador"
+  },
   "pokemonDetail": {
     "generalInfo": "Información General",
     "level": "Nivel",
@@ -135,5 +155,61 @@
     "move-to-change": "Movimiento a cambiar",
     "availableMoves": "Lista de Movimientos Disponibles",
     "uses": "Usos"
-}
+  },
+  "batalla": {
+    "title": "¡Ganaste!",
+    "defeatTitle": "Perdiste la batalla",
+    "victoryMsg": "¡Has ganado la batalla! Sumaste {{puntosGanados}} punto. Puntaje total: {{puntajeNuevo}}. Cargando siguiente batalla...",
+    "defeatMsg": "¡Has perdido la batalla! Se guardó tu puntaje final. Puntaje total: {{puntajeNuevo}}.",
+    "superEffective": "¡Fue supereficaz!",
+    "notVeryEffective": "No fue muy eficaz...",
+    "noEffect": "No tuvo ningún efecto...",
+    "fainted": "se ha desmayado!",
+    "usedMove": "usó",
+    "isDefeated": "ha sido derrotado!",
+    "errorSpriteFetch": "Error al obtener el sprite",
+    "status": {
+      "loadingBattle": "Iniciando batalla",
+      "generatingRival": "Generando rival",
+      "pokemonPlayer": "Pokémon del jugador:",
+      "pokemonRival": "Pokémon rival:",
+      "attackingPlayer": "El jugador es el atacante",
+      "attackingRival": "El rival es el atacante",
+      "defenderId": "ID del defensor:",
+      "originalDefenderId": "ID del defensor original:",
+      "newDefenderId": "ID del defensor luego de verificarCambio:",
+      "defenderStanding": "El defensor sigue en pie",
+      "performingMove": "está realizando",
+      "playerTeamDefeated": "El equipo del jugador ha sido derrotado.",
+      "rivalTeamDefeated": "El equipo del rival ha sido derrotado.",
+      "calculatingEffectiveness": "Calculando efectividad",
+      "attackType": "Tipo de ataque:",
+      "defenderType": "Tipo de defensor:",
+      "effectiveness": "Efectividad:",
+      "errorRivalLoad": "Error al cargar rival"
+    }
+  },
+  "menu": {
+    "mainTitle": "BECOME A LEADER",
+    "welcome": "Bienvenido al Juego",
+    "newGame": "Nueva Partida",
+    "leaderName": "Nombre del Líder",
+    "chooseLeader": "Escoge tu Líder",
+    "selectLeader": "Selecciona un líder",
+    "leader1": "Líder 1",
+    "leader2": "Líder 2",
+    "leader1Name": "Aura",
+    "leader2Name": "Bruno",
+    "chooseType": "Escoge tu tipo",
+    "notSelected": "Sin seleccionar"
+  },
+  "log": {
+    "spriteUrlError": "Error consigiendo los sprites.",
+    "scoreUpdated": "Score actualizado:",
+    "scoreUpdateError": "Error actualizando el score:",
+    "rankingUpdated": "Ranking actualizado:",
+    "rankingUpdateError": "Error actualizando el ranking:",
+    "gameDeleted": "Juego eliminado:",
+    "gameDeleteError": "Error eleminando el juego:"
+  }
 }

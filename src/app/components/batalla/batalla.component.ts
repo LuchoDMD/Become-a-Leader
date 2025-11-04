@@ -11,12 +11,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-batalla',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './batalla.component.html',
   styleUrls: ['./batalla.component.css']
 })
@@ -26,6 +26,7 @@ export class BatallaComponent {
   teamService = inject(TeamService);
   ps = inject(PartidaService);
   rs = inject(RankingService);
+  translate = inject(TranslateService);
 
   // Datos de la batalla
   cambioPokemon: boolean = false;
@@ -93,7 +94,9 @@ verificarContador()
             back_default:data.back_default
           });
         },
-        error: (error: Error) => { reject("Error al obtener el sprite"); }
+        error: (error: Error) => { 
+          reject(this.translate.instant('batalla.errorSpriteFetch')); 
+        }
       });
     });
   }
@@ -107,49 +110,54 @@ verificarContador()
         element.frontSprite=urls.front_default;
       }
       catch {
-        console.error("Error al obtener urls de los sprites.");
+        console.error(this.translate.instant('log.spriteUrlError'));
       }
     }
   }
 
-
   //Metodo para iniciar la batalla, este metodo genera el rival del entrenador y asigna los sprites a los pokemon del entrenador como tambien sus movimientos
-  iniciarBatalla() {
-    console.log("Iniciando batalla");
-    this.asignarSprites(this.jugador?.equipo);
+  async iniciarBatalla() { // Hecho async para asegurar que los sprites carguen primero
+    console.log(this.translate.instant('batalla.status.loadingBattle'));
+    
+    // Esperamos a que los sprites del equipo del jugador se asignen
+    await this.asignarSprites(this.jugador?.equipo);
+    
     this.pokemonJugador = this.jugador?.equipo[0];
-    console.log("Pokemon jugador:", this.pokemonJugador);
+    console.log(this.translate.instant('batalla.status.pokemonPlayer'), this.pokemonJugador);
 
-
-    this.generarRival();
+    // Esperamos a que el rival se genere y sus sprites se asignen
+    await this.generarRival();
+    
     this.movimientosJugador = this.jugador?.equipo[0].movimientos!;
-
   }
 
-
-  //Metodo para generar un rival, Utiliza el servicio teamService para obtener todos los pokemons de la api
-  //Luego con ese arreglo selecciona uno al azar y lo coloca en una constante pokemon
-  //Se le asigna un id de entrenador al rival y se colocan los pokemons dentro del arreglo rival, esto lo repetira 6 veces
-  //Se asignan los sprites y los movimientos a cada pokemon del arreglo rival
-  generarRival() {
-    console.log("Generando rival");
-    this.teamService.getPokemons().subscribe(
-      {
-        next: (data) => {
-          while (this.rival.length < 6) {
-            const pokemon = data[Math.floor(Math.random() * (data.length - 1)) + 1];
-            pokemon.idEntrenador = "rival";
-            this.rival.push(pokemon);
+  // Metodo para generar un rival, refactorizado para devolver una promesa y permitir await
+  generarRival(): Promise<void> {
+    console.log(this.translate.instant('batalla.status.generatingRival'));
+    return new Promise((resolve, reject) => {
+      this.teamService.getPokemons().subscribe(
+        {
+          next: async (data) => { // Hecho async para permitir await en asignarSprites
+            while (this.rival.length < 6) {
+              const pokemon = data[Math.floor(Math.random() * (data.length - 1)) + 1];
+              pokemon.idEntrenador = "rival";
+              this.rival.push(pokemon);
+            }
+            
+            // Esperamos a que los sprites del equipo rival se asignen
+            await this.asignarSprites(this.rival);
+            
+            this.pokemonRival = this.rival[0];
+            this.movimientosRival = this.pokemonRival.movimientos!;
+            console.log(this.translate.instant('batalla.status.pokemonRival'), this.pokemonRival);
+            resolve();
+          },
+          error: (error: Error) => {
+            console.log(this.translate.instant('batalla.status.errorRivalLoad'), error);
+            reject(error);
           }
-          this.asignarSprites(this.rival);
-          this.pokemonRival = this.rival[0];
-          this.movimientosRival = this.pokemonRival.movimientos!;
-          console.log("Pokemon rival:", this.pokemonRival);
-        },
-        error: (error: Error) => {
-          console.log("Error al cargar rival")
-        }
-      })
+        })
+    });
   }
 
   /*---------------------------------------------------------------------------------------------------------------------------------------- */
@@ -163,7 +171,7 @@ verificarContador()
     let defensor: Pokemon;
     let movimientoAtacante: Move;
     let chequearTurnoDefensor: string;
-    console.log("Iniciando batalla");
+    console.log(this.translate.instant('batalla.status.loadingBattle'));
     // Comparar las velocidades
     if (this.pokemonJugador!.estadisticas.spd >= this.pokemonRival!.estadisticas.spd) {
       // Si el jugador es igual o más rápido que el rival
@@ -171,26 +179,26 @@ verificarContador()
       defensor = this.pokemonRival!;
       chequearTurnoDefensor = this.pokemonRival!.id;
       movimientoAtacante = movimientoSeleccionado;
-      console.log("Jugador es el atacante");
-      console.log("Id del defensor:", chequearTurnoDefensor);
+      console.log(this.translate.instant('batalla.status.attackingPlayer'));
+      console.log(this.translate.instant('batalla.status.defenderId'), chequearTurnoDefensor);
     } else {
       // Si el rival es más rápido
       atacante = this.pokemonRival!;
       defensor = this.pokemonJugador!;
       chequearTurnoDefensor = this.pokemonJugador!.id;
       movimientoAtacante = this.generarMovimientoRival();  // Generamos un movimiento aleatorio para el rival
-      console.log("Rival es el atacante");
-      console.log("Id del defensor:", chequearTurnoDefensor);
+      console.log(this.translate.instant('batalla.status.attackingRival'));
+      console.log(this.translate.instant('batalla.status.defenderId'), chequearTurnoDefensor);
     }
     this.calcularAtaque(movimientoAtacante, atacante, defensor);
-    console.log("Id del defensor original:", defensor.id);
+    console.log(this.translate.instant('batalla.status.originalDefenderId'), defensor.id);
     defensor = this.verificarCambio(defensor);
-    console.log("Id del defensor luego de verificarCambio:", defensor.id);
+    console.log(this.translate.instant('batalla.status.newDefenderId'), defensor.id);
 
     setTimeout(() => {
       // Si el defensor sigue en pie, realizar el siguiente ataque
       if (chequearTurnoDefensor === defensor.id) {
-        console.log("Defensor sigue en pie");
+        console.log(this.translate.instant('batalla.status.defenderStanding'));
         // Si es el jugador, usa su movimiento seleccionado
         if (defensor === this.pokemonJugador) {
           movimientoAtacante = movimientoSeleccionado;
@@ -206,7 +214,6 @@ verificarContador()
       }
     }, 2000)
   }
-
 
   //
   generarMovimientoRival(): Move {
@@ -228,18 +235,21 @@ verificarContador()
     defensor.vidaActual = Math.max(defensor.vidaActual - danio, 0);
 
     // Mostrar el daño en consola o UI
-    console.log(`${atacante.especie} atacó a ${defensor.especie} con ${movimiento.nombre} causando ${danio} de daño.`);
+    console.log(`${atacante.especie} ${this.translate.instant('batalla.usedMove')} ${defensor.especie} con ${movimiento.nombre} causando ${danio} de daño.`);
   }
 
   verificarCambio(defensor: Pokemon): Pokemon {
     if (defensor.vidaActual <= 0) {
-      console.log(`${defensor.especie} ha sido derrotado!`);
+      
+      // Mensaje: {Pokemon} has been defeated!
+      this.mensajeBatalla = `${this.transformarPrimeraLetra(defensor.especie)} ${this.translate.instant('batalla.isDefeated')}`;
+      console.log(this.mensajeBatalla);
 
       // Eliminar al defensor de su respectivo equipo (jugador o rival)
       if (defensor.idEntrenador === this.pokemonJugador?.idEntrenador) {
         this.jugador?.equipo.shift();
         if (this.jugador?.equipo.length === 0) {
-          console.log("El equipo del jugador ha sido derrotado.");
+          console.log(this.translate.instant('batalla.status.playerTeamDefeated'));
           this.finalizarBatalla(false);
           this.contadorDeDuelos=0;
         }
@@ -251,7 +261,7 @@ verificarContador()
       } else {
         this.rival.shift();
         if (this.rival.length === 0) {
-          console.log("El equipo del rival ha sido derrotado.");
+          console.log(this.translate.instant('batalla.status.rivalTeamDefeated'));
           this.finalizarBatalla(true);
           this.contadorSumar();
           this.verificarContador();
@@ -268,18 +278,32 @@ verificarContador()
 
   /*-------------------------------------------------------------------------------------------------------------------------*/
   calcularAtaque(movimiento: Move, atacante: Pokemon, defensor: Pokemon) {
-    console.log(`${atacante.especie} está realizando ${movimiento.nombre}`);
+    console.log(`${this.transformarPrimeraLetra(atacante.especie)} ${this.translate.instant('batalla.status.performingMove')} ${this.transformarPrimeraLetra(movimiento.nombre)}`);
     const factor = this.calcularEfectividad(movimiento.tipo, defensor.tipos);
     const daño = Math.floor(((2 * atacante.estadisticas.atk) / defensor.estadisticas.def) * movimiento.potencia * factor);
     defensor.vidaActual -= daño;
-    const mensajeAtaque = `${this.transformarPrimeraLetra(atacante.especie)} usó ${this.transformarPrimeraLetra(movimiento.nombre)}. ` +
-      (factor > 1 ? '¡Fue supereficaz!' : (factor === 0 ? 'No tuvo ningún efecto...' : (factor < 1 ? 'No fue muy eficaz...' : '')))
+    
+    let efectoMensaje = '';
+    if (factor > 1) {
+      efectoMensaje = this.translate.instant('batalla.superEffective');
+    } else if (factor === 0) {
+      efectoMensaje = this.translate.instant('batalla.noEffect');
+    } else if (factor < 1) {
+      efectoMensaje = this.translate.instant('batalla.notVeryEffective');
+    }
+    
+    // Mensaje: {Attacker} used {Move}.
+    const baseAtaque = `${this.transformarPrimeraLetra(atacante.especie)} ${this.translate.instant('batalla.usedMove')} ${this.transformarPrimeraLetra(movimiento.nombre)}.`;
+    
+    let mensajeAtaque = baseAtaque + (efectoMensaje ? ` ${efectoMensaje}` : '');
 
     this.mostrarMensajeBatalla(mensajeAtaque);
 
     if (defensor.vidaActual < 0) {
-      this.mostrarMensajeBatalla(mensajeAtaque + ` ${this.transformarPrimeraLetra(defensor.especie)} se ha desmayado!`);
       defensor.vidaActual = 0;
+      // Mensaje: {Pokemon} has fainted!
+      const faintedMsg = `${this.transformarPrimeraLetra(defensor.especie)} ${this.translate.instant('batalla.fainted')}`;
+      this.mostrarMensajeBatalla(mensajeAtaque + ` ${faintedMsg}`);
     }
   }
 
@@ -288,15 +312,15 @@ verificarContador()
   }
 
   calcularEfectividad(tipoAtaque: string, tiposDefensor: string[]): number {
-    console.log("Calculando efectividad");
-    console.log("Tipo ataque:", tipoAtaque);
+    console.log(this.translate.instant('batalla.status.calculatingEffectiveness'));
+    console.log(this.translate.instant('batalla.status.attackType'), tipoAtaque);
     let efectividadTotal = 1;
 
     const tipoAtacante = tipos.find(t => t.name === tipoAtaque.toLowerCase());
     if (!tipoAtacante) return efectividadTotal;
 
     for (const tipoDefensor of tiposDefensor) {
-      console.log("Tipo defensor:", tipoDefensor);
+      console.log(this.translate.instant('batalla.status.defenderType'), tipoDefensor);
       const efectividad = tipoAtacante.efectivity.find(([tipo, _]) => tipo === tipoDefensor.toLowerCase());
       if (efectividad) {
         efectividadTotal *= efectividad[1];
@@ -304,7 +328,7 @@ verificarContador()
         efectividadTotal *= 1;
       }
     }
-    console.log("Efectividad:", efectividadTotal);
+    console.log(this.translate.instant('batalla.status.effectiveness'), efectividadTotal);
     return efectividadTotal;
   }
 
@@ -323,53 +347,72 @@ verificarContador()
 
   finalizarBatalla(ganador: boolean) {
     let puntajeNuevo = 0;
+    
+    // Usamos subscribe para los mensajes del modal que pueden ser más complejos y se muestran al usuario
     if (ganador) {
       puntajeNuevo = (this.partida?.puntuacion ?? 0) + 1;
-      this.resultado = '¡Ganaste!';
-      this.mensajeModal = 'Has ganado la batalla! Sumaste 1 punto. Puntaje total: ' + puntajeNuevo + '. Cargando siguiente batalla...';
-      this.mostrarModal = true;
+      this.resultado = this.translate.instant('batalla.title'); // Establece 'You Won!' o '¡Ganaste!'
+      
+      // victoryMsg: "You won the battle! You gained {{puntosGanados}} point. Total score: {{puntajeNuevo}}. Loading next battle..."
+      this.translate.get('batalla.victoryMsg', {puntajeNuevo: puntajeNuevo, puntosGanados: 1}).subscribe(msg => {
+        this.mensajeModal = msg;
+        this.mostrarModal = true;
+      });
+
       this.ps.actualizarPuntaje(this.partida?.id!, puntajeNuevo).subscribe({
         next: (response) => {
-          console.log('Puntaje actualizado:', response);
+          console.log(this.translate.instant('log.scoreUpdated'), response);
         },
         error: (error: Error) => {
-          console.error('Error al actualizar el puntaje:', error);
+          console.error(this.translate.instant('log.scoreUpdateError'), error);
         }
       });
     } else {
       const ranking = { nombre: '', usuario: '', puntaje: 0 };
       puntajeNuevo = this.partida?.puntuacion ?? 0;
-      this.resultado = 'Perdiste la batalla';
-      this.mensajeModal = 'Has perdido la batalla!. Se guardo tu puntaje final. Puntaje total: ' + puntajeNuevo ;
-      this.mostrarModal = true;
+      this.resultado = this.translate.instant('batalla.defeatTitle'); // Establece 'Battle Lost' o 'Perdiste la batalla'
+      
+      // defeatMsg: "You lost the battle! Your final score was saved. Total score: {{puntajeNuevo}}"
+      this.translate.get('batalla.defeatMsg', {puntajeNuevo: puntajeNuevo}).subscribe(msg => {
+        this.mensajeModal = msg;
+        this.mostrarModal = true;
+      });
+
       console.log(this.jugador?.nombre!);
       console.log(this.partida?.id!);
       ranking!.nombre = this.jugador?.nombre!;
       ranking!.usuario = this.partida?.id!;
       ranking!.puntaje = puntajeNuevo;
+      
       this.rs.postRanking(ranking!).subscribe({
         next: (response) => {
-          console.log('Ranking actualizado:', response);
+          console.log(this.translate.instant('log.rankingUpdated'), response);
         },
         error: (error: Error) => {
-          console.error('Error al actualizar el ranking:', error);
+          console.error(this.translate.instant('log.rankingUpdateError'), error);
         }
-      }
-      )
+      });
+      
       this.ps.eliminarPartida(this.partida?.id!).subscribe({
         next: (response) => {
-          console.log('Puntaje actualizado:', response);
+          console.log(this.translate.instant('log.gameDeleted'), response);
         },
         error: (error: Error) => {
-          console.error('Error al actualizar el puntaje:', error);
+          console.error(this.translate.instant('log.gameDeleteError'), error);
         }
       });
     }
   }
 
   cerrarModal() {
-    this.mostrarModal = false; // Oculta el modal
-    if (this.resultado === '¡Ganaste!') {
+    const isWin = this.resultado === this.translate.instant('batalla.title');
+    
+    // Limpiamos el estado del modal antes de cerrar o navegar
+    this.mostrarModal = false;
+    this.resultado = ''; 
+    this.mensajeModal = '';
+
+    if (isWin) {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/batalla']); // Navegar de nuevo a la ruta deseada
       });
@@ -388,4 +431,5 @@ verificarContador()
     this.router.navigate(['']);
   }
 }
+
 
