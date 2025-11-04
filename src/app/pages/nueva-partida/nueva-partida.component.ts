@@ -7,16 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Pokemon } from '../../interface/pokemon';
 import { TeamService } from '../../service/team.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nueva-partida',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,TranslateModule],
   templateUrl: './nueva-partida.component.html',
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent implements OnInit {
   ts= inject(TeamService);
+  translate = inject(TranslateService);
   ngOnInit(): void {
     this.id = localStorage.getItem('token')!;
   }
