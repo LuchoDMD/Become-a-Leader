@@ -6,5 +6,6 @@ export interface Move
     potencia:number,
     precision:number,
     usos?:number,
-    pp:number //Cantidad de Usos
+    pp:number, //Cantidad de Usos
+    localizedName?:string
 }

@@ -9,6 +9,7 @@ export interface Pokemon
     nivel?:number,
     vidaActual:number,
     estadisticas:Stats,
+    localizedName?: string;
     movimientos:Move[] // Maximo 4 Solo almaceno sus id para bajarlos en el combate
     idEntrenador?:string;
     frontSprite?:string;

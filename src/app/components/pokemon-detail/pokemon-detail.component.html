@@ -5,7 +5,7 @@
     </button>
 
     <article>
-      <h1>{{ pokemon.id }} - {{ pokemon.especie }}</h1>
+      <h1>{{ pokemon.id }} - {{ transformarPrimeraLetra(pokemon.especie) }}</h1>
       <div>
         @if (sprites) {
         <img [src]="sprites.front_default" [alt]="pokemon.especie + '.jpg'" />
@@ -15,35 +15,14 @@
         <h3>{{ "pokemonDetail.generalInfo" | translate }}</h3>
         <ul>
           <li>{{ "pokemonDetail.level" | translate }}: {{ pokemon.nivel }}</li>
-          <li>{{ "pokemonDetail.types" | translate }}: {{ pokemon.tipos }}</li>
+          <li>
+            {{ "pokemonDetail.types" | translate }}:
+            @for(tipo of pokemon.tipos; track $index){
+              {{ transformarPrimeraLetra(tipo) }}{{ $last ? '' : ', ' }}
+            }
+          </li>
         </ul>
         <h3>{{ "pokemonDetail.stats" | translate }}</h3>
-        <ul>
-          <li>
-            {{ "pokemonDetail.hp" | translate }}: {{ pokemon.estadisticas.hp }}
-          </li>
-          <li>
-            {{ "pokemonDetail.physAttack" | translate }}:
-            {{ pokemon.estadisticas.atk }}
-          </li>
-          <li>
-            {{ "pokemonDetail.physDefense" | translate }}:
-            {{ pokemon.estadisticas.def }}
-          </li>
-          <li>
-            {{ "pokemonDetail.specAttack" | translate }}:
-            {{ pokemon.estadisticas.satk }}
-          </li>
-          <li>
-            {{ "pokemonDetail.specDefense" | translate }}:
-            {{ pokemon.estadisticas.sdef }}
-          </li>
-          <li>
-            {{ "pokemonDetail.speed" | translate }}:
-            {{ pokemon.estadisticas.spd }}
-          </li>
-        </ul>
-
         <h3>{{ "pokemonDetail.moves" | translate }}</h3>
         <table>
           <thead>
@@ -59,8 +38,8 @@
           <tbody>
             @for(movimiento of pokemon.movimientos; track $index){
             <tr>
-              <td>{{ movimiento.nombre }}</td>
-              <td>{{ movimiento.tipo }}</td>
+              <td>{{ transformarPrimeraLetra(movimiento.nombre) }}</td>
+              <td>{{ transformarPrimeraLetra(movimiento.tipo) }}</td>
               <td>{{ movimiento.clase }}</td>
               <td>{{ movimiento.potencia }}</td>
               <td>{{ movimiento.precision }}</td>
