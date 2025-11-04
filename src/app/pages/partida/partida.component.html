@@ -1,12 +1,20 @@
 <nav class="navbar">
-      <ul class="nav-links">
-          <button (click)="logout()">Logout</button>
-          <button (click)="mostrarMensajeProgresivo()">Siguiente</button>
-      </ul>
+    <ul class="nav-links">
+        <button (click)="logout()">{{"actions.logout" | translate}}</button>
+        
+        <button (click)="mostrarMensajeProgresivo()" *ngIf="!mensajeCompleto">
+            {{"actions.next" | translate}}
+        </button>
+        
+        <button (click)="navegarAMenu()" *ngIf="mensajeCompleto">
+            {{"NAV.MENU" | translate}}
+        </button>
+    </ul>
 </nav>
+
 <div class="ESPERA">
-  <img src="fondo_inicio.jpg" alt="fondito">
-  <div class="bienvenida-container">
-    <div class="mensaje" [innerHTML]="mensajeActual"></div>
-  </div>
+    <img src="fondo_inicio.jpg" alt="Fondo de bienvenida" />
+    <div class="bienvenida-container">
+        <div class="mensaje" [innerHTML]="mensajeActual"></div>
+    </div>
 </div>

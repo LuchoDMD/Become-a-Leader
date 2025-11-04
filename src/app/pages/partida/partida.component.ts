@@ -1,39 +1,96 @@
-import { Component, inject, OnInit  } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../service/user.service';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-partida',
   standalone: true,
-  imports: [RouterModule],
+  // Agregamos CommonModule para directivas (como *ngIf) y TranslateModule para el pipe | translate
+  imports: [RouterModule, CommonModule, TranslateModule], 
   templateUrl: './partida.component.html',
   styleUrl: './partida.component.css'
 })
-export class PartidaComponent implements OnInit {
-  mensajeCompleto = false;
-  mensajeLargo = "Bienvenido a Become a Leader. En este proyecto se simulan batallas de Lider Pokemon contra entrenadores, usando un equipo de un mismo tipo. Tu objetivo es acumular la mayor cantidad victorias y sumar puntos. Recuerda que cuando pierdes, tu partida se elimina y tu puntaje se guarda en la tabla de puntajes. Entrando al juego... ";
-  mensajeActual = "";
-  lineaIndex = 0;
+export class PartidaComponent implements OnInit, OnDestroy {
+  // Estado de la UI
+  mensajeCompleto: boolean = false;
+  mensajeActual: SafeHtml = ''; // Usamos SafeHtml para el binding [innerHTML]
+  lineaIndex: number = 0;
 
-  us=inject(UserService);
+  // Propiedades privadas para la lógica de traducción y construcción del mensaje
+  private MESSAGE_KEY = 'intro.message';
+  private lineas: string[] = [];
+  private langChangeSubscription!: Subscription;
+  private mensajeAcumuladoString: string = ''; // 🌟 NEW: Rastrea el contenido HTML sin sanitizar
+
+  // Inyecciones
+  us = inject(UserService);
+  translate = inject(TranslateService);
+  sanitizer = inject(DomSanitizer);
 
   constructor(private router: Router) {}
 
   ngOnInit() {
+    // 1. Cargar el mensaje inicial al cargar el componente
+    this.loadMessage();
+
+    // 2. Suscribirse a los cambios de idioma para recargar el mensaje traducido automáticamente
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadMessage();
+    });
+  }
+
+  ngOnDestroy() {
+    // Desuscribirse para prevenir fugas de memoria
+    this.langChangeSubscription?.unsubscribe();
+  }
+
+  loadMessage() {
+    // Obtener la traducción de manera sincrónica usando instant()
+    const mensajeLargo = this.translate.instant(this.MESSAGE_KEY);
+
+    // Dividir el mensaje en frases por el separador ". "
+    this.lineas = mensajeLargo.split('. ');
+    
+    // Resetear el estado
+    this.mensajeCompleto = false;
+    this.lineaIndex = 0;
+    this.mensajeAcumuladoString = ''; // Resetear el string acumulado
+    this.mensajeActual = this.sanitizer.bypassSecurityTrustHtml(''); // Limpiar el SafeHtml
+    
+    // Mostrar la primera frase
     this.mostrarMensajeProgresivo();
   }
-  //Cambios: El mensaje progresivo se ira mostrando las veces que se presione un boton, asi la persona puede leer mas facil en vez de utilizar un setTimeOut
+
+  /**
+   * Muestra la siguiente frase del mensaje progresivamente.
+   */
   mostrarMensajeProgresivo() {
-    const lineas = this.mensajeLargo.split('. '); // Divide por puntos
-    this.mensajeActual = lineas[this.lineaIndex] + ".<br>";
-    this.lineaIndex++;
+    if (this.lineaIndex < this.lineas.length) {
+      let currentSegment = this.lineas[this.lineaIndex];
 
+      // Re-agregar el punto al final de la frase (se perdió con el split)
+      if (this.lineaIndex < this.lineas.length - 1) {
+        currentSegment += '.';
+      }
 
-    if (this.lineaIndex < lineas.length) {
-      //setTimeout(() => this.mostrarMensajeProgresivo(), 3000); // Ajusta el tiempo si es necesario
-    } else {
+      // 1. Acumular el nuevo segmento al string interno
+      this.mensajeAcumuladoString += currentSegment + '<br><br>';
+      
+      // 2. Usar DomSanitizer para crear el SafeHtml y actualizar la variable pública
+      this.mensajeActual = this.sanitizer.bypassSecurityTrustHtml(
+        this.mensajeAcumuladoString
+      );
+      
+      this.lineaIndex++;
+
+    } 
+    
+    if (this.lineaIndex >= this.lineas.length) {
       this.mensajeCompleto = true;
-      this.navegarAMenu();
     }
   }
 
@@ -41,8 +98,7 @@ export class PartidaComponent implements OnInit {
     this.router.navigate(['/menu']);
   }
 
-  logout()
-  {
+  logout() {
     this.us.logout();
     this.router.navigate(['']);
   }

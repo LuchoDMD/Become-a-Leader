@@ -22,7 +22,8 @@
     "backToList": "Volver a la lista de Pokemon",
     "select": "Seleccionar",
     "change": "Cambiar",
-    "createGame": "Crear Partida"
+    "createGame": "Crear Partida",
+    "next": "Siguiente"
   },
   "alerts": {
     "nicknameEmpty": "No puedes dejar el campo vacío.",
@@ -211,5 +212,8 @@
     "rankingUpdateError": "Error actualizando el ranking:",
     "gameDeleted": "Juego eliminado:",
     "gameDeleteError": "Error eleminando el juego:"
+  },
+    "intro": {
+    "message": "Bienvenido a Become a Leader. En este proyecto se simulan batallas de Líder Pokémon contra entrenadores, usando un equipo de un mismo tipo. Tu objetivo es acumular la mayor cantidad de victorias y sumar puntos. Recuerda que cuando pierdes, tu partida se elimina y tu puntaje se guarda en la tabla de puntajes. Entrando al juego..."
   }
 }

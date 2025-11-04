@@ -22,7 +22,8 @@
     "backToList": "Go to the list of Pokemon",
     "select": "Select",
     "change": "Change",
-    "createGame": "Create new game"
+    "createGame": "Create new game",
+    "next": "Next"
   },
   "alerts": {
     "emailRequired": "Email is required",
@@ -211,5 +212,8 @@
     "rankingUpdateError": "Error updating ranking:",
     "gameDeleted": "Game deleted:",
     "gameDeleteError": "Error deleting game:"
+  },
+  "intro": {
+    "message": "Welcome to Become a Leader. This project simulates battles between a Pokémon Leader and trainers, using a single-type team. Your goal is to accumulate the highest number of victories and score points. Remember that when you lose, your game is deleted and your score is saved in the ranking table. Entering the game..."
   }
 }
