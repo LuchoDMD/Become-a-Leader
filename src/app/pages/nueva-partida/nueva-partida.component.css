@@ -16,7 +16,7 @@ html, body, :host {
 
 /* Fondo principal */
 :host {
-  background-image: url('../../../../public/fondo_inicio.jpg'); /* Fondo GIF */
+  background-image: url('/assets/fondo_inicio.jpg'); /* Fondo GIF */
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

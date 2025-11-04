@@ -12,7 +12,7 @@ body,
 }
 
 :host {
-  background-image: url('../../../../public/fondo_inicio.jpg');
+ background-image: url('/assets/fondo_inicio.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
