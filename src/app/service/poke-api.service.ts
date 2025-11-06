@@ -143,4 +143,34 @@ export class PokeAPIService {
   getTypeDetails(idOrName: string | number): Observable<any> {
     return this.http.get<any>(`${this.url}type/${idOrName}`);
   }
+
+  getPokemonOriginalName(localizedName: string): Observable<string> {
+    return this.http.get<any>(`${this.url}pokemon-species/${localizedName}`).pipe(
+      map(speciesData => {
+        const englishNameEntry = speciesData.names.find(
+          (name: any) => name.language.name === 'en'
+        );
+        return englishNameEntry ? englishNameEntry.name : speciesData.name;
+      })
+    );
+  }
+
+  getMoveOriginalName(localizedName: string): Observable<string> {
+    return this.http.get<any>(`${this.url}move/${localizedName}`).pipe(
+      map(moveData => {
+        const englishNameEntry = moveData.names.find(
+          (n: any) => n.language.name === 'en'
+        );
+        return englishNameEntry ? englishNameEntry.name : moveData.name;
+      })
+    );
+  }
+
+  getOriginalTypeName(localizedName: string): Observable<string> {
+    return this.http.get<any>(`${this.url}type/${localizedName}`).pipe(
+      map(typeData => {
+        return typeData.name;
+      })
+    );
+  }
 }

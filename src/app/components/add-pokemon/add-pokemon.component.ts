@@ -14,7 +14,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-add-pokemon',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule,TranslateModule],
+  imports: [CommonModule, RouterModule, FormsModule, TranslateModule],
   templateUrl: './add-pokemon.component.html',
   styleUrl: './add-pokemon.component.css'
 })
@@ -109,7 +109,10 @@ export class AddPokemonComponent {
               potencia: data.power,
               precision: data.accuracy,
               usos: data.pp,
-              pp: data.pp
+              pp: data.pp,
+              // Añadir campos originales para futura deslocalización/edición
+              originalName: moveName,
+              originalType: data.type.name
             }
             console.log(move);
             this.moves.push(move);
@@ -156,34 +159,34 @@ export class AddPokemonComponent {
   addPokemonBD() {
     // Validar que el Pokémon tenga exactamente 4 movimientos
     if (this.moves.length !== 4) {
-      alert('El Pokémon debe tener exactamente 4 movimientos antes de guardarse.');
+      console.log('El Pokémon debe tener exactamente 4 movimientos antes de guardarse.'); // Cambio: De alert() a console.log()
       return;
     }
-  
+
     // Verificar si el Pokémon ya existe en la base de datos
     this.ts.getPokemons().subscribe({
       next: (pokemons) => {
         const existe = pokemons.some((poke) => poke.id === this.pokeAPI.id.toString());
         if (existe) {
-          alert(`El Pokémon con ID ${this.pokeAPI.id} ya existe en la base de datos.`);
+          console.log(`El Pokémon con ID ${this.pokeAPI.id} ya existe en la base de datos.`); // Cambio: De alert() a console.log()
           this.moves = [];
           return;
         }
-  
+
         // Proceder con la creación del Pokémon
         this.pokemon.id = this.pokeAPI.id.toString();
         this.pokemon.especie = this.pokeAPI.name;
-  
+
         // Almacenar los tipos
         for (let i = 0; i < this.pokeAPI.types.length; i++) {
           this.pokemon.tipos.push(this.pokeAPI.types[i].type.name);
         }
-  
+
         this.pokemon.nivel = 100;
-  
+
         // Generar los IVs
         this.iv = this.generateIVs();
-  
+
         // Calcular las estadísticas
         this.pokemon.estadisticas = {
           hp: this.calculateStats(this.statsBase.hp, this.iv.hp, this.generateEV(1, 84), this.pokemon.nivel, false),
@@ -193,18 +196,18 @@ export class AddPokemonComponent {
           sdef: this.calculateStats(this.statsBase.sdef, this.iv.sdef, this.generateEV(1, 84), this.pokemon.nivel, true),
           spd: this.calculateStats(this.statsBase.spd, this.iv.spd, this.generateEV(1, 84), this.pokemon.nivel, true),
         };
-  
+
         this.pokemon.vidaActual = this.pokemon.estadisticas.hp;
         this.pokemon.movimientos = this.moves;
         this.pokemon.idEntrenador = '';
-  
+
         console.log(this.pokemon);
-  
+
         // Almacenar en el db.json "pokemons":[] 
         this.ts.addPokemon(this.pokemon).subscribe({
           next: () => {
             console.log("Pokémon Agregado");
-            alert("Pokémon Agregado");
+            console.log("Pokémon Agregado"); // Cambio: De alert() a console.log()
             this.cleanBuffer();
             this.routes.navigate(['pokemon-list']);
           },
@@ -223,42 +226,3 @@ export class AddPokemonComponent {
     this.routes.navigate(['']);
   }
 }
-/*
-  // Obtener naturaleza aleatoria
-  private getNature(): string {
-    const natures = ['Hardy', 'Lonely', 'Brave', 'Adamant', 'Naughty', 'Bold'];
-    return natures[Math.floor(Math.random() * natures.length)];
-  }
-
-  private generateIVs(): any {
-    return {
-      hp: Math.floor(Math.random() * 32),
-      attack: Math.floor(Math.random() * 32),
-      defense: Math.floor(Math.random() * 32),
-      special_attack: Math.floor(Math.random() * 32),
-      special_defense: Math.floor(Math.random() * 32),
-      speed: Math.floor(Math.random() * 32),
-    };
-  }
-
-    private generateEVs(): any {
-    return {
-      hp: 0,
-      attack: 0,
-      defense: 0,
-      special_attack: 0,
-      special_defense: 0,
-      speed: 0,
-    };
-  }
-
-    incrementEV(evs: any, stat: string, value: number): any {
-    evs[stat] = Math.min(252, evs[stat] + value);
-    return evs;
-  }
-
-*/
-/*const tipos= this.pokeAPI.types;
-for(let i=0;i<tipos.length;i++){
-  console.log(tipos[i].type.name); //Esto para obtener los tipos del pokemon
-}*/

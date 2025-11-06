@@ -1808,7 +1808,7 @@
     },
     {
       "id": "596",
-      "especie": "galvantula",
+      "especie": "Galvantula",
       "tipos": [
         "bug",
         "electric"
@@ -1825,13 +1825,15 @@
       },
       "movimientos": [
         {
-          "nombre": "bug-buzz",
-          "tipo": "bug",
-          "clase": "special",
-          "potencia": 90,
-          "precision": 100,
-          "usos": 10,
-          "pp": 10
+          "nombre": "hyper-beam",
+          "tipo": "normal",
+          "clase": "Special",
+          "potencia": 150,
+          "precision": 90,
+          "usos": 5,
+          "pp": 5,
+          "originalName": "hyper-beam",
+          "originalType": "normal"
         },
         {
           "nombre": "energy-ball",
@@ -1840,7 +1842,9 @@
           "potencia": 90,
           "precision": 100,
           "usos": 10,
-          "pp": 10
+          "pp": 10,
+          "originalName": "energy-ball",
+          "originalType": "grass"
         },
         {
           "nombre": "electroweb",
@@ -1849,7 +1853,9 @@
           "potencia": 55,
           "precision": 95,
           "usos": 15,
-          "pp": 15
+          "pp": 15,
+          "originalName": "electroweb",
+          "originalType": "electric"
         },
         {
           "nombre": "discharge",
@@ -1858,7 +1864,9 @@
           "potencia": 80,
           "precision": 100,
           "usos": 15,
-          "pp": 15
+          "pp": 15,
+          "originalName": "discharge",
+          "originalType": "electric"
         }
       ]
     },
