@@ -176,6 +176,14 @@ html, body {
   max-width: 900px;
 }
 
+.pokedex{
+  display: flex;
+  align-items: center;
+  width: 10%;
+  float: left;
+  height: 10%;
+}
+
 
 div.batalla div img {
   height: 15vh;
@@ -356,3 +364,4 @@ div.batalla div img {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+

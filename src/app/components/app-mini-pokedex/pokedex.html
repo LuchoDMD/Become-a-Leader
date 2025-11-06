@@ -1,0 +1,42 @@
+ <div class="mini-pokedex-card">
+      <h3>{{ 'batalla.pokedexTitle' | translate }}</h3>
+      
+      <div class="search-container">
+        <input 
+          type="text" 
+          [(ngModel)]="searchTerm" 
+          (keyup.enter)="searchPokemon()" 
+          [placeholder]="('batalla.searchPlaceholder' | translate)"
+        />
+        <button (click)="searchPokemon()" [disabled]="!searchTerm">
+          {{ 'actions.search' | translate }}
+        </button>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <div class="pokemon-details" *ngIf="searchedPokemonData">
+        <p class="pokemon-name">
+          <strong>{{ 'pokemonDetail.species' | translate }}:</strong> 
+          {{ transformarPrimeraLetra(searchedPokemonData.localizedName || searchedPokemonData.name) }}
+        </p>
+        
+        <img 
+          [src]="searchedPokemonData.spriteUrl" 
+          alt="{{ searchedPokemonData.name }}" 
+          class="pokedex-sprite"
+        />
+        
+        <div class="pokemon-types">
+          <strong>{{ 'pokemonDetail.types' | translate }}:</strong>
+          <span 
+            *ngFor="let tipo of searchedPokemonData.types" 
+            [ngClass]="obtenerClaseTipoMovimiento(tipo)" 
+            class="type-tag"
+          >
+            {{ getTranslatedTypeName(tipo) | async }}
+          </span>
+        </div>
+      </div>
+    </div>
+  

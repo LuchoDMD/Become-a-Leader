@@ -13,11 +13,12 @@ import { PartidaService } from '../../service/partida.service';
 import { Entrenador } from '../../interface/entrenador';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { MiniPokedexComponent } from "../app-mini-pokedex/pokedex";
 
 @Component({
   selector: 'app-batalla',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, MiniPokedexComponent],
   templateUrl: './batalla.component.html',
   styleUrls: ['./batalla.component.css']
 })
